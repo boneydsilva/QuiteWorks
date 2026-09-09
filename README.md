@@ -59,7 +59,7 @@ These are the placeholders. The site will publish without them but should not.
 | Where | What to change | Done? |
 |---|---|---|
 | `public/assets/js/site.js` | `formAccessKey` — sign up free at [web3forms.com](https://web3forms.com) and paste the key. Until you do, the form falls back to opening the visitor's email app. | **still to do** |
-| Site address in canonical, og:url, og:image, robots.txt and sitemap.xml | Run `python tools\set-site-url.py https://your-domain`. One command does all 15 references. | done — set to the live workers.dev URL; rerun when you buy a domain |
+| Site address in canonical, og:url, og:image, robots.txt and sitemap.xml | Run `python tools\set-site-url.py https://your-domain`. One command does all 15 references. | done — set to `https://boneydsilva.com` |
 | `public/pricing.html` | The prices, if ₹14,999 / ₹7,500 / ₹4,999 are not what you settled on. | check |
 | `public/assets/js/site.js` | `email` and `whatsapp` | done — `boneydsilva@gmail.com`, `919004213100` |
 | All `public/*.html` files | The address shown in the footers and on the contact page | done |
@@ -166,8 +166,8 @@ text still describe it.
 
 ## Deploying
 
-**Live at <https://quiteworks.boneydsilva.workers.dev> — Cloudflare, free, with
-unlimited bandwidth.**
+**Live at <https://boneydsilva.com> — Cloudflare, free, with unlimited
+bandwidth.**
 Read **[deploy/cloudflare.md](deploy/cloudflare.md)** for the one-time setup.
 After that, deploying is:
 
