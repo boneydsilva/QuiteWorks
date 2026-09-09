@@ -17,7 +17,9 @@ public/             EVERYTHING IN HERE IS PUBLISHED. Nothing outside it is.
     css/site.css    The entire stylesheet. Tokens at the top control everything.
     js/site.js      Theme toggle, mobile nav, contact form. Config at the top.
     img/            Product screenshots (see tools/) + favicon
+wrangler.jsonc      Cloudflare assets config (publish dir + 404 handling)
 deploy/
+  cloudflare.md     How this site is hosted - read this one
   aws.md            Step-by-step AWS hosting (S3 + CloudFront)
   gcp.md            Step-by-step Google Cloud hosting
   deploy-aws.ps1    One-command deploy to AWS
@@ -164,7 +166,8 @@ text still describe it.
 
 ## Deploying
 
-**The site is hosted on Cloudflare Pages — free, with unlimited bandwidth.**
+**Live at <https://quiteworks.boneydsilva.workers.dev> — Cloudflare, free, with
+unlimited bandwidth.**
 Read **[deploy/cloudflare.md](deploy/cloudflare.md)** for the one-time setup.
 After that, deploying is:
 

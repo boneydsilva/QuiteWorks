@@ -55,8 +55,13 @@ git push -u origin main
 
 5. **Save and Deploy.**
 
-A minute later the site is live at `https://<project>.pages.dev`. That URL is
-permanent and free — you can send it to people today, before you own a domain.
+A minute later the site is live. Depending on how Cloudflare provisions it you
+get either `https://<project>.pages.dev` or `https://<project>.<account>.workers.dev`
+— this one is the workers.dev kind. Either URL is permanent and free, so you can
+send it to people today, before you own a domain.
+
+`wrangler.jsonc` in the repo root sets the assets directory and the 404
+behaviour. Leave it alone unless you rename the project.
 
 ### 3. Deploying changes after that
 
@@ -136,9 +141,12 @@ a day, every day.
 - **`git push` is rejected as non-fast-forward** — the GitHub repo was created
   with a README. Either `git pull --rebase origin main` and push again, or
   delete the repo and recreate it empty.
-- **The 404 page does not appear** — Cloudflare Pages serves `404.html`
-  automatically for a static project. Confirm it is at `public/404.html` and not
-  nested any deeper.
+- **The 404 page does not appear** (an empty body, so the browser shows its own
+  error page) — this project deploys as a Worker with static assets, where
+  `not_found_handling` is off by default. That is what `wrangler.jsonc` at the
+  repo root is for; keep the `"not_found_handling": "404-page"` line. Check with
+  `curl -s https://your-site/nope | wc -c` — a few thousand bytes means it is
+  working, zero means it is not.
 - **An edit is not showing** — check the deployment actually succeeded in the
   Pages dashboard, then hard-reload. Pages purges its own cache on deploy, so a
   stale page is nearly always a failed build.
