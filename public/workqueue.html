@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — assign work to your team over your own network</title>
+<meta name="description" content="WorkQueue assigns tasks from a browser to a thin strip on every employee's screen, times the work automatically, and reports on it — all on your office Wi-Fi, with no monthly fee.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.quietworks.in/workqueue.html">
+<meta property="og:type" content="product">
+<meta property="og:title" content="WorkQueue — assign work to your team over your own network">
+<meta property="og:description" content="A thin strip on every employee's screen. Automatic timing. No monthly fee.">
+<meta property="og:image" content="https://www.quietworks.in/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://www.quietworks.in/workqueue.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workqueue.html" aria-current="page">WorkQueue</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="contact.html?about=trial">Start a trial</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== Hero ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>Give out work. Get the timings for free.</h1>
+        <p class="lede">
+          You assign a task from your browser. It lands within seconds on a thin strip
+          at the top of that employee's screen. They press Complete when it is done.
+          Those two moments are all WorkQueue needs to tell you how your day actually went.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="contact.html?about=trial">Try it free for 30 days</a>
+          <a class="btn btn-ghost btn-lg" href="pricing.html">See the price</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 and 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No cloud account</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Unlimited PCs on one licence</span>
+        </div>
+      </div>
+
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 — WorkQueue</span>
+          </div>
+          <img src="assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="The WorkQueue board with a task composer and three columns: Waiting, In progress and Completed today."
+               fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">One row to assign. Three columns to watch.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== The strip ===================== -->
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The employee side</span>
+      <h2>34 pixels. That is the entire thing your staff have to learn.</h2>
+      <p class="lede">
+        The strip docks into Windows the same way the taskbar does, so Windows reserves
+        the space for it and maximised windows simply stop below. It cannot cover
+        anyone's work, and nothing can cover it.
+      </p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="assets/img/bar-strip.png" width="1920" height="41" loading="lazy"
+           alt="The whole strip across the top of a 1920-pixel screen: the employee name and current task at the left, a chip for each open task at the right, and a great deal of empty space between them.">
+      <figcaption class="shot-caption">
+        The whole strip, across a 1920-pixel screen. This is roughly how much of
+        the display it takes — which is the point. The two close-ups below are
+        the same strip at actual size.
+      </figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="assets/img/bar-strip-left.png" width="500" height="41" loading="lazy"
+               alt="Close-up of the left end of the strip: a green connected dot, the name Asha Rao, then a red diamond and the task title Reconcile the September invoice batch.">
+        </div>
+        <figcaption class="shot-caption">
+          <strong>Left end.</strong> A green dot while the server is reachable,
+          their name, and the task they are on. The red diamond means urgent.
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy"
+               alt="Close-up of the right end of the strip: three chips, one red, one amber, one blue, reading Reconcile the September i..., Confirm tomorrow's delive... and Update the shipping tracker, then a small menu arrow.">
+        </div>
+        <figcaption class="shot-caption">
+          <strong>Right end.</strong> One chip per open task, coloured by
+          priority. Clicking one switches to it; the frame takes its colour.
+        </figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="assets/img/bar-panel.png" width="822" height="278" loading="lazy"
+             alt="The panel opened from the strip: the current task with its description and assigned time on the left above one large Mark completed button, and the employee's three tasks listed on the right, each with its own Complete button.">
+      </div>
+      <figcaption class="shot-caption center">Clicking a task opens this. One big button to finish the job, a box to ask the admin a question, and every other task one click away.</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <h3>There is no Accept button</h3>
+        <p>
+          A task is marked received the instant it reaches their machine. Nobody can
+          forget to acknowledge work, and the gap between "assigned" and "on their
+          screen" becomes a number you can actually manage.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3>One button to finish</h3>
+        <p>
+          Click a task to open the panel: the description, any comments, and one large
+          Complete button that asks for a second click so it cannot happen by accident.
+        </p>
+      </div>
+      <div class="card reveal">
+        <h3>They can talk back</h3>
+        <p>
+          An employee can leave a comment on a task — a question, a blocker, a note on
+          what they found. You see it and reply from the same task in the dashboard.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Board ===================== -->
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">The board</span>
+        <h3>Assign in one line, then watch the day move</h3>
+        <p>
+          A title, any detail the person needs, a priority, a due date, who it goes to,
+          and Assign. Send the same task to one person or to six.
+        </p>
+        <ul class="check-list">
+          <li><strong>Three live columns</strong> — waiting, in progress, and completed today, grouped by person.</li>
+          <li><strong>Act without interrupting anyone</strong> — Done, Cancel, Reopen and Delete appear on a card when you point at it.</li>
+          <li><strong>Move work around</strong> — open a task and reassign it to somebody else.</li>
+          <li><strong>Urgent looks urgent</strong> — priority colours the card and the employee's strip frame.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue — Board</span>
+          </div>
+          <img src="assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy"
+               alt="The board with five waiting tasks, three in progress and twelve completed today.">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">Analytics</span>
+        <h3>The questions a manager actually asks</h3>
+        <p>
+          Seven headline numbers and ten charts, all driven by one filter row. Every
+          chart has a table twin, so you can read the figures rather than squint at bars.
+        </p>
+        <ul class="check-list">
+          <li><strong>How much got done</strong> — completed against assigned, per day.</li>
+          <li><strong>How long things take</strong> — average and median per task, and the longest jobs of the period.</li>
+          <li><strong>How fast work is picked up</strong> — response time per day and per person.</li>
+          <li><strong>Who is carrying what</strong> — count, hours, response and on-time rate per employee.</li>
+          <li><strong>When your team is busy</strong> — by hour of day and by day of week.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue — Analytics</span>
+          </div>
+          <img src="assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy"
+               alt="Analytics: 164 completed, 7d 7h of work time, 1h 4m average per task, 21m average response, 95% on time, plus charts.">
+        </div>
+        <figcaption class="shot-caption">Light by default, dark if you prefer — the whole dashboard has both.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">History and calendar</span>
+        <h3>Every task keeps its own paper trail</h3>
+        <p>
+          Filter history by person and date range and you get response time and work
+          time on every row, per-person totals at the bottom, and a CSV export that
+          matches exactly what is on screen — the one your accountant or your client
+          actually wants.
+        </p>
+        <ul class="check-list">
+          <li><strong>Click any task title, anywhere,</strong> to open its full timeline.</li>
+          <li><strong>The calendar</strong> heat-shades the month so a slow week is visible at a glance.</li>
+          <li><strong>Reopen a finished task</strong> straight from its row if it comes back.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue — Calendar</span>
+          </div>
+          <img src="assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy"
+               alt="The calendar tab: a heat-shaded month beside the list of completed tasks, newest day first.">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Resilience ===================== -->
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">When things go wrong</span>
+      <h2>Built for an office, not for a demo.</h2>
+      <p class="lede">
+        Small offices have bad afternoons. The router reboots, the broadband dies,
+        somebody switches off the wrong PC. Each of these was designed for rather than
+        discovered.
+      </p>
+    </div>
+
+    <div class="grid grid-2">
+      <div>
+        <ul class="check-list">
+          <li>
+            <strong>The network drops.</strong> Completions and comments go into a local
+            outbox and are delivered when the server returns — each carrying the original
+            click time, so a task finished at 10:35 during a three-hour outage is still
+            recorded at 10:35, not at 13:35.
+          </li>
+          <li>
+            <strong>Something gets sent twice.</strong> Every action carries a unique id
+            the server recognises, so a retry after a dropped connection can never
+            double-count a task.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul class="check-list">
+          <li>
+            <strong>The server PC changes IP.</strong> The strip broadcasts on the local
+            network and the server answers with its new address. If your router blocks
+            broadcasts — common on mesh and ISP routers — it scans the network instead.
+          </li>
+          <li>
+            <strong>Nothing works and nobody knows why.</strong> A built-in check walks
+            through the eight usual causes — firewall, Wi-Fi isolation, VPN, wrong
+            address — and tells you in plain words which one it is.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Architecture ===================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">How it fits together</span>
+      <h2>Two programs, one network, no cloud.</h2>
+      <p class="lede">
+        The whole system is a program on the manager's PC and a small program on each
+        employee's. They talk to each other over the office network and nowhere else.
+      </p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue architecture</title>
+        <desc id="diagram-desc">The manager's PC runs the WorkQueue server with a SQLite database and a browser dashboard. Each employee PC runs the WorkQueue bar, which talks to the server over HTTP on port 8420 and finds it using UDP broadcast on port 8421. Everything stays inside the office network.</desc>
+
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">Manager&#8217;s PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">one SQLite database file</text>
+        <text class="dg-s" x="38" y="182">dashboard opens in a browser</text>
+
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">Employee PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe &#183; 34px strip</text>
+
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">Employee PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe &#183; 34px strip</text>
+
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">Employee PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe &#183; 34px strip</text>
+
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 finds the server</text>
+
+        <text class="dg-s" x="430" y="285" text-anchor="middle">everything above stays inside your office network</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card">
+        <h3>Away from the office?</h3>
+        <p>
+          WorkQueue can join a private network (Tailscale) so a laptop at home or a
+          second branch reaches the same server, encrypted, with nothing published to
+          the public internet. Setup is one extra step and it is included in the licence.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Backups are one file</h3>
+        <p>
+          Everything the system knows is a single database. The dashboard exports it
+          while the server keeps running — either a full snapshot with a checksum, or a
+          byte-exact copy of the database. Keep it off that PC and you are covered.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Celebrations ===================== -->
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">One nice thing</span>
+      <h2>It can also throw a small party.</h2>
+      <p class="lede">
+        Send a card instead of a task — a birthday, a work anniversary, a win, a
+        welcome. Balloons drift across that person's strip, and there is a one-minute
+        game in the panel if they want it. A card never enters the history, the
+        analytics or anyone's work time. It is not a task, and it takes itself down
+        after a day.
+      </p>
+      <p class="small muted">
+        We mention it because monitoring software has a reputation, and a tool your
+        team resents is a tool that quietly stops being used.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Requirements ===================== -->
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">The specifics</span>
+      <h2>What you need to run it</h2>
+    </div>
+
+    <dl class="spec-list">
+      <div>
+        <dt>Manager's PC</dt>
+        <dd>Windows 10 or 11, left switched on during working hours. No dedicated server, no special hardware. Administrator rights are needed once, for the install.</dd>
+      </div>
+      <div>
+        <dt>Employee PCs</dt>
+        <dd>Windows 10 or 11. No administrator rights needed — the strip installs for the logged-in user.</dd>
+      </div>
+      <div>
+        <dt>Network</dt>
+        <dd>All the PCs on the same office network, wired or Wi-Fi. TCP port 8420 and UDP port 8421 open between them — the installer opens the firewall for you.</dd>
+      </div>
+      <div>
+        <dt>Internet</dt>
+        <dd>Not required. Only needed if you turn on remote access for people outside the office.</dd>
+      </div>
+      <div>
+        <dt>Dashboard</dt>
+        <dd>Any modern browser on any device on the network, including a phone or tablet.</dd>
+      </div>
+      <div>
+        <dt>Install time</dt>
+        <dd>About ten minutes for the server and under a minute per employee PC.</dd>
+      </div>
+    </dl>
+
+    <h3 style="margin-top:48px">And what it does not do</h3>
+    <p class="muted">
+      We would rather you read this now than find out in month two.
+    </p>
+    <ul class="check-list">
+      <li><strong>It is Windows only.</strong> Mac and Linux employee machines are not supported yet.</li>
+      <li><strong>People are identified by their PC,</strong> not by a login. That is the right trade for a trusted office network, but it does mean a determined person could pretend to be another machine.</li>
+      <li><strong>Work time is wall-clock time.</strong> If a task stays open over lunch, lunch is in the number. It measures elapsed time, not effort.</li>
+      <li><strong>Off the network, the queue goes stale.</strong> A laptop away from the office shows its last known tasks until it reconnects — unless you turn on remote access.</li>
+      <li><strong>The strip costs 34 pixels</strong> of height on the primary monitor, permanently.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>About WorkQueue specifically</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Is this employee monitoring? Will my team hate it?</summary>
+        <div class="faq-body">
+          <p>
+            It records two things per task: when it reached the screen and when the
+            person pressed Complete. It does not take screenshots, log keystrokes, track
+            idle time or watch which websites anyone visits, and it never will — that is
+            a deliberate line, not an oversight.
+          </p>
+          <p>
+            In practice teams tend to like it, because "I sent you that hours ago"
+            arguments stop being arguments. Everyone is looking at the same timestamps.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>How many people can it handle?</summary>
+        <div class="faq-body">
+          <p>
+            It is built and load-tested for a single office — around 25 machines at once
+            on ordinary hardware, with responses well under a tenth of a second. If you
+            are bigger than that, talk to us before you buy rather than after.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>What if the manager's PC dies?</summary>
+        <div class="faq-body">
+          <p>
+            Install the server on another PC and import your last export. This is why
+            the backup is one file and why the dashboard nags you to keep a copy
+            somewhere else. Employee PCs find the new server by themselves.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>Can I get my data out?</summary>
+        <div class="faq-body">
+          <p>
+            Yes, at any time and without asking us. History exports to CSV, and the whole
+            database exports as a JSON snapshot or as the SQLite file itself. There is no
+            lock-in because there is nothing of yours on our side to lock.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>Do you see any of our tasks?</summary>
+        <div class="faq-body">
+          <p>
+            No. The software never contacts us. There is no telemetry, no licence
+            check-in and no analytics call. If your office had no internet at all,
+            WorkQueue would not notice.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>What does support look like?</summary>
+        <div class="faq-body">
+          <p>
+            Email, answered within one working day, by the person who wrote the software.
+            The licence includes a year of it, along with a year of updates.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Put it on your own team for 30 days.</h2>
+    <p class="lede">
+      The complete tool, nothing held back, nothing to cancel. Tell us roughly how many
+      PCs you have and we will send the installer and stay on the call while you set it up.
+    </p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="contact.html?about=trial">Request the trial</a>
+      <a class="btn btn-ghost btn-lg" href="pricing.html">See the price</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+            <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+            <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+            <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+          </svg>
+          Quietworks
+        </a>
+        <p>
+          Small Windows tools for small businesses. Built in Mumbai, India — bought
+          once, run on your own network.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="workqueue.html">WorkQueue</a></li>
+          <li><a href="workqueue.html#requirements">Requirements</a></li>
+          <li><a href="contact.html?about=roadmap">What is next</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Buying</h4>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html?about=trial">Free trial</a></li>
+          <li><a href="contact.html?about=setup">Guided setup</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Send a message</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="Hello, I saw the Quietworks website and would like to know more about WorkQueue." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. All rights reserved.</span>
+      <span>Made in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
