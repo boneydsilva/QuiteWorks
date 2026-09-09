@@ -24,6 +24,8 @@ deploy/
   deploy-gcp.ps1    One-command deploy to Google Cloud
 tools/
   README.md         How to regenerate the product screenshots
+  preview.py        Local preview that matches how Cloudflare serves the site
+  set-site-url.py   Repoints the whole site at a new address, in one command
   seed_demo.py      Fills a throwaway WorkQueue database with demo data
   shoot.py          Drives headless Chrome and saves the 1920x1080 PNGs
 ```
@@ -32,15 +34,19 @@ tools/
 
 ## Preview it locally
 
-Any static file server works. With Python already installed:
+With Python already installed:
 
 ```powershell
-cd D:\BoneysNewWebsiteProcessAutoamation\public
-python -m http.server 8000
+cd D:\BoneysNewWebsiteProcessAutoamation
+python tools\preview.py
 ```
 
-Then open <http://localhost:8000>. Opening `index.html` by double-clicking also
-mostly works, but a server is closer to the real thing.
+Then open <http://localhost:8000>.
+
+Use this rather than `python -m http.server`. The site uses clean URLs
+(`/workqueue`, not `/workqueue.html`) because that is what Cloudflare Pages
+serves; the plain server does not understand those and 404s on every page.
+`preview.py` applies the same rule Pages does, and serves `404.html` properly.
 
 ---
 
@@ -51,8 +57,7 @@ These are the placeholders. The site will publish without them but should not.
 | Where | What to change | Done? |
 |---|---|---|
 | `public/assets/js/site.js` | `formAccessKey` — sign up free at [web3forms.com](https://web3forms.com) and paste the key. Until you do, the form falls back to opening the visitor's email app. | **still to do** |
-| All `public/*.html` files | `https://www.quietworks.in` in the canonical, og:url and og:image tags. | **still to do** |
-| `public/robots.txt`, `public/sitemap.xml` | The same domain. | **still to do** |
+| Site address in canonical, og:url, og:image, robots.txt and sitemap.xml | Run `python tools\set-site-url.py https://your-domain`. One command does all 15 references. | done — set to the live workers.dev URL; rerun when you buy a domain |
 | `public/pricing.html` | The prices, if ₹14,999 / ₹7,500 / ₹4,999 are not what you settled on. | check |
 | `public/assets/js/site.js` | `email` and `whatsapp` | done — `boneydsilva@gmail.com`, `919004213100` |
 | All `public/*.html` files | The address shown in the footers and on the contact page | done |
@@ -109,13 +114,14 @@ This is designed for it, because more tools are coming.
      <span class="tag tag-live">Available now</span>
      <h3>Your tool</h3>
      <p>One sentence on what it does and who for.</p>
-     <a class="btn btn-primary btn-sm" href="yournewtool.html">Take a look</a>
+     <a class="btn btn-primary btn-sm" href="/yournewtool">Take a look</a>
    </div>
    ```
 
 3. **Add it to the four navigation bars.** They are copy-pasted into each page
    (the cost of having no build step). Search for `nav-links` and add a link in
-   all five HTML files, plus the `Tools` column in each footer.
+   all five HTML files, plus the `Tools` column in each footer. Link to
+   `/yournewtool`, not `/yournewtool.html` — the site uses clean URLs.
 
 4. **Add it to `public/sitemap.xml`.**
 

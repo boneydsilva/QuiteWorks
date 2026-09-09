@@ -72,6 +72,18 @@ look at a change before it goes live.
 
 ---
 
+## Clean URLs
+
+Pages serves `/workqueue`, and 307-redirects `/workqueue.html` to it. The site's
+links, canonical tags and sitemap all use the clean form, so nothing redirects
+in normal use. Two things follow from that:
+
+- Link to `/pricing`, never `/pricing.html`, when you add pages.
+- Preview locally with `python tools\preview.py`, not `python -m http.server` —
+  the plain server does not resolve clean URLs and 404s on every page.
+
+---
+
 ## Adding your domain later
 
 When you have bought one:
@@ -91,8 +103,14 @@ canonical address is the placeholder:
 - `public/robots.txt` — the `Sitemap:` line
 - `public/sitemap.xml` — all four `<loc>` entries
 
-They currently all say `https://www.quietworks.in`. One search-and-replace does
-it. Commit, push, done.
+One command does all of it:
+
+```powershell
+python tools\set-site-url.py https://www.quietworks.in
+```
+
+Then commit and push. Run `python tools\set-site-url.py --check` any time to see
+what the site currently claims its address is.
 
 ---
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.quietworks.in/sitemap.xml
+Sitemap: https://quiteworks.boneydsilva.workers.dev/sitemap.xml
