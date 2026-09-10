@@ -147,6 +147,66 @@
   </div>
 </section>
 
+<!-- ===================== The demo film =====================
+     A recording of WorkQueue actually running: the dashboard captured from the
+     browser, the employee strip captured off a Windows desktop. The chapter
+     buttons and the caption under it are wired up by initFilm() in site.js;
+     without JavaScript the video still plays with its own controls. -->
+<section id="see-it-work">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">See it work</span>
+      <h2>Watch one task go out and come back.</h2>
+      <p class="lede">
+        A minute of WorkQueue running for real: a job typed on the manager's
+        board, delivered to an employee's strip a couple of seconds later, timed
+        without anybody starting a clock, and turned into a number the moment it
+        is done.
+      </p>
+    </div>
+
+    <figure class="film" data-film>
+      <div class="film-stage">
+        <video data-film-video width="1920" height="1080" controls playsinline
+               preload="none" poster="assets/img/demo-poster.jpg"
+               aria-describedby="film-caption">
+          <source src="assets/video/workqueue-demo.mp4" type="video/mp4">
+          <p class="film-fallback">
+            Your browser cannot play this video.
+            <a href="assets/video/workqueue-demo.mp4">Download it instead</a> (10 MB).
+          </p>
+        </video>
+        <button class="film-play" type="button" data-film-play
+                aria-label="Play the demonstration, one minute and seven seconds">
+          <span class="film-play-mark">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </span>
+          <span class="film-play-text">Watch the demo <b>1:07</b></span>
+        </button>
+      </div>
+
+      <ol class="film-chapters" data-film-chapters>
+        <li><button type="button" data-film-at="3.2">Assigned <span>0:03</span></button></li>
+        <li><button type="button" data-film-at="23.4">Delivered <span>0:23</span></button></li>
+        <li><button type="button" data-film-at="32.4">Being worked on <span>0:32</span></button></li>
+        <li><button type="button" data-film-at="39.6">Completed <span>0:40</span></button></li>
+        <li><button type="button" data-film-at="48.6">Counted <span>0:49</span></button></li>
+      </ol>
+
+      <figcaption class="film-caption" id="film-caption" data-film-caption aria-live="polite">
+        The manager types the job once, and picks whose screen it goes to.
+      </figcaption>
+
+      <p class="film-note">
+        Recorded on 10 September 2026 against WorkQueue 4.0.1 and a database of
+        demo data. The dashboard is captured from the browser; the strip is
+        captured from the top of a real Windows desktop, at its real size. The
+        names are invented — everything they are doing is not.
+      </p>
+    </figure>
+  </div>
+</section>
+
 <!-- ===================== Featured tool ===================== -->
 <section>
   <div class="wrap">

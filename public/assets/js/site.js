@@ -216,6 +216,78 @@ function initMisc() {
   }
 }
 
+/* --------------------------------------------------------------------------
+   7. The demo film on the home page
+   The video is a plain <video> with its own controls, so it works with this
+   file missing. What this adds is the chapter row, the running caption under
+   it, and a play button big enough to be an invitation.
+   -------------------------------------------------------------------------- */
+
+// Where each chapter starts in the film, and what is happening there.
+const FILM_CHAPTERS = [
+  { at: 3.2,  text: "The manager types the job once, and picks whose screen it goes to." },
+  { at: 23.4, text: "It lands on Asha's strip about two seconds later. There is no app to open and nothing to accept — reaching her PC is what counts as delivered." },
+  { at: 32.4, text: "The clock started itself the moment the task arrived, and the board shows it running. Nobody has to remember to start a timer." },
+  { at: 39.6, text: "She presses Complete once. Her strip goes quiet and the card crosses the board on its own." },
+  { at: 48.6, text: "Response five seconds, work twenty-four. Two timestamps nobody typed — and thirty days of them is the reporting." },
+];
+
+function initFilm() {
+  const root = document.querySelector("[data-film]");
+  if (!root) return;
+
+  const video = root.querySelector("[data-film-video]");
+  const play = root.querySelector("[data-film-play]");
+  const caption = root.querySelector("[data-film-caption]");
+  const buttons = Array.from(root.querySelectorAll("[data-film-at]"));
+  if (!video) return;
+
+  let current = -1;
+
+  const sync = () => {
+    let index = 0;
+    FILM_CHAPTERS.forEach((c, i) => { if (video.currentTime >= c.at) index = i; });
+    if (index === current) return;
+    current = index;
+    if (caption) caption.textContent = FILM_CHAPTERS[index].text;
+    buttons.forEach((b, i) => b.setAttribute("aria-current", String(i === index)));
+  };
+
+  // preload="none" means there is nothing to seek in until the file is asked
+  // for, so a chapter button has to wait for the metadata before it jumps.
+  const seek = (seconds) => {
+    const go = () => {
+      video.currentTime = seconds;
+      const started = video.play();
+      if (started && started.catch) started.catch(() => { /* the user can press play */ });
+    };
+    if (video.readyState >= 1) go();
+    else {
+      video.addEventListener("loadedmetadata", go, { once: true });
+      video.load();
+    }
+  };
+
+  if (play) play.addEventListener("click", () => seek(0));
+  buttons.forEach((b) => {
+    b.addEventListener("click", () => seek(Number(b.dataset.filmAt)));
+  });
+
+  // The poster should be a picture, not a picture with a control bar across it.
+  // The controls are in the markup so the video still works with this file
+  // missing; they come back the moment it is actually playing.
+  video.removeAttribute("controls");
+  video.addEventListener("playing", () => {
+    root.classList.add("is-playing");
+    video.setAttribute("controls", "");
+  });
+  video.addEventListener("timeupdate", sync);
+  video.addEventListener("seeked", sync);
+
+  root.classList.add("is-live");
+  buttons.forEach((b, i) => b.setAttribute("aria-current", String(i === 0)));
+}
+
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -225,4 +297,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initForm();
   initMisc();
+  initFilm();
 });

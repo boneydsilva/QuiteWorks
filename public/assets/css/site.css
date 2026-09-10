@@ -687,10 +687,90 @@ td strong { font-weight: 600; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
-/* --- 23. Print ----------------------------------------------------------- */
+/* --- 23. The demo film (home page) --------------------------------------- */
+/* The video carries its own dark stage, so the frame around it is quiet: a
+   border, a shadow, and nothing else competing with it. */
+
+.film { margin: 0 auto; max-width: 1020px; }
+
+.film-stage {
+  position: relative;
+  border: 1px solid var(--border-firm); border-radius: var(--radius-lg);
+  overflow: hidden; background: #0d1015; box-shadow: var(--shadow-lg);
+  line-height: 0;
+}
+.film-stage video { width: 100%; height: auto; display: block; }
+.film-fallback { line-height: 1.6; color: #e9edf3; padding: 24px; }
+.film-fallback a { color: #f0a65c; }
+
+/* The overlay only exists when JavaScript is there to work it; without it the
+   video's own controls are the way in. */
+.film-play { display: none; }
+.film.is-live .film-play {
+  position: absolute; inset: 0; display: flex; cursor: pointer;
+  align-items: center; justify-content: center; flex-direction: column; gap: 18px;
+  border: 0; background: rgba(9, 12, 17, .28); color: #fff; font: inherit;
+  transition: background .25s ease, opacity .25s ease;
+}
+.film.is-live .film-play:hover { background: rgba(9, 12, 17, .16); }
+.film.is-playing .film-play { opacity: 0; pointer-events: none; }
+
+.film-play-mark {
+  display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
+  background: rgba(255, 255, 255, .94); color: #14171c;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .45);
+  transition: transform .25s ease;
+}
+.film-play-mark svg { width: 34px; height: 34px; margin-left: 4px; }
+.film-play:hover .film-play-mark { transform: scale(1.06); }
+/* The label sits along the bottom of the poster, where the frame is dark and
+   there is nothing behind it to fight with. */
+.film-play-text {
+  position: absolute; left: 0; right: 0; bottom: 28px;
+  font-size: 16px; font-weight: 500; letter-spacing: .01em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .65);
+}
+.film-play-text b { font-weight: 600; opacity: .82; }
+
+.film-chapters { display: none; }
+.film.is-live .film-chapters {
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 0; padding: 0;
+  list-style: none; counter-reset: chapter;
+}
+.film-chapters button {
+  display: block; padding: 7px 12px; border-radius: 8px; cursor: pointer;
+  background: transparent; border: 1px solid var(--border); color: var(--ink-3);
+  font: inherit; font-size: 13.5px; font-weight: 500;
+}
+.film-chapters button::before { counter-increment: chapter; content: counter(chapter) ". "; }
+.film-chapters button span { color: var(--ink-3); font-variant-numeric: tabular-nums; opacity: .75; }
+.film-chapters button:hover { border-color: var(--border-firm); color: var(--ink-2); }
+.film-chapters button[aria-current="true"] {
+  /* Colour marks the chapter we are in, not weight - bolder text is wider, and
+     on a phone one wider button reflows the row and nudges the page. */
+  background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent-ink);
+}
+.film-chapters button[aria-current="true"] span { color: var(--accent-ink); }
+
+.film-caption {
+  min-height: 3.2em; margin: 18px 0 0; padding-left: 15px;
+  border-left: 3px solid var(--accent); font-size: 16.5px; line-height: 1.55; color: var(--ink);
+}
+.film-note { margin: 14px 0 0; font-size: 13.5px; color: var(--ink-3); }
+
+@media (max-width: 700px) {
+  .film-play-mark { width: 64px; height: 64px; }
+  .film-play-mark svg { width: 26px; height: 26px; }
+  .film-play-text { font-size: 13.5px; bottom: 12px; }
+  .film-caption { font-size: 15.5px; min-height: 4.8em; }
+}
+
+/* --- 24. Print ----------------------------------------------------------- */
 
 @media print {
   .site-header, .site-footer, .theme-toggle, .nav-toggle, .btn { display: none !important; }
+  /* On paper the film is its poster frame, so its controls are noise. */
+  .film-chapters, .film-play { display: none !important; }
   body { background: #fff; color: #000; font-size: 12pt; }
   .shot { box-shadow: none; }
   section { padding-block: 18px; }

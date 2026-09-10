@@ -6,7 +6,7 @@ gets uploaded.
 
 ```
 public/             EVERYTHING IN HERE IS PUBLISHED. Nothing outside it is.
-  index.html        Home - the company, the approach, the catalogue
+  index.html        Home - the company, the demo film, the approach, the catalogue
   workqueue.html    WorkQueue product page - the page that does the selling
   pricing.html      Pricing, cost comparison, licence terms
   contact.html      Contact form and channels
@@ -16,7 +16,8 @@ public/             EVERYTHING IN HERE IS PUBLISHED. Nothing outside it is.
   assets/
     css/site.css    The entire stylesheet. Tokens at the top control everything.
     js/site.js      Theme toggle, mobile nav, contact form. Config at the top.
-    img/            Product screenshots (see tools/) + favicon
+    img/            Product screenshots (see tools/) + demo poster + favicon
+    video/          The demo film (see tools/)
 wrangler.jsonc      Cloudflare assets config (publish dir + 404 handling)
 deploy/
   cloudflare.md     How this site is hosted - read this one
@@ -133,7 +134,36 @@ This is designed for it, because more tools are coming.
 Once there are four or five tools, the repeated header and footer will start to
 hurt. That is the moment to add a tiny build step or move to Astro — not before.
 
-### Adding screenshots
+### The demo film on the home page
+
+The "See it work" section under the hero is a real recording of WorkQueue
+running, not an animation: `public/assets/video/workqueue-demo.mp4`, 1:07,
+1920x1080, about 10 MB. It is two captures cut together --
+
+* the **dashboard**, driven with real mouse and keyboard events and captured
+  out of the browser's own compositor, and
+* the **employee strip**, grabbed from the top 44 pixels of a Windows desktop
+  with a real bar running in them.
+
+Both were recorded against a throwaway demo database, so the task really is
+assigned, really is delivered to a PC, and really is completed by the employee
+side of the API. The clock in the film is the product's clock.
+
+The page adds three things around it: a poster with a play button, a row of
+chapter buttons that seek the video, and a caption under it that follows
+along. Those live in `initFilm()` in `site.js` -- the chapter times and their
+text are the `FILM_CHAPTERS` array at the top of section 7. If you re-cut the
+film, those five timestamps are the only thing that has to change. Everything
+still works with JavaScript off: the video keeps its own controls.
+
+The video has `preload="none"`, so a visitor who never presses play downloads
+the 66 KB poster and nothing else.
+
+**Re-recording it** is documented with the screenshot tooling in
+**[tools/](tools/README.md)** -- same demo database, same three steps, plus a
+fourth for the film. It takes about ten minutes, most of it the render.
+
+### Adding screenshots### Adding screenshots
 
 Put the PNG in `public/assets/img/` and reference it inside a `.shot` block:
 

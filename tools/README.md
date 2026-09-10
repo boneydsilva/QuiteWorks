@@ -1,4 +1,4 @@
-# Regenerating the product screenshots
+# Regenerating the product screenshots and the demo film
 
 The images in `public/assets/img/` are real screenshots of WorkQueue running against a
 throwaway database full of realistic demo data. When the UI changes, regenerate
@@ -56,6 +56,74 @@ You get exact 1920x1080 PNGs in `$DEMO\shots`: `board`, `analytics`,
 `task-drawer`. Copy the ones you want into `public/assets/img/` as `dashboard-*.png`.
 
 Stop the server when you are done, and delete `$DEMO`.
+
+## 4. The demo film on the home page
+
+`public/assets/video/workqueue-demo.mp4` is a real recording, not an animation:
+the dashboard captured out of the browser, the employee strip captured off the
+top of this Windows desktop, cut together afterwards.
+
+**It needs a real bar running on this PC.** The strip in the film is a genuine
+one. A bar with no server finds the demo server by itself within a minute or
+so; check the **Machines** tab for a row with this computer's hostname before
+you start.
+
+With the demo server from step 2 still running:
+
+```powershell
+$SHOOT = "$DEMO\shoot"
+cd D:\MyWorkUpdate
+.\.venv\Scripts\python.exe $TOOLSecord_demo.py $SHOOT
+```
+
+It takes about 100 seconds and you should leave the machine alone while it
+runs - it is watching the top of your screen. What it does:
+
+1. Names the bar on this PC **Asha Rao** and empties its queue, so the strip
+   visibly changes when the task lands, and deletes the seeded copies of the
+   task title the film is about - the seeder reuses twenty titles, and a card
+   that is on the board three times is a card nobody can follow.
+2. Drives the dashboard with real mouse and keyboard events in an off-screen
+   Chrome window - types the task, picks the person, presses Assign.
+3. Captures both streams at once, timestamped to the same clock.
+4. Completes the task through the employee endpoint - the same call the bar
+   makes when Complete is pressed - and records the board catching up.
+5. Visits Analytics and History.
+6. **Puts the bar back**: deletes the demo task and clears the name, so the
+   strip returns to "Unnamed PC - No tasks available".
+
+Then cut it:
+
+```powershell
+python $TOOLS\compose_demo.py $SHOOT           # needs pillow + imageio-ffmpeg
+copy $SHOOT\workqueue-demo.mp4 publicssetsideocopy $SHOOT\demo-poster.jpg    publicssets\img```
+
+That writes a 1920x1080 H.264 file of about 10 MB and its poster frame. The
+render takes four or five minutes; to check a shot's framing without waiting,
+ask for a single frame instead:
+
+```powershell
+python $TOOLS\compose_demo.py $SHOOT still 7 25 36 58
+```
+
+**The shot list is the top half of `compose_demo.py`** - one entry per shot,
+each naming the seconds of the recording it plays, the camera (centre and width,
+in the dashboard's CSS pixels) at the start and end of the move, and the caption.
+Reframing a shot is two numbers. If you change the *timing* of the film, update
+the five chapter marks in `FILM_CHAPTERS` in `public/assets/js/site.js`, or the
+buttons under the video will seek to the wrong places.
+
+### If the film comes out wrong
+
+- **The strip never changes** - no bar on this PC had registered, so the task
+  went to a seeded machine that does not exist. Check the Machines tab first.
+- **The strip capture is of something else** - something was covering the top
+  of the screen. Windows reserves that band for the AppBar, so this should not
+  happen; if it does, nothing else can have been dragged up there.
+- **The typing looks like a slideshow** - the capture rate fell. It runs at
+  about six frames a second; close anything heavy and re-record.
+
+---
 
 ## The employee strip and panel
 
