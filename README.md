@@ -74,7 +74,8 @@ These are the placeholders. The site will publish without them but should not.
 
 | Where | What to change | Done? |
 |---|---|---|
-| `public/assets/js/site.js` | `formAccessKey` — sign up free at [web3forms.com](https://web3forms.com) and paste the key. Until you do, the form falls back to opening the visitor's email app. | **still to do** |
+| `public/assets/js/site.js` | `formAccessKey` — set, and a submission through the live form came back accepted. | done |
+| Web3Forms dashboard | **Restrict the access key to `boneydsilva.com`.** The key ships in `site.js` and this repo is public, so until you do, anyone can post through it and the spam lands in your inbox. Web3Forms → your form → Settings → Allowed Domains. | **still to do** |
 | Site address in canonical, og:url, og:image, robots.txt and sitemap.xml | Run `python tools\set-site-url.py https://your-domain`. One command does all 15 references. | done — set to `https://boneydsilva.com` |
 | `public/pricing.html` | The prices, if ₹14,999 / ₹7,500 / ₹4,999 are not what you settled on. | check |
 | `public/assets/js/site.js` | `email` and `whatsapp` | done — `boneydsilva@gmail.com`, `919004213100` |
