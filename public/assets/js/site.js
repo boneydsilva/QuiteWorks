@@ -218,12 +218,20 @@ function initMisc() {
 
 /* --------------------------------------------------------------------------
    7. The demo film on the home page
-   The video is a plain <video> with its own controls, so it works with this
-   file missing. What this adds is the chapter row, the running caption under
-   it, and a play button big enough to be an invitation.
+   The video is a plain <video> with a <source> and its own controls, so the
+   section works with this file missing. What this adds is the chapter row, the
+   caption that follows along, and the one thing the markup cannot do:
+
+   Cloudflare's asset server answers a Range request with the whole file, so a
+   streamed <video> reports itself as not seekable - the scrub bar does nothing
+   and a chapter button lands back at zero. Fetching the file and handing the
+   element a blob: URL gives the browser the whole thing at once, which is
+   seekable. The cost is that playback starts after the download rather than
+   during it, so the button counts it in.
    -------------------------------------------------------------------------- */
 
-// Where each chapter starts in the film, and what is happening there.
+// Where each chapter starts in the film, and what is happening there. If the
+// film is ever re-cut, these five numbers are what has to change.
 const FILM_CHAPTERS = [
   { at: 3.2,  text: "The manager types the job once, and picks whose screen it goes to." },
   { at: 23.4, text: "It lands on Asha's strip about two seconds later. There is no app to open and nothing to accept — reaching her PC is what counts as delivered." },
@@ -238,11 +246,17 @@ function initFilm() {
 
   const video = root.querySelector("[data-film-video]");
   const play = root.querySelector("[data-film-play]");
+  const label = root.querySelector("[data-film-label]");
   const caption = root.querySelector("[data-film-caption]");
   const buttons = Array.from(root.querySelectorAll("[data-film-at]"));
-  if (!video) return;
+  const source = video && video.querySelector("source");
+  if (!video || !source) return;
 
+  const original = label ? label.innerHTML : "";
   let current = -1;
+  let loading = null;
+
+  const say = (html) => { if (label) label.innerHTML = html; };
 
   const sync = () => {
     let index = 0;
@@ -253,28 +267,66 @@ function initFilm() {
     buttons.forEach((b, i) => b.setAttribute("aria-current", String(i === index)));
   };
 
-  // preload="none" means there is nothing to seek in until the file is asked
-  // for, so a chapter button has to wait for the metadata before it jumps.
-  const seek = (seconds) => {
-    const go = () => {
-      video.currentTime = seconds;
-      const started = video.play();
-      if (started && started.catch) started.catch(() => { /* the user can press play */ });
-    };
-    if (video.readyState >= 1) go();
-    else {
-      video.addEventListener("loadedmetadata", go, { once: true });
-      video.load();
-    }
-  };
+  // Download it once, then hand the element the local copy.
+  async function fetchFilm() {
+    const res = await fetch(source.src);
+    if (!res.ok) throw new Error("HTTP " + res.status);
 
-  if (play) play.addEventListener("click", () => seek(0));
-  buttons.forEach((b) => {
-    b.addEventListener("click", () => seek(Number(b.dataset.filmAt)));
+    const total = Number(res.headers.get("Content-Length")) || 0;
+    let data;
+    if (res.body && res.body.getReader && total) {
+      const reader = res.body.getReader();
+      const chunks = [];
+      let got = 0;
+      for (;;) {
+        const step = await reader.read();
+        if (step.done) break;
+        chunks.push(step.value);
+        got += step.value.length;
+        say("Loading the demo · " + Math.round((got / total) * 100) + "%");
+      }
+      data = new Blob(chunks, { type: "video/mp4" });
+    } else {
+      data = await res.blob();
+    }
+
+    video.src = URL.createObjectURL(data);
+    if (video.readyState < 1) {
+      await new Promise((resolve) => {
+        video.addEventListener("loadedmetadata", resolve, { once: true });
+      });
+    }
+  }
+
+  function ready() {
+    if (!loading) {
+      root.classList.add("is-loading");
+      say("Loading the demo · 0%");
+      loading = fetchFilm().catch(() => {
+        // Streaming it still plays; it just cannot be seeked. Better than a
+        // section that does nothing because one fetch failed.
+        video.load();
+      }).then(() => {
+        root.classList.remove("is-loading");
+        say(original);
+      });
+    }
+    return loading;
+  }
+
+  const start = (seconds) => ready().then(() => {
+    if (seconds) video.currentTime = seconds;
+    const started = video.play();
+    if (started && started.catch) started.catch(() => { /* the user can press play */ });
   });
 
-  // The poster should be a picture, not a picture with a control bar across it.
-  // The controls are in the markup so the video still works with this file
+  if (play) play.addEventListener("click", () => start(0));
+  buttons.forEach((b) => {
+    b.addEventListener("click", () => start(Number(b.dataset.filmAt)));
+  });
+
+  // The poster should be a picture, not a picture with a control bar across
+  // it. The controls are in the markup so the video still works with this file
   // missing; they come back the moment it is actually playing.
   video.removeAttribute("controls");
   video.addEventListener("playing", () => {

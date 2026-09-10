@@ -399,7 +399,11 @@ if __name__ == "__main__":
     proc = subprocess.Popen([
         ff, "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
         "-r", str(FPS), "-i", "-",
-        "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-profile:v", "high",
+        # The page downloads the whole file before it plays it (Cloudflare's
+        # asset server does not answer Range requests, so a streamed <video>
+        # cannot be seeked at all). Every megabyte here is a megabyte of wait,
+        # and 24 is the point where the dashboard's small text still holds up.
+        "-c:v", "libx264", "-preset", "veryslow", "-crf", "24", "-profile:v", "high",
         "-pix_fmt", "yuv420p", "-movflags", "+faststart", dest,
     ], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 

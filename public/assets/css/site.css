@@ -722,6 +722,13 @@ td strong { font-weight: 600; }
   transition: transform .25s ease;
 }
 .film-play-mark svg { width: 34px; height: 34px; margin-left: 4px; }
+/* The film is fetched whole before it plays, so the button has to look busy. */
+.film.is-loading .film-play { cursor: progress; }
+.film.is-loading .film-play-mark { animation: film-wait 1.4s ease-in-out infinite; }
+@keyframes film-wait {
+  0%, 100% { transform: scale(1); opacity: .85; }
+  50%      { transform: scale(1.07); opacity: 1; }
+}
 .film-play:hover .film-play-mark { transform: scale(1.06); }
 /* The label sits along the bottom of the poster, where the frame is dark and
    there is nothing behind it to fight with. */

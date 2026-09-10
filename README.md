@@ -138,7 +138,7 @@ hurt. That is the moment to add a tiny build step or move to Astro — not befor
 
 The "See it work" section under the hero is a real recording of WorkQueue
 running, not an animation: `public/assets/video/workqueue-demo.mp4`, 1:07,
-1920x1080, about 10 MB. It is two captures cut together --
+1920x1080, about 6 MB. It is two captures cut together --
 
 * the **dashboard**, driven with real mouse and keyboard events and captured
   out of the browser's own compositor, and
@@ -157,7 +157,16 @@ film, those five timestamps are the only thing that has to change. Everything
 still works with JavaScript off: the video keeps its own controls.
 
 The video has `preload="none"`, so a visitor who never presses play downloads
-the 66 KB poster and nothing else.
+the 64 KB poster and nothing else.
+
+**Why the page fetches the file itself.** Cloudflare's asset server answers a
+Range request with the whole file, which makes a streamed `<video>` report
+itself as not seekable: the scrub bar does nothing and a chapter button lands
+back at zero. So `initFilm()` fetches the mp4, hands the element a `blob:` URL
+and plays that, which seeks perfectly. The trade is that playback starts after
+the download instead of during it, which is why the button counts the download
+in, and why the encode is kept near 6 MB. If the site ever moves somewhere that
+honours Range, that whole dance can go and the `<source>` can do the work.
 
 **Re-recording it** is documented with the screenshot tooling in
 **[tools/](tools/README.md)** -- same demo database, same three steps, plus a
