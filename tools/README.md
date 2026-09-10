@@ -73,7 +73,8 @@ With the demo server from step 2 still running:
 ```powershell
 $SHOOT = "$DEMO\shoot"
 cd D:\MyWorkUpdate
-.\.venv\Scripts\python.exe $TOOLSecord_demo.py $SHOOT
+.\.venv\Scripts\python.exe $TOOLS
+ecord_demo.py $SHOOT
 ```
 
 It takes about 100 seconds and you should leave the machine alone while it
@@ -95,8 +96,17 @@ runs - it is watching the top of your screen. What it does:
 Then cut it:
 
 ```powershell
-python $TOOLS\compose_demo.py $SHOOT           # needs pillow + imageio-ffmpeg
+python $TOOLS\compose_demo.py $SHOOT   # needs pillow, numpy, imageio-ffmpeg
 copy $SHOOT\workqueue-demo.mp4 publicssetsideocopy $SHOOT\demo-poster.jpg    publicssets\img```
+
+That also writes the score and muxes it in. `score_demo.py` synthesises the
+music from sine partials - nothing is sampled and nothing is licensed, so the
+file the site publishes is ours to publish. Run it on its own if you want to
+hear the music by itself:
+
+```powershell
+python $TOOLS\score_demo.py $SHOOT\score.wav
+```
 
 That writes a 1920x1080 H.264 file of about 10 MB and its poster frame. The
 render takes four or five minutes; to check a shot's framing without waiting,

@@ -395,6 +395,7 @@ if __name__ == "__main__":
         sys.exit()
 
     dest = os.path.join(OUT, "workqueue-demo.mp4")
+    mute = os.path.join(OUT, "film-picture.mp4")
     ff = imageio_ffmpeg.get_ffmpeg_exe()
     proc = subprocess.Popen([
         ff, "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
@@ -404,7 +405,7 @@ if __name__ == "__main__":
         # cannot be seeked at all). Every megabyte here is a megabyte of wait,
         # and 24 is the point where the dashboard's small text still holds up.
         "-c:v", "libx264", "-preset", "veryslow", "-crf", "24", "-profile:v", "high",
-        "-pix_fmt", "yuv420p", "-movflags", "+faststart", dest,
+        "-pix_fmt", "yuv420p", "-movflags", "+faststart", mute,
     ], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     total = int(DURATION * FPS)
@@ -414,6 +415,22 @@ if __name__ == "__main__":
             print(f"  {i/FPS:5.1f}s / {DURATION:.1f}s", flush=True)
     proc.stdin.close()
     proc.wait()
+    # --- the score ---------------------------------------------------------
+    # score_demo.py synthesises it from sine partials, so there is no sample
+    # and no licence in the file we publish.
+    import score_demo
+
+    wav = os.path.join(OUT, "score.wav")
+    score_demo.LENGTH = DURATION
+    score_demo.write(wav, score_demo.build())
+    print("wrote", wav)
+
+    subprocess.run([
+        ff, "-y", "-i", mute, "-i", wav,
+        "-c:v", "copy", "-c:a", "aac", "-b:a", "96k", "-shortest",
+        "-movflags", "+faststart", dest,
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    os.remove(mute)
     print("wrote", dest, os.path.getsize(dest) // 1024, "KB")
 
     # The poster carries a play button, so it does not carry a caption too.

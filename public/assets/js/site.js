@@ -217,7 +217,83 @@ function initMisc() {
 }
 
 /* --------------------------------------------------------------------------
-   7. The demo film on the home page
+   7. Screenshots that open full size
+   The markup is a plain link to the image file, so this only upgrades it: it
+   opens the picture over the page instead of navigating away from it. A
+   modified click (new tab, save) is left alone.
+   -------------------------------------------------------------------------- */
+
+function initZoom() {
+  const links = Array.from(document.querySelectorAll("[data-zoom]"));
+  if (!links.length) return;
+
+  let box = null;
+  let opener = null;
+
+  const close = () => {
+    if (!box) return;
+    box.remove();
+    box = null;
+    document.body.style.removeProperty("overflow");
+    if (opener) opener.focus();
+  };
+
+  const open = (link) => {
+    const img = link.querySelector("img");
+    const figure = link.closest("figure");
+    const note = figure && figure.querySelector("figcaption");
+
+    box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", (img && img.alt) || "Screenshot");
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "lightbox-close";
+    button.setAttribute("aria-label", "Close");
+    button.innerHTML = "&times;";
+
+    const full = document.createElement("img");
+    full.src = link.getAttribute("href");
+    full.alt = (img && img.alt) || "";
+
+    box.append(button, full);
+    if (note) {
+      const caption = document.createElement("p");
+      caption.className = "lightbox-caption";
+      caption.textContent = note.textContent.trim();
+      box.append(caption);
+    }
+
+    // Clicking the picture itself should not close it; anything else should.
+    full.addEventListener("click", (e) => e.stopPropagation());
+    box.addEventListener("click", close);
+    button.addEventListener("click", close);
+
+    document.body.append(box);
+    document.body.style.overflow = "hidden";
+    button.focus();
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      // Ctrl/cmd/shift-click, or a middle click, belong to the browser.
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      opener = link;
+      open(link);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") close();
+  });
+}
+
+/* --------------------------------------------------------------------------
+   8. The demo film on the home page
    The video is a plain <video> with a <source> and its own controls, so the
    section works with this file missing. What this adds is the chapter row, the
    caption that follows along, and the one thing the markup cannot do:
@@ -349,5 +425,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initForm();
   initMisc();
+  initZoom();
   initFilm();
 });

@@ -400,6 +400,50 @@ h3 { font-size: clamp(19px, 2.1vw, 23px); }
   .strip-zoom .shot img, .strip-stack .shot img { width: auto; max-width: none; }
 }
 
+/* A screenshot that opens full size. The <a> is a real link to the file, so
+   this is a nicety on top of something that already works. */
+
+.shot-zoom { display: block; position: relative; cursor: zoom-in; text-decoration: none; }
+.shot-zoom .shot { transition: box-shadow .25s ease, transform .25s ease; }
+.shot-zoom:hover .shot { transform: translateY(-2px); box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent-line); }
+
+.shot-zoom-badge {
+  position: absolute; right: 14px; bottom: 14px;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 12px; border-radius: 20px;
+  background: rgba(16, 20, 26, .82); color: #fff;
+  font-size: 13px; font-weight: 500; letter-spacing: .01em;
+  opacity: 0; transform: translateY(4px);
+  transition: opacity .22s ease, transform .22s ease;
+  backdrop-filter: blur(6px);
+}
+.shot-zoom-badge svg { width: 14px; height: 14px; }
+.shot-zoom:hover .shot-zoom-badge,
+.shot-zoom:focus-visible .shot-zoom-badge { opacity: 1; transform: none; }
+@media (hover: none) { .shot-zoom-badge { opacity: 1; transform: none; } }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; padding: clamp(16px, 4vw, 48px);
+  background: rgba(8, 10, 14, .96); backdrop-filter: blur(3px); cursor: zoom-out;
+  animation: lightbox-in .18s ease-out;
+}
+@keyframes lightbox-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox img {
+  max-width: 100%; max-height: calc(100vh - 150px);
+  border-radius: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+  background: #fff;
+}
+.lightbox-caption { margin: 0; color: #c3cbd6; font-size: 14.5px; text-align: center; max-width: 780px; }
+.lightbox-close {
+  position: absolute; top: 18px; right: 20px;
+  display: grid; place-items: center; width: 42px; height: 42px;
+  border-radius: 50%; cursor: pointer; font: inherit; font-size: 22px; line-height: 1;
+  background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .22); color: #fff;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, .2); }
+
 /* --- 8. Cards and grids -------------------------------------------------- */
 
 .grid { display: grid; gap: 22px; }

@@ -138,7 +138,7 @@ hurt. That is the moment to add a tiny build step or move to Astro — not befor
 
 The "See it work" section under the hero is a real recording of WorkQueue
 running, not an animation: `public/assets/video/workqueue-demo.mp4`, 1:07,
-1920x1080, about 6 MB. It is two captures cut together --
+1920x1080, about 7 MB, with a score under it. It is two captures cut together --
 
 * the **dashboard**, driven with real mouse and keyboard events and captured
   out of the browser's own compositor, and
@@ -148,6 +148,11 @@ running, not an animation: `public/assets/video/workqueue-demo.mp4`, 1:07,
 Both were recorded against a throwaway demo database, so the task really is
 assigned, really is delivered to a PC, and really is completed by the employee
 side of the API. The clock in the film is the product's clock.
+
+The music is ours as well: `tools/score_demo.py` synthesises it from sine
+partials, so there is no sample and no licence anywhere in the file the site
+publishes. It is mixed as a bed, around -21 dBFS, and follows the film's
+shape rather than a tune.
 
 The page adds three things around it: a poster with a play button, a row of
 chapter buttons that seek the video, and a caption under it that follows
@@ -165,7 +170,7 @@ itself as not seekable: the scrub bar does nothing and a chapter button lands
 back at zero. So `initFilm()` fetches the mp4, hands the element a `blob:` URL
 and plays that, which seeks perfectly. The trade is that playback starts after
 the download instead of during it, which is why the button counts the download
-in, and why the encode is kept near 6 MB. If the site ever moves somewhere that
+in, and why the encode is kept near 7 MB. If the site ever moves somewhere that
 honours Range, that whole dance can go and the `<source>` can do the work.
 
 **Re-recording it** is documented with the screenshot tooling in
@@ -193,6 +198,22 @@ Put the PNG in `public/assets/img/` and reference it inside a `.shot` block:
 `shot-crop` limits tall screenshots to a readable height and fades the bottom.
 Drop it for short, wide images like the WorkQueue strip. Always fill in `alt`
 and the `width`/`height` — the dimensions stop the page jumping while images load.
+
+To let people open a screenshot full size — worth it for anything `shot-crop`
+cuts off — wrap the `.shot` in a link to the file itself and mark it `data-zoom`:
+
+```html
+<a class="shot-zoom" href="assets/img/your-shot.png" data-zoom
+   aria-label="Open the full-size screenshot">
+  <div class="shot shot-crop"> … </div>
+  <span class="shot-zoom-badge" aria-hidden="true">See the whole thing</span>
+</a>
+```
+
+`initZoom()` in `site.js` turns that into an overlay and borrows the
+`figcaption` for its caption. It is only an upgrade: the link is a real link to
+the image, so with JavaScript off — or on a ctrl-click — the browser just opens
+the file. The hero shot on the home page is the worked example.
 
 The screenshots in `public/assets/img/` are real captures of WorkQueue 4.0.1 running
 against a seeded demo database, taken on 10 Sep 2026 at 1920x1080. When the UI
