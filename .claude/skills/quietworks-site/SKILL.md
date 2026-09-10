@@ -60,8 +60,14 @@ Dark mode lives in three blocks that must stay in step: `:root`,
   customers yet. Inventing one loses the first deal that asks for a reference.
 - **Nothing that claims to be a capture unless it is one.** The film and the
   screenshots say plainly what they are, and where the names are invented.
-- **No cookie banner, no analytics, no payment integration** — all deliberate.
-  Plausible or Cloudflare Web Analytics need no banner if he ever wants numbers.
+- **No cookie banner and no payment integration** — both deliberate.
+- **Analytics is Cloudflare Web Analytics, and it lives in `initAnalytics()`**
+  in `site.js`, not in the 133 `<head>`s. Two reasons it is there and not a
+  tag: Cloudflare's collector refuses a `localhost` origin and logs a CORS
+  error, which breaks the zero-console rule; and views from `preview.py` are
+  not traffic. Cloudflare's own auto-install does not work here — it never
+  reaches Workers static assets, verified live on a cache miss. It sets no
+  cookie, which is why there is still no banner.
 - Every screenshot needs real `alt` text and explicit `width`/`height`, or the
   page jumps while images load.
 

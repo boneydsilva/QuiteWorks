@@ -80,7 +80,7 @@ These are the placeholders. The site will publish without them but should not.
 | `public/assets/js/site.js` | `email` and `whatsapp` | done — `boneydsilva@gmail.com`, `919004213100` |
 | All `public/*.html` files | The address shown in the footers and on the contact page | done |
 | Search Console | Submit `https://boneydsilva.com/sitemap.xml` once the domain is verified. 132 URLs, each declaring its own `hreflang` set. Nothing the site does can substitute for this — until the sitemap is submitted, the eight new landing pages are found only by crawl. | **still to do** |
-| Analytics | There is none, deliberately — so there is currently no way to tell whether any of the search work lands. Cloudflare Web Analytics or Plausible would answer that and neither needs a cookie banner. | **worth doing** |
+| Analytics | Cloudflare Web Analytics, wired into `initAnalytics()` in `site.js`. Dashboard: Cloudflare → Analytics & Logs → Web Analytics. | done |
 | The eleven translations | Written to be read, not machine-translated — but nobody has proof-read them yet. Worth one native reader per language before you spend on ads. | **worth doing** |
 
 A quick way to find what is left:
@@ -275,8 +275,10 @@ Cloudflare Pages does not provide free.
 - **No cookie banner.** Nothing sets a cookie. The only thing stored in the
   browser is the light/dark preference, in `localStorage`, which does not
   require consent.
-- **No analytics.** If you want them, Plausible or Cloudflare Web Analytics are
-  one script tag and do not need a banner either. Google Analytics does need one.
+- **Cloudflare Web Analytics**, loaded by `initAnalytics()` in `site.js` and
+  only on the real hostname, so previewing locally is not counted. It sets no
+  cookie and no cross-site identifier, so it needs no banner. Blank
+  `analyticsToken` in the `SITE` block and it stops loading entirely.
 - **No payment integration.** Buying goes through the contact form on purpose,
   so you talk to the first customers rather than watching a checkout. Add
   Razorpay or Stripe once you know what the objections are.

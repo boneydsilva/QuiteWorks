@@ -16,6 +16,12 @@ const SITE = {
   // WhatsApp number lives only here; the links are built from it at runtime.
   email: "boneydsilva@gmail.com",
   whatsapp: "919004213100",          // country code + number, digits only
+
+  // Cloudflare Web Analytics. No cookie, no cross-site identifier, nothing
+  // that follows anyone off this site - which is why there is still no
+  // banner. Blank it out and the beacon simply never loads.
+  analyticsToken: "467cbff5993842ec8844b88d1030aab5",
+  analyticsHost: "boneydsilva.com",
 };
 
 /* --------------------------------------------------------------------------
@@ -496,6 +502,28 @@ function offerLanguage(pick, here) {
   if (header) header.insertAdjacentElement("afterend", bar);
 }
 
+/* --------------------------------------------------------------------------
+   10. Analytics
+   The beacon is loaded from here rather than written into all 133 <head>s,
+   and only on the real host. Two reasons: Cloudflare's collector refuses a
+   localhost origin and logs a CORS error, which would break the zero-console
+   rule the site holds itself to; and page views from preview.py are not
+   traffic and should not be counted as any.
+
+   Cloudflare's own auto-install cannot do this job - it does not reach
+   Workers static assets, verified against the live site on a cache miss.
+   -------------------------------------------------------------------------- */
+
+function initAnalytics() {
+  if (!SITE.analyticsToken) return;
+  if (location.hostname !== SITE.analyticsHost) return;
+  const s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: SITE.analyticsToken }));
+  document.head.appendChild(s);
+}
+
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -508,4 +536,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initZoom();
   initFilm();
   initLang();
+  initAnalytics();
 });
