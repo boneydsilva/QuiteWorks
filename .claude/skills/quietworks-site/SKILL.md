@@ -65,9 +65,14 @@ Dark mode lives in three blocks that must stay in step: `:root`,
   in `site.js`, not in the 133 `<head>`s. Two reasons it is there and not a
   tag: Cloudflare's collector refuses a `localhost` origin and logs a CORS
   error, which breaks the zero-console rule; and views from `preview.py` are
-  not traffic. Cloudflare's own auto-install does not work here — it never
-  reaches Workers static assets, verified live on a cache miss. It sets no
-  cookie, which is why there is still no banner.
+  not traffic. It sets no cookie, which is why there is still no banner.
+- **Leave "Automatic setup" switched on in the Cloudflare dashboard**, even
+  though it injects nothing here (it does not reach Workers static assets —
+  verified live on a cache miss). Switching it off also removes the
+  `/cdn-cgi/rum` collector the beacon posts to, and then every hit 404s
+  silently: the script still loads, the console stays clean, and no data
+  arrives. To check, load a live page and look for `POST /cdn-cgi/rum` —
+  204 good, 404 means someone turned it off, two POSTs means double-counting.
 - Every screenshot needs real `alt` text and explicit `width`/`height`, or the
   page jumps while images load.
 

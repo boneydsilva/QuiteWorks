@@ -279,6 +279,9 @@ Cloudflare Pages does not provide free.
   only on the real hostname, so previewing locally is not counted. It sets no
   cookie and no cross-site identifier, so it needs no banner. Blank
   `analyticsToken` in the `SITE` block and it stops loading entirely.
+  Leave "Automatic setup" on in the Cloudflare dashboard — it injects nothing
+  on a Workers site, but switching it off removes the collector the beacon
+  posts to and collection dies without any visible error.
 - **No payment integration.** Buying goes through the contact form on purpose,
   so you talk to the first customers rather than watching a checkout. Add
   Razorpay or Stripe once you know what the objections are.

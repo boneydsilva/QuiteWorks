@@ -512,6 +512,17 @@ function offerLanguage(pick, here) {
 
    Cloudflare's own auto-install cannot do this job - it does not reach
    Workers static assets, verified against the live site on a cache miss.
+
+   >>> But leave "Automatic setup" ON in the Cloudflare dashboard anyway. <<<
+   Turning it off also removes the /cdn-cgi/rum collector this beacon posts
+   to, and every hit then silently 404s while the script still loads and the
+   console stays clean - so nothing looks wrong and no data arrives. It costs
+   nothing to leave on, because it injects nothing here.
+
+   To check collection is alive: load a page on the real domain with devtools
+   open and look for POST /cdn-cgi/rum. 204 is good; 404 means somebody turned
+   automatic setup off. There should be exactly one such POST per page load -
+   two would mean auto-install started working and is now double-counting.
    -------------------------------------------------------------------------- */
 
 function initAnalytics() {
