@@ -65,9 +65,37 @@ Dark mode lives in three blocks that must stay in step: `:root`,
 - Every screenshot needs real `alt` text and explicit `width`/`height`, or the
   page jumps while images load.
 
+## The English-only landing pages
+
+Eight more, under `tools/content/pages.py` and rendered by `build_landing()`:
+`/employee-task-tracker`, `/work-tracker`, `/task-management-software`, and
+`/alternatives/` with a page each for Jira, Trello, Asana and "a WhatsApp
+group and an Excel sheet". They exist because the rest of the site is written
+brand-first and nobody searches for "team software that runs on your own
+Wi-Fi".
+
+- **English only, and staying that way.** These phrases are typed in English
+  in India. Their `hreflang` set is one entry; the picker sends the other
+  eleven languages to their own `/workqueue`.
+- **The copy is not in `strings/`.** It is data in `pages.py`, a list of
+  `(kind, dict)` blocks — hero, prose, cards, checks, steps, spec, table,
+  shots, links, callout — rendered into the components the site already has.
+  The vocabulary is documented above `build_landing()`. `**bold**` and
+  `[text](/href)` work inside any string; nothing else does.
+- **Every comparison page says who should not switch,** and three rows of
+  every comparison table go against WorkQueue. Delete that and they become
+  eight pages of the same advertisement, which is what Google demotes and
+  what readers stop believing.
+- **Other people's products are described qualitatively.** No competitor
+  prices or plan limits — they change, and a stale claim about someone else's
+  product is worse than no claim.
+- The English footer carries one link the other eleven do not
+  (`/alternatives/`). That is the only place the twelve footers differ, and
+  it differs because the pages genuinely do not exist elsewhere.
+
 ## Twelve languages and 36 states
 
-125 pages: five hand-written English ones, and 120 generated. Full detail in
+133 pages in all. Full detail in
 **`tools/README.md`**; the parts worth knowing before you touch anything:
 
 | | |

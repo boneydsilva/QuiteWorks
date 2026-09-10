@@ -79,7 +79,8 @@ These are the placeholders. The site will publish without them but should not.
 | `public/pricing.html` | The prices, if ₹14,999 / ₹7,500 / ₹4,999 are not what you settled on. | check |
 | `public/assets/js/site.js` | `email` and `whatsapp` | done — `boneydsilva@gmail.com`, `919004213100` |
 | All `public/*.html` files | The address shown in the footers and on the contact page | done |
-| Search Console | Submit `https://boneydsilva.com/sitemap.xml` once the domain is verified. 124 URLs, each declaring its own `hreflang` set. | **still to do** |
+| Search Console | Submit `https://boneydsilva.com/sitemap.xml` once the domain is verified. 132 URLs, each declaring its own `hreflang` set. Nothing the site does can substitute for this — until the sitemap is submitted, the eight new landing pages are found only by crawl. | **still to do** |
+| Analytics | There is none, deliberately — so there is currently no way to tell whether any of the search work lands. Cloudflare Web Analytics or Plausible would answer that and neither needs a cookie banner. | **worth doing** |
 | The eleven translations | Written to be read, not machine-translated — but nobody has proof-read them yet. Worth one native reader per language before you spend on ads. | **worth doing** |
 
 A quick way to find what is left:

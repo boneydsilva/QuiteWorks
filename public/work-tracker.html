@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work tracker that times every job by itself — WorkQueue</title>
+<meta name="description" content="A work tracker for small teams that asks nobody to fill in a timesheet. WorkQueue records when a task reached the screen and when it was finished, so response time and work time come out on their own. Runs on your own office network.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/work-tracker">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/work-tracker">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/work-tracker">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Work tracker that times every job by itself — WorkQueue">
+<meta property="og:description" content="A work tracker for small teams that asks nobody to fill in a timesheet. WorkQueue records when a task reached the screen and when it was finished, so response time and work time come out on their own. Runs on your own office network.">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/work-tracker">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Work tracker that times every job by itself — WorkQueue","url":"https://boneydsilva.com/work-tracker","description":"A work tracker for small teams that asks nobody to fill in a timesheet. WorkQueue records when a task reached the screen and when it was finished, so response time and work time come out on their own. Runs on your own office network.","inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"Quietworks","url":"https://boneydsilva.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://boneydsilva.com/"},{"@type":"ListItem","position":2,"name":"Work tracker","item":"https://boneydsilva.com/work-tracker"}]},{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it track hours worked, like attendance software?","acceptedAnswer":{"@type":"Answer","text":"No. It times tasks, not people — there is no clock-in, no clock-out and no daily total of hours at a desk. If what you need is attendance or payroll hours, this is the wrong tool, and we would rather you knew that before the trial than after it."}},{"@type":"Question","name":"Can an employee edit the times?","acceptedAnswer":{"@type":"Answer","text":"There is no field anywhere for typing in a duration. Every number on the reports comes from a click that actually happened — the task arriving on the strip, and Complete being pressed — so there is nothing to round up at the end of the week."}},{"@type":"Question","name":"What about work that never goes on the board?","acceptedAnswer":{"@type":"Answer","text":"It is not in the numbers. If half the day's jobs get handed over in the corridor, half the day is missing, and no tool of this kind can fix that. It is worth agreeing up front how much of the work will actually go through it."}},{"@type":"Question","name":"Do you see any of our numbers?","acceptedAnswer":{"@type":"Answer","text":"No. The software never contacts us. There is no telemetry, no licence check-in and no analytics call. If your office had no internet at all, WorkQueue would not notice."}},{"@type":"Question","name":"Can I see the reports on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. The dashboard is an ordinary web page served on your own network, so any phone on the office Wi-Fi opens it. Windows is only needed for the employee strip."}},{"@type":"Question","name":"How accurate is the response time?","acceptedAnswer":{"@type":"Answer","text":"It is the gap between two events the software itself observed, on a local network, so it is generally a second or two rather than a guess. What it measures is the job reaching the screen — whether the person was looking at the screen is something no software can honestly tell you."}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/workqueue">WorkQueue</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/india/">Across India</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">English</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">Choose your language</p>
+          <ul>
+          <li><a href="/work-tracker" hreflang="en-IN" lang="en" data-lang="en" aria-current="true"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">The whole site is written in each of these, not machine-translated.</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/contact?about=trial">Start a trial</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Work tracker</span>
+    </nav>
+    <div class="wrap-narrow" style="padding:0">
+      <span class="eyebrow">Work tracking</span>
+      <h1 style="max-width:none">A work tracker where nobody fills in a timesheet.</h1>
+      <p class="lede">A timesheet is a guess written on Friday about a Tuesday. WorkQueue takes two timestamps for every task — the second it arrived on the employee's screen, and the second they pressed Complete — and every number on the reports is arithmetic on those two. Nobody starts a clock, so nobody forgets to.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="/contact?about=trial">Try it free for 30 days</a>
+        <a class="btn btn-ghost btn-lg" href="/workqueue">See the whole tool</a>
+      </div>
+      <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No timer to start or stop</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Response time and work time, per task</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> The numbers never leave your office</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">What is measured</span>
+      <h2>Two clocks, and why they are different.</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>Response time</dt><dd>From the moment you press Assign to the moment the job is on their screen. On a healthy office network that is a couple of seconds. When it is not, that is worth knowing, and it is the number that tells you.</dd></div>
+      <div><dt>Work time</dt><dd>From arriving on the screen to the click on Complete. There is no pause button, because a pause button is somewhere to put a lie.</dd></div>
+      <div><dt>Everything else on the reports</dt><dd>Tasks closed per person per day, what is overdue, which priorities slip, how this Tuesday compares with last Tuesday. All of it is those two numbers grouped differently — there is no third source.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+      <figure style="margin:0">
+        <a class="shot-zoom" href="/assets/img/dashboard-analytics.png" data-zoom aria-label="Open the full-size screenshot">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="The WorkQueue analytics page, showing completion counts and average response and work times per person over a date range.">
+        </div>
+      </a>
+        <figcaption class="shot-caption">Thirty days of two timestamps, with nobody having typed a duration. Click for full size.</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>Questions you can answer on Monday morning.</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Who is actually carrying it</h3><p>Not who says they are busy — how many jobs each person closed, and how long each one took.</p></div>
+      <div class="card reveal"><h3>What is sitting still</h3><p>A task assigned at nine and still open at four is on the board in the colour it went on with. Nothing has to be chased to find that out.</p></div>
+      <div class="card reveal"><h3>Whether it is getting better</h3><p>Thirty days of the same two timestamps is a trend, and a trend is the only honest way to tell whether a change you made worked.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>It keeps time when the network does not.</h2>
+    </div>
+    <p>If the Wi-Fi drops, the strip keeps showing the tasks it already has and keeps accepting Complete. Those clicks queue on the employee's own PC with the real time they happened, and are delivered when the network comes back.</p>
+    <p>A job finished at <strong>10:35</strong> during an outage is recorded as 10:35, not as whenever the router recovered. Timing that only works on a good day is not timing.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>What this deliberately is not.</h2>
+      <p class="lede">Both halves matter when you are choosing. One of them is why the team will tolerate it; the other is why it might be too small for you.</p>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3>It is not surveillance</h3>
+        <ul class="check-list">
+          <li><strong>No screenshots, ever.</strong> Not on a timer and not at random.</li>
+          <li><strong>No keystrokes, no idle time.</strong> The keyboard and the mouse are not being read.</li>
+          <li><strong>No list of sites or apps.</strong> The software has no idea what else is open.</li>
+          <li><strong>No telemetry to us.</strong> It never contacts Quietworks. There is no licence check-in and no analytics call.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>And it is not attendance software</h3>
+        <ul class="check-list check-list-plain">
+          <li><strong>No clock-in or clock-out.</strong> It times tasks, not people. There is no daily total of hours at a desk.</li>
+          <li><strong>No hours-worked report.</strong> If payroll needs one, this is the wrong tool and we would rather say so now.</li>
+          <li><strong>No sprints or Gantt charts.</strong> It hands out jobs and times them. If you need a work-breakdown structure, buy one.</li>
+          <li><strong>Only what goes through it.</strong> Work handed out in the corridor is not in the numbers. That is true of every tool of this shape, and worth deciding up front.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>Getting the numbers back out.</h2>
+    </div>
+    <p>History exports to CSV, so it lands in the spreadsheet you already report from. The whole database exports as a JSON snapshot, or as the SQLite file itself if you would rather have the original.</p>
+    <p>There is no lock-in, because there is nothing of yours on our side to lock. The file is on your PC and you can copy it anywhere.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>Related.</h2>
+    </div>
+    <ul class="state-grid">
+      <li><a href="/employee-task-tracker"><span class="state-name">The employee's side</span><span class="state-cities">What the strip looks like, and what is never recorded</span></a></li>
+      <li><a href="/task-management-software"><span class="state-name">What it costs against a subscription</span><span class="state-cities">The three-year arithmetic for five, ten and twenty-five people</span></a></li>
+      <li><a href="/alternatives/"><span class="state-name">How it compares</span><span class="state-cities">Jira, Trello, Asana, and a WhatsApp group</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>The things people ask about this</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Does it track hours worked, like attendance software?</summary>
+        <div class="faq-body">
+          <p>No. It times tasks, not people — there is no clock-in, no clock-out and no daily total of hours at a desk. If what you need is attendance or payroll hours, this is the wrong tool, and we would rather you knew that before the trial than after it.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can an employee edit the times?</summary>
+        <div class="faq-body">
+          <p>There is no field anywhere for typing in a duration. Every number on the reports comes from a click that actually happened — the task arriving on the strip, and Complete being pressed — so there is nothing to round up at the end of the week.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What about work that never goes on the board?</summary>
+        <div class="faq-body">
+          <p>It is not in the numbers. If half the day's jobs get handed over in the corridor, half the day is missing, and no tool of this kind can fix that. It is worth agreeing up front how much of the work will actually go through it.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do you see any of our numbers?</summary>
+        <div class="faq-body">
+          <p>No. The software never contacts us. There is no telemetry, no licence check-in and no analytics call. If your office had no internet at all, WorkQueue would not notice.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can I see the reports on my phone?</summary>
+        <div class="faq-body">
+          <p>Yes. The dashboard is an ordinary web page served on your own network, so any phone on the office Wi-Fi opens it. Windows is only needed for the employee strip.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How accurate is the response time?</summary>
+        <div class="faq-body">
+          <p>It is the gap between two events the software itself observed, on a local network, so it is generally a second or two rather than a guess. What it measures is the job reaching the screen — whether the person was looking at the screen is something no software can honestly tell you.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Try it on your own team for thirty days.</h2>
+    <p class="lede">Every feature, unlimited PCs, no card and nothing to cancel. We will help you install it, and if it does not fit, nothing of yours has left the office.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/contact?about=trial">Start a free trial</a>
+      <a class="btn btn-ghost btn-lg" href="/pricing">See what it costs</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>Small Windows tools for small businesses. Built in Mumbai, India — bought once, run on your own network.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/workqueue">WorkQueue</a></li>
+          <li><a href="/workqueue#requirements">Requirements</a></li>
+          <li><a href="/alternatives/">How it compares</a></li>
+          <li><a href="/contact?about=roadmap">What is next</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Buying</h4>
+        <ul>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact?about=trial">Free trial</a></li>
+          <li><a href="/contact?about=setup">Guided setup</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/india/">Every state</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="Hello, I saw the Quietworks website and would like to know more." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. All rights reserved.</span>
+      <span>Made in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

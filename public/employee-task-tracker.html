@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee task tracker for small teams in India — WorkQueue</title>
+<meta name="description" content="An employee task tracker that runs on your own office PCs. Each person's work sits in a thin strip at the top of their screen, the clock starts by itself, and you pay once for the whole company instead of every month per person.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/employee-task-tracker">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/employee-task-tracker">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/employee-task-tracker">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Employee task tracker for small teams in India — WorkQueue">
+<meta property="og:description" content="An employee task tracker that runs on your own office PCs. Each person's work sits in a thin strip at the top of their screen, the clock starts by itself, and you pay once for the whole company instead of every month per person.">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/employee-task-tracker">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Employee task tracker for small teams in India — WorkQueue","url":"https://boneydsilva.com/employee-task-tracker","description":"An employee task tracker that runs on your own office PCs. Each person's work sits in a thin strip at the top of their screen, the clock starts by itself, and you pay once for the whole company instead of every month per person.","inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"Quietworks","url":"https://boneydsilva.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://boneydsilva.com/"},{"@type":"ListItem","position":2,"name":"Employee task tracker","item":"https://boneydsilva.com/employee-task-tracker"}]},{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this employee monitoring? Will my team hate it?","acceptedAnswer":{"@type":"Answer","text":"It records two things per task: when it reached the screen and when the person pressed Complete. It does not take screenshots, log keystrokes, track idle time or watch which websites anyone visits, and it never will — that is a deliberate line, not an oversight. In practice teams tend to like it, because \"I sent you that hours ago\" stops being an argument. Everyone is looking at the same timestamps."}},{"@type":"Question","name":"Do employees need a login or a password?","acceptedAnswer":{"@type":"Answer","text":"No. The strip belongs to the PC, and you give that PC a person's name in the dashboard. There is nothing for an employee to sign into, nothing to forget, and nothing to install after the first time."}},{"@type":"Question","name":"What happens when the Wi-Fi goes down?","acceptedAnswer":{"@type":"Answer","text":"Employees keep seeing their tasks and keep marking them complete. Those actions queue up on their own PC with the real time they were clicked, and are delivered when the network comes back — so a task finished at 10:35 during an outage is still recorded as 10:35."}},{"@type":"Question","name":"Can people use it from home, or from another branch?","acceptedAnswer":{"@type":"Answer","text":"Yes. WorkQueue can be joined to a private network (Tailscale) so laptops outside the office reach the same server securely, with nothing exposed to the public internet. It is one extra step during setup, and it is included."}},{"@type":"Question","name":"How many employees can it track?","acceptedAnswer":{"@type":"Answer","text":"It is built and load-tested for a single office — around 25 machines at once on ordinary hardware, with responses well under a tenth of a second. If you are bigger than that, talk to us before you buy rather than after."}},{"@type":"Question","name":"Does it work on Mac?","acceptedAnswer":{"@type":"Answer","text":"Not today. The dashboard is an ordinary web page and opens on anything, including a phone, but the employee strip needs Windows 10 or 11. Mac and Linux are on the roadmap rather than in the box, and we would rather say so plainly than let you find out."}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/">Home</a>
+        <a href="/workqueue">WorkQueue</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/india/">Across India</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">English</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">Choose your language</p>
+          <ul>
+          <li><a href="/employee-task-tracker" hreflang="en-IN" lang="en" data-lang="en" aria-current="true"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">The whole site is written in each of these, not machine-translated.</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="Switch theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/contact?about=trial">Start a trial</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Employee task tracker</span>
+    </nav>
+    <div class="wrap-narrow" style="padding:0">
+      <span class="eyebrow">Employee task tracking</span>
+      <h1 style="max-width:none">An employee task tracker that lives at the top of the screen.</h1>
+      <p class="lede">Most task trackers are a website somebody has to remember to open. WorkQueue is a strip docked into Windows — thirty-four pixels tall, always visible, never covering a window — that shows each person only the work that is theirs, and records when it arrived and when they finished without anybody starting a timer.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="/contact?about=trial">Try it free for 30 days</a>
+        <a class="btn btn-ghost btn-lg" href="/workqueue">See how the whole thing works</a>
+      </div>
+      <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Nothing for the employee to open</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Two timestamps, taken automatically</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ₹14,999 once, for the whole company</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap wrap-narrow">
+    <div class="strip-zoom">
+      <figure style="margin:0">
+        <div class="shot"><img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="Close-up of the left end of the employee strip: a green connected dot, the name Asha Rao, then a red diamond and the task title Reconcile the September invoice batch."></div>
+        <figcaption class="shot-caption"><strong>Left end.</strong> A green dot while the server is reachable, their name, and the job they are on. The red diamond means urgent.</figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="shot"><img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="Close-up of the right end of the employee strip: three colour-coded chips, one per open task, and a small menu arrow."></div>
+        <figcaption class="shot-caption"><strong>Right end.</strong> One chip for every other task waiting, coloured by priority. Clicking one switches to it.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">The employee's side</span>
+      <h2>What a tracked employee actually sees.</h2>
+    </div>
+    <p>That is the entire interface. There is no dashboard for them, no project view, no login screen and no inbox — their name, the job they are on now, and a chip for each other task waiting.</p>
+    <p>It is a Windows AppBar, the same kind of thing the taskbar is. Windows reserves the band at the top of the screen for it, so a maximised window cannot cover it and twelve open tabs cannot bury it. A new task appears there within a couple of seconds of being assigned.</p>
+    <p>When the job is done they press <strong>Complete</strong> once. That is the whole workflow, and it is the only thing anyone has to be trained on.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>What it records, and what it will never record.</h2>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3>Recorded, for every task</h3>
+        <ul class="check-list">
+          <li><strong>When it reached their screen.</strong> The moment the strip received it — not when somebody remembered to click Accept, because there is nothing to accept.</li>
+          <li><strong>When they pressed Complete.</strong> One click, from the strip or from the panel behind it.</li>
+          <li><strong>Who it went to,</strong> what it said, and what priority you gave it.</li>
+          <li><strong>Anything they typed back.</strong> The panel has a box for asking the manager a question about the job.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Never recorded, on any plan</h3>
+        <ul class="check-list">
+          <li><strong>No screenshots.</strong> Not on a timer, not at random, not once.</li>
+          <li><strong>No keystrokes.</strong> Nothing is read from the keyboard.</li>
+          <li><strong>No idle or active time.</strong> The mouse is not being watched.</li>
+          <li><strong>No browsing history.</strong> Which sites and apps somebody uses is not our business, and not yours through us.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="callout" style="margin-bottom:0">
+      <h3 style="margin-top:0">This is why teams accept it.</h3>
+      <p>That second list is a deliberate line, not a gap in the feature set. A tracker that watches people gets worked around within a fortnight; one that timestamps jobs mostly gets left alone.</p>
+      <p>In practice the argument it ends is <strong>&quot;I sent you that hours ago&quot;</strong> — which stops being an argument when both people are looking at the same two timestamps.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>Putting it on a team.</h2>
+      <p class="lede">An afternoon, and nobody has to be an administrator.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Install the server</h3><p>One file, on a PC that stays switched on — usually the manager's. It starts itself after that and tells you the dashboard address.</p></div>
+      <div class="step reveal"><h3>Install the strip</h3><p>One file on each employee PC. It finds the server on your network by itself, so there is no address for anyone to type and nothing to configure.</p></div>
+      <div class="step reveal"><h3>Name the machines</h3><p>Open the dashboard, put a person's name against each PC, and start handing out work. That name is what shows on their strip and in every report afterwards.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+      <figure style="margin:0">
+        <a class="shot-zoom" href="/assets/img/dashboard-board.png" data-zoom aria-label="Open the full-size screenshot">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="The WorkQueue board: a task composer at the top, and three live columns showing Waiting, In progress and Completed today.">
+        </div>
+      </a>
+        <figcaption class="shot-caption">The manager's side, open in a browser on the office network. Type the job, pick whose screen it goes to, press Assign. Click for full size.</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>What it costs to track a team this way.</h2>
+    </div>
+    <p>₹14,999, once, for your whole company. Not per employee and not per month. Hire five more people next year and the number does not move — there is no seat count anywhere in the software to move it.</p>
+    <p>Thirty days free first, every feature, no card. If you buy afterwards the data from the trial carries over. After the first year, updates and support are ₹4,999 a year and entirely optional; skip it and the version you have keeps running.</p>
+    <p><a href="/pricing">The full pricing, and the arithmetic against a per-seat tool</a></p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>If you are still comparing.</h2>
+    </div>
+    <ul class="state-grid">
+      <li><a href="/work-tracker"><span class="state-name">The timing side of it</span><span class="state-cities">What the two timestamps actually measure, and what they cannot</span></a></li>
+      <li><a href="/alternatives/jira"><span class="state-name">Compared with Jira</span><span class="state-cities">Including who should stay on Jira</span></a></li>
+      <li><a href="/alternatives/excel-and-whatsapp"><span class="state-name">Compared with WhatsApp and Excel</span><span class="state-cities">What most small businesses in India are really using</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>The things people ask about this</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is this employee monitoring? Will my team hate it?</summary>
+        <div class="faq-body">
+          <p>It records two things per task: when it reached the screen and when the person pressed Complete. It does not take screenshots, log keystrokes, track idle time or watch which websites anyone visits, and it never will — that is a deliberate line, not an oversight. In practice teams tend to like it, because &quot;I sent you that hours ago&quot; stops being an argument. Everyone is looking at the same timestamps.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do employees need a login or a password?</summary>
+        <div class="faq-body">
+          <p>No. The strip belongs to the PC, and you give that PC a person's name in the dashboard. There is nothing for an employee to sign into, nothing to forget, and nothing to install after the first time.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What happens when the Wi-Fi goes down?</summary>
+        <div class="faq-body">
+          <p>Employees keep seeing their tasks and keep marking them complete. Those actions queue up on their own PC with the real time they were clicked, and are delivered when the network comes back — so a task finished at 10:35 during an outage is still recorded as 10:35.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can people use it from home, or from another branch?</summary>
+        <div class="faq-body">
+          <p>Yes. WorkQueue can be joined to a private network (Tailscale) so laptops outside the office reach the same server securely, with nothing exposed to the public internet. It is one extra step during setup, and it is included.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How many employees can it track?</summary>
+        <div class="faq-body">
+          <p>It is built and load-tested for a single office — around 25 machines at once on ordinary hardware, with responses well under a tenth of a second. If you are bigger than that, talk to us before you buy rather than after.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Does it work on Mac?</summary>
+        <div class="faq-body">
+          <p>Not today. The dashboard is an ordinary web page and opens on anything, including a phone, but the employee strip needs Windows 10 or 11. Mac and Linux are on the roadmap rather than in the box, and we would rather say so plainly than let you find out.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Try it on your own team for thirty days.</h2>
+    <p class="lede">Every feature, unlimited PCs, no card and nothing to cancel. We will help you install it, and if it does not fit, nothing of yours has left the office.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/contact?about=trial">Start a free trial</a>
+      <a class="btn btn-ghost btn-lg" href="/pricing">See what it costs</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>Small Windows tools for small businesses. Built in Mumbai, India — bought once, run on your own network.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/workqueue">WorkQueue</a></li>
+          <li><a href="/workqueue#requirements">Requirements</a></li>
+          <li><a href="/alternatives/">How it compares</a></li>
+          <li><a href="/contact?about=roadmap">What is next</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Buying</h4>
+        <ul>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact?about=trial">Free trial</a></li>
+          <li><a href="/contact?about=setup">Guided setup</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/india/">Every state</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="Hello, I saw the Quietworks website and would like to know more." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. All rights reserved.</span>
+      <span>Made in Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

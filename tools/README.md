@@ -182,6 +182,45 @@ editor will do; the exact numbers above are what the current crops used.
 
 ---
 
+# The English-only landing pages
+
+`tools/content/pages.py` holds eight more pages, rendered by `build_landing()`
+in the same builder. They target what people actually type into Google —
+"employee task tracker", "work tracker", "task management software",
+"something simpler than Jira" — which is not how the rest of the site is
+written.
+
+| | |
+|---|---|
+| The pages | `/employee-task-tracker`, `/work-tracker`, `/task-management-software`, `/alternatives/` + jira, trello, asana, excel-and-whatsapp |
+| Copy | `tools/content/pages.py` — data only |
+| Renderer | `build_landing()` and the `b_*` block functions in `build_i18n.py` |
+| Languages | English, and only English |
+
+A page is a list of `(kind, dict)` blocks — `hero`, `prose`, `cards`,
+`checks`, `steps`, `spec`, `table`, `shots`, `links`, `callout` — each
+rendered into a component the site already had, so nothing new lands in the
+CSS. The block vocabulary is documented in the comment above `RICH` in
+`build_i18n.py`. Inside any string, `**bold**` and `[text](/href)` work and
+nothing else does.
+
+**Adding one:** a dict in `PAGES`, then rebuild. The `hreflang` set, the
+sitemap entry, the breadcrumb, the FAQ section, the closing CTA and the
+JSON-LD graph all come out of the slug and the copy.
+
+**What must not slip:**
+
+- Each page is a *different argument*, not the same argument with the keyword
+  changed. Eight variations on one page is a doorway set, and it reads like
+  one long before Google decides so.
+- Every comparison carries a "stay where you are if" section, and three rows
+  of every comparison table go against WorkQueue. That is the reason anyone
+  believes the other rows.
+- Nothing quantitative about somebody else's product. Their prices and plan
+  limits change; ours would go stale and be wrong on their behalf.
+
+---
+
 # The generated pages: languages and states
 
 `public/` is not all hand-written any more. 121 of its 125 pages come out of

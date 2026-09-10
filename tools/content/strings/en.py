@@ -53,7 +53,7 @@ S = {
     "f_wa_msg": "Hello, I saw the Quietworks website and would like to know more.",
 
     # --- Home ----------------------------------------------------------------
-    "h_title": "Quietworks — team software that runs on your own Wi-Fi",
+    "h_title": "Quietworks — task tracking software that runs on your own Wi-Fi",
     "h_desc": "Small, sharp Windows tools for small businesses in India. Buy once, run it on a PC you already own, and keep your data in your office. WorkQueue assigns work to your team and times it automatically.",
     "h_eyebrow": "Software for small teams",
     "h_h1": "Team software that runs on your own Wi-Fi.",
@@ -154,7 +154,7 @@ S = {
     "h_cta_b2": "See the price",
 
     # --- WorkQueue -----------------------------------------------------------
-    "w_title": "WorkQueue — assign work and time it, on your own network",
+    "w_title": "WorkQueue — an employee task tracker for your own network",
     "w_desc": "WorkQueue hands tasks to your team through a 34-pixel strip at the top of their screen, times every job automatically, and reports on it. Runs on your own Windows PCs. One payment for the whole company.",
     "w_eyebrow": "WorkQueue",
     "w_h1": "Hand out work. Know exactly how long it took.",
@@ -307,7 +307,7 @@ S = {
     "w_cta_p": "The complete tool, nothing held back, nothing to cancel. Tell us roughly how many PCs you have and we will send the installer and stay on the call while you set it up.",
 
     # --- Pricing -------------------------------------------------------------
-    "p_title": "Pricing — one payment for the whole company",
+    "p_title": "WorkQueue pricing — one payment, no per-user fee",
     "p_desc": "WorkQueue costs ₹14,999 once for your entire company — unlimited PCs, a year of updates and support, and no monthly fee. Free 30-day trial. GST invoice for Indian businesses.",
     "p_eyebrow": "Pricing",
     "p_h1": "One payment. Your whole company.",

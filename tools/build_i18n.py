@@ -41,6 +41,7 @@ sys.path.insert(0, HERE)
 
 from content.langs import LANGS, BY_CODE                     # noqa: E402
 from content.states import STATES, states_for                # noqa: E402
+from content.pages import PAGES                              # noqa: E402
 
 PUBLIC = os.path.abspath(os.path.join(HERE, "..", "public"))
 SITE = "https://boneydsilva.com"
@@ -262,6 +263,11 @@ def header(lang, current, targets):
 def footer(lang, wa_msg=None):
     s = STR[lang]
     p = "" if lang == "en" else "/" + lang
+    # The comparison pages exist in English only, so only the English footer
+    # links to them. That is the one place the twelve footers differ, and it
+    # differs because the pages genuinely do not exist in the other eleven.
+    compare = ('<li><a href="/alternatives/">How it compares</a></li>\n          '
+               if lang == "en" else "")
     return """</main>
 
 <footer class="site-footer">
@@ -279,7 +285,7 @@ def footer(lang, wa_msg=None):
         <ul>
           <li><a href="{p}/workqueue">WorkQueue</a></li>
           <li><a href="{p}/workqueue#requirements">{req}</a></li>
-          <li><a href="{p}/contact?about=roadmap">{next}</a></li>
+          {compare}<li><a href="{p}/contact?about=roadmap">{next}</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -311,7 +317,7 @@ def footer(lang, wa_msg=None):
 </html>
 """.format(home=(p + "/") if p else "/", brand=BRAND_SVG, p=p,
            about=esc(s["f_about"]), tools=esc(s["f_tools"]),
-           req=esc(s["f_requirements"]), next=esc(s["f_next"]),
+           req=esc(s["f_requirements"]), next=esc(s["f_next"]), compare=compare,
            buying=esc(s["f_buying"]), pricing=esc(s["n_pricing"]),
            free=esc(s["f_free_trial"]), setup=esc(s["f_setup"]),
            contact=esc(s["f_contact"]), states=esc(s["f_states"]),
@@ -1587,6 +1593,290 @@ def build_state(st, lang):
             + header(lang, "india", targets) + body + footer(lang))
 
 
+# --- 4.5 The English-only landing pages -------------------------------------
+#
+# The rest of the site is written brand-first. These eight are written for the
+# words people type into Google - employee task tracker, work tracker, task
+# management software, "something simpler than Jira" - and they exist in
+# English only, on purpose. The reasoning, and all of the prose, is in
+# tools/content/pages.py; this half is only the renderer.
+#
+# A page is a list of (kind, dict) blocks. The kinds, and what each wants:
+#
+#   hero     eyebrow h1 lede [trust] [b1] [b2 b2href]
+#   prose    [eyebrow] h2 [lede] paras[]                    [band]
+#   cards    [eyebrow] h2 [lede] cols(2|3) items[(h, p)]    [band]
+#   checks   [eyebrow] h2 [lede] cols[(title, [(bold, rest)], [plain])]  [band]
+#   steps    [eyebrow] h2 [lede] items[(h, p)]
+#   spec     [eyebrow] h2 [lede] items[(term, definition)]
+#   table    [eyebrow] h2 [lede] caption head[] rows[[cell]] [note]  [band]
+#   shots    items[(src, w, h, alt, caption)] [zoom] [browser]
+#   links    [eyebrow] h2 [lede] items[(href, name, sub)]
+#   callout  [h3] paras[]
+#
+# A table cell is a string, or ("yes"|"no"|"b", string) for the green, grey
+# and bold variants. Inside any string, **bold** and [text](/href) work.
+
+RICH = re.compile(r"\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)]+)\)")
+
+
+def rich(text):
+    """esc(), plus the only two bits of markup content/pages.py may use:
+    **bold** and [text](/href). Deliberately not Markdown - anything else in
+    the string, a stray < included, still comes out as itself."""
+    out, pos = [], 0
+    for m in RICH.finditer(text):
+        out.append(esc(text[pos:m.start()]))
+        if m.group(1) is not None:
+            out.append("<strong>%s</strong>" % esc(m.group(1)))
+        else:
+            out.append('<a href="%s">%s</a>' % (esc(m.group(3)), esc(m.group(2))))
+        pos = m.end()
+    out.append(esc(text[pos:]))
+    return "".join(out)
+
+
+def section(inner, band=False, narrow=True, cls=""):
+    classes = " ".join(c for c in (cls, "band" if band else "") if c)
+    return ('\n<section%s>\n  <div class="wrap%s">\n%s\n  </div>\n</section>\n'
+            % (' class="%s"' % classes if classes else "",
+               " wrap-narrow" if narrow else "", inner))
+
+
+def section_head(d, center=False):
+    rows = []
+    if d.get("eyebrow"):
+        rows.append('      <span class="eyebrow">%s</span>' % esc(d["eyebrow"]))
+    rows.append("      <h2>%s</h2>" % rich(d["h2"]))
+    if d.get("lede"):
+        rows.append('      <p class="lede">%s</p>' % rich(d["lede"]))
+    return ('    <div class="section-head%s">\n%s\n    </div>'
+            % (" center" if center else "", "\n".join(rows)))
+
+
+def b_hero(d, crumbs):
+    bc = ""
+    if crumbs:
+        parts = ['      <a href="/">Home</a>']
+        for name, href in crumbs[:-1]:
+            parts.append('      <span aria-hidden="true">/</span>')
+            parts.append('      <a href="%s">%s</a>' % (href, esc(name)))
+        parts.append('      <span aria-hidden="true">/</span>')
+        parts.append('      <span aria-current="page">%s</span>' % esc(crumbs[-1][0]))
+        bc = ('    <nav class="breadcrumb" aria-label="Breadcrumb">\n%s\n    </nav>\n'
+              % "\n".join(parts))
+    buttons = ""
+    if d.get("b1"):
+        second = ('\n        <a class="btn btn-ghost btn-lg" href="%s">%s</a>'
+                  % (d["b2href"], esc(d["b2"]))) if d.get("b2") else ""
+        buttons = ('\n      <div class="btn-row">\n'
+                   '        <a class="btn btn-primary btn-lg" href="/contact?about=trial">%s</a>%s\n'
+                   '      </div>' % (esc(d["b1"]), second))
+    trust = ("\n      " + trust_row(d["trust"])) if d.get("trust") else ""
+    return """
+<section class="hero">
+  <div class="wrap">
+{bc}    <div class="wrap-narrow" style="padding:0">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1 style="max-width:none">{h1}</h1>
+      <p class="lede">{lede}</p>{buttons}{trust}
+    </div>
+  </div>
+</section>
+""".format(bc=bc, eyebrow=esc(d["eyebrow"]), h1=rich(d["h1"]),
+           lede=rich(d["lede"]), buttons=buttons, trust=trust)
+
+
+def b_prose(d):
+    body = "\n".join("    <p>%s</p>" % rich(p) for p in d["paras"])
+    return section(section_head(d) + "\n" + body, band=d.get("band"))
+
+
+def b_cards(d):
+    items = "\n".join(
+        '      <div class="card reveal"><h3>%s</h3><p>%s</p></div>'
+        % (rich(h), rich(p)) for h, p in d["items"])
+    inner = ('%s\n    <div class="grid grid-%d">\n%s\n    </div>'
+             % (section_head(d, center=True), d.get("cols", 3), items))
+    return section(inner, band=d.get("band"), narrow=False)
+
+
+def b_checks(d):
+    cols = []
+    for col in d["cols"]:
+        title, pairs = col[0], col[1]
+        plain = len(col) > 2 and col[2]
+        cls = "check-list check-list-plain" if plain else "check-list"
+        cols.append('      <div>\n        <h3>%s</h3>\n        %s\n      </div>'
+                    % (esc(title), check_list(pairs, cls)))
+    inner = ('%s\n    <div class="grid grid-2">\n%s\n    </div>'
+             % (section_head(d), "\n".join(cols)))
+    return section(inner, band=d.get("band"))
+
+
+def b_steps(d):
+    items = "\n".join('      <div class="step reveal"><h3>%s</h3><p>%s</p></div>'
+                      % (rich(h), rich(p)) for h, p in d["items"])
+    inner = ('%s\n    <div class="steps">\n%s\n    </div>'
+             % (section_head(d), "\n".join([items]) if items else ""))
+    return section(inner, band=d.get("band"))
+
+
+def b_spec(d):
+    rows = "\n".join("      <div><dt>%s</dt><dd>%s</dd></div>"
+                     % (rich(t), rich(v)) for t, v in d["items"])
+    inner = ('%s\n    <dl class="spec-list">\n%s\n    </dl>'
+             % (section_head(d), rows))
+    return section(inner, band=d.get("band"))
+
+
+def b_table(d):
+    def cell(c, tag="td"):
+        if isinstance(c, tuple):
+            kind, text = c
+            if kind == "b":
+                return "<%s><strong>%s</strong></%s>" % (tag, rich(text), tag)
+            return '<%s class="%s">%s</%s>' % (tag, kind, rich(text), tag)
+        return "<%s>%s</%s>" % (tag, rich(c), tag)
+
+    heads = "".join('<th scope="col">%s</th>' % esc(h) for h in d["head"])
+    rows = "\n".join(
+        "          <tr>%s%s</tr>"
+        % (cell(r[0], "th").replace("<th>", '<th scope="row">'),
+           "".join(cell(c) for c in r[1:]))
+        for r in d["rows"])
+    note = ('\n    <p class="small muted" style="margin-top:14px">%s</p>'
+            % rich(d["note"])) if d.get("note") else ""
+    inner = """{head}
+    <div class="table-scroll">
+      <table>
+        <caption class="visually-hidden">{caption}</caption>
+        <thead>
+          <tr>{heads}</tr>
+        </thead>
+        <tbody>
+{rows}
+        </tbody>
+      </table>
+    </div>{note}""".format(head=section_head(d), caption=esc(d["caption"]),
+                           heads=heads, rows=rows, note=note)
+    return section(inner, band=d.get("band"), narrow=False)
+
+
+def b_shots(d):
+    figures = []
+    for src, w, h, alt, cap in d["items"]:
+        img = ('<img src="%s" width="%d" height="%d" loading="lazy" alt="%s">'
+               % (src, w, h, esc(alt)))
+        if d.get("browser"):
+            frame = ('<div class="shot shot-crop">\n'
+                     '          <div class="shot-bar">\n'
+                     '            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>\n'
+                     '            <span class="shot-title">%s</span>\n'
+                     '          </div>\n          %s\n        </div>'
+                     % (d["browser"], img))
+        else:
+            frame = '<div class="shot">%s</div>' % img
+        if d.get("zoom"):
+            frame = ('<a class="shot-zoom" href="%s" data-zoom aria-label="%s">\n'
+                     '        %s\n      </a>' % (src, "Open the full-size screenshot", frame))
+        figures.append('      <figure style="margin:0">\n        %s\n'
+                       '        <figcaption class="shot-caption">%s</figcaption>\n'
+                       '      </figure>' % (frame, rich(cap)))
+    if len(figures) == 2:
+        inner = '    <div class="strip-zoom">\n%s\n    </div>' % "\n".join(figures)
+    else:
+        inner = "\n".join(figures)
+    return section(inner, narrow=len(figures) == 2, cls="tight")
+
+
+def b_links(d):
+    items = "\n".join(
+        '      <li><a href="%s"><span class="state-name">%s</span>'
+        '<span class="state-cities">%s</span></a></li>'
+        % (href, esc(name), esc(sub)) for href, name, sub in d["items"])
+    inner = ('%s\n    <ul class="state-grid">\n%s\n    </ul>'
+             % (section_head(d), items))
+    return section(inner, band=d.get("band"), cls="tight")
+
+
+def b_callout(d):
+    h3 = ('\n      <h3 style="margin-top:0">%s</h3>' % rich(d["h3"])) if d.get("h3") else ""
+    paras = "\n".join("      <p>%s</p>" % rich(p) for p in d["paras"])
+    return section('    <div class="callout" style="margin-bottom:0">%s\n%s\n    </div>'
+                   % (h3, paras))
+
+
+BLOCKS = {"hero": None, "prose": b_prose, "cards": b_cards, "checks": b_checks,
+          "steps": b_steps, "spec": b_spec, "table": b_table, "shots": b_shots,
+          "links": b_links, "callout": b_callout}
+
+
+def page_url(slug):
+    return "/" + slug
+
+
+def build_landing(pg):
+    """One English-only landing page, plus the FAQ and CTA every one ends on."""
+    slug = pg["slug"]
+    url = page_url(slug)
+    crumbs = []
+    if pg.get("parent"):
+        crumbs.append(pg["parent"])
+    crumbs.append((pg["crumb"], url))
+
+    body = []
+    for kind, d in pg["blocks"]:
+        body.append(b_hero(d, crumbs) if kind == "hero" else BLOCKS[kind](d))
+
+    faqs = pg["faq"]
+    body.append(section(
+        '%s\n    %s' % (section_head({"eyebrow": "Questions",
+                                      "h2": "The things people ask about this"},
+                                     center=True), faq(faqs, "en")),
+        band=True))
+
+    body.append("""
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Try it on your own team for thirty days.</h2>
+    <p class="lede">Every feature, unlimited PCs, no card and nothing to cancel. We will help you install it, and if it does not fit, nothing of yours has left the office.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/contact?about=trial">Start a free trial</a>
+      <a class="btn btn-ghost btn-lg" href="/pricing">See what it costs</a>
+    </div>
+  </div>
+</section>
+""")
+
+    crumb_ld = [{"@type": "ListItem", "position": 1, "name": "Home",
+                 "item": SITE + "/"}]
+    for i, (name, href) in enumerate(crumbs, start=2):
+        crumb_ld.append({"@type": "ListItem", "position": i, "name": name,
+                         "item": SITE + href})
+
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebPage", "name": pg["title"], "url": SITE + url,
+         "description": pg["desc"], "inLanguage": "en-IN",
+         "isPartOf": {"@type": "WebSite", "name": "Quietworks",
+                      "url": SITE + "/"}},
+        {"@type": "BreadcrumbList", "itemListElement": crumb_ld},
+        software_ld("en"),
+        faq_ld(faqs)]}
+    for node in ld["@graph"]:
+        node.pop("@context", None)
+
+    # Only English exists, so the hreflang set is this page and nothing else.
+    # The picker still offers twelve and sends the rest to /workqueue in their
+    # language - the nearest page that does exist.
+    alts = {"en": url}
+    targets = {l["code"]: url_for(l["code"], "workqueue") for l in LANGS}
+    targets["en"] = url
+
+    return (head("en", pg["title"], pg["desc"], url, alts, jsonld=ld)
+            + header("en", None, targets) + "".join(body) + footer("en"))
+
+
 # --- 5. The hand-written English pages --------------------------------------
 
 MARKERS = ("hreflang", "langpicker", "jsonld")
@@ -1680,6 +1970,12 @@ def build_sitemap():
         add(url_for(code, "india"), core_alts("india"), "0.8" if first else "0.7")
         add(url_for(code, "contact"), core_alts("contact"), "0.6", "yearly")
 
+    # The English-only landing pages. One hreflang each, because one is all
+    # that exists; the sitemap must say the same thing the page's head says.
+    for pg in PAGES:
+        loc = page_url(pg["slug"])
+        add(loc, {"en": loc}, "0.8")
+
     for st in STATES:
         alts = {"en": url_for("en", "state", st["slug"])}
         if st["lang"] != "en":
@@ -1743,6 +2039,9 @@ def main():
         if st["lang"] != "en":
             write(url_for(st["lang"], "state", st["slug"]),
                   build_state(st, st["lang"]))
+
+    for pg in PAGES:
+        write(page_url(pg["slug"]), build_landing(pg))
 
     patch_english()
     n = build_sitemap()

@@ -40,6 +40,9 @@ PAGES = [
     "/india/dadra-and-nagar-haveli-and-daman-and-diu",
     "/mr/india/maharashtra", "/ta/india/tamil-nadu", "/as/india/assam",
     "/hi/india/uttar-pradesh", "/ml/india/lakshadweep",
+    # The English-only landing pages: one of each shape.
+    "/employee-task-tracker", "/work-tracker", "/task-management-software",
+    "/alternatives/", "/alternatives/jira", "/alternatives/excel-and-whatsapp",
     "/nope-this-is-a-404",
 ]
 

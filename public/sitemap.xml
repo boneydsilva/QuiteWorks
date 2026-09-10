@@ -1142,6 +1142,70 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://boneydsilva.com/employee-task-tracker</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/employee-task-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/employee-task-tracker"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/work-tracker</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/work-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/work-tracker"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/task-management-software</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/task-management-software"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/task-management-software"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/alternatives/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/alternatives/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/alternatives/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/alternatives/jira</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/alternatives/jira"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/alternatives/jira"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/alternatives/trello</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/alternatives/trello"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/alternatives/trello"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/alternatives/asana</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/alternatives/asana"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/alternatives/asana"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/alternatives/excel-and-whatsapp</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/alternatives/excel-and-whatsapp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/alternatives/excel-and-whatsapp"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://boneydsilva.com/india/andhra-pradesh</loc>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/andhra-pradesh"/>
     <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india/andhra-pradesh"/>

@@ -515,6 +515,10 @@ h3 { font-size: clamp(19px, 2.1vw, 23px); }
   border-width: 0 2px 2px 0; transform: rotate(42deg);
 }
 .check-list strong { color: var(--ink); font-weight: 600; }
+/* The same list where a green tick would be a lie - "who this is not for",
+   "stay on Jira if". Same shape, no endorsement. */
+.check-list-plain li::before { background: var(--surface-2); border-color: var(--border-firm); }
+.check-list-plain li::after  { border-color: var(--ink-3); }
 .band-ink .check-list li { color: #a8b2be; }
 .band-ink .check-list strong { color: #fff; }
 
