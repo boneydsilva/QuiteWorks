@@ -7,6 +7,21 @@
 <meta name="description" content="WorkQueue assigns tasks from a browser to a thin strip on every employee's screen, times the work automatically, and reports on it — all on your office Wi-Fi, with no monthly fee.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://boneydsilva.com/workqueue">
+<!-- qw:hreflang -->
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<!-- /qw:hreflang -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="WorkQueue — assign work to your team over your own network">
 <meta property="og:description" content="A thin strip on every employee's screen. Automatic timing. No monthly fee.">
@@ -18,6 +33,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/site.css">
 <script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<!-- qw:jsonld -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this employee monitoring? Will my team hate it?","acceptedAnswer":{"@type":"Answer","text":"It records two things per task: when it reached the screen and when the person pressed Complete. It does not take screenshots, log keystrokes, track idle time or watch which websites anyone visits, and it never will — that is a deliberate line, not an oversight. In practice teams tend to like it, because \"I sent you that hours ago\" arguments stop being arguments. Everyone is looking at the same timestamps."}},{"@type":"Question","name":"How many people can it handle?","acceptedAnswer":{"@type":"Answer","text":"It is built and load-tested for a single office — around 25 machines at once on ordinary hardware, with responses well under a tenth of a second. If you are bigger than that, talk to us before you buy rather than after."}},{"@type":"Question","name":"What if the manager's PC dies?","acceptedAnswer":{"@type":"Answer","text":"Install the server on another PC and import your last export. This is why the backup is one file and why the dashboard nags you to keep a copy somewhere else. Employee PCs find the new server by themselves."}},{"@type":"Question","name":"Can I get my data out?","acceptedAnswer":{"@type":"Answer","text":"Yes, at any time and without asking us. History exports to CSV, and the whole database exports as a JSON snapshot or as the SQLite file itself. There is no lock-in because there is nothing of yours on our side to lock."}},{"@type":"Question","name":"Do you see any of our tasks?","acceptedAnswer":{"@type":"Answer","text":"No. The software never contacts us. There is no telemetry, no licence check-in and no analytics call. If your office had no internet at all, WorkQueue would not notice."}},{"@type":"Question","name":"What does support look like?","acceptedAnswer":{"@type":"Answer","text":"Email, answered within one working day, by the person who wrote the software. The licence includes a year of it, along with a year of updates."}}]}]}</script>
+<!-- /qw:jsonld -->
 </head>
 <body>
 
@@ -39,9 +57,36 @@
         <a href="/">Home</a>
         <a href="/workqueue" aria-current="page">WorkQueue</a>
         <a href="/pricing">Pricing</a>
+        <a href="/india">Across India</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="nav-actions">
+        <!-- qw:langpicker -->
+<details class="lang-pick" data-lang-pick>
+        <summary aria-label="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">English</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">Choose your language</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en" aria-current="true"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">The whole site is written in each of these, not machine-translated.</p>
+        </div>
+      </details>
+<!-- /qw:langpicker -->
         <button class="theme-toggle" type="button" aria-label="Switch theme">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
@@ -583,7 +628,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="/contact">Send a message</a></li>
+          <li><a href="/india">Every state</a></li>
           <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
           <li><a data-whatsapp="Hello, I saw the Quietworks website and would like to know more about WorkQueue." href="#">WhatsApp</a></li>
         </ul>

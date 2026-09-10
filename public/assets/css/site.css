@@ -816,7 +816,129 @@ td strong { font-weight: 600; }
   .film-caption { font-size: 15.5px; min-height: 4.8em; }
 }
 
-/* --- 24. Print ----------------------------------------------------------- */
+/* --- 24. Language picker -------------------------------------------------
+   A <details> so the menu opens with JavaScript off; initLang() only closes
+   it on an outside click and remembers what the reader chose. The endonym is
+   the label - somebody looking for Bengali is looking for the word বাংলা. */
+
+.lang-pick { position: relative; }
+.lang-pick > summary {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 38px; padding: 0 11px;
+  border: 1.5px solid var(--border); border-radius: 9px;
+  font-size: 14.5px; font-weight: 500; color: var(--ink-2);
+  cursor: pointer; list-style: none; white-space: nowrap;
+  transition: border-color .15s ease, color .15s ease;
+}
+.lang-pick > summary::-webkit-details-marker { display: none; }
+.lang-pick > summary:hover { border-color: var(--ink-3); color: var(--ink); }
+.lang-pick > summary svg { width: 17px; height: 17px; flex: none; }
+.lang-pick[open] > summary { border-color: var(--ink-3); color: var(--ink); }
+.lang-current { max-width: 9ch; overflow: hidden; text-overflow: ellipsis; }
+
+.lang-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 120;
+  width: min(320px, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  padding: 14px 12px 10px;
+}
+.lang-head {
+  margin: 0 8px 8px; font-size: 12px; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+}
+.lang-menu ul { list-style: none; margin: 0; padding: 0; max-height: 62vh; overflow-y: auto; }
+.lang-menu li + li { margin-top: 1px; }
+.lang-menu a {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 10px; border-radius: 8px;
+  text-decoration: none; color: var(--ink);
+}
+.lang-menu a:hover { background: var(--surface-2); }
+.lang-menu a[aria-current="true"] { background: var(--accent-soft); }
+.lang-name { font-weight: 600; font-size: 15.5px; }
+.lang-sample { font-size: 13px; color: var(--ink-3); margin-left: auto; text-align: right; }
+.lang-note {
+  margin: 10px 8px 2px; padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px; line-height: 1.5; color: var(--ink-3);
+}
+
+@media (max-width: 860px) {
+  .lang-current { display: none; }
+  .lang-pick > summary { padding: 0; width: 38px; justify-content: center; }
+}
+
+/* The one-line offer under the header on a first visit. It is a suggestion,
+   never a redirect - see offerLanguage() in site.js. */
+.lang-offer {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px var(--pad);
+  background: var(--accent-soft); border-bottom: 1px solid var(--accent-line);
+  font-size: 14.5px;
+}
+.lang-offer a { color: var(--accent-ink); font-weight: 600; }
+.lang-offer button {
+  margin-left: auto; width: 26px; height: 26px; padding: 0;
+  display: grid; place-items: center;
+  background: transparent; border: 0; border-radius: 6px;
+  font-size: 19px; line-height: 1; color: var(--accent-ink); cursor: pointer;
+}
+.lang-offer button:hover { background: var(--accent-line); }
+
+/* --- 25. The India pages -------------------------------------------------- */
+
+.group-head {
+  font-size: 13px; font-weight: 600; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--ink-3);
+  margin: 34px 0 14px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.group-head:first-of-type { margin-top: 0; }
+
+.state-grid, .lang-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.state-grid a, .lang-grid a {
+  display: block; height: 100%; padding: 14px 16px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); text-decoration: none; color: var(--ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.state-grid a:hover, .lang-grid a:hover {
+  border-color: var(--border-firm); box-shadow: var(--shadow-sm);
+}
+.state-name { display: block; font-weight: 600; font-size: 16px; }
+.state-native { display: block; font-size: 14.5px; color: var(--accent-ink); margin-top: 1px; }
+.state-cities { display: block; font-size: 13px; color: var(--ink-3); margin-top: 5px; }
+.lang-grid a { display: flex; align-items: baseline; gap: 10px; }
+
+.breadcrumb {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  font-size: 13.5px; color: var(--ink-3); margin-bottom: 22px;
+}
+.breadcrumb a { color: var(--ink-2); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent-ink); text-decoration: underline; }
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-block; padding: 6px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 14px; color: var(--ink); text-decoration: none;
+}
+a.chip:hover { border-color: var(--accent-line); background: var(--accent-soft); color: var(--accent-ink); }
+.chip-plain { background: var(--surface-2); }
+
+.state-teaser {
+  margin-top: clamp(30px, 5vw, 46px); padding-top: clamp(26px, 4vw, 36px);
+  border-top: 1px solid var(--border);
+}
+.state-teaser p { max-width: 62ch; margin-bottom: 16px; }
+.state-teaser .btn { margin-top: 16px; }
+
+/* --- 26. Print ----------------------------------------------------------- */
 
 @media print {
   .site-header, .site-footer, .theme-toggle, .nav-toggle, .btn { display: none !important; }

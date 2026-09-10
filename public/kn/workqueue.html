@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — ನಿಮ್ಮದೇ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ ಕೆಲಸ ಹಂಚಿ, ಸಮಯ ಅಳೆಯಿರಿ</title>
+<meta name="description" content="WorkQueue ನಿಮ್ಮ ತಂಡಕ್ಕೆ ಕೆಲಸವನ್ನು ಅವರ ಪರದೆಯ ಮೇಲಿನ 34-ಪಿಕ್ಸೆಲ್ ಪಟ್ಟಿಯ ಮೂಲಕ ಕೊಡುತ್ತದೆ, ಪ್ರತಿ ಕೆಲಸದ ಸಮಯವನ್ನೂ ತಾನೇ ಅಳೆಯುತ್ತದೆ, ಅದರ ವರದಿ ಕೊಡುತ್ತದೆ. ನಿಮ್ಮದೇ Windows PC ಮೇಲೆ ಓಡುತ್ತದೆ. ಇಡೀ ಕಂಪನಿಗೆ ಒಂದೇ ಬಾರಿ ಪಾವತಿ.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="kn_IN">
+<meta property="og:title" content="WorkQueue — ನಿಮ್ಮದೇ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ ಕೆಲಸ ಹಂಚಿ, ಸಮಯ ಅಳೆಯಿರಿ">
+<meta property="og:description" content="WorkQueue ನಿಮ್ಮ ತಂಡಕ್ಕೆ ಕೆಲಸವನ್ನು ಅವರ ಪರದೆಯ ಮೇಲಿನ 34-ಪಿಕ್ಸೆಲ್ ಪಟ್ಟಿಯ ಮೂಲಕ ಕೊಡುತ್ತದೆ, ಪ್ರತಿ ಕೆಲಸದ ಸಮಯವನ್ನೂ ತಾನೇ ಅಳೆಯುತ್ತದೆ, ಅದರ ವರದಿ ಕೊಡುತ್ತದೆ. ನಿಮ್ಮದೇ Windows PC ಮೇಲೆ ಓಡುತ್ತದೆ. ಇಡೀ ಕಂಪನಿಗೆ ಒಂದೇ ಬಾರಿ ಪಾವತಿ.">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/kn/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/kn/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/kn/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ಇದು ನೌಕರರ ಕಣ್ಗಾವಲೇ? ನನ್ನ ತಂಡಕ್ಕೆ ಇದು ಇಷ್ಟವಾಗದೇ?","acceptedAnswer":{"@type":"Answer","text":"ಇದು ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಎರಡನ್ನೇ ದಾಖಲಿಸುತ್ತದೆ: ಅದು ಪರದೆ ತಲುಪಿದ್ದು ಯಾವಾಗ, ಮತ್ತು ಆ ವ್ಯಕ್ತಿ Complete ಒತ್ತಿದ್ದು ಯಾವಾಗ. ಇದು ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ತೆಗೆಯುವುದಿಲ್ಲ, ಕೀಸ್ಟ್ರೋಕ್ ದಾಖಲಿಸುವುದಿಲ್ಲ, ಸುಮ್ಮನಿರುವ ಸಮಯ ಅಳೆಯುವುದಿಲ್ಲ, ಯಾರು ಯಾವ ಜಾಲತಾಣ ನೋಡುತ್ತಾರೆಂದೂ ಗಮನಿಸುವುದಿಲ್ಲ — ಮುಂದೆಯೂ ಮಾಡುವುದಿಲ್ಲ. ಇದು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಎಳೆದ ಗೆರೆ, ಮರೆವಲ್ಲ. ವಾಸ್ತವದಲ್ಲಿ ತಂಡಗಳಿಗೆ ಇದು ಇಷ್ಟವಾಗುತ್ತದೆ, ಏಕೆಂದರೆ \"ನಾನು ಗಂಟೆಗಳ ಹಿಂದೆಯೇ ಕಳುಹಿಸಿದ್ದೆ\" ಎಂಬ ವಾದ ವಾದವಾಗಿ ಉಳಿಯುವುದಿಲ್ಲ. ಎಲ್ಲರ ಮುಂದೆಯೂ ಒಂದೇ ಸಮಯ ದಾಖಲಾಗಿರುತ್ತದೆ."}},{"@type":"Question","name":"ಇದು ಎಷ್ಟು ಜನರನ್ನು ನಿಭಾಯಿಸಬಲ್ಲದು?","acceptedAnswer":{"@type":"Answer","text":"ಇದು ಒಂದೇ ಕಚೇರಿಗಾಗಿ ಕಟ್ಟಿ, ಭಾರ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ — ಸಾಮಾನ್ಯ ಯಂತ್ರಾಂಶದ ಮೇಲೆ ಒಟ್ಟಿಗೆ ಸುಮಾರು 25 ಯಂತ್ರಗಳು, ಸ್ಪಂದನೆಗಳು ಸೆಕೆಂಡಿನ ಹತ್ತನೇ ಒಂದು ಭಾಗಕ್ಕಿಂತಲೂ ಕಡಿಮೆಯಲ್ಲಿ. ನೀವು ಅದಕ್ಕಿಂತ ದೊಡ್ಡವರಾದರೆ, ಖರೀದಿಸಿದ ಮೇಲಲ್ಲ, ಮೊದಲೇ ಮಾತನಾಡಿ."}},{"@type":"Question","name":"ವ್ಯವಸ್ಥಾಪಕರ PC ಕೆಟ್ಟರೆ?","acceptedAnswer":{"@type":"Answer","text":"ಸರ್ವರನ್ನು ಬೇರೊಂದು PC ಮೇಲೆ ಅಳವಡಿಸಿ, ನಿಮ್ಮ ಕೊನೆಯ ರಫ್ತನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ. ಅದಕ್ಕೇ ಬ್ಯಾಕಪ್ ಒಂದೇ ಕಡತ, ಅದಕ್ಕೇ ಬೇರೆಲ್ಲಾದರೂ ಒಂದು ಪ್ರತಿ ಇಡಿ ಎಂದು ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಪದೇ ಪದೇ ನೆನಪಿಸುತ್ತದೆ. ನೌಕರರ PC ಗಳು ಹೊಸ ಸರ್ವರನ್ನು ತಾವೇ ಹುಡುಕಿಕೊಳ್ಳುತ್ತವೆ."}},{"@type":"Question","name":"ನನ್ನ ದತ್ತಾಂಶವನ್ನು ಹೊರತೆಗೆಯಬಹುದೇ?","acceptedAnswer":{"@type":"Answer","text":"ಬಹುದು, ಯಾವಾಗ ಬೇಕಾದರೂ, ನಮ್ಮನ್ನು ಕೇಳದೆಯೇ. ಇತಿಹಾಸ CSV ಆಗಿ ಬರುತ್ತದೆ, ಇಡೀ ದತ್ತಸಂಚಯ JSON ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಆಗಿ ಅಥವಾ ನೇರವಾಗಿ SQLite ಕಡತವಾಗಿ ಬರುತ್ತದೆ. ಲಾಕ್-ಇನ್ ಇಲ್ಲ, ಏಕೆಂದರೆ ನಮ್ಮ ಕಡೆ ಲಾಕ್ ಮಾಡಲು ನಿಮ್ಮದೇನೂ ಇಲ್ಲ."}},{"@type":"Question","name":"ನಮ್ಮ ಕೆಲಸಗಳು ನಿಮಗೆ ಕಾಣಿಸುತ್ತವೆಯೇ?","acceptedAnswer":{"@type":"Answer","text":"ಇಲ್ಲ. ತಂತ್ರಾಂಶ ಎಂದೂ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುವುದಿಲ್ಲ. ಟೆಲಿಮೆಟ್ರಿ ಇಲ್ಲ, ಪರವಾನಗಿ ಪರಿಶೀಲನೆ ಇಲ್ಲ, ಅನಾಲಿಟಿಕ್ಸ್ ಕರೆ ಇಲ್ಲ. ನಿಮ್ಮ ಕಚೇರಿಯಲ್ಲಿ ಇಂಟರ್ನೆಟ್ಟೇ ಇಲ್ಲದಿದ್ದರೂ WorkQueue ಗಮನಿಸುವುದೂ ಇಲ್ಲ."}},{"@type":"Question","name":"ಬೆಂಬಲ ಹೇಗಿರುತ್ತದೆ?","acceptedAnswer":{"@type":"Answer","text":"ಇಮೇಲ್, ಒಂದು ಕೆಲಸದ ದಿನದೊಳಗೆ ಉತ್ತರ, ಮತ್ತು ಉತ್ತರಿಸುವವರು ತಂತ್ರಾಂಶ ಬರೆದವರೇ. ಪರವಾನಗಿಯಲ್ಲಿ ಒಂದು ವರ್ಷದ ಬೆಂಬಲ ಮತ್ತು ಒಂದು ವರ್ಷದ ನವೀಕರಣಗಳು ಸೇರಿವೆ."}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/kn/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/kn/">ಮುಖಪುಟ</a>
+        <a href="/kn/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/kn/pricing">ಬೆಲೆ</a>
+        <a href="/kn/india">ಭಾರತದಾದ್ಯಂತ</a>
+        <a href="/kn/contact">ಸಂಪರ್ಕ</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="ಭಾಷೆ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">ಕನ್ನಡ</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆರಿಸಿ</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn" aria-current="true"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">ಇಡೀ ತಾಣ ಈ ಪ್ರತಿಯೊಂದು ಭಾಷೆಯಲ್ಲೂ ಬರೆಯಲ್ಪಟ್ಟಿದೆ — ಯಂತ್ರಾನುವಾದವಲ್ಲ.</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="ಥೀಮ್ ಬದಲಿಸಿ">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/kn/contact?about=trial">ಟ್ರಯಲ್ ಶುರು ಮಾಡಿ</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="ಮೆನು">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>ಕೆಲಸ ಹಂಚಿ. ಎಷ್ಟು ಸಮಯ ಹಿಡಿಯಿತೆಂದು ನಿಖರವಾಗಿ ತಿಳಿಯಿರಿ.</h1>
+        <p class="lede">ವ್ಯವಸ್ಥಾಪಕರು ಬ್ರೌಸರಿನಿಂದ ವಹಿಸುತ್ತಾರೆ. ಪ್ರತಿ ನೌಕರರೂ ತಮ್ಮ ಸರದಿಯನ್ನು ಪರದೆಯ ಮೇಲೆ ಜೋಡಿಸಿದ ತೆಳುವಾದ ಪಟ್ಟಿಯಲ್ಲಿ ನೋಡುತ್ತಾರೆ. ಎರಡೂ ಸಮಯಗಳು ನಿಮಗಾಗಿ ತಾವಾಗಿಯೇ ದಾಖಲಾಗುತ್ತವೆ, ಹಾಗಾಗಿ ಜನ ಬರೀ ಕೆಲಸ ಮಾಡುತ್ತಾ ಹೋದರೆ ಸಾಕು, ವರದಿ ತಾನಾಗಿಯೇ ಸಿದ್ಧವಾಗುತ್ತದೆ.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/kn/contact?about=trial">ಟ್ರಯಲ್ ಕೇಳಿ</a>
+          <a class="btn btn-ghost btn-lg" href="/kn/pricing">ಬೆಲೆ ನೋಡಿ</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 ಮತ್ತು 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ಕ್ಲೌಡ್ ಖಾತೆ ಇಲ್ಲ</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ಒಂದೇ ಪರವಾನಗಿಯಲ್ಲಿ ಅಪರಿಮಿತ PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue ಬೋರ್ಡ್, ಮೇಲೆ ಕೆಲಸ ಬರೆಯುವ ಜಾಗ ಮತ್ತು ಮೂರು ಕಂಬಸಾಲುಗಳು: ಕಾಯುತ್ತಿರುವವು, ನಡೆಯುತ್ತಿರುವವು, ಇಂದು ಮುಗಿದವು." fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">ವಹಿಸಲು ಒಂದು ಸಾಲು. ಗಮನಿಸಲು ಮೂರು ಕಂಬಸಾಲುಗಳು.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ನೌಕರರ ಕಡೆ</span>
+      <h2>34 ಪಿಕ್ಸೆಲ್. ನಿಮ್ಮ ಸಿಬ್ಬಂದಿ ಕಲಿಯಬೇಕಾದದ್ದು ಇಷ್ಟೇ.</h2>
+      <p class="lede">ಟಾಸ್ಕ್‌ಬಾರಿನಂತೆಯೇ ಪಟ್ಟಿಯೂ Windows ನಲ್ಲಿ ಕೂರುತ್ತದೆ, ಹಾಗಾಗಿ Windows ಅದಕ್ಕೆ ಜಾಗ ಕಾಯ್ದಿರಿಸುತ್ತದೆ, ದೊಡ್ಡದಾಗಿಸಿದ ಕಿಟಕಿಗಳು ಅದರ ಕೆಳಗೇ ನಿಲ್ಲುತ್ತವೆ. ಅದು ಯಾರ ಕೆಲಸವನ್ನೂ ಮುಚ್ಚಲಾರದು, ಅದನ್ನು ಯಾರೂ ಮುಚ್ಚಲಾರರು.</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 ಪಿಕ್ಸೆಲ್ ಪರದೆಯ ಮೇಲೆ ಇಡೀ ಪಟ್ಟಿ: ಎಡಕ್ಕೆ ನೌಕರರ ಹೆಸರು ಮತ್ತು ಪ್ರಸ್ತುತ ಕೆಲಸ, ಬಲಕ್ಕೆ ತೆರೆದಿರುವ ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಒಂದು ಚಿಪ್, ನಡುವೆ ಸಾಕಷ್ಟು ಖಾಲಿ ಜಾಗ.">
+      <figcaption class="shot-caption">1920 ಪಿಕ್ಸೆಲ್ ಪರದೆಯ ಮೇಲೆ ಇಡೀ ಪಟ್ಟಿ. ಪರದೆಯ ಸುಮಾರು ಇಷ್ಟು ಭಾಗವನ್ನಷ್ಟೇ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ — ಅದೇ ವಿಷಯ. ಕೆಳಗಿನ ಎರಡು ಹತ್ತಿರದ ಚಿತ್ರಗಳೂ ಅದೇ ಪಟ್ಟಿ, ನಿಜವಾದ ಗಾತ್ರದಲ್ಲಿ.</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="ನೌಕರರ ಪಟ್ಟಿಯ ಎಡತುದಿ: ಹಸಿರು ಸಂಪರ್ಕ ಚುಕ್ಕೆ, ಆಶಾ ರಾವ್ ಎಂಬ ಹೆಸರು, ನಂತರ ಕೆಂಪು ವಜ್ರ ಮತ್ತು ಕೆಲಸದ ಶೀರ್ಷಿಕೆ — ಸೆಪ್ಟೆಂಬರ್ ಇನ್‌ವಾಯ್ಸ್‌ಗಳನ್ನು ತಾಳೆ ಮಾಡಿ.">
+        </div>
+        <figcaption class="shot-caption"><strong>ಎಡತುದಿ.</strong> ಸರ್ವರ್ ಸಂಪರ್ಕವಿರುವವರೆಗೆ ಒಂದು ಹಸಿರು ಚುಕ್ಕೆ, ಅವರ ಹೆಸರು, ಮತ್ತು ಅವರು ಮಾಡುತ್ತಿರುವ ಕೆಲಸ. ಕೆಂಪು ವಜ್ರ ಎಂದರೆ ತುರ್ತು.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="ನೌಕರರ ಪಟ್ಟಿಯ ಬಲತುದಿ: ಬಣ್ಣದಿಂದ ಗುರುತಿಸುವ ಮೂರು ಚಿಪ್‌ಗಳು, ತೆರೆದಿರುವ ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಒಂದು, ಮತ್ತು ಒಂದು ಸಣ್ಣ ಮೆನು ಬಾಣ.">
+        </div>
+        <figcaption class="shot-caption"><strong>ಬಲತುದಿ.</strong> ತೆರೆದಿರುವ ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಒಂದು ಚಿಪ್, ಆದ್ಯತೆಯ ಬಣ್ಣದಲ್ಲಿ. ಒಂದನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದರೆ ಅದಕ್ಕೆ ಬದಲಾಗುತ್ತದೆ; ಚೌಕಟ್ಟು ಅದೇ ಬಣ್ಣ ತಳೆಯುತ್ತದೆ.</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="ಪಟ್ಟಿಯಿಂದ ತೆರೆಯುವ ಫಲಕ: ಎಡಕ್ಕೆ ಪ್ರಸ್ತುತ ಕೆಲಸ, ಅದರ ವಿವರಣೆ ಮತ್ತು ವಹಿಸಿದ ಸಮಯ, ಅದರ ಕೆಳಗೆ ಒಂದು ದೊಡ್ಡ Mark completed ಗುಂಡಿ, ಬಲಕ್ಕೆ ನೌಕರರ ಮೂರು ಕೆಲಸಗಳು, ಪ್ರತಿಯೊಂದಕ್ಕೂ ತನ್ನದೇ Complete ಗುಂಡಿ.">
+      </div>
+      <figcaption class="shot-caption center">ಯಾವುದೇ ಕೆಲಸವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದರೆ ಇದು ತೆರೆಯುತ್ತದೆ. ಕೆಲಸ ಮುಗಿಸಲು ಒಂದು ದೊಡ್ಡ ಗುಂಡಿ, ಅಡ್ಮಿನ್‌ಗೆ ಪ್ರಶ್ನೆ ಕೇಳಲು ಒಂದು ಪೆಟ್ಟಿಗೆ, ಉಳಿದ ಪ್ರತಿ ಕೆಲಸವೂ ಒಂದೇ ಕ್ಲಿಕ್ ದೂರದಲ್ಲಿ.</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Accept ಗುಂಡಿಯೇ ಇಲ್ಲ</h3><p>ಕೆಲಸ ಅವರ ಯಂತ್ರ ತಲುಪಿದ ಕ್ಷಣವೇ &quot;ಸಿಕ್ಕಿತು&quot; ಎಂದು ದಾಖಲಾಗುತ್ತದೆ. ಕೆಲಸ ಸಿಕ್ಕಿತೆಂದು ತಿಳಿಸಲು ಯಾರೂ ಮರೆಯಲಾರರು, ಮತ್ತು &quot;ವಹಿಸಿದ್ದು&quot; ಇಂದ &quot;ಅವರ ಪರದೆಗೆ&quot; ನಡುವಿನ ಅಂತರ ನೀವು ನಿಜವಾಗಿಯೂ ನಿಭಾಯಿಸಬಲ್ಲ ಒಂದು ಸಂಖ್ಯೆಯಾಗುತ್ತದೆ.</p></div>
+      <div class="card reveal"><h3>ಮುಗಿಸಲು ಒಂದೇ ಗುಂಡಿ</h3><p>ಯಾವುದೇ ಕೆಲಸವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದರೆ ಫಲಕ ತೆರೆಯುತ್ತದೆ: ವಿವರಣೆ, ಇರುವ ಟಿಪ್ಪಣಿಗಳು, ಮತ್ತು ಆಕಸ್ಮಿಕವಾಗಿ ಆಗಬಾರದೆಂದು ಎರಡನೇ ಕ್ಲಿಕ್ ಕೇಳುವ ಒಂದು ದೊಡ್ಡ Complete ಗುಂಡಿ.</p></div>
+      <div class="card reveal"><h3>ಅವರೂ ಉತ್ತರಿಸಬಲ್ಲರು</h3><p>ನೌಕರರು ಕೆಲಸದ ಮೇಲೆ ಟಿಪ್ಪಣಿ ಬರೆಯಬಹುದು — ಒಂದು ಪ್ರಶ್ನೆ, ಒಂದು ತೊಡಕು, ಅಥವಾ ಸಿಕ್ಕಿದ್ದರ ಬಗ್ಗೆ ಟಿಪ್ಪಣಿ. ನೀವು ಅದನ್ನು ನೋಡಿ, ಡ್ಯಾಶ್‌ಬೋರ್ಡಿನಲ್ಲಿ ಅದೇ ಕೆಲಸದಿಂದಲೇ ಉತ್ತರಿಸುತ್ತೀರಿ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ಬೋರ್ಡ್</span>
+        <h3>ಒಂದೇ ಸಾಲಿನಲ್ಲಿ ವಹಿಸಿ, ನಂತರ ದಿನ ಸಾಗುವುದನ್ನು ನೋಡಿ</h3>
+        <p>ಒಂದು ಶೀರ್ಷಿಕೆ, ಆ ವ್ಯಕ್ತಿಗೆ ಬೇಕಾದ ವಿವರ, ಆದ್ಯತೆ, ಗಡುವು, ಯಾರಿಗೆ ಹೋಗಬೇಕು, ನಂತರ Assign. ಅದೇ ಕೆಲಸವನ್ನು ಒಬ್ಬರಿಗೂ ಕಳುಹಿಸಿ, ಆರು ಜನರಿಗೂ ಕಳುಹಿಸಿ.</p>
+        <ul class="check-list">
+          <li><strong>ಮೂರು ಜೀವಂತ ಕಂಬಸಾಲುಗಳು</strong> — ಕಾಯುತ್ತಿರುವವು, ನಡೆಯುತ್ತಿರುವವು, ಇಂದು ಮುಗಿದವು, ವ್ಯಕ್ತಿವಾರು.</li>
+          <li><strong>ಯಾರಿಗೂ ಅಡ್ಡಿ ಮಾಡದೆ ಕ್ರಮ ಕೈಗೊಳ್ಳಿ</strong> — ಕಾರ್ಡ್ ಮೇಲೆ ಕರ್ಸರ್ ಇಟ್ಟರೆ Done, Cancel, Reopen, Delete ಕಾಣಿಸುತ್ತವೆ.</li>
+          <li><strong>ಕೆಲಸವನ್ನು ಅತ್ತಿತ್ತ ಸರಿಸಿ</strong> — ಕೆಲಸ ತೆರೆದು ಬೇರೊಬ್ಬರಿಗೆ ವಹಿಸಿ.</li>
+          <li><strong>ತುರ್ತಿನದು ತುರ್ತಾಗಿಯೇ ಕಾಣುತ್ತದೆ</strong> — ಆದ್ಯತೆ ಕಾರ್ಡಿಗೂ ನೌಕರರ ಪಟ್ಟಿಯ ಚೌಕಟ್ಟಿಗೂ ಬಣ್ಣ ಕೊಡುತ್ತದೆ.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="ಬೋರ್ಡಿನಲ್ಲಿ ಐದು ಕೆಲಸ ಕಾಯುತ್ತಿವೆ, ಮೂರು ನಡೆಯುತ್ತಿವೆ, ಹನ್ನೆರಡು ಇಂದು ಮುಗಿದಿವೆ.">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">ಅನಾಲಿಟಿಕ್ಸ್</span>
+        <h3>ವ್ಯವಸ್ಥಾಪಕರು ನಿಜವಾಗಿ ಕೇಳುವ ಪ್ರಶ್ನೆಗಳು</h3>
+        <p>ಏಳು ಮುಖ್ಯ ಸಂಖ್ಯೆಗಳು ಮತ್ತು ಹತ್ತು ನಕ್ಷೆಗಳು, ಎಲ್ಲವೂ ಒಂದೇ ಶೋಧಕ ಸಾಲಿನಿಂದ ಚಲಿಸುವವು. ಪ್ರತಿ ನಕ್ಷೆಗೂ ಅದರ ಕೋಷ್ಟಕ ಜೊತೆಗಿದೆ, ಹಾಗಾಗಿ ಕಂಬಗಳನ್ನು ಕಣ್ಣು ಕಿರಿದಾಗಿಸಿ ನೋಡುವ ಬದಲು ಸಂಖ್ಯೆಗಳನ್ನೇ ಓದಬಹುದು.</p>
+        <ul class="check-list">
+          <li><strong>ಎಷ್ಟು ಕೆಲಸ ಆಯಿತು</strong> — ವಹಿಸಿದ್ದಕ್ಕೆ ಹೋಲಿಸಿದರೆ ಮುಗಿದವು, ದಿನವಾರು.</li>
+          <li><strong>ಕೆಲಸಗಳಿಗೆ ಎಷ್ಟು ಸಮಯ ಹಿಡಿಯುತ್ತದೆ</strong> — ಪ್ರತಿ ಕೆಲಸಕ್ಕೆ ಸರಾಸರಿ ಮತ್ತು ಮಧ್ಯಮಾನ, ಮತ್ತು ಆ ಅವಧಿಯ ಅತಿ ಉದ್ದದ ಕೆಲಸಗಳು.</li>
+          <li><strong>ಕೆಲಸ ಎಷ್ಟು ಬೇಗ ಕೈಗೆತ್ತಿಕೊಳ್ಳಲಾಗುತ್ತದೆ</strong> — ದಿನವಾರು ಮತ್ತು ವ್ಯಕ್ತಿವಾರು ಸ್ಪಂದನೆಯ ಸಮಯ.</li>
+          <li><strong>ಯಾರು ಎಷ್ಟು ಹೊರುತ್ತಿದ್ದಾರೆ</strong> — ಪ್ರತಿ ನೌಕರರಿಗೂ ಸಂಖ್ಯೆ, ಗಂಟೆ, ಸ್ಪಂದನೆ, ಸಮಯಕ್ಕೆ ಮುಗಿಸಿದ ಪ್ರಮಾಣ.</li>
+          <li><strong>ನಿಮ್ಮ ತಂಡ ಯಾವಾಗ ಬಿಡುವಿಲ್ಲದೆ ಇರುತ್ತದೆ</strong> — ದಿನದ ಗಂಟೆವಾರು ಮತ್ತು ವಾರದ ದಿನವಾರು.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="ಅನಾಲಿಟಿಕ್ಸ್: 164 ಮುಗಿದವು, 7 ದಿನ 7 ಗಂಟೆ ಕೆಲಸದ ಸಮಯ, ಪ್ರತಿ ಕೆಲಸಕ್ಕೆ ಸರಾಸರಿ 1 ಗಂಟೆ 4 ನಿಮಿಷ, ಸರಾಸರಿ ಸ್ಪಂದನೆ 21 ನಿಮಿಷ, 95% ಸಮಯಕ್ಕೆ, ಜೊತೆಗೆ ನಕ್ಷೆಗಳು.">
+        </div>
+        <figcaption class="shot-caption">ಸಹಜವಾಗಿ ತಿಳಿ, ಬೇಕಿದ್ದರೆ ಗಾಢ — ಇಡೀ ಡ್ಯಾಶ್‌ಬೋರ್ಡಿಗೆ ಎರಡೂ ಇವೆ.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ಇತಿಹಾಸ ಮತ್ತು ಕ್ಯಾಲೆಂಡರ್</span>
+        <h3>ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ತನ್ನದೇ ದಾಖಲೆ ಉಳಿಯುತ್ತದೆ</h3>
+        <p>ವ್ಯಕ್ತಿ ಮತ್ತು ದಿನಾಂಕದ ಪ್ರಕಾರ ಇತಿಹಾಸ ಶೋಧಿಸಿದರೆ ಪ್ರತಿ ಸಾಲಿನಲ್ಲೂ ಸ್ಪಂದನೆಯ ಸಮಯ ಮತ್ತು ಕೆಲಸದ ಸಮಯ ಸಿಗುತ್ತವೆ, ಕೆಳಗೆ ವ್ಯಕ್ತಿವಾರು ಒಟ್ಟುಗಳು, ಮತ್ತು ಪರದೆಯ ಮೇಲಿರುವುದನ್ನೇ ನಿಖರವಾಗಿ ಕೊಡುವ CSV ರಫ್ತು — ನಿಮ್ಮ ಲೆಕ್ಕಿಗರಿಗೋ ಗ್ರಾಹಕರಿಗೋ ನಿಜವಾಗಿ ಬೇಕಾದದ್ದು ಅದೇ.</p>
+        <ul class="check-list">
+          <li><strong>ಎಲ್ಲಿಯಾದರೂ ಯಾವುದೇ ಕೆಲಸದ ಶೀರ್ಷಿಕೆಯನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ,</strong> ಅದರ ಪೂರ್ಣ ಕಾಲಸರಣಿ ತೆರೆಯುತ್ತದೆ.</li>
+          <li><strong>ಕ್ಯಾಲೆಂಡರ್</strong> ತಿಂಗಳನ್ನು ಬಣ್ಣದ ಗಾಢತೆಯಿಂದ ತೋರಿಸುತ್ತದೆ, ಹಾಗಾಗಿ ನಿಧಾನದ ವಾರ ಒಂದೇ ನೋಟಕ್ಕೆ ಗೊತ್ತಾಗುತ್ತದೆ.</li>
+          <li><strong>ಮುಗಿದ ಕೆಲಸವನ್ನು ಮತ್ತೆ ತೆರೆಯಿರಿ</strong> — ಅದು ಮರಳಿ ಬಂದರೆ ನೇರವಾಗಿ ಅದೇ ಸಾಲಿನಿಂದಲೇ.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="ಕ್ಯಾಲೆಂಡರ್ ಟ್ಯಾಬ್: ಬಣ್ಣದ ಗಾಢತೆ ಕೊಟ್ಟ ಒಂದು ತಿಂಗಳು, ಪಕ್ಕದಲ್ಲಿ ಮುಗಿದ ಕೆಲಸಗಳ ಪಟ್ಟಿ, ಹೊಸ ದಿನ ಮೇಲೆ.">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ಏನಾದರೂ ಕೆಟ್ಟಾಗ</span>
+      <h2>ಕಚೇರಿಗಾಗಿ ಕಟ್ಟಿದ್ದು, ಡೆಮೊಗಾಗಿ ಅಲ್ಲ.</h2>
+      <p class="lede">ಸಣ್ಣ ಕಚೇರಿಗಳಿಗೆ ಕೆಟ್ಟ ಮಧ್ಯಾಹ್ನಗಳು ಬರುತ್ತವೆ. ರೂಟರ್ ರೀಬೂಟ್ ಆಗುತ್ತದೆ, ಬ್ರಾಡ್‌ಬ್ಯಾಂಡ್ ನಿಲ್ಲುತ್ತದೆ, ಯಾರೋ ತಪ್ಪು PC ಆಫ್ ಮಾಡುತ್ತಾರೆ. ಇವುಗಳಲ್ಲಿ ಪ್ರತಿಯೊಂದನ್ನೂ ಮೊದಲೇ ಯೋಚಿಸಿ ರೂಪಿಸಲಾಗಿದೆ, ಆಮೇಲೆ ಕಂಡುಕೊಂಡದ್ದಲ್ಲ.</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>ನೆಟ್‌ವರ್ಕ್ ಹೋಗುತ್ತದೆ.</strong> ಮುಗಿದವು ಮತ್ತು ಟಿಪ್ಪಣಿಗಳು PC ಯದೇ ಔಟ್‌ಬಾಕ್ಸಿಗೆ ಹೋಗಿ, ಸರ್ವರ್ ಮರಳಿದಾಗ ತಲುಪುತ್ತವೆ — ಪ್ರತಿಯೊಂದೂ ತನ್ನ ಮೂಲ ಕ್ಲಿಕ್ ಸಮಯದೊಂದಿಗೆ, ಅಂದರೆ ಮೂರು ಗಂಟೆಯ ತೊಂದರೆಯಲ್ಲಿ 10:35ಕ್ಕೆ ಮುಗಿದ ಕೆಲಸ 13:35 ಅಲ್ಲ, 10:35ಕ್ಕೇ ದಾಖಲಾಗುತ್ತದೆ.</li>
+          <li><strong>ಏನಾದರೂ ಎರಡು ಬಾರಿ ಹೋಗುತ್ತದೆ.</strong> ಪ್ರತಿ ಕ್ರಿಯೆಯೊಂದಿಗೂ ಸರ್ವರ್ ಗುರುತಿಸುವ ಒಂದು ಅನನ್ಯ id ಹೋಗುತ್ತದೆ, ಹಾಗಾಗಿ ಸಂಪರ್ಕ ತುಂಡಾದ ಮೇಲೆ ಮತ್ತೆ ಕಳುಹಿಸಿದರೂ ಒಂದು ಕೆಲಸ ಎರಡು ಬಾರಿ ಲೆಕ್ಕವಾಗಲಾರದು.</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>ಸರ್ವರ್ PC ಯ IP ಬದಲಾಗುತ್ತದೆ.</strong> ಪಟ್ಟಿ ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕಿನಲ್ಲಿ ಕೇಳುತ್ತದೆ, ಸರ್ವರ್ ತನ್ನ ಹೊಸ ವಿಳಾಸದೊಂದಿಗೆ ಉತ್ತರಿಸುತ್ತದೆ. ನಿಮ್ಮ ರೂಟರ್ ಬ್ರಾಡ್‌ಕಾಸ್ಟ್ ತಡೆದರೆ — ಮೆಶ್ ಮತ್ತು ISP ರೂಟರುಗಳಲ್ಲಿ ಸಾಮಾನ್ಯ — ಅದು ನೆಟ್‌ವರ್ಕನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡುತ್ತದೆ.</li>
+          <li><strong>ಏನೂ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ, ಕಾರಣ ಯಾರಿಗೂ ಗೊತ್ತಿಲ್ಲ.</strong> ಒಳಗೇ ಇರುವ ಒಂದು ಪರಿಶೀಲನೆ ಸಾಮಾನ್ಯ ಎಂಟು ಕಾರಣಗಳ ಮೂಲಕ ಸಾಗುತ್ತದೆ — ಫೈರ್‌ವಾಲ್, Wi-Fi ಪ್ರತ್ಯೇಕತೆ, VPN, ತಪ್ಪು ವಿಳಾಸ — ಮತ್ತು ಸರಳ ಮಾತಿನಲ್ಲಿ ಯಾವುದು ಕಾರಣ ಎಂದು ಹೇಳುತ್ತದೆ.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ಇದು ಹೇಗೆ ಜೋಡಣೆಯಾಗುತ್ತದೆ</span>
+      <h2>ಎರಡು ಪ್ರೋಗ್ರಾಂ, ಒಂದು ನೆಟ್‌ವರ್ಕ್, ಕ್ಲೌಡ್ ಇಲ್ಲ.</h2>
+      <p class="lede">ಇಡೀ ವ್ಯವಸ್ಥೆ ಎಂದರೆ ವ್ಯವಸ್ಥಾಪಕರ PC ಮೇಲೆ ಒಂದು ಪ್ರೋಗ್ರಾಂ ಮತ್ತು ಪ್ರತಿ ನೌಕರರ PC ಮೇಲೆ ಒಂದು ಸಣ್ಣ ಪ್ರೋಗ್ರಾಂ. ಅವು ಪರಸ್ಪರ ಕಚೇರಿ ನೆಟ್‌ವರ್ಕಿನಲ್ಲಿ ಮಾತನಾಡುತ್ತವೆ, ಬೇರೆಲ್ಲೂ ಅಲ್ಲ.</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue ರಚನೆ</title>
+        <desc id="diagram-desc">ವ್ಯವಸ್ಥಾಪಕರ PC ಮೇಲೆ WorkQueue ಸರ್ವರ್ ಓಡುತ್ತದೆ, ಅದರಲ್ಲಿ ಒಂದು SQLite ದತ್ತಸಂಚಯ ಮತ್ತು ಬ್ರೌಸರಿನಲ್ಲಿ ತೆರೆಯುವ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಇವೆ. ಪ್ರತಿ ನೌಕರರ PC ಮೇಲೆ WorkQueue ಬಾರ್ ಓಡುತ್ತದೆ, ಅದು ಸರ್ವರ್ ಜೊತೆ ಪೋರ್ಟ್ 8420ರಲ್ಲಿ HTTP ಮೂಲಕ ಮಾತನಾಡುತ್ತದೆ ಮತ್ತು ಪೋರ್ಟ್ 8421ರಲ್ಲಿ UDP ಬ್ರಾಡ್‌ಕಾಸ್ಟ್ ಮೂಲಕ ಅದನ್ನು ಹುಡುಕುತ್ತದೆ. ಎಲ್ಲವೂ ಕಚೇರಿ ನೆಟ್‌ವರ್ಕಿನ ಒಳಗೇ ಉಳಿಯುತ್ತದೆ.</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">ವ್ಯವಸ್ಥಾಪಕರ PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">ಒಂದು SQLite ದತ್ತಸಂಚಯ ಕಡತ</text>
+        <text class="dg-s" x="38" y="182">ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಬ್ರೌಸರಿನಲ್ಲಿ ತೆರೆಯುತ್ತದೆ</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">ನೌಕರರ PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px ಪಟ್ಟಿ</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">ನೌಕರರ PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px ಪಟ್ಟಿ</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">ನೌಕರರ PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px ಪಟ್ಟಿ</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 ಸರ್ವರನ್ನು ಹುಡುಕುತ್ತದೆ</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">ಮೇಲಿನದೆಲ್ಲವೂ ನಿಮ್ಮ ಕಚೇರಿ ನೆಟ್‌ವರ್ಕಿನ ಒಳಗೇ ಉಳಿಯುತ್ತದೆ</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>ಕಚೇರಿಯಿಂದ ಹೊರಗೇ?</h3><p>WorkQueue ಖಾಸಗಿ ನೆಟ್‌ವರ್ಕ್‌ಗೆ (Tailscale) ಸೇರಬಲ್ಲದು, ಆಗ ಮನೆಯ ಲ್ಯಾಪ್‌ಟಾಪ್ ಅಥವಾ ಎರಡನೇ ಶಾಖೆ ಅದೇ ಸರ್ವರನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಆದ ರೀತಿಯಲ್ಲಿ ತಲುಪುತ್ತದೆ, ಸಾರ್ವಜನಿಕ ಇಂಟರ್ನೆಟ್ಟಿನಲ್ಲಿ ಏನನ್ನೂ ಇಡುವುದಿಲ್ಲ. ಅಳವಡಿಕೆಯಲ್ಲಿ ಇದು ಒಂದು ಹೆಚ್ಚುವರಿ ಹೆಜ್ಜೆ, ಪರವಾನಗಿಯಲ್ಲೇ ಸೇರಿದೆ.</p></div>
+      <div class="card"><h3>ಬ್ಯಾಕಪ್ ಎಂದರೆ ಒಂದೇ ಕಡತ</h3><p>ವ್ಯವಸ್ಥೆಗೆ ಗೊತ್ತಿರುವುದೆಲ್ಲ ಒಂದೇ ದತ್ತಸಂಚಯ. ಸರ್ವರ್ ಓಡುತ್ತಿರುವಾಗಲೇ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಅದನ್ನು ರಫ್ತು ಮಾಡುತ್ತದೆ — ಚೆಕ್‌ಸಮ್ ಸಹಿತ ಪೂರ್ಣ ಸ್ನ್ಯಾಪ್‌ಶಾಟ್, ಅಥವಾ ದತ್ತಸಂಚಯದ ತದ್ವತ್ ಪ್ರತಿ. ಅದನ್ನು ಆ PC ಯಿಂದ ದೂರ ಇಡಿ, ನೀವು ಸುರಕ್ಷಿತ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ಒಂದು ಒಳ್ಳೆಯ ಸಂಗತಿ</span>
+      <h2>ಇದು ಒಂದು ಸಣ್ಣ ಸಂಭ್ರಮವನ್ನೂ ಮಾಡಬಲ್ಲದು.</h2>
+      <p class="lede">ಕೆಲಸದ ಬದಲು ಒಂದು ಕಾರ್ಡ್ ಕಳುಹಿಸಿ — ಹುಟ್ಟುಹಬ್ಬ, ಕೆಲಸದ ವಾರ್ಷಿಕೋತ್ಸವ, ಒಂದು ಗೆಲುವು, ಒಂದು ಸ್ವಾಗತ. ಆ ವ್ಯಕ್ತಿಯ ಪಟ್ಟಿಯ ಮೇಲೆ ಬಲೂನುಗಳು ತೇಲುತ್ತವೆ, ಬೇಕಿದ್ದರೆ ಫಲಕದಲ್ಲಿ ಒಂದು ನಿಮಿಷದ ಆಟವೂ ಇದೆ. ಕಾರ್ಡ್ ಎಂದೂ ಇತಿಹಾಸಕ್ಕೆ, ಅನಾಲಿಟಿಕ್ಸ್‌ಗೆ, ಯಾರ ಕೆಲಸದ ಸಮಯಕ್ಕೂ ಸೇರುವುದಿಲ್ಲ. ಅದು ಕೆಲಸವಲ್ಲ, ಒಂದು ದಿನದ ನಂತರ ತಾನೇ ಸರಿದುಹೋಗುತ್ತದೆ.</p>
+      <p class="small muted">ಕಣ್ಗಾವಲು ತಂತ್ರಾಂಶಕ್ಕೆ ಒಂದು ಕುಖ್ಯಾತಿ ಇದೆ, ಮತ್ತು ನಿಮ್ಮ ತಂಡ ಬೇಸರಿಸುವ ಸಾಧನ ಸದ್ದಿಲ್ಲದೆ ಬಳಕೆಯಾಗುವುದು ನಿಂತುಹೋಗುತ್ತದೆ — ಅದಕ್ಕೇ ಇದನ್ನು ಪ್ರಸ್ತಾಪಿಸುತ್ತೇವೆ.</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">ವಿವರಗಳು</span>
+      <h2>ಓಡಿಸಲು ಏನೇನು ಬೇಕು</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>ವ್ಯವಸ್ಥಾಪಕರ PC</dt><dd>Windows 10 ಅಥವಾ 11, ಕೆಲಸದ ಗಂಟೆಗಳಲ್ಲಿ ಚಾಲೂ ಇರಬೇಕು. ಪ್ರತ್ಯೇಕ ಸರ್ವರ್ ಬೇಡ, ವಿಶೇಷ ಯಂತ್ರಾಂಶವೂ ಬೇಡ. ಅಳವಡಿಕೆಗೆ ಒಮ್ಮೆ ಅಡ್ಮಿನ್ ಹಕ್ಕು ಬೇಕು.</dd></div>
+      <div><dt>ನೌಕರರ PC ಗಳು</dt><dd>Windows 10 ಅಥವಾ 11. ಅಡ್ಮಿನ್ ಹಕ್ಕು ಬೇಡ — ಪಟ್ಟಿ ಲಾಗಿನ್ ಆದ ಬಳಕೆದಾರರಿಗಾಗಿ ಅಳವಡುತ್ತದೆ.</dd></div>
+      <div><dt>ನೆಟ್‌ವರ್ಕ್</dt><dd>ಎಲ್ಲ PC ಗಳೂ ಒಂದೇ ಕಚೇರಿ ನೆಟ್‌ವರ್ಕಿನಲ್ಲಿ, ತಂತಿ ಅಥವಾ Wi-Fi ಮೂಲಕ. ಅವುಗಳ ನಡುವೆ TCP ಪೋರ್ಟ್ 8420 ಮತ್ತು UDP ಪೋರ್ಟ್ 8421 ತೆರೆದಿರಬೇಕು — ಇನ್‌ಸ್ಟಾಲರ್ ಫೈರ್‌ವಾಲನ್ನು ತಾನೇ ತೆರೆಯುತ್ತದೆ.</dd></div>
+      <div><dt>ಇಂಟರ್ನೆಟ್</dt><dd>ಬೇಕಿಲ್ಲ. ಕಚೇರಿ ಹೊರಗಿನವರಿಗೆ ರಿಮೋಟ್ ಪ್ರವೇಶ ಚಾಲೂ ಮಾಡಿದರೆ ಮಾತ್ರ ಬೇಕು.</dd></div>
+      <div><dt>ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</dt><dd>ನೆಟ್‌ವರ್ಕಿನ ಯಾವುದೇ ಸಾಧನದಲ್ಲಿ ಯಾವುದೇ ಆಧುನಿಕ ಬ್ರೌಸರ್, ಫೋನ್ ಅಥವಾ ಟ್ಯಾಬ್ಲೆಟ್ ಸೇರಿದಂತೆ.</dd></div>
+      <div><dt>ಅಳವಡಿಕೆಯ ಸಮಯ</dt><dd>ಸರ್ವರಿಗೆ ಸುಮಾರು ಹತ್ತು ನಿಮಿಷ, ಪ್ರತಿ ನೌಕರರ PC ಗೆ ಒಂದು ನಿಮಿಷಕ್ಕಿಂತ ಕಡಿಮೆ.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">ಮತ್ತು ಇದು ಏನು ಮಾಡುವುದಿಲ್ಲ</h3>
+    <p class="muted">ಎರಡನೇ ತಿಂಗಳಲ್ಲಿ ತಿಳಿಯುವುದಕ್ಕಿಂತ ಈಗಲೇ ಇದನ್ನು ಓದುವುದು ಒಳ್ಳೆಯದೆಂದು ನಮ್ಮ ಭಾವನೆ.</p>
+    <ul class="check-list">
+          <li><strong>ಇದು Windows ಗೆ ಮಾತ್ರ.</strong> Mac ಮತ್ತು Linux ನೌಕರರ ಯಂತ್ರಗಳಿಗೆ ಇನ್ನೂ ಬೆಂಬಲವಿಲ್ಲ.</li>
+          <li><strong>ಜನರನ್ನು ಅವರ PC ಯಿಂದ ಗುರುತಿಸಲಾಗುತ್ತದೆ,</strong> ಲಾಗಿನ್‌ನಿಂದ ಅಲ್ಲ. ನಂಬಿಕೆಯ ಕಚೇರಿ ನೆಟ್‌ವರ್ಕಿಗೆ ಇದು ಸರಿಯಾದ ಒಪ್ಪಂದ, ಆದರೆ ಹಠ ಹಿಡಿದವರು ಬೇರೆ ಯಂತ್ರವೆಂದು ನಟಿಸಬಹುದು ಎಂಬುದೂ ನಿಜ.</li>
+          <li><strong>ಕೆಲಸದ ಸಮಯ ಎಂದರೆ ಗೋಡೆ ಗಡಿಯಾರದ ಸಮಯ.</strong> ಊಟದ ಹೊತ್ತಿನಲ್ಲೂ ಕೆಲಸ ತೆರೆದಿದ್ದರೆ, ಊಟವೂ ಆ ಸಂಖ್ಯೆಯಲ್ಲಿ ಸೇರುತ್ತದೆ. ಇದು ಕಳೆದ ಸಮಯವನ್ನು ಅಳೆಯುತ್ತದೆ, ಶ್ರಮವನ್ನಲ್ಲ.</li>
+          <li><strong>ನೆಟ್‌ವರ್ಕಿನ ಹೊರಗೆ ಸರದಿ ಹಳೆಯದಾಗುತ್ತದೆ.</strong> ಕಚೇರಿಯಿಂದ ದೂರವಿರುವ ಲ್ಯಾಪ್‌ಟಾಪ್ ಮತ್ತೆ ಸೇರುವವರೆಗೆ ಕೊನೆಯದಾಗಿ ಗೊತ್ತಿದ್ದ ಕೆಲಸಗಳನ್ನೇ ತೋರಿಸುತ್ತದೆ — ನೀವು ರಿಮೋಟ್ ಪ್ರವೇಶ ಚಾಲೂ ಮಾಡದಿದ್ದರೆ.</li>
+          <li><strong>ಪಟ್ಟಿ 34 ಪಿಕ್ಸೆಲ್</strong> ಎತ್ತರವನ್ನು ಮುಖ್ಯ ಪರದೆಯ ಮೇಲೆ ಶಾಶ್ವತವಾಗಿ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">ಪ್ರಶ್ನೆಗಳು</span>
+      <h2>ವಿಶೇಷವಾಗಿ WorkQueue ಬಗ್ಗೆ</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>ಇದು ನೌಕರರ ಕಣ್ಗಾವಲೇ? ನನ್ನ ತಂಡಕ್ಕೆ ಇದು ಇಷ್ಟವಾಗದೇ?</summary>
+        <div class="faq-body">
+          <p>ಇದು ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಎರಡನ್ನೇ ದಾಖಲಿಸುತ್ತದೆ: ಅದು ಪರದೆ ತಲುಪಿದ್ದು ಯಾವಾಗ, ಮತ್ತು ಆ ವ್ಯಕ್ತಿ Complete ಒತ್ತಿದ್ದು ಯಾವಾಗ. ಇದು ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ತೆಗೆಯುವುದಿಲ್ಲ, ಕೀಸ್ಟ್ರೋಕ್ ದಾಖಲಿಸುವುದಿಲ್ಲ, ಸುಮ್ಮನಿರುವ ಸಮಯ ಅಳೆಯುವುದಿಲ್ಲ, ಯಾರು ಯಾವ ಜಾಲತಾಣ ನೋಡುತ್ತಾರೆಂದೂ ಗಮನಿಸುವುದಿಲ್ಲ — ಮುಂದೆಯೂ ಮಾಡುವುದಿಲ್ಲ. ಇದು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಎಳೆದ ಗೆರೆ, ಮರೆವಲ್ಲ. ವಾಸ್ತವದಲ್ಲಿ ತಂಡಗಳಿಗೆ ಇದು ಇಷ್ಟವಾಗುತ್ತದೆ, ಏಕೆಂದರೆ &quot;ನಾನು ಗಂಟೆಗಳ ಹಿಂದೆಯೇ ಕಳುಹಿಸಿದ್ದೆ&quot; ಎಂಬ ವಾದ ವಾದವಾಗಿ ಉಳಿಯುವುದಿಲ್ಲ. ಎಲ್ಲರ ಮುಂದೆಯೂ ಒಂದೇ ಸಮಯ ದಾಖಲಾಗಿರುತ್ತದೆ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ಇದು ಎಷ್ಟು ಜನರನ್ನು ನಿಭಾಯಿಸಬಲ್ಲದು?</summary>
+        <div class="faq-body">
+          <p>ಇದು ಒಂದೇ ಕಚೇರಿಗಾಗಿ ಕಟ್ಟಿ, ಭಾರ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ — ಸಾಮಾನ್ಯ ಯಂತ್ರಾಂಶದ ಮೇಲೆ ಒಟ್ಟಿಗೆ ಸುಮಾರು 25 ಯಂತ್ರಗಳು, ಸ್ಪಂದನೆಗಳು ಸೆಕೆಂಡಿನ ಹತ್ತನೇ ಒಂದು ಭಾಗಕ್ಕಿಂತಲೂ ಕಡಿಮೆಯಲ್ಲಿ. ನೀವು ಅದಕ್ಕಿಂತ ದೊಡ್ಡವರಾದರೆ, ಖರೀದಿಸಿದ ಮೇಲಲ್ಲ, ಮೊದಲೇ ಮಾತನಾಡಿ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ವ್ಯವಸ್ಥಾಪಕರ PC ಕೆಟ್ಟರೆ?</summary>
+        <div class="faq-body">
+          <p>ಸರ್ವರನ್ನು ಬೇರೊಂದು PC ಮೇಲೆ ಅಳವಡಿಸಿ, ನಿಮ್ಮ ಕೊನೆಯ ರಫ್ತನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ. ಅದಕ್ಕೇ ಬ್ಯಾಕಪ್ ಒಂದೇ ಕಡತ, ಅದಕ್ಕೇ ಬೇರೆಲ್ಲಾದರೂ ಒಂದು ಪ್ರತಿ ಇಡಿ ಎಂದು ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಪದೇ ಪದೇ ನೆನಪಿಸುತ್ತದೆ. ನೌಕರರ PC ಗಳು ಹೊಸ ಸರ್ವರನ್ನು ತಾವೇ ಹುಡುಕಿಕೊಳ್ಳುತ್ತವೆ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ನನ್ನ ದತ್ತಾಂಶವನ್ನು ಹೊರತೆಗೆಯಬಹುದೇ?</summary>
+        <div class="faq-body">
+          <p>ಬಹುದು, ಯಾವಾಗ ಬೇಕಾದರೂ, ನಮ್ಮನ್ನು ಕೇಳದೆಯೇ. ಇತಿಹಾಸ CSV ಆಗಿ ಬರುತ್ತದೆ, ಇಡೀ ದತ್ತಸಂಚಯ JSON ಸ್ನ್ಯಾಪ್‌ಶಾಟ್ ಆಗಿ ಅಥವಾ ನೇರವಾಗಿ SQLite ಕಡತವಾಗಿ ಬರುತ್ತದೆ. ಲಾಕ್-ಇನ್ ಇಲ್ಲ, ಏಕೆಂದರೆ ನಮ್ಮ ಕಡೆ ಲಾಕ್ ಮಾಡಲು ನಿಮ್ಮದೇನೂ ಇಲ್ಲ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ನಮ್ಮ ಕೆಲಸಗಳು ನಿಮಗೆ ಕಾಣಿಸುತ್ತವೆಯೇ?</summary>
+        <div class="faq-body">
+          <p>ಇಲ್ಲ. ತಂತ್ರಾಂಶ ಎಂದೂ ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುವುದಿಲ್ಲ. ಟೆಲಿಮೆಟ್ರಿ ಇಲ್ಲ, ಪರವಾನಗಿ ಪರಿಶೀಲನೆ ಇಲ್ಲ, ಅನಾಲಿಟಿಕ್ಸ್ ಕರೆ ಇಲ್ಲ. ನಿಮ್ಮ ಕಚೇರಿಯಲ್ಲಿ ಇಂಟರ್ನೆಟ್ಟೇ ಇಲ್ಲದಿದ್ದರೂ WorkQueue ಗಮನಿಸುವುದೂ ಇಲ್ಲ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ಬೆಂಬಲ ಹೇಗಿರುತ್ತದೆ?</summary>
+        <div class="faq-body">
+          <p>ಇಮೇಲ್, ಒಂದು ಕೆಲಸದ ದಿನದೊಳಗೆ ಉತ್ತರ, ಮತ್ತು ಉತ್ತರಿಸುವವರು ತಂತ್ರಾಂಶ ಬರೆದವರೇ. ಪರವಾನಗಿಯಲ್ಲಿ ಒಂದು ವರ್ಷದ ಬೆಂಬಲ ಮತ್ತು ಒಂದು ವರ್ಷದ ನವೀಕರಣಗಳು ಸೇರಿವೆ.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 ದಿನ ನಿಮ್ಮದೇ ತಂಡದ ಮೇಲೆ ಹಾಕಿ ನೋಡಿ.</h2>
+    <p class="lede">ಪೂರ್ಣ ಸಾಧನ, ಏನನ್ನೂ ತಡೆದಿಲ್ಲ, ರದ್ದು ಮಾಡಲೂ ಏನೂ ಇಲ್ಲ. ಸುಮಾರು ಎಷ್ಟು PC ಎಂದು ಹೇಳಿ — ಇನ್‌ಸ್ಟಾಲರ್ ಕಳುಹಿಸಿ, ಅಳವಡಿಸುವವರೆಗೆ ಕರೆಯಲ್ಲಿ ಇರುತ್ತೇವೆ.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/kn/contact?about=trial">ಟ್ರಯಲ್ ಕೇಳಿ</a>
+      <a class="btn btn-ghost btn-lg" href="/kn/pricing">ಬೆಲೆ ನೋಡಿ</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/kn/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>ಸಣ್ಣ ವ್ಯಾಪಾರಗಳಿಗಾಗಿ ಸಣ್ಣ Windows ಸಾಧನಗಳು. ಮುಂಬೈನಲ್ಲಿ, ಭಾರತದಲ್ಲಿ ತಯಾರಾದವು — ಒಮ್ಮೆ ಖರೀದಿಸಿ, ನಿಮ್ಮದೇ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ ಓಡಿಸಿ.</p>
+      </div>
+      <div class="footer-col">
+        <h4>ಸಾಧನಗಳು</h4>
+        <ul>
+          <li><a href="/kn/workqueue">WorkQueue</a></li>
+          <li><a href="/kn/workqueue#requirements">ಏನೇನು ಬೇಕು</a></li>
+          <li><a href="/kn/contact?about=roadmap">ಮುಂದೇನು</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ಖರೀದಿ</h4>
+        <ul>
+          <li><a href="/kn/pricing">ಬೆಲೆ</a></li>
+          <li><a href="/kn/contact?about=trial">ಉಚಿತ ಟ್ರಯಲ್</a></li>
+          <li><a href="/kn/contact?about=setup">ಅಳವಡಿಕೆಗೆ ನೆರವು</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ಸಂಪರ್ಕ</h4>
+        <ul>
+          <li><a href="/kn/india">ಪ್ರತಿ ರಾಜ್ಯ</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="ನಮಸ್ಕಾರ, ನಾನು Quietworks ಜಾಲತಾಣವನ್ನು ನೋಡಿದೆ, ಇನ್ನಷ್ಟು ತಿಳಿಯಬೇಕಿದೆ." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. ಎಲ್ಲ ಹಕ್ಕುಗಳೂ ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</span>
+      <span>ಮುಂಬೈನಲ್ಲಿ ತಯಾರಾದದ್ದು</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -10,3 +10,7 @@ desktop.ini
 _mobiletest.html
 chrome-profile*/
 *.local.*
+
+# Python bytecode from the tools/ scripts
+__pycache__/
+*.pyc

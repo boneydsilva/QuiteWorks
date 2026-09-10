@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — নিজের নেটওয়ার্কে কাজ ভাগ করুন আর সময় মাপুন</title>
+<meta name="description" content="WorkQueue আপনার দলকে কাজ দেয় তাঁদের পর্দার উপরে বসানো ৩৪-পিক্সেল স্ট্রিপ থেকে, প্রতিটি কাজের সময় নিজে থেকেই মাপে, আর তার রিপোর্ট বানায়। আপনার নিজের Windows PC-তে চলে। গোটা কোম্পানির জন্য একবারের টাকা।">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="bn_IN">
+<meta property="og:title" content="WorkQueue — নিজের নেটওয়ার্কে কাজ ভাগ করুন আর সময় মাপুন">
+<meta property="og:description" content="WorkQueue আপনার দলকে কাজ দেয় তাঁদের পর্দার উপরে বসানো ৩৪-পিক্সেল স্ট্রিপ থেকে, প্রতিটি কাজের সময় নিজে থেকেই মাপে, আর তার রিপোর্ট বানায়। আপনার নিজের Windows PC-তে চলে। গোটা কোম্পানির জন্য একবারের টাকা।">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/bn/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/bn/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/bn/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"এটি কি কর্মী নজরদারি? আমার দল কি এটা অপছন্দ করবে?","acceptedAnswer":{"@type":"Answer","text":"এটি প্রতিটি কাজের দুটি জিনিসই নথিভুক্ত করে: সেটি পর্দায় কখন পৌঁছল আর মানুষটি Complete কখন চাপলেন। এটি স্ক্রিনশট নেয় না, কীস্ট্রোক রাখে না, অলস সময় মাপে না, কে কোন ওয়েবসাইট খুলছে তাও দেখে না — আর কখনও করবেও না। এটি ইচ্ছাকৃত একটি সীমারেখা, অবহেলা নয়। বাস্তবে দলগুলির এটি পছন্দই হয়, কারণ \"আমি তো ঘণ্টাখানেক আগেই পাঠিয়েছিলাম\" ধরনের তর্ক আর তর্ক থাকে না। সবার সামনে একই সময় নথিভুক্ত।"}},{"@type":"Question","name":"এটি কতজনকে সামলাতে পারে?","acceptedAnswer":{"@type":"Answer","text":"এটি একটি অফিসের জন্য বানানো আর পরীক্ষিত — সাধারণ হার্ডওয়্যারে একসঙ্গে প্রায় ২৫টি মেশিন, আর সাড়া সেকেন্ডের দশ ভাগের এক ভাগেরও কম সময়ে। আপনি তার চেয়ে বড় হলে, কেনার পরে নয়, আগেই কথা বলুন।"}},{"@type":"Question","name":"ম্যানেজারের PC নষ্ট হয়ে গেলে?","acceptedAnswer":{"@type":"Answer","text":"সার্ভার অন্য একটি PC-তে বসান আর আপনার শেষ রপ্তানিটি আমদানি করুন। এই জন্যই ব্যাকআপ একটিই ফাইল আর এই জন্যই ড্যাশবোর্ড আপনাকে অন্য কোথাও একটি নকল রাখার কথা বারবার মনে করায়। কর্মীদের PC নতুন সার্ভার নিজেরাই খুঁজে নেয়।"}},{"@type":"Question","name":"আমি কি আমার তথ্য বার করে নিতে পারি?","acceptedAnswer":{"@type":"Answer","text":"হ্যাঁ, যেকোনও সময়ে আর আমাদের না জিজ্ঞেস করেই। ইতিহাস CSV-তে যায়, আর গোটা ডেটাবেস JSON স্ন্যাপশট হিসেবে বা সরাসরি SQLite ফাইল হিসেবেই বেরিয়ে আসে। কোনও লক-ইন নেই, কারণ আমাদের দিকে আপনার এমন কিছুই নেই যা আটকানো যায়।"}},{"@type":"Question","name":"আপনারা কি আমাদের কাজ দেখতে পান?","acceptedAnswer":{"@type":"Answer","text":"না। সফটওয়্যারটি কখনও আমাদের সঙ্গে যোগাযোগ করে না। কোনও টেলিমেট্রি নেই, লাইসেন্স যাচাই নেই, অ্যানালিটিক্স কল নেই। আপনার অফিসে ইন্টারনেট একেবারেই না থাকলেও WorkQueue টেরই পাবে না।"}},{"@type":"Question","name":"সহায়তা কেমন হয়?","acceptedAnswer":{"@type":"Answer","text":"ইমেল, এক কর্মদিবসের মধ্যে উত্তর, আর উত্তর দেন তিনিই যিনি সফটওয়্যারটি লিখেছেন। লাইসেন্সে এক বছরের সহায়তা আর এক বছরের আপডেট ধরা আছে।"}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">মূল বিষয়ে যান</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/bn/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/bn/">হোম</a>
+        <a href="/bn/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/bn/pricing">দাম</a>
+        <a href="/bn/india">সারা ভারতে</a>
+        <a href="/bn/contact">যোগাযোগ</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="ভাষা">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">বাংলা</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">আপনার ভাষা বেছে নিন</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn" aria-current="true"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">পুরো সাইটটি এর প্রতিটি ভাষায় লেখা — যন্ত্রে অনুবাদ করা নয়।</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="থিম বদলান">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/bn/contact?about=trial">ট্রায়াল শুরু করুন</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="মেনু">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>কাজ ভাগ করুন। ঠিক কত সময় লাগল, জানুন।</h1>
+        <p class="lede">ম্যানেজার ব্রাউজার থেকে কাজ দেন। প্রতিটি কর্মী নিজের সারি দেখেন পর্দার উপরে বসানো একটি সরু স্ট্রিপে। দুটি সময়ই আপনার হয়ে নিজে থেকে নথিভুক্ত হয়, তাই লোকে শুধু কাজ করে গেলেই রিপোর্ট আপনা থেকেই তৈরি হয়।</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/bn/contact?about=trial">ট্রায়াল চান</a>
+          <a class="btn btn-ghost btn-lg" href="/bn/pricing">দাম দেখুন</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 আর 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> কোনও ক্লাউড অ্যাকাউন্ট নয়</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> একটি লাইসেন্সে সীমাহীন PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue বোর্ড, উপরে কাজ লেখার জায়গা আর তিনটি কলাম: অপেক্ষায়, চলছে, এবং আজ শেষ হয়েছে।" fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">দেওয়ার জন্য একটি সারি। দেখার জন্য তিনটি কলাম।</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">কর্মীর দিক</span>
+      <h2>৩৪ পিক্সেল। আপনার কর্মীদের এটুকুই শিখতে হবে।</h2>
+      <p class="lede">স্ট্রিপটি Windows-এ টাস্কবারের মতোই বসে, তাই Windows তার জন্য জায়গা রেখে দেয় এবং পূর্ণ করা উইন্ডোগুলি তার নীচেই থেমে যায়। এটি কারও কাজ ঢাকতে পারে না, আর একে কেউ ঢাকতেও পারে না।</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="১৯২০ পিক্সেল পর্দার উপরে গোটা স্ট্রিপ: বাঁ দিকে কর্মীর নাম আর চলতি কাজ, ডান দিকে প্রতিটি চলতি কাজের জন্য একটি চিপ, আর মাঝে অনেকটা ফাঁকা জায়গা।">
+      <figcaption class="shot-caption">১৯২০ পিক্সেল পর্দায় গোটা স্ট্রিপ। পর্দার মোটামুটি এইটুকুই নেয় — সেটাই তো কথা। নীচের দুটি কাছ থেকে তোলা ছবি সেই একই স্ট্রিপের, আসল মাপে।</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="কর্মীর স্ট্রিপের বাঁ প্রান্ত: সবুজ সংযুক্ত বিন্দু, নাম আশা রাও, তারপর একটি লাল হীরে আর কাজের শিরোনাম — সেপ্টেম্বরের চালান মিলিয়ে নিন।">
+        </div>
+        <figcaption class="shot-caption"><strong>বাঁ প্রান্ত।</strong> সার্ভারের সঙ্গে যোগ থাকা পর্যন্ত একটি সবুজ বিন্দু, তাঁদের নাম, আর তাঁরা যে কাজটি করছেন। লাল হীরের মানে — জরুরি।</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="কর্মীর স্ট্রিপের ডান প্রান্ত: রঙে চেনা যায় এমন তিনটি চিপ, প্রতিটি চলতি কাজের জন্য একটি, আর একটি ছোট মেনু তির।">
+        </div>
+        <figcaption class="shot-caption"><strong>ডান প্রান্ত।</strong> প্রতিটি চলতি কাজের জন্য একটি চিপ, অগ্রাধিকারের রঙে। একটিতে ক্লিক করলেই সেটিতে চলে যাওয়া যায়; কাঠামোটি সেই রং নেয়।</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="স্ট্রিপ থেকে খোলা প্যানেল: বাঁ দিকে চলতি কাজ, তার বিবরণ আর দেওয়ার সময়, তার নীচে একটি বড় Mark completed বোতাম, আর ডান দিকে কর্মীর তিনটি কাজ, প্রতিটির নিজের Complete বোতাম সহ।">
+      </div>
+      <figcaption class="shot-caption center">কোনও কাজে ক্লিক করলে এটি খোলে। কাজ শেষ করার জন্য একটি বড় বোতাম, অ্যাডমিনকে প্রশ্ন করার জন্য একটি ঘর, আর বাকি প্রতিটি কাজ এক ক্লিক দূরে।</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>কোনও Accept বোতাম নেই</h3><p>কাজ তাঁদের মেশিনে পৌঁছনোমাত্রই &quot;পেয়েছি&quot; হিসেবে নথিভুক্ত হয়। কাজ পাওয়ার কথা জানাতে কেউ ভুলতে পারে না, আর &quot;দেওয়া হয়েছে&quot; থেকে &quot;তাঁদের পর্দায়&quot; পর্যন্ত ফাঁকটা এমন একটি সংখ্যা হয়ে ওঠে যা আপনি সত্যিই সামলাতে পারেন।</p></div>
+      <div class="card reveal"><h3>শেষ করার জন্য একটি বোতাম</h3><p>কোনও কাজে ক্লিক করলে প্যানেল খোলে: বিবরণ, কোনও মন্তব্য, আর একটি বড় Complete বোতাম যা ভুল করে যাতে না হয়ে যায় সেজন্য দ্বিতীয়বার ক্লিক চায়।</p></div>
+      <div class="card reveal"><h3>তাঁরাও বলতে পারেন</h3><p>একজন কর্মী কোনও কাজে মন্তব্য রেখে যেতে পারেন — একটি প্রশ্ন, একটি বাধা, বা যা পেলেন তার একটি নোট। আপনি সেটি দেখেন আর ড্যাশবোর্ডে সেই কাজ থেকেই উত্তর দেন।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">বোর্ড</span>
+        <h3>এক সারিতে কাজ দিন, তারপর দিনটাকে এগোতে দেখুন</h3>
+        <p>একটি শিরোনাম, সেই মানুষটির যে বিবরণ দরকার, অগ্রাধিকার, সময়সীমা, কার কাছে যাবে, আর Assign। একই কাজ একজনকে পাঠান বা ছ'জনকে।</p>
+        <ul class="check-list">
+          <li><strong>তিনটি চলমান কলাম</strong> — অপেক্ষায়, চলছে, আর আজ শেষ হয়েছে, ব্যক্তি অনুযায়ী সাজানো।</li>
+          <li><strong>কাউকে না থামিয়েই কাজ করুন</strong> — কার্ডের উপর কার্সর নিলেই Done, Cancel, Reopen আর Delete দেখা যায়।</li>
+          <li><strong>কাজ এদিক-ওদিক করুন</strong> — কাজ খুলুন আর অন্য কাউকে দিয়ে দিন।</li>
+          <li><strong>জরুরি জিনিস জরুরিই দেখায়</strong> — অগ্রাধিকার কার্ড আর কর্মীর স্ট্রিপের কাঠামো রাঙিয়ে দেয়।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="বোর্ড, যাতে পাঁচটি কাজ অপেক্ষায়, তিনটি চলছে আর বারোটি আজ শেষ হয়েছে।">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">অ্যানালিটিক্স</span>
+        <h3>একজন ম্যানেজার আসলে যে প্রশ্নগুলি করেন</h3>
+        <p>সাতটি প্রধান সংখ্যা আর দশটি চার্ট, সবই একটি ছাঁকনি সারি দিয়ে চলে। প্রতিটি চার্টের সঙ্গে তার টেবিলও আছে, যাতে বারের দিকে চোখ কুঁচকে না তাকিয়ে আপনি সংখ্যাই পড়তে পারেন।</p>
+        <ul class="check-list">
+          <li><strong>কতটা কাজ হল</strong> — দেওয়া কাজের তুলনায় শেষ হওয়া কাজ, প্রতিদিন।</li>
+          <li><strong>কাজে কত সময় লাগে</strong> — প্রতি কাজে গড় আর মধ্যক, আর ওই সময়ের সবচেয়ে দীর্ঘ কাজগুলি।</li>
+          <li><strong>কাজ কত তাড়াতাড়ি তোলা হয়</strong> — দৈনিক আর প্রতি ব্যক্তির সাড়া দেওয়ার সময়।</li>
+          <li><strong>কে কতটা টানছেন</strong> — প্রতি কর্মীর সংখ্যা, ঘণ্টা, সাড়া আর সময়মতো শেষ করার হার।</li>
+          <li><strong>আপনার দল কখন ব্যস্ত থাকে</strong> — দিনের ঘণ্টা আর সপ্তাহের দিন অনুযায়ী।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="অ্যানালিটিক্স: ১৬৪টি শেষ, ৭ দিন ৭ ঘণ্টা কাজের সময়, প্রতি কাজে গড় ১ ঘণ্টা ৪ মিনিট, গড় সাড়া ২১ মিনিট, ৯৫% সময়মতো, সঙ্গে চার্ট।">
+        </div>
+        <figcaption class="shot-caption">সাধারণভাবে হালকা, চাইলে গাঢ় — গোটা ড্যাশবোর্ডে দুটোই আছে।</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ইতিহাস আর ক্যালেন্ডার</span>
+        <h3>প্রতিটি কাজের নিজের নথি থেকে যায়</h3>
+        <p>ব্যক্তি আর তারিখ ধরে ইতিহাস ছেঁকে নিন, প্রতিটি সারিতে সাড়া দেওয়ার সময় আর কাজের সময় পাবেন, নীচে প্রতিটি ব্যক্তির মোট, আর একটি CSV রপ্তানি যা পর্দায় যা আছে ঠিক তাই দেয় — আপনার হিসাবরক্ষক বা ক্লায়েন্টের আসলে যা দরকার।</p>
+        <ul class="check-list">
+          <li><strong>যেকোনও জায়গায় যেকোনও কাজের শিরোনামে ক্লিক করুন,</strong> আর তার পুরো সময়রেখা খুলে যায়।</li>
+          <li><strong>ক্যালেন্ডার</strong> মাসটিকে রঙের গাঢ়ত্বে দেখায়, তাই মন্দ সপ্তাহ এক নজরেই ধরা পড়ে।</li>
+          <li><strong>শেষ হওয়া কাজ আবার খুলুন</strong> — ফিরে এলে সরাসরি সেই সারি থেকেই।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="ক্যালেন্ডার ট্যাব: রঙের ছায়া দেওয়া একটি মাস, পাশে শেষ হওয়া কাজের তালিকা, নতুন দিন সবার উপরে।">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">যখন কিছু গোলমাল হয়</span>
+      <h2>একটি অফিসের জন্য বানানো, ডেমোর জন্য নয়।</h2>
+      <p class="lede">ছোট অফিসে খারাপ দুপুর আসে। রাউটার রিবুট হয়, ব্রডব্যান্ড বসে যায়, কেউ ভুল PC বন্ধ করে দেয়। এর প্রতিটির কথা আগে থেকেই ভাবা হয়েছে, পরে টের পাওয়া যায়নি।</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>নেটওয়ার্ক চলে যায়।</strong> শেষ হওয়া কাজ আর মন্তব্য PC-রই আউটবক্সে যায় আর সার্ভার ফিরলেই পৌঁছে যায় — প্রতিটি তার আসল ক্লিকের সময় নিয়ে, অর্থাৎ তিন ঘণ্টার বিভ্রাটে ১০:৩৫-এ শেষ হওয়া কাজ ১০:৩৫-এই নথিভুক্ত থাকে, ১৩:৩৫-এ নয়।</li>
+          <li><strong>কিছু দু'বার চলে যায়।</strong> প্রতিটি কাজের সঙ্গে এমন একটি অনন্য id যায় যা সার্ভার চেনে, তাই সংযোগ কেটে যাওয়ার পরে আবার পাঠালেও কোনও কাজ দু'বার গোনা হতে পারে না।</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>সার্ভার PC-র IP বদলে যায়।</strong> স্ট্রিপটি স্থানীয় নেটওয়ার্কে জিজ্ঞেস করে আর সার্ভার তার নতুন ঠিকানা নিয়ে উত্তর দেয়। আপনার রাউটার ব্রডকাস্ট আটকালে — মেশ আর ISP রাউটারে যা সাধারণ — সেটি গোটা নেটওয়ার্ক স্ক্যান করে নেয়।</li>
+          <li><strong>কিছুই চলছে না আর কারণ কেউ জানে না।</strong> ভিতরেই থাকা একটি পরীক্ষা আটটি চেনা কারণ ধরে এগোয় — ফায়ারওয়াল, Wi-Fi আইসোলেশন, VPN, ভুল ঠিকানা — আর সহজ ভাষায় বলে দেয় কারণটি কোনটি।</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">এটি কীভাবে জোড়া</span>
+      <h2>দুটি প্রোগ্রাম, একটি নেটওয়ার্ক, ক্লাউড নেই।</h2>
+      <p class="lede">গোটা ব্যবস্থাটি হল ম্যানেজারের PC-তে একটি প্রোগ্রাম আর প্রতিটি কর্মীর PC-তে একটি ছোট প্রোগ্রাম। তারা নিজেদের মধ্যে অফিসের নেটওয়ার্কে কথা বলে, আর কোথাও নয়।</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue-এর গঠন</title>
+        <desc id="diagram-desc">ম্যানেজারের PC-তে WorkQueue সার্ভার চলে, যাতে একটি SQLite ডেটাবেস আর ব্রাউজারে খোলা ড্যাশবোর্ড আছে। প্রতিটি কর্মীর PC-তে WorkQueue বার চলে, যা সার্ভারের সঙ্গে পোর্ট ৮৪২০-তে HTTP দিয়ে কথা বলে আর তাকে পোর্ট ৮৪২১-এ UDP ব্রডকাস্ট দিয়ে খুঁজে নেয়। সবকিছু অফিসের নেটওয়ার্কের ভিতরেই থাকে।</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">ম্যানেজারের PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">একটি SQLite ডেটাবেস ফাইল</text>
+        <text class="dg-s" x="38" y="182">ড্যাশবোর্ড ব্রাউজারে খোলে</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">কর্মীর PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · ৩৪px স্ট্রিপ</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">কর্মীর PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · ৩৪px স্ট্রিপ</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">কর্মীর PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · ৩৪px স্ট্রিপ</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 সার্ভার খুঁজে নেয়</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">উপরের সবকিছুই আপনার অফিসের নেটওয়ার্কের ভিতরে থাকে</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>অফিসের বাইরে?</h3><p>WorkQueue একটি ব্যক্তিগত নেটওয়ার্কে (Tailscale) যুক্ত হতে পারে, যাতে বাড়ির ল্যাপটপ বা দ্বিতীয় শাখা একই সার্ভারে এনক্রিপ্টেড ভাবে পৌঁছয় আর প্রকাশ্য ইন্টারনেটে কিছুই রাখা না হয়। সেটআপে এটি একটি বাড়তি ধাপ আর লাইসেন্সের মধ্যেই ধরা।</p></div>
+      <div class="card"><h3>ব্যাকআপ মানে একটিই ফাইল</h3><p>ব্যবস্থাটি যা কিছু জানে তা একটিই ডেটাবেস। সার্ভার চলতে চলতেই ড্যাশবোর্ড সেটি রপ্তানি করে — হয় চেকসাম সহ পূর্ণ স্ন্যাপশট, নয় ডেটাবেসের হুবহু নকল। সেটি ওই PC থেকে সরিয়ে রাখুন, আপনি নিরাপদ।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">একটি ভাল ব্যাপার</span>
+      <h2>এটি ছোট একটা আনন্দও করতে পারে।</h2>
+      <p class="lede">কাজের বদলে একটি কার্ড পাঠান — জন্মদিন, চাকরির বর্ষপূর্তি, কোনও জয়, কারও স্বাগত। সেই মানুষটির স্ট্রিপে বেলুন ভেসে যায়, আর চাইলে প্যানেলে এক মিনিটের একটি খেলাও আছে। কার্ড কখনও ইতিহাসে, অ্যানালিটিক্সে বা কারও কাজের সময়ে ঢোকে না। সেটি কাজ নয়, আর একদিন পরে নিজে থেকেই সরে যায়।</p>
+      <p class="small muted">আমরা এর কথা বলি কারণ নজরদারির সফটওয়্যারের একটা বদনাম আছে, আর যে সরঞ্জামের উপর আপনার দল বিরক্ত, সেটি চুপচাপ ব্যবহার হওয়া বন্ধ হয়ে যায়।</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">খুঁটিনাটি</span>
+      <h2>চালাতে কী কী লাগে</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>ম্যানেজারের PC</dt><dd>Windows 10 বা 11, কাজের সময়ে চালু রাখা। আলাদা সার্ভার নয়, বিশেষ হার্ডওয়্যারও নয়। বসানোর জন্য একবার অ্যাডমিন অধিকার লাগে।</dd></div>
+      <div><dt>কর্মীদের PC</dt><dd>Windows 10 বা 11। অ্যাডমিন অধিকার লাগে না — স্ট্রিপ লগ-ইন করা ব্যবহারকারীর জন্য বসে।</dd></div>
+      <div><dt>নেটওয়ার্ক</dt><dd>সব PC একই অফিস নেটওয়ার্কে, তার দিয়ে বা Wi-Fi দিয়ে। তাদের মধ্যে TCP পোর্ট ৮৪২০ আর UDP পোর্ট ৮৪২১ খোলা থাকতে হবে — ইনস্টলার ফায়ারওয়াল নিজেই খুলে দেয়।</dd></div>
+      <div><dt>ইন্টারনেট</dt><dd>দরকার নেই। শুধু অফিসের বাইরের লোকেদের জন্য রিমোট অ্যাক্সেস চালু করলে লাগে।</dd></div>
+      <div><dt>ড্যাশবোর্ড</dt><dd>নেটওয়ার্কের যেকোনও যন্ত্রে যেকোনও আধুনিক ব্রাউজার, ফোন বা ট্যাবলেট সহ।</dd></div>
+      <div><dt>বসাতে সময়</dt><dd>সার্ভারের জন্য প্রায় দশ মিনিট আর প্রতিটি কর্মী PC-র জন্য এক মিনিটেরও কম।</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">আর এটি যা করে না</h3>
+    <p class="muted">দ্বিতীয় মাসে টের পাওয়ার চেয়ে আপনি এটি এখনই পড়ে নিন, আমরা সেটাই চাই।</p>
+    <ul class="check-list">
+          <li><strong>এটি শুধু Windows-এর জন্য।</strong> Mac আর Linux-এর কর্মী মেশিন এখনও সমর্থিত নয়।</li>
+          <li><strong>লোকেদের চেনা হয় তাঁদের PC দিয়ে,</strong> কোনও লগইন দিয়ে নয়। বিশ্বাসের অফিস নেটওয়ার্কের জন্য এটাই ঠিক আপস, তবে এর মানে কেউ জেদ করলে অন্য মেশিনের ভান করতে পারে।</li>
+          <li><strong>কাজের সময় মানে দেওয়াল-ঘড়ির সময়।</strong> খাওয়ার সময়েও কাজ খোলা থাকলে খাওয়াটাও ওই সংখ্যায় ঢোকে। এটি কেটে যাওয়া সময় মাপে, পরিশ্রম নয়।</li>
+          <li><strong>নেটওয়ার্কের বাইরে সারিটি পুরনো হয়ে যায়।</strong> অফিস থেকে দূরের ল্যাপটপে আবার যুক্ত না হওয়া পর্যন্ত শেষ জানা কাজগুলিই দেখা যায় — যদি না আপনি রিমোট অ্যাক্সেস চালু করেন।</li>
+          <li><strong>স্ট্রিপটি ৩৪ পিক্সেল</strong> উচ্চতা মূল মনিটরে চিরকালের জন্য নেয়।</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">প্রশ্ন</span>
+      <h2>বিশেষ করে WorkQueue নিয়ে</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>এটি কি কর্মী নজরদারি? আমার দল কি এটা অপছন্দ করবে?</summary>
+        <div class="faq-body">
+          <p>এটি প্রতিটি কাজের দুটি জিনিসই নথিভুক্ত করে: সেটি পর্দায় কখন পৌঁছল আর মানুষটি Complete কখন চাপলেন। এটি স্ক্রিনশট নেয় না, কীস্ট্রোক রাখে না, অলস সময় মাপে না, কে কোন ওয়েবসাইট খুলছে তাও দেখে না — আর কখনও করবেও না। এটি ইচ্ছাকৃত একটি সীমারেখা, অবহেলা নয়। বাস্তবে দলগুলির এটি পছন্দই হয়, কারণ &quot;আমি তো ঘণ্টাখানেক আগেই পাঠিয়েছিলাম&quot; ধরনের তর্ক আর তর্ক থাকে না। সবার সামনে একই সময় নথিভুক্ত।</p>
+        </div>
+      </details>
+      <details>
+        <summary>এটি কতজনকে সামলাতে পারে?</summary>
+        <div class="faq-body">
+          <p>এটি একটি অফিসের জন্য বানানো আর পরীক্ষিত — সাধারণ হার্ডওয়্যারে একসঙ্গে প্রায় ২৫টি মেশিন, আর সাড়া সেকেন্ডের দশ ভাগের এক ভাগেরও কম সময়ে। আপনি তার চেয়ে বড় হলে, কেনার পরে নয়, আগেই কথা বলুন।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ম্যানেজারের PC নষ্ট হয়ে গেলে?</summary>
+        <div class="faq-body">
+          <p>সার্ভার অন্য একটি PC-তে বসান আর আপনার শেষ রপ্তানিটি আমদানি করুন। এই জন্যই ব্যাকআপ একটিই ফাইল আর এই জন্যই ড্যাশবোর্ড আপনাকে অন্য কোথাও একটি নকল রাখার কথা বারবার মনে করায়। কর্মীদের PC নতুন সার্ভার নিজেরাই খুঁজে নেয়।</p>
+        </div>
+      </details>
+      <details>
+        <summary>আমি কি আমার তথ্য বার করে নিতে পারি?</summary>
+        <div class="faq-body">
+          <p>হ্যাঁ, যেকোনও সময়ে আর আমাদের না জিজ্ঞেস করেই। ইতিহাস CSV-তে যায়, আর গোটা ডেটাবেস JSON স্ন্যাপশট হিসেবে বা সরাসরি SQLite ফাইল হিসেবেই বেরিয়ে আসে। কোনও লক-ইন নেই, কারণ আমাদের দিকে আপনার এমন কিছুই নেই যা আটকানো যায়।</p>
+        </div>
+      </details>
+      <details>
+        <summary>আপনারা কি আমাদের কাজ দেখতে পান?</summary>
+        <div class="faq-body">
+          <p>না। সফটওয়্যারটি কখনও আমাদের সঙ্গে যোগাযোগ করে না। কোনও টেলিমেট্রি নেই, লাইসেন্স যাচাই নেই, অ্যানালিটিক্স কল নেই। আপনার অফিসে ইন্টারনেট একেবারেই না থাকলেও WorkQueue টেরই পাবে না।</p>
+        </div>
+      </details>
+      <details>
+        <summary>সহায়তা কেমন হয়?</summary>
+        <div class="faq-body">
+          <p>ইমেল, এক কর্মদিবসের মধ্যে উত্তর, আর উত্তর দেন তিনিই যিনি সফটওয়্যারটি লিখেছেন। লাইসেন্সে এক বছরের সহায়তা আর এক বছরের আপডেট ধরা আছে।</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>৩০ দিন নিজের দলের উপরেই লাগিয়ে দেখুন।</h2>
+    <p class="lede">পুরো সরঞ্জাম, কিছুই আটকে রাখা নেই আর বাতিল করারও কিছু নেই। মোটামুটি কতগুলি PC আছে জানান — আমরা ইনস্টলার পাঠাব আর সেটআপ হওয়া পর্যন্ত কলে থাকব।</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/bn/contact?about=trial">ট্রায়াল চান</a>
+      <a class="btn btn-ghost btn-lg" href="/bn/pricing">দাম দেখুন</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/bn/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>ছোট ব্যবসার জন্য ছোট Windows সরঞ্জাম। মুম্বই, ভারতে তৈরি — একবার কিনুন, নিজের নেটওয়ার্কে চালান।</p>
+      </div>
+      <div class="footer-col">
+        <h4>সরঞ্জাম</h4>
+        <ul>
+          <li><a href="/bn/workqueue">WorkQueue</a></li>
+          <li><a href="/bn/workqueue#requirements">কী কী লাগে</a></li>
+          <li><a href="/bn/contact?about=roadmap">পরে কী আসছে</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>কেনাকাটা</h4>
+        <ul>
+          <li><a href="/bn/pricing">দাম</a></li>
+          <li><a href="/bn/contact?about=trial">বিনামূল্যে ট্রায়াল</a></li>
+          <li><a href="/bn/contact?about=setup">সেটআপে সাহায্য</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><a href="/bn/india">প্রতিটি রাজ্য</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="নমস্কার, আমি Quietworks-এর ওয়েবসাইট দেখেছি এবং আরও জানতে চাই।" href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>মুম্বইয়ে তৈরি</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

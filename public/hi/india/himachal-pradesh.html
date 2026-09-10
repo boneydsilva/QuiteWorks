@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>हिमाचल प्रदेश में WorkQueue — अपने ही दफ़्तर के नेटवर्क पर काम प्रबंधन</title>
+<meta name="description" content="हिमाचल प्रदेश की टीमों के लिए — शिमला, बद्दी, सोलन, धर्मशाला, मंडी — काम बाँटिए और उसका समय अपने आप गिनिए। आपके अपने Windows PC पर चलता है, न क्लाउड, न मासिक शुल्क। पूरी कंपनी के लिए एक बार ₹14,999। 30 दिन का मुफ़्त ट्रायल।">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/hi/india/himachal-pradesh">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/himachal-pradesh">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/himachal-pradesh">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/himachal-pradesh">
+<meta name="geo.region" content="IN-HP">
+<meta name="geo.placename" content="Himachal Pradesh">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:title" content="हिमाचल प्रदेश में WorkQueue — अपने ही दफ़्तर के नेटवर्क पर काम प्रबंधन">
+<meta property="og:description" content="हिमाचल प्रदेश की टीमों के लिए — शिमला, बद्दी, सोलन, धर्मशाला, मंडी — काम बाँटिए और उसका समय अपने आप गिनिए। आपके अपने Windows PC पर चलता है, न क्लाउड, न मासिक शुल्क। पूरी कंपनी के लिए एक बार ₹14,999। 30 दिन का मुफ़्त ट्रायल।">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/hi/india/himachal-pradesh">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"हिमाचल प्रदेश में WorkQueue — अपने ही दफ़्तर के नेटवर्क पर काम प्रबंधन","url":"https://boneydsilva.com/hi/india/himachal-pradesh","about":{"@type":"AdministrativeArea","name":"Himachal Pradesh","identifier":"IN-HP","containedInPlace":{"@type":"Country","name":"India"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://boneydsilva.com/hi/"},{"@type":"ListItem","position":2,"name":"पूरे भारत में","item":"https://boneydsilva.com/hi/india"},{"@type":"ListItem","position":3,"name":"हिमाचल प्रदेश","item":"https://boneydsilva.com/hi/india/himachal-pradesh"}]},{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/hi/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/hi/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}},"areaServed":{"@type":"AdministrativeArea","name":"Himachal Pradesh","identifier":"IN-HP"}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/hi/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/hi/">होम</a>
+        <a href="/hi/workqueue">WorkQueue</a>
+        <a href="/hi/pricing">कीमत</a>
+        <a href="/hi/india" aria-current="page">पूरे भारत में</a>
+        <a href="/hi/contact">संपर्क</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="भाषा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">हिन्दी</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">अपनी भाषा चुनें</p>
+          <ul>
+          <li><a href="/india/himachal-pradesh" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/india/himachal-pradesh" hreflang="hi-IN" lang="hi" data-lang="hi" aria-current="true"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/india" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/india" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/india" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/india" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/india" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/india" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/india" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/india" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/india" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/india" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">पूरी साइट इनमें से हर भाषा में लिखी गई है — मशीन से अनुवाद नहीं की गई।</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="थीम बदलें">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/hi/contact?about=trial">ट्रायल शुरू करें</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="मेन्यू">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/hi/">होम</a>
+      <span aria-hidden="true">/</span>
+      <a href="/hi/india">पूरे भारत में</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">हिमाचल प्रदेश</span>
+    </nav>
+    <div class="wrap-narrow" style="padding:0">
+      <span class="eyebrow">हिमाचल प्रदेश</span>
+      <h1 style="max-width:none">हिमाचल प्रदेश की टीमों के लिए काम प्रबंधन — आपके अपने नेटवर्क पर।</h1>
+      <p class="lede">आप शिमला में हों या किसी छोटे शहर में, WorkQueue उन्हीं Windows PC पर चलता है जो पहले से आपके दफ़्तर में हैं। काम ब्राउज़र से निकलता है, हर व्यक्ति की स्क्रीन के ऊपर लगी स्ट्रिप पर पहुँचता है, और अपना समय ख़ुद गिनता है। इसमें कहीं इंटरनेट की ज़रूरत नहीं है, और कुछ भी इमारत से बाहर नहीं जाता।</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="/hi/contact?about=trial">ट्रायल माँगिए</a>
+        <a class="btn btn-ghost btn-lg" href="/hi/workqueue">WorkQueue देखिए</a>
+      </div>
+      <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> एक बार का भुगतान, कोई सब्सक्रिप्शन नहीं</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> आपका डेटा दफ़्तर से बाहर नहीं जाता</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 और 11</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>हिमाचल प्रदेश के कारोबारों के लिए</h2>
+      <p class="lede">हमसे बात करते हैं बद्दी के आसपास की दवा इकाइयाँ, होटल और ट्रैवल ऑपरेटर, सेब पैकिंग और कोल्ड स्टोरेज कारोबार — यानी वे जगहें जहाँ काम फ़ोन, WhatsApp और फ़्लोर पर आवाज़ लगाकर बाँटा जाता है, और बाद में कोई नहीं बता पाता कि किस काम में कितना समय लगा। WorkQueue ठीक यही खाई भरता है।</p>
+    </div>
+
+    <h3 class="group-head">यहाँ काम आता है</h3>
+    <div class="chip-row"><span class="chip chip-plain">शिमला</span><span class="chip chip-plain">बद्दी</span><span class="chip chip-plain">सोलन</span><span class="chip chip-plain">धर्मशाला</span><span class="chip chip-plain">मंडी</span></div>
+    <p class="small muted" style="margin-top:14px">हिमाचल प्रदेश में हर जगह WorkQueue एक ही तरह इस्तेमाल होता है — वह आपके अपने नेटवर्क पर चलता है, इसलिए न कोई क्षेत्रीय सेटअप है, न कोई डेटा सेंटर चुनना है, और न हेड ऑफ़िस और ब्रांच में कोई फ़र्क़।</p>
+    
+    <div class="callout" style="margin-top:36px">
+      <h3 style="margin-top:0">आसानी हो तो हिन्दी में</h3>
+      <p>यह पेज और बाक़ी पूरी साइट अंग्रेज़ी के साथ-साथ हिन्दी में भी लिखी गई है। किसी भी संस्करण में कुछ भी रोका नहीं गया है।</p>
+      <a class="btn btn-ghost" href="/india/himachal-pradesh">यह पेज अंग्रेज़ी में पढ़िए</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <h2>हिमाचल प्रदेश के लिए काम की बातें</h2>
+    </div>
+    <ul class="check-list">
+          <li><strong>बिजली और ब्रॉडबैंड।</strong> सर्वर वाला PC काम के घंटों में चालू रहना चाहिए; एक छोटा UPS काफ़ी है। इंटरनेट पूरे दिन बंद रहे तो भी दफ़्तर में किसी को पता नहीं चलेगा।</li>
+          <li><strong>ख़रीदना।</strong> एक बार ₹14,999, UPI, बैंक ट्रांसफ़र या कार्ड से, और आपके कारोबार के नाम पर GST इनवॉइस। कोई नवीनीकरण नहीं जो देना ही पड़े।</li>
+          <li><strong>चालू करना।</strong> हिमाचल प्रदेश में कहीं से भी, कॉल पर रिमोट इंस्टॉल — सर्वर के लिए क़रीब दस मिनट और हर कर्मचारी PC के लिए एक मिनट से कम। ख़ुद न करना चाहें तो सेटअप में मदद उपलब्ध है।</li>
+          <li><strong>सपोर्ट।</strong> ईमेल, एक कार्यदिवस के भीतर (IST) जवाब, और जवाब देने वाला वही है जिसने सॉफ़्टवेयर लिखा है। हिन्दी में पूछिए या अंग्रेज़ी में।</li>
+        </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wrap-narrow center">
+    <h2>भारत में कहीं और?</h2>
+    <p class="lede">हर राज्य और केंद्र शासित प्रदेश के लिए एक पेज है।</p>
+    <a class="btn btn-ghost" href="/hi/india">सब देखिए</a>
+  </div>
+</section>
+
+<section class="band cta-band">
+  <div class="wrap">
+    <h2>हिमाचल प्रदेश में अपने ही दफ़्तर में, 30 दिन मुफ़्त आज़माइए।</h2>
+    <p class="lede">पूरा टूल, कुछ भी रोका नहीं गया और रद्द करने को कुछ नहीं। हमें मोटे तौर पर बता दीजिए कि कितने PC हैं — हम इंस्टॉलर भेजेंगे और सेटअप के दौरान कॉल पर बने रहेंगे।</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/hi/contact?about=trial">ट्रायल माँगिए</a>
+      <a class="btn btn-ghost btn-lg" href="/hi/pricing">कीमत देखिए</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/hi/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>छोटे कारोबारों के लिए छोटे Windows टूल। मुंबई, भारत में बने — एक बार खरीदिए, अपने ही नेटवर्क पर चलाइए।</p>
+      </div>
+      <div class="footer-col">
+        <h4>टूल</h4>
+        <ul>
+          <li><a href="/hi/workqueue">WorkQueue</a></li>
+          <li><a href="/hi/workqueue#requirements">क्या-क्या चाहिए</a></li>
+          <li><a href="/hi/contact?about=roadmap">आगे क्या आ रहा है</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>खरीदारी</h4>
+        <ul>
+          <li><a href="/hi/pricing">कीमत</a></li>
+          <li><a href="/hi/contact?about=trial">मुफ़्त ट्रायल</a></li>
+          <li><a href="/hi/contact?about=setup">सेटअप में मदद</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>संपर्क</h4>
+        <ul>
+          <li><a href="/hi/india">हर राज्य</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="नमस्ते, मैंने Quietworks की वेबसाइट देखी और इसके बारे में और जानना चाहता/चाहती हूँ।" href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. सर्वाधिकार सुरक्षित।</span>
+      <span>मुंबई में बना</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

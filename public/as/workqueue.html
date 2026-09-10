@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="as">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — নিজৰ নেটৱৰ্কত কাম ভগাওক আৰু সময় গণক</title>
+<meta name="description" content="WorkQueue এ আপোনাৰ দলক কাম সিহঁতৰ পৰ্দাৰ ওপৰত থকা 34-পিক্সেল পটিৰ জৰিয়তে দিয়ে, প্ৰতিটো কামৰ সময় নিজেই গণে, আৰু তাৰ প্ৰতিবেদন বনায়। আপোনাৰ নিজৰ Windows PC ত চলে। গোটেই কোম্পানীৰ বাবে এবাৰৰ পৰিশোধ।">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="as_IN">
+<meta property="og:title" content="WorkQueue — নিজৰ নেটৱৰ্কত কাম ভগাওক আৰু সময় গণক">
+<meta property="og:description" content="WorkQueue এ আপোনাৰ দলক কাম সিহঁতৰ পৰ্দাৰ ওপৰত থকা 34-পিক্সেল পটিৰ জৰিয়তে দিয়ে, প্ৰতিটো কামৰ সময় নিজেই গণে, আৰু তাৰ প্ৰতিবেদন বনায়। আপোনাৰ নিজৰ Windows PC ত চলে। গোটেই কোম্পানীৰ বাবে এবাৰৰ পৰিশোধ।">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/as/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/as/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/as/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"এইটো কৰ্মচাৰী নিৰীক্ষণনে? মোৰ দলে ইয়াক বেয়া পাবনে?","acceptedAnswer":{"@type":"Answer","text":"ই প্ৰতিটো কামৰ দুটাহে কথা লিপিবদ্ধ কৰে: সেয়া পৰ্দাত কেতিয়া পালেগৈ আৰু সেই মানুহজনে Complete কেতিয়া টিপিলে। ই স্ক্ৰীনশ্বট নলয়, কীষ্ট্ৰোক লিপিবদ্ধ নকৰে, খালী সময় নগণে, কোনে কোনটো ৱেবছাইট খুলিছে সেয়াও নাচায় — আৰু আগলৈও নকৰিব। এইটো ইচ্ছাকৃতভাৱে টনা এডাল ৰেখা, অৱহেলা নহয়। প্ৰকৃততে দলবোৰে ইয়াক ভাল পায়, কাৰণ \"মই তো ঘণ্টাৰ আগতেই পঠিয়াই দিছিলোঁ\" বুলি বাদানুবাদ বাদানুবাদ হৈ নাথাকে। সকলোৰে আগত একেটা সময় লিপিবদ্ধ আছে।"}},{"@type":"Question","name":"ই কিমান মানুহক চম্ভালিব পাৰে?","acceptedAnswer":{"@type":"Answer","text":"ই এটা কাৰ্যালয়ৰ বাবে বনোৱা আৰু পৰীক্ষিত — সাধাৰণ হাৰ্ডৱেৰত একেলগে প্ৰায় 25 টা মেচিন, আৰু সঁহাৰি ছেকেণ্ডৰ দহভাগৰ এভাগতকৈয়ো কমত। আপুনি তাতকৈ ডাঙৰ হ'লে, কিনাৰ পিছত নহয়, আগতেই কথা পাতক।"}},{"@type":"Question","name":"মেনেজাৰৰ PC নষ্ট হ'লে?","acceptedAnswer":{"@type":"Answer","text":"ছাৰ্ভাৰ আন এটা PC ত ইনষ্টল কৰক আৰু আপোনাৰ শেষৰ ৰপ্তানি আমদানি কৰি লওক। সেইবাবেই বেকআপ এটাই ফাইল আৰু সেইবাবেই ডেশ্ববৰ্ডে আপোনাক বাৰে বাৰে আন ক'ৰবাত এটা নকল ৰাখিবলৈ কয়। কৰ্মচাৰীৰ PC বোৰে নতুন ছাৰ্ভাৰ নিজেই বিচাৰি লয়।"}},{"@type":"Question","name":"মই মোৰ তথ্য বাহিৰ কৰিব পাৰিমনে?","acceptedAnswer":{"@type":"Answer","text":"পাৰিব, যিকোনো সময়তে আৰু আমাক নুসুধাকৈয়ে। ইতিহাস CSV ত ওলায়, আৰু গোটেই ডাটাবেছ JSON স্নেপশ্বট হিচাপে বা পোনে পোনে SQLite ফাইল হিচাপে ওলাই আহে। কোনো লক-ইন নাই, কাৰণ আমাৰ ফালে আপোনাৰ এনেকুৱা একো নাই যাক ৰখাব পাৰি।"}},{"@type":"Question","name":"আপোনালোকে আমাৰ কাম চাব পাৰেনে?","acceptedAnswer":{"@type":"Answer","text":"নাই। চফ্টৱেৰে কেতিয়াও আমাৰ সৈতে যোগাযোগ নকৰে। কোনো টেলিমেট্ৰি নাই, লাইচেন্স পৰীক্ষা নাই, এনালিটিক্স কল নাই। আপোনাৰ কাৰ্যালয়ত ইণ্টাৰনেট নাথাকিলেও WorkQueue এ গমেই নাপাব।"}},{"@type":"Question","name":"সহায় কেনেকুৱা হয়?","acceptedAnswer":{"@type":"Answer","text":"ইমেইল, এটা কামৰ দিনৰ ভিতৰত উত্তৰ, আৰু উত্তৰ দিওঁতাজন সেইজনেই যিয়ে চফ্টৱেৰটো লিখিছে। লাইচেন্সত এবছৰৰ সহায় আৰু এবছৰৰ আপডেট অন্তৰ্ভুক্ত।"}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">মূল বিষয়বস্তুলৈ যাওক</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/as/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/as/">ঘৰ</a>
+        <a href="/as/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/as/pricing">দাম</a>
+        <a href="/as/india">সমগ্ৰ ভাৰতত</a>
+        <a href="/as/contact">যোগাযোগ</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="ভাষা">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">অসমীয়া</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">আপোনাৰ ভাষা বাছনি কৰক</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as" aria-current="true"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">গোটেই ছাইটখন এই প্ৰতিটো ভাষাতে লিখা হৈছে — যন্ত্ৰেৰে অনুবাদ কৰা নহয়।</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="থীম সলনি কৰক">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/as/contact?about=trial">ট্ৰায়েল আৰম্ভ কৰক</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="মেনু">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>কাম ভগাওক। ঠিক কিমান সময় লাগিল জানক।</h1>
+        <p class="lede">মেনেজাৰে ব্ৰাউজাৰৰ পৰা দিয়ে। প্ৰতিজন কৰ্মচাৰীয়ে নিজৰ শাৰী পৰ্দাৰ ওপৰত লগোৱা পাতল পটিত দেখে। দুয়োটা সময় আপোনাৰ বাবে নিজেই লিপিবদ্ধ হৈ যায়, গতিকে মানুহে কেৱল কাম কৰি থাকিলেও প্ৰতিবেদন নিজেই তৈয়াৰ হৈ যায়।</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/as/contact?about=trial">ট্ৰায়েল বিচাৰক</a>
+          <a class="btn btn-ghost btn-lg" href="/as/pricing">দাম চাওক</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 আৰু 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> কোনো ক্লাউড একাউণ্ট নাই</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> এটা লাইচেন্সত অসীম PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue বৰ্ড, ওপৰত কাম লিখাৰ ঠাই আৰু তিনিটা স্তম্ভ: অপেক্ষাত, চলি আছে, আৰু আজি শেষ হৈছে।" fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">দিবলৈ এটা শাৰী। চাবলৈ তিনিটা স্তম্ভ।</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">কৰ্মচাৰীৰ ফাল</span>
+      <h2>34 পিক্সেল। আপোনাৰ কৰ্মচাৰীয়ে ইমানেই শিকিব লাগিব।</h2>
+      <p class="lede">টাস্কবাৰৰ দৰেই পটিটোও Windows ত বহে, গতিকে Windows এ তাৰ বাবে ঠাই ৰাখি দিয়ে আৰু ডাঙৰ কৰা উইণ্ড'বোৰ তাৰ তলতেই ৰৈ যায়। ই কাৰো কাম ঢাকিব নোৱাৰে, আৰু ইয়াক কোনেও ঢাকিব নোৱাৰে।</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 পিক্সেল পৰ্দাৰ ওপৰত গোটেই পটি: বাওঁফালে কৰ্মচাৰীৰ নাম আৰু বৰ্তমানৰ কাম, সোঁফালে খোল খাই থকা প্ৰতিটো কামৰ বাবে এটা চিপ, আৰু মাজত বহুত খালী ঠাই।">
+      <figcaption class="shot-caption">1920 পিক্সেল পৰ্দাত গোটেই পটি। পৰ্দাৰ প্ৰায় ইমান অংশহে লয় — সেইটোৱেই তো কথা। তলৰ দুখন ওচৰৰ পৰা লোৱা ছবি সেই পটিটোৰেই, প্ৰকৃত আকাৰত।</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="কৰ্মচাৰীৰ পটিৰ বাওঁফালৰ মূৰ: সেউজীয়া সংযোগ বিন্দু, আশা ৰাও নাম, তাৰ পিছত ৰঙা হীৰা আৰু কামৰ শিৰোনাম — চেপ্টেম্বৰৰ ইনভইচ মিলাওক।">
+        </div>
+        <figcaption class="shot-caption"><strong>বাওঁমূৰ।</strong> ছাৰ্ভাৰৰ সৈতে সংযোগ থকালৈকে এটা সেউজীয়া বিন্দু, সিহঁতৰ নাম, আৰু সিহঁতে কৰি থকা কাম। ৰঙা হীৰাৰ অৰ্থ — জৰুৰী।</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="কৰ্মচাৰীৰ পটিৰ সোঁফালৰ মূৰ: ৰঙেৰে চিনি পোৱা তিনিটা চিপ, খোল খাই থকা প্ৰতিটো কামৰ বাবে এটা, আৰু এটা সৰু মেনু কাঁড়।">
+        </div>
+        <figcaption class="shot-caption"><strong>সোঁমূৰ।</strong> খোল খাই থকা প্ৰতিটো কামৰ বাবে এটা চিপ, অগ্ৰাধিকাৰৰ ৰঙত। এটাত ক্লিক কৰিলে তালৈ যাব পাৰি; ফ্ৰেমটোৱে সেই ৰঙেই লয়।</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="পটিৰ পৰা খোলা পেনেল: বাওঁফালে বৰ্তমানৰ কাম, তাৰ বিৱৰণ আৰু দিয়াৰ সময়, তলত এটা ডাঙৰ Mark completed বুটাম, আৰু সোঁফালে কৰ্মচাৰীৰ তিনিটা কাম, প্ৰতিটোৰে নিজৰ Complete বুটামৰ সৈতে।">
+      </div>
+      <figcaption class="shot-caption center">কোনো কামত ক্লিক কৰিলে এইটো খোল খায়। কাম শেষ কৰিবলৈ এটা ডাঙৰ বুটাম, এডমিনক প্ৰশ্ন সুধিবলৈ এটা বাকচ, আৰু বাকী প্ৰতিটো কাম এটা ক্লিক দূৰত।</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Accept বুটাম নাইয়েই</h3><p>কাম সিহঁতৰ মেচিনত পোৱাৰ লগে লগে &quot;পালোঁ&quot; বুলি লিপিবদ্ধ হৈ যায়। কাম পোৱাৰ খবৰ দিবলৈ কোনেও পাহৰিব নোৱাৰে, আৰু &quot;দিয়া হ'ল&quot; ৰ পৰা &quot;সিহঁতৰ পৰ্দাত&quot; ৰ মাজৰ ব্যৱধানটো এনেকুৱা এটা সংখ্যা হৈ পৰে যিটো আপুনি প্ৰকৃততে চম্ভালিব পাৰে।</p></div>
+      <div class="card reveal"><h3>শেষ কৰিবলৈ এটা বুটাম</h3><p>কোনো কামত ক্লিক কৰিলে পেনেল খোল খায়: বিৱৰণ, কোনো মন্তব্য, আৰু এটা ডাঙৰ Complete বুটাম যিয়ে ভুলতে নহ'বলৈ দ্বিতীয়বাৰ ক্লিক বিচাৰে।</p></div>
+      <div class="card reveal"><h3>সিহঁতেও উত্তৰ দিব পাৰে</h3><p>এজন কৰ্মচাৰীয়ে কোনো কামত মন্তব্য এৰি থৈ যাব পাৰে — এটা প্ৰশ্ন, এটা বাধা, বা যি পালে তাৰ এটা টোকা। আপুনি সেয়া দেখে আৰু ডেশ্ববৰ্ডত সেই কামৰ পৰাই উত্তৰ দিয়ে।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">বৰ্ড</span>
+        <h3>এটা শাৰীত দিয়ক, তাৰ পিছত দিনটো আগবাঢ়ি যোৱা চাওক</h3>
+        <p>এটা শিৰোনাম, সেই মানুহজনৰ লাগিবলগীয়া বিৱৰণ, অগ্ৰাধিকাৰ, সময়সীমা, কাক যাব, আৰু Assign। একেটা কাম এজনক পঠিয়াওক বা ছয়জনক।</p>
+        <ul class="check-list">
+          <li><strong>তিনিটা চলি থকা স্তম্ভ</strong> — অপেক্ষাত, চলি আছে, আৰু আজি শেষ হৈছে, মানুহ অনুসৰি।</li>
+          <li><strong>কাকো নাটকাই কাম কৰক</strong> — কাৰ্ডৰ ওপৰত কাৰ্ছাৰ নিলেই Done, Cancel, Reopen আৰু Delete দেখা যায়।</li>
+          <li><strong>কাম ইফালে-সিফালে কৰক</strong> — কাম খোলক আৰু আন কাৰোবাক দি দিয়ক।</li>
+          <li><strong>জৰুৰী কাম জৰুৰীকৈয়ে দেখা যায়</strong> — অগ্ৰাধিকাৰে কাৰ্ড আৰু কৰ্মচাৰীৰ পটিৰ ফ্ৰেম ৰঙাই দিয়ে।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="বৰ্ড, য'ত পাঁচটা কাম অপেক্ষাত, তিনিটা চলি আছে আৰু বাৰটা আজি শেষ হৈছে।">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">এনালিটিক্স</span>
+        <h3>এজন মেনেজাৰে প্ৰকৃততে যিবোৰ প্ৰশ্ন সোধে</h3>
+        <p>সাতটা মুখ্য সংখ্যা আৰু দহটা চাৰ্ট, সকলোবোৰ এটা ফিল্টাৰ শাৰীৰ পৰাই চলে। প্ৰতিটো চাৰ্টৰ লগত তাৰ তালিকাও আছে, যাতে আপুনি স্তম্ভবোৰলৈ চকু সৰু কৰি চোৱাৰ সলনি সংখ্যাবোৰেই পঢ়িব পাৰে।</p>
+        <ul class="check-list">
+          <li><strong>কিমান কাম হ'ল</strong> — দিয়া কামৰ তুলনাত শেষ হোৱা, দৈনিক।</li>
+          <li><strong>কামত কিমান সময় লাগে</strong> — প্ৰতিটো কামত গড় আৰু মধ্যমান, আৰু সেই সময়ছোৱাৰ আটাইতকৈ দীঘল কামবোৰ।</li>
+          <li><strong>কাম কিমান সোনকালে তোলা হয়</strong> — দৈনিক আৰু প্ৰতিজন মানুহৰ সঁহাৰিৰ সময়।</li>
+          <li><strong>কোনে কিমান বৈছে</strong> — প্ৰতিজন কৰ্মচাৰীৰ সংখ্যা, ঘণ্টা, সঁহাৰি আৰু সময়মতে শেষ কৰাৰ হাৰ।</li>
+          <li><strong>আপোনাৰ দল কেতিয়া ব্যস্ত থাকে</strong> — দিনৰ ঘণ্টা অনুসৰি আৰু সপ্তাহৰ দিন অনুসৰি।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="এনালিটিক্স: 164 শেষ হৈছে, 7 দিন 7 ঘণ্টা কামৰ সময়, প্ৰতিটো কামত গড় 1 ঘণ্টা 4 মিনিট, গড় সঁহাৰি 21 মিনিট, 95% সময়মতে, লগত চাৰ্ট।">
+        </div>
+        <figcaption class="shot-caption">সাধাৰণতে পাতল, বিচাৰিলে ডাঠ — গোটেই ডেশ্ববৰ্ডত দুয়োটাই আছে।</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ইতিহাস আৰু কেলেণ্ডাৰ</span>
+        <h3>প্ৰতিটো কামৰ নিজা ৰেকৰ্ড থাকি যায়</h3>
+        <p>মানুহ আৰু তাৰিখ অনুসৰি ইতিহাস ফিল্টাৰ কৰক আৰু প্ৰতিটো শাৰীত সঁহাৰিৰ সময় আৰু কামৰ সময় পাব, তলত প্ৰতিজন মানুহৰ যোগফল, আৰু এটা CSV ৰপ্তানি যিয়ে পৰ্দাত যি আছে ঠিক সেয়াই দিয়ে — আপোনাৰ হিচাপ ৰক্ষক বা গ্ৰাহকক প্ৰকৃততে সেইটোৱেই লাগে।</p>
+        <ul class="check-list">
+          <li><strong>যিকোনো ঠাইত যিকোনো কামৰ শিৰোনামত ক্লিক কৰক,</strong> আৰু তাৰ সম্পূৰ্ণ সময়ক্ৰম খোল খায়।</li>
+          <li><strong>কেলেণ্ডাৰে</strong> মাহটোক ৰঙৰ ডাঠিৰে দেখুৱায়, যাতে লেহেমীয়া সপ্তাহটো এবাৰ চোৱাতেই ধৰা পৰে।</li>
+          <li><strong>শেষ হোৱা কাম পুনৰ খোলক</strong> — সেয়া ঘূৰি আহিলে পোনেপোনে সেই শাৰীৰ পৰাই।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="কেলেণ্ডাৰ টেব: ৰঙৰ ডাঠি দিয়া এটা মাহ, কাষত শেষ হোৱা কামৰ তালিকা, নতুন দিন সৰ্বোচ্চত।">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">যেতিয়া কিবা বেয়া হয়</span>
+      <h2>এটা কাৰ্যালয়ৰ বাবে বনোৱা, ডেমোৰ বাবে নহয়।</h2>
+      <p class="lede">সৰু কাৰ্যালয়ত বেয়া দুপৰীয়া আহে। ৰাউটাৰ ৰিবুট হয়, ব্ৰডবেণ্ড বহি যায়, কোনোবাই ভুল PC বন্ধ কৰি দিয়ে। ইয়াৰে প্ৰতিটোৰ বাবে আগতেই ভবা হৈছে, পিছত ধৰা পৰা নাই।</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>নেটৱৰ্ক গুচি যায়।</strong> শেষ হোৱা কাম আৰু মন্তব্য PC ৰ নিজা আউটবক্সলৈ যায় আৰু ছাৰ্ভাৰ ঘূৰি অহাৰ লগে লগে পায়গৈ — প্ৰতিটোৱে নিজৰ মূল ক্লিকৰ সময়ৰ সৈতে, অৰ্থাৎ তিনি ঘণ্টাৰ বন্ধত 10:35 বজাত শেষ হোৱা কাম 13:35 নহয়, 10:35 বুলিয়েই লিপিবদ্ধ হয়।</li>
+          <li><strong>কিবা দুবাৰ গুচি যায়।</strong> প্ৰতিটো কাৰ্যৰ লগত এটা অনন্য id যায় যিটো ছাৰ্ভাৰে চিনি পায়, গতিকে সংযোগ ছিঙাৰ পিছত পুনৰ পঠিয়ালেও কোনো কাম দুবাৰ গণনা হ'ব নোৱাৰে।</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>ছাৰ্ভাৰ PC ৰ IP সলনি হয়।</strong> পটিয়ে স্থানীয় নেটৱৰ্কত সোধে আৰু ছাৰ্ভাৰে নিজৰ নতুন ঠিকনাৰ সৈতে উত্তৰ দিয়ে। আপোনাৰ ৰাউটাৰে ব্ৰডকাষ্ট বন্ধ কৰিলে — মেশ্ব আৰু ISP ৰাউটাৰত সাধাৰণ — ই গোটেই নেটৱৰ্ক স্কেন কৰি লয়।</li>
+          <li><strong>একোৱেই চলা নাই আৰু কাৰণ কাকো গম নাই।</strong> ভিতৰতেই থকা এটা পৰীক্ষাই আঠটা সাধাৰণ কাৰণৰ মাজেৰে যায় — ফায়াৰৱাল, Wi-Fi আইছ'লেশ্বন, VPN, ভুল ঠিকনা — আৰু সৰল ভাষাত কৈ দিয়ে কাৰণটো কোনটো।</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">এইটো কেনেকৈ লাগি আছে</span>
+      <h2>দুটা প্ৰগ্ৰাম, এটা নেটৱৰ্ক, কোনো ক্লাউড নাই।</h2>
+      <p class="lede">গোটেই ব্যৱস্থাটো হৈছে মেনেজাৰৰ PC ত এটা প্ৰগ্ৰাম আৰু প্ৰতিজন কৰ্মচাৰীৰ PC ত এটা সৰু প্ৰগ্ৰাম। সিহঁতে ইজনে সিজনৰ সৈতে কাৰ্যালয়ৰ নেটৱৰ্কত কথা পাতে, আন ক'তো নহয়।</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue ৰ গঠন</title>
+        <desc id="diagram-desc">মেনেজাৰৰ PC ত WorkQueue ছাৰ্ভাৰ চলে, য'ত এটা SQLite ডাটাবেছ আৰু ব্ৰাউজাৰত খোল খোৱা ডেশ্ববৰ্ড আছে। প্ৰতিজন কৰ্মচাৰীৰ PC ত WorkQueue বাৰ চলে, যিয়ে ছাৰ্ভাৰৰ সৈতে পৰ্ট 8420 ত HTTP ৰে কথা পাতে আৰু তাক পৰ্ট 8421 ত UDP ব্ৰডকাষ্টেৰে বিচাৰি পায়। সকলোবোৰ কাৰ্যালয়ৰ নেটৱৰ্কৰ ভিতৰতেই থাকে।</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">মেনেজাৰৰ PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">এটা SQLite ডাটাবেছ ফাইল</text>
+        <text class="dg-s" x="38" y="182">ডেশ্ববৰ্ড ব্ৰাউজাৰত খোল খায়</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">কৰ্মচাৰীৰ PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px পটি</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">কৰ্মচাৰীৰ PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px পটি</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">কৰ্মচাৰীৰ PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px পটি</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 ছাৰ্ভাৰ বিচাৰি পায়</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">ওপৰৰ সকলোবোৰ আপোনাৰ কাৰ্যালয়ৰ নেটৱৰ্কৰ ভিতৰতেই থাকে</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>কাৰ্যালয়ৰ বাহিৰত?</h3><p>WorkQueue এটা ব্যক্তিগত নেটৱৰ্কৰ (Tailscale) সৈতে যোগ হ'ব পাৰে, যাতে ঘৰৰ লেপটপ বা দ্বিতীয় শাখাই একেটা ছাৰ্ভাৰলৈকে এনক্ৰিপ্টেড ধৰণে পায় আৰু ৰাজহুৱা ইণ্টাৰনেটত একোৱেই ৰখা নহয়। ছেটআপত এইটো এটা অতিৰিক্ত খোজ আৰু লাইচেন্সৰ ভিতৰতেই আছে।</p></div>
+      <div class="card"><h3>বেকআপ হৈছে এটাই ফাইল</h3><p>ব্যৱস্থাটোৱে যি জানে সেয়া এটাই ডাটাবেছ। ছাৰ্ভাৰ চলি থকা সময়তেই ডেশ্ববৰ্ডে সেয়া ৰপ্তানি কৰি দিয়ে — হয় চেকচামৰ সৈতে সম্পূৰ্ণ স্নেপশ্বট, নহয় ডাটাবেছৰ হুবহু নকল। সেয়া সেই PC ৰ পৰা আঁতৰাই ৰাখক আৰু আপুনি সুৰক্ষিত।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">এটা ভাল কথা</span>
+      <h2>ই এটা সৰু আনন্দও পালন কৰিব পাৰে।</h2>
+      <p class="lede">কামৰ সলনি এখন কাৰ্ড পঠিয়াওক — জন্মদিন, চাকৰিৰ বাৰ্ষিকী, এটা জয়, কাৰোবাৰ আদৰণি। সেই মানুহজনৰ পটিত বেলুন ভাঁহে, আৰু বিচাৰিলে পেনেলত এক মিনিটৰ এটা খেলো আছে। কাৰ্ড কেতিয়াও ইতিহাস, এনালিটিক্স বা কাৰো কামৰ সময়ত নোসোমায়। সেয়া কাম নহয়, আৰু এদিনৰ পিছত নিজেই আঁতৰি যায়।</p>
+      <p class="small muted">আমি ইয়াৰ উল্লেখ কৰোঁ কাৰণ নিৰীক্ষণ চফ্টৱেৰৰ এটা বদনাম আছে, আৰু যিটো সঁজুলিক আপোনাৰ দলে বেয়া পায় সেয়া নিমাতে ব্যৱহাৰ হোৱা বন্ধ হৈ যায়।</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">বিৱৰণ</span>
+      <h2>চলাবলৈ কি কি লাগে</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>মেনেজাৰৰ PC</dt><dd>Windows 10 বা 11, কামৰ সময়ত চলি থাকিব লাগিব। পৃথক ছাৰ্ভাৰ নালাগে, বিশেষ হাৰ্ডৱেৰো নালাগে। ইনষ্টলৰ বাবে এবাৰ এডমিন অধিকাৰ লাগে।</dd></div>
+      <div><dt>কৰ্মচাৰীৰ PC</dt><dd>Windows 10 বা 11। এডমিন অধিকাৰ নালাগে — পটি লগ-ইন কৰা ব্যৱহাৰকাৰীৰ বাবে ইনষ্টল হয়।</dd></div>
+      <div><dt>নেটৱৰ্ক</dt><dd>সকলো PC একেটা কাৰ্যালয় নেটৱৰ্কত, তাঁৰেৰে বা Wi-Fi ৰে। সিহঁতৰ মাজত TCP পৰ্ট 8420 আৰু UDP পৰ্ট 8421 খোল খাই থাকিব লাগিব — ইনষ্টলাৰে ফায়াৰৱাল নিজেই খুলি দিয়ে।</dd></div>
+      <div><dt>ইণ্টাৰনেট</dt><dd>নালাগে। কেৱল কাৰ্যালয়ৰ বাহিৰৰ মানুহৰ বাবে ৰিম'ট এক্সেছ চলু কৰিলেহে লাগে।</dd></div>
+      <div><dt>ডেশ্ববৰ্ড</dt><dd>নেটৱৰ্কৰ যিকোনো ডিভাইচত যিকোনো আধুনিক ব্ৰাউজাৰ, ফোন বা টেবলেটকে ধৰি।</dd></div>
+      <div><dt>ইনষ্টলৰ সময়</dt><dd>ছাৰ্ভাৰৰ বাবে প্ৰায় দহ মিনিট আৰু প্ৰতিজন কৰ্মচাৰীৰ PC ৰ বাবে এক মিনিটতকৈয়ো কম।</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">আৰু ই কি নকৰে</h3>
+    <p class="muted">দ্বিতীয় মাহত গম পোৱাতকৈ আপুনি এইটো এতিয়াই পঢ়ি লওক, আমি সেইটোৱেই ভাল বুলি ভাবোঁ।</p>
+    <ul class="check-list">
+          <li><strong>ই কেৱল Windows ৰ বাবে।</strong> Mac আৰু Linux থকা কৰ্মচাৰী মেচিন এতিয়াও সমৰ্থিত নহয়।</li>
+          <li><strong>মানুহৰ পৰিচয় সিহঁতৰ PC ৰ পৰা হয়,</strong> কোনো লগইনৰ পৰা নহয়। বিশ্বাসযোগ্য কাৰ্যালয় নেটৱৰ্কৰ বাবে এইটো শুদ্ধ সাঁচ, কিন্তু ইয়াৰ অৰ্থ হ'ল কোনোবাই ধৰি ল'লে আন মেচিন বুলি ভাও ধৰিব পাৰে।</li>
+          <li><strong>কামৰ সময় হৈছে দেৱালৰ ঘড়ীৰ সময়।</strong> খোৱাৰ সময়তো কাম খোল খাই থাকিলে, খোৱাটোও সেই সংখ্যাতে আহে। ই পাৰ হৈ যোৱা সময় জোখে, পৰিশ্ৰম নহয়।</li>
+          <li><strong>নেটৱৰ্কৰ বাহিৰত শাৰীটো পুৰণি হৈ যায়।</strong> কাৰ্যালয়ৰ পৰা দূৰৈত থকা লেপটপত পুনৰ সংযোগ নোহোৱালৈকে শেষবাৰ গম পোৱা কামবোৰহে দেখা যায় — যেতিয়ালৈকে আপুনি ৰিম'ট এক্সেছ চলু নকৰে।</li>
+          <li><strong>পটিয়ে 34 পিক্সেল</strong> উচ্চতা মুখ্য মনিটৰত চিৰদিনৰ বাবে লয়।</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">প্ৰশ্ন</span>
+      <h2>বিশেষকৈ WorkQueue ৰ বিষয়ে</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>এইটো কৰ্মচাৰী নিৰীক্ষণনে? মোৰ দলে ইয়াক বেয়া পাবনে?</summary>
+        <div class="faq-body">
+          <p>ই প্ৰতিটো কামৰ দুটাহে কথা লিপিবদ্ধ কৰে: সেয়া পৰ্দাত কেতিয়া পালেগৈ আৰু সেই মানুহজনে Complete কেতিয়া টিপিলে। ই স্ক্ৰীনশ্বট নলয়, কীষ্ট্ৰোক লিপিবদ্ধ নকৰে, খালী সময় নগণে, কোনে কোনটো ৱেবছাইট খুলিছে সেয়াও নাচায় — আৰু আগলৈও নকৰিব। এইটো ইচ্ছাকৃতভাৱে টনা এডাল ৰেখা, অৱহেলা নহয়। প্ৰকৃততে দলবোৰে ইয়াক ভাল পায়, কাৰণ &quot;মই তো ঘণ্টাৰ আগতেই পঠিয়াই দিছিলোঁ&quot; বুলি বাদানুবাদ বাদানুবাদ হৈ নাথাকে। সকলোৰে আগত একেটা সময় লিপিবদ্ধ আছে।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ই কিমান মানুহক চম্ভালিব পাৰে?</summary>
+        <div class="faq-body">
+          <p>ই এটা কাৰ্যালয়ৰ বাবে বনোৱা আৰু পৰীক্ষিত — সাধাৰণ হাৰ্ডৱেৰত একেলগে প্ৰায় 25 টা মেচিন, আৰু সঁহাৰি ছেকেণ্ডৰ দহভাগৰ এভাগতকৈয়ো কমত। আপুনি তাতকৈ ডাঙৰ হ'লে, কিনাৰ পিছত নহয়, আগতেই কথা পাতক।</p>
+        </div>
+      </details>
+      <details>
+        <summary>মেনেজাৰৰ PC নষ্ট হ'লে?</summary>
+        <div class="faq-body">
+          <p>ছাৰ্ভাৰ আন এটা PC ত ইনষ্টল কৰক আৰু আপোনাৰ শেষৰ ৰপ্তানি আমদানি কৰি লওক। সেইবাবেই বেকআপ এটাই ফাইল আৰু সেইবাবেই ডেশ্ববৰ্ডে আপোনাক বাৰে বাৰে আন ক'ৰবাত এটা নকল ৰাখিবলৈ কয়। কৰ্মচাৰীৰ PC বোৰে নতুন ছাৰ্ভাৰ নিজেই বিচাৰি লয়।</p>
+        </div>
+      </details>
+      <details>
+        <summary>মই মোৰ তথ্য বাহিৰ কৰিব পাৰিমনে?</summary>
+        <div class="faq-body">
+          <p>পাৰিব, যিকোনো সময়তে আৰু আমাক নুসুধাকৈয়ে। ইতিহাস CSV ত ওলায়, আৰু গোটেই ডাটাবেছ JSON স্নেপশ্বট হিচাপে বা পোনে পোনে SQLite ফাইল হিচাপে ওলাই আহে। কোনো লক-ইন নাই, কাৰণ আমাৰ ফালে আপোনাৰ এনেকুৱা একো নাই যাক ৰখাব পাৰি।</p>
+        </div>
+      </details>
+      <details>
+        <summary>আপোনালোকে আমাৰ কাম চাব পাৰেনে?</summary>
+        <div class="faq-body">
+          <p>নাই। চফ্টৱেৰে কেতিয়াও আমাৰ সৈতে যোগাযোগ নকৰে। কোনো টেলিমেট্ৰি নাই, লাইচেন্স পৰীক্ষা নাই, এনালিটিক্স কল নাই। আপোনাৰ কাৰ্যালয়ত ইণ্টাৰনেট নাথাকিলেও WorkQueue এ গমেই নাপাব।</p>
+        </div>
+      </details>
+      <details>
+        <summary>সহায় কেনেকুৱা হয়?</summary>
+        <div class="faq-body">
+          <p>ইমেইল, এটা কামৰ দিনৰ ভিতৰত উত্তৰ, আৰু উত্তৰ দিওঁতাজন সেইজনেই যিয়ে চফ্টৱেৰটো লিখিছে। লাইচেন্সত এবছৰৰ সহায় আৰু এবছৰৰ আপডেট অন্তৰ্ভুক্ত।</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 দিন নিজৰ দলতে লগাই চাওক।</h2>
+    <p class="lede">সম্পূৰ্ণ সঁজুলি, একোৱেই আটক ৰখা হোৱা নাই আৰু বাতিল কৰিবলৈও একো নাই। মোটামুটি কিমান PC আছে কওক — আমি ইনষ্টলাৰ পঠিয়াম আৰু ছেটআপ নোহোৱালৈকে কলত থাকিম।</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/as/contact?about=trial">ট্ৰায়েল বিচাৰক</a>
+      <a class="btn btn-ghost btn-lg" href="/as/pricing">দাম চাওক</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/as/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>সৰু ব্যৱসায়ৰ বাবে সৰু Windows সঁজুলি। মুম্বাইত, ভাৰতত তৈয়াৰ — এবাৰ কিনক, নিজৰ নেটৱৰ্কতে চলাওক।</p>
+      </div>
+      <div class="footer-col">
+        <h4>সঁজুলি</h4>
+        <ul>
+          <li><a href="/as/workqueue">WorkQueue</a></li>
+          <li><a href="/as/workqueue#requirements">কি কি লাগে</a></li>
+          <li><a href="/as/contact?about=roadmap">পিছত কি</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>কিনা-বেচা</h4>
+        <ul>
+          <li><a href="/as/pricing">দাম</a></li>
+          <li><a href="/as/contact?about=trial">বিনামূলীয়া ট্ৰায়েল</a></li>
+          <li><a href="/as/contact?about=setup">ছেটআপত সহায়</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>যোগাযোগ</h4>
+        <ul>
+          <li><a href="/as/india">প্ৰতিখন ৰাজ্য</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="নমস্কাৰ, মই Quietworks ৱেবছাইট চালোঁ আৰু অধিক জানিব বিচাৰোঁ।" href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. সকলো অধিকাৰ সংৰক্ষিত।</span>
+      <span>মুম্বাইত তৈয়াৰ</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

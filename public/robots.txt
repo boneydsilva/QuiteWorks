@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# One page per state and per language; nothing here is a crawl trap.
 Sitemap: https://boneydsilva.com/sitemap.xml

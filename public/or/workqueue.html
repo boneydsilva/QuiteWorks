@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="or">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — ନିଜ ନେଟୱାର୍କରେ କାମ ବାଣ୍ଟନ୍ତୁ ଓ ସମୟ ଗଣନ୍ତୁ</title>
+<meta name="description" content="WorkQueue ଆପଣଙ୍କ ଦଳକୁ କାମ ସେମାନଙ୍କ ପରଦାର ଉପରେ ଲାଗିଥିବା 34-ପିକସେଲ୍ ପଟି ମାଧ୍ୟମରେ ଦିଏ, ପ୍ରତ୍ୟେକ କାମର ସମୟ ନିଜେ ଗଣେ, ଏବଂ ତାର ରିପୋର୍ଟ ତିଆରି କରେ। ଆପଣଙ୍କ ନିଜ Windows PC ଉପରେ ଚାଲେ। ସମ୍ପୂର୍ଣ୍ଣ କମ୍ପାନୀ ପାଇଁ ଥରେ ଦେୟ।">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="or_IN">
+<meta property="og:title" content="WorkQueue — ନିଜ ନେଟୱାର୍କରେ କାମ ବାଣ୍ଟନ୍ତୁ ଓ ସମୟ ଗଣନ୍ତୁ">
+<meta property="og:description" content="WorkQueue ଆପଣଙ୍କ ଦଳକୁ କାମ ସେମାନଙ୍କ ପରଦାର ଉପରେ ଲାଗିଥିବା 34-ପିକସେଲ୍ ପଟି ମାଧ୍ୟମରେ ଦିଏ, ପ୍ରତ୍ୟେକ କାମର ସମୟ ନିଜେ ଗଣେ, ଏବଂ ତାର ରିପୋର୍ଟ ତିଆରି କରେ। ଆପଣଙ୍କ ନିଜ Windows PC ଉପରେ ଚାଲେ। ସମ୍ପୂର୍ଣ୍ଣ କମ୍ପାନୀ ପାଇଁ ଥରେ ଦେୟ।">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/or/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/or/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/or/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ଏହା କର୍ମଚାରୀଙ୍କ ନଜରଦାରୀ କି? ମୋ ଦଳକୁ ଏହା ଭଲ ଲାଗିବ ନାହିଁ କି?","acceptedAnswer":{"@type":"Answer","text":"ଏହା ପ୍ରତ୍ୟେକ କାମର ଦୁଇଟି ହିଁ କଥା ଲେଖେ: ତାହା ପରଦାରେ କେବେ ପହଞ୍ଚିଲା ଏବଂ ସେହି ବ୍ୟକ୍ତି Complete କେବେ ଦବାଇଲେ। ଏହା ସ୍କ୍ରିନସଟ୍ ନିଏ ନାହିଁ, କୀଷ୍ଟ୍ରୋକ୍ ଲେଖେ ନାହିଁ, ଖାଲି ସମୟ ଗଣେ ନାହିଁ, କିଏ କେଉଁ ୱେବସାଇଟ୍ ଖୋଲୁଛି ତାହା ମଧ୍ୟ ଦେଖେ ନାହିଁ — ଏବଂ ଆଗକୁ ମଧ୍ୟ କରିବ ନାହିଁ। ଏହା ଜାଣିଶୁଣି ଟଣାଯାଇଥିବା ରେଖା, ଅବହେଳା ନୁହେଁ। ପ୍ରକୃତରେ ଦଳଙ୍କୁ ଏହା ଭଲ ଲାଗେ, କାରଣ \"ମୁଁ ତ ଘଣ୍ଟା ଆଗରୁ ପଠାଇଦେଇଥିଲି\" ପରି ତର୍କ ତର୍କ ହୋଇ ରହେ ନାହିଁ। ସମସ୍ତଙ୍କ ଆଗରେ ଗୋଟିଏ ହିଁ ସମୟ ଲେଖା ଅଛି।"}},{"@type":"Question","name":"ଏହା କେତେ ଲୋକଙ୍କୁ ସମ୍ଭାଳି ପାରିବ?","acceptedAnswer":{"@type":"Answer","text":"ଏହା ଗୋଟିଏ ଅଫିସ ପାଇଁ ତିଆରି ଓ ପରୀକ୍ଷିତ — ସାଧାରଣ ହାର୍ଡୱେୟାରରେ ଏକାସାଙ୍ଗରେ ପ୍ରାୟ 25 ମେସିନ୍, ଏବଂ ପ୍ରତିକ୍ରିୟା ସେକେଣ୍ଡର ଦଶମାଂଶରୁ ମଧ୍ୟ କମ୍‌ରେ। ଆପଣ ଏଥିରୁ ବଡ଼ ହୋଇଥିଲେ, କିଣିବା ପରେ ନୁହେଁ, ଆଗରୁ କଥା ହୁଅନ୍ତୁ।"}},{"@type":"Question","name":"ମ୍ୟାନେଜରଙ୍କ PC ଖରାପ ହୋଇଗଲେ?","acceptedAnswer":{"@type":"Answer","text":"ସର୍ଭରକୁ ଅନ୍ୟ ଏକ PC ରେ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କ ଶେଷ ରପ୍ତାନି ଆମଦାନୀ କରିନିଅନ୍ତୁ। ସେଥିପାଇଁ ହିଁ ବ୍ୟାକଅପ୍ ଗୋଟିଏ ଫାଇଲ୍ ଏବଂ ସେଥିପାଇଁ ହିଁ ଡ୍ୟାସବୋର୍ଡ ଆପଣଙ୍କୁ ବାରମ୍ବାର ଅନ୍ୟ କେଉଁଠି ନକଲ ରଖିବାକୁ କହେ। କର୍ମଚାରୀଙ୍କ PC ନୂଆ ସର୍ଭରକୁ ନିଜେ ଖୋଜି ନିଅନ୍ତି।"}},{"@type":"Question","name":"ମୁଁ ମୋର ତଥ୍ୟ ବାହାର କରିପାରିବି କି?","acceptedAnswer":{"@type":"Answer","text":"ହଁ, ଯେକୌଣସି ସମୟରେ ଏବଂ ଆମକୁ ନପଚାରି ହିଁ। ଇତିହାସ CSV ରେ ବାହାରେ, ଏବଂ ସମ୍ପୂର୍ଣ୍ଣ ଡାଟାବେସ୍ JSON ସ୍ନାପସଟ୍ ଭାବେ କିମ୍ବା ସିଧା SQLite ଫାଇଲ୍ ଭାବେ ବାହାରି ଆସେ। କୌଣସି ଲକ୍-ଇନ୍ ନାହିଁ, କାରଣ ଆମ ପାଖରେ ଆପଣଙ୍କର ଏମିତି କିଛି ନାହିଁ ଯାହାକୁ ଅଟକାଯାଇପାରେ।"}},{"@type":"Question","name":"ଆପଣମାନେ ଆମର କାମ ଦେଖିପାରନ୍ତି କି?","acceptedAnswer":{"@type":"Answer","text":"ନାହିଁ। ସଫ୍ଟୱେୟାର କେବେ ଆମ ସହ ଯୋଗାଯୋଗ କରେ ନାହିଁ। କୌଣସି ଟେଲିମେଟ୍ରି ନାହିଁ, ଲାଇସେନ୍ସ ଯାଞ୍ଚ ନାହିଁ, ଆନାଲିଟିକ୍ସ କଲ୍ ନାହିଁ। ଆପଣଙ୍କ ଅଫିସରେ ଇଣ୍ଟରନେଟ୍ ନଥିଲେ ମଧ୍ୟ WorkQueue ଜାଣି ପାରିବ ନାହିଁ।"}},{"@type":"Question","name":"ସହାୟତା କେମିତି ହୁଏ?","acceptedAnswer":{"@type":"Answer","text":"ଇମେଲ୍, ଗୋଟିଏ କାର୍ଯ୍ୟଦିବସ ମଧ୍ୟରେ ଉତ୍ତର, ଏବଂ ଉତ୍ତର ଦେଉଥିବା ବ୍ୟକ୍ତି ସେହି ଜଣ ଯିଏ ସଫ୍ଟୱେୟାର ଲେଖିଛନ୍ତି। ଲାଇସେନ୍ସରେ ଗୋଟିଏ ବର୍ଷର ସହାୟତା ଓ ଗୋଟିଏ ବର୍ଷର ଅପଡେଟ୍ ସାମିଲ।"}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">ମୁଖ୍ୟ ବିଷୟବସ୍ତୁକୁ ଯାଆନ୍ତୁ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/or/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/or/">ମୂଳପୃଷ୍ଠା</a>
+        <a href="/or/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/or/pricing">ମୂଲ୍ୟ</a>
+        <a href="/or/india">ସାରା ଭାରତରେ</a>
+        <a href="/or/contact">ଯୋଗାଯୋଗ</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="ଭାଷା">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">ଓଡ଼ିଆ</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">ଆପଣଙ୍କ ଭାଷା ବାଛନ୍ତୁ</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or" aria-current="true"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">ସମ୍ପୂର୍ଣ୍ଣ ସାଇଟ୍ ଏହି ପ୍ରତ୍ୟେକ ଭାଷାରେ ଲେଖାଯାଇଛି — ଯନ୍ତ୍ର ଅନୁବାଦ ନୁହେଁ।</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="ଥିମ୍ ବଦଳାନ୍ତୁ">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/or/contact?about=trial">ଟ୍ରାଏଲ୍ ଆରମ୍ଭ କରନ୍ତୁ</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="ମେନୁ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>କାମ ବାଣ୍ଟନ୍ତୁ। ଠିକ୍ କେତେ ସମୟ ଲାଗିଲା ଜାଣନ୍ତୁ।</h1>
+        <p class="lede">ମ୍ୟାନେଜର ବ୍ରାଉଜରରୁ ଦିଅନ୍ତି। ପ୍ରତ୍ୟେକ କର୍ମଚାରୀ ନିଜ ଧାଡ଼ି ପରଦାର ଉପରେ ଲାଗିଥିବା ପତଳା ପଟିରେ ଦେଖନ୍ତି। ଦୁଇଟି ସମୟ ଆପଣଙ୍କ ପାଇଁ ନିଜେ ଲେଖା ହୋଇଯାଏ, ତେଣୁ ଲୋକେ କେବଳ କାମ କରୁଥିଲେ ମଧ୍ୟ ରିପୋର୍ଟ ନିଜେ ତିଆରି ହୋଇଯାଏ।</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/or/contact?about=trial">ଟ୍ରାଏଲ୍ ମାଗନ୍ତୁ</a>
+          <a class="btn btn-ghost btn-lg" href="/or/pricing">ମୂଲ୍ୟ ଦେଖନ୍ତୁ</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 ଓ 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> କୌଣସି କ୍ଲାଉଡ୍ ଖାତା ନାହିଁ</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ଗୋଟିଏ ଲାଇସେନ୍ସରେ ଅସୀମିତ PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue ବୋର୍ଡ, ଉପରେ କାମ ଲେଖିବା ଜାଗା ଏବଂ ତିନୋଟି ସ୍ତମ୍ଭ: ଅପେକ୍ଷାରେ, ଚାଲୁଛି, ଏବଂ ଆଜି ସରିଛି।" fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">ଦେବାକୁ ଗୋଟିଏ ଧାଡ଼ି। ଦେଖିବାକୁ ତିନୋଟି ସ୍ତମ୍ଭ।</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">କର୍ମଚାରୀ ପାଖ</span>
+      <h2>34 ପିକସେଲ୍। ଆପଣଙ୍କ କର୍ମଚାରୀଙ୍କୁ ଏତିକି ହିଁ ଶିଖିବାକୁ ଅଛି।</h2>
+      <p class="lede">ଟାସ୍କବାର୍ ପରି ପଟି ମଧ୍ୟ Windows ରେ ବସେ, ତେଣୁ Windows ତାହା ପାଇଁ ଜାଗା ରଖିଦିଏ ଏବଂ ବଡ଼ କରାଯାଇଥିବା ୱିଣ୍ଡୋଗୁଡ଼ିକ ତା' ତଳେ ହିଁ ଅଟକିଯାଏ। ଏହା କାହାର କାମ ଢାଙ୍କି ପାରିବ ନାହିଁ, ଏବଂ ଏହାକୁ କେହି ଢାଙ୍କି ପାରିବ ନାହିଁ।</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 ପିକସେଲ୍ ପରଦାର ଉପରେ ସମ୍ପୂର୍ଣ୍ଣ ପଟି: ବାମରେ କର୍ମଚାରୀଙ୍କ ନାମ ଓ ବର୍ତ୍ତମାନର କାମ, ଡାହାଣରେ ଖୋଲାଥିବା ପ୍ରତ୍ୟେକ କାମ ପାଇଁ ଗୋଟିଏ ଚିପ୍, ଏବଂ ମଝିରେ ବହୁତ ଖାଲି ଜାଗା।">
+      <figcaption class="shot-caption">1920 ପିକସେଲ୍ ପରଦାରେ ସମ୍ପୂର୍ଣ୍ଣ ପଟି। ପରଦାର ପ୍ରାୟ ଏତିକି ଭାଗ ନିଏ — ସେଇଆ ତ କଥା। ତଳର ଦୁଇଟି ପାଖରୁ ନିଆଯାଇଥିବା ଛବି ସେହି ପଟିର ହିଁ, ପ୍ରକୃତ ଆକାରରେ।</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="କର୍ମଚାରୀ ପଟିର ବାମ ମୁଣ୍ଡ: ସବୁଜ ଯୋଡ଼ା ବିନ୍ଦୁ, ଆଶା ରାଓ ନାମ, ତା'ପରେ ଲାଲ ହୀରା ଏବଂ କାମର ଶିରୋନାମା — ସେପ୍ଟେମ୍ବରର ଇନଭଏସ ମେଳାନ୍ତୁ।">
+        </div>
+        <figcaption class="shot-caption"><strong>ବାମ ମୁଣ୍ଡ।</strong> ସର୍ଭର ସହ ଯୋଗାଯୋଗ ଥିବା ପର୍ଯ୍ୟନ୍ତ ଗୋଟିଏ ସବୁଜ ବିନ୍ଦୁ, ସେମାନଙ୍କ ନାମ, ଏବଂ ସେମାନେ କରୁଥିବା କାମ। ଲାଲ ହୀରାର ଅର୍ଥ — ଜରୁରୀ।</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="କର୍ମଚାରୀ ପଟିର ଡାହାଣ ମୁଣ୍ଡ: ରଙ୍ଗରୁ ଚିହ୍ନାଯାଉଥିବା ତିନୋଟି ଚିପ୍, ଖୋଲାଥିବା ପ୍ରତ୍ୟେକ କାମ ପାଇଁ ଗୋଟିଏ, ଏବଂ ଗୋଟିଏ ଛୋଟ ମେନୁ ତୀର।">
+        </div>
+        <figcaption class="shot-caption"><strong>ଡାହାଣ ମୁଣ୍ଡ।</strong> ଖୋଲାଥିବା ପ୍ରତ୍ୟେକ କାମ ପାଇଁ ଗୋଟିଏ ଚିପ୍, ପ୍ରାଥମିକତାର ରଙ୍ଗରେ। ଗୋଟିଏ ଉପରେ କ୍ଲିକ୍ କଲେ ସେଥିକୁ ଯାଆନ୍ତି; ଫ୍ରେମ୍ ସେହି ରଙ୍ଗ ନିଏ।</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="ପଟିରୁ ଖୋଲୁଥିବା ପ୍ୟାନେଲ୍: ବାମରେ ବର୍ତ୍ତମାନର କାମ, ତାର ବିବରଣୀ ଓ ଦିଆଯିବାର ସମୟ, ତଳେ ଗୋଟିଏ ବଡ଼ Mark completed ବଟନ୍, ଏବଂ ଡାହାଣରେ କର୍ମଚାରୀଙ୍କ ତିନୋଟି କାମ, ପ୍ରତ୍ୟେକର ନିଜ Complete ବଟନ୍ ସହ।">
+      </div>
+      <figcaption class="shot-caption center">କୌଣସି କାମ ଉପରେ କ୍ଲିକ୍ କଲେ ଏହା ଖୋଲେ। କାମ ସାରିବାକୁ ଗୋଟିଏ ବଡ଼ ବଟନ୍, ଆଡମିନ୍‌ଙ୍କୁ ପ୍ରଶ୍ନ ପଚାରିବାକୁ ଗୋଟିଏ ବାକ୍ସ, ଏବଂ ବାକି ପ୍ରତ୍ୟେକ କାମ ଗୋଟିଏ କ୍ଲିକ୍ ଦୂରରେ।</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Accept ବଟନ୍ ନାହିଁ ହିଁ</h3><p>କାମ ସେମାନଙ୍କ ମେସିନରେ ପହଞ୍ଚିବା ମାତ୍ରେ &quot;ମିଳିଲା&quot; ବୋଲି ଲେଖା ହୋଇଯାଏ। କାମ ମିଳିବାର ଖବର ଦେବାକୁ କେହି ଭୁଲିପାରିବେ ନାହିଁ, ଏବଂ &quot;ଦିଆଗଲା&quot; ରୁ &quot;ସେମାନଙ୍କ ପରଦାରେ&quot; ମଧ୍ୟରେ ଥିବା ଅନ୍ତର ଏମିତି ଏକ ସଂଖ୍ୟା ହୋଇଯାଏ ଯାହାକୁ ଆପଣ ପ୍ରକୃତରେ ସମ୍ଭାଳି ପାରିବେ।</p></div>
+      <div class="card reveal"><h3>ସାରିବାକୁ ଗୋଟିଏ ବଟନ୍</h3><p>କୌଣସି କାମ ଉପରେ କ୍ଲିକ୍ କଲେ ପ୍ୟାନେଲ୍ ଖୋଲେ: ବିବରଣୀ, କୌଣସି ମନ୍ତବ୍ୟ, ଏବଂ ଗୋଟିଏ ବଡ଼ Complete ବଟନ୍ ଯାହା ଭୁଲରେ ନହେବା ପାଇଁ ଦ୍ୱିତୀୟ ଥର କ୍ଲିକ୍ ମାଗେ।</p></div>
+      <div class="card reveal"><h3>ସେମାନେ ମଧ୍ୟ ଉତ୍ତର ଦେଇପାରନ୍ତି</h3><p>ଜଣେ କର୍ମଚାରୀ କୌଣସି କାମ ଉପରେ ମନ୍ତବ୍ୟ ଛାଡ଼ିପାରନ୍ତି — ଗୋଟିଏ ପ୍ରଶ୍ନ, ଗୋଟିଏ ବାଧା, କିମ୍ବା ଯାହା ମିଳିଲା ସେ ବିଷୟରେ ଗୋଟିଏ ଟିପ୍ପଣୀ। ଆପଣ ତାହା ଦେଖନ୍ତି ଏବଂ ଡ୍ୟାସବୋର୍ଡରେ ସେହି କାମରୁ ହିଁ ଉତ୍ତର ଦିଅନ୍ତି।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ବୋର୍ଡ</span>
+        <h3>ଗୋଟିଏ ଧାଡ଼ିରେ ଦିଅନ୍ତୁ, ତା'ପରେ ଦିନ ଆଗକୁ ବଢ଼ିବା ଦେଖନ୍ତୁ</h3>
+        <p>ଗୋଟିଏ ଶିରୋନାମା, ସେହି ବ୍ୟକ୍ତିଙ୍କୁ ଦରକାର ହେଉଥିବା ବିବରଣୀ, ପ୍ରାଥମିକତା, ସମୟସୀମା, କାହାକୁ ଯିବ, ଏବଂ Assign। ସେହି କାମ ଜଣକୁ ପଠାନ୍ତୁ କିମ୍ବା ଛଅ ଜଣଙ୍କୁ।</p>
+        <ul class="check-list">
+          <li><strong>ତିନୋଟି ଜୀବନ୍ତ ସ୍ତମ୍ଭ</strong> — ଅପେକ୍ଷାରେ, ଚାଲୁଛି, ଏବଂ ଆଜି ସରିଛି, ବ୍ୟକ୍ତି ଅନୁସାରେ।</li>
+          <li><strong>କାହାକୁ ବାଧା ନଦେଇ କାର୍ଯ୍ୟ କରନ୍ତୁ</strong> — କାର୍ଡ ଉପରେ କର୍ସର ନେଲେ Done, Cancel, Reopen ଓ Delete ଦେଖାଯାଏ।</li>
+          <li><strong>କାମ ଏଣେତେଣେ କରନ୍ତୁ</strong> — କାମ ଖୋଲନ୍ତୁ ଏବଂ ଅନ୍ୟ କାହାକୁ ଦେଇଦିଅନ୍ତୁ।</li>
+          <li><strong>ଜରୁରୀ କାମ ଜରୁରୀ ହିଁ ଦେଖାଯାଏ</strong> — ପ୍ରାଥମିକତା କାର୍ଡ ଓ କର୍ମଚାରୀଙ୍କ ପଟିର ଫ୍ରେମ୍‌କୁ ରଙ୍ଗ ଦିଏ।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="ବୋର୍ଡ, ଯେଉଁଥିରେ ପାଞ୍ଚଟି କାମ ଅପେକ୍ଷାରେ, ତିନୋଟି ଚାଲୁଛି ଏବଂ ବାରଟି ଆଜି ସରିଛି।">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">ଆନାଲିଟିକ୍ସ</span>
+        <h3>ଜଣେ ମ୍ୟାନେଜର ପ୍ରକୃତରେ ଯେଉଁ ପ୍ରଶ୍ନ ପଚାରନ୍ତି</h3>
+        <p>ସାତୋଟି ମୁଖ୍ୟ ସଂଖ୍ୟା ଏବଂ ଦଶଟି ଚାର୍ଟ, ସବୁ ଗୋଟିଏ ଛାଣକ ଧାଡ଼ିରୁ ଚାଲନ୍ତି। ପ୍ରତ୍ୟେକ ଚାର୍ଟ ସହ ତାର ସାରଣୀ ମଧ୍ୟ ଅଛି, ଯାହାଫଳରେ ଆପଣ ଦଣ୍ଡିକୁ ଆଖି ସଙ୍କୁଚିତ କରି ଚାହିଁବା ବଦଳରେ ସଂଖ୍ୟା ପଢ଼ିପାରିବେ।</p>
+        <ul class="check-list">
+          <li><strong>କେତେ କାମ ହେଲା</strong> — ଦିଆଯାଇଥିବା ତୁଳନାରେ ସରିଥିବା, ଦୈନିକ।</li>
+          <li><strong>କାମରେ କେତେ ସମୟ ଲାଗେ</strong> — ପ୍ରତି କାମ ପାଇଁ ହାରାହାରି ଓ ମଧ୍ୟମାନ, ଏବଂ ସେହି ଅବଧିର ସବୁଠାରୁ ଲମ୍ବା କାମ।</li>
+          <li><strong>କାମ କେତେ ଶୀଘ୍ର ଉଠାଯାଏ</strong> — ଦୈନିକ ଓ ପ୍ରତି ବ୍ୟକ୍ତି ପିଛା ପ୍ରତିକ୍ରିୟା ସମୟ।</li>
+          <li><strong>କିଏ କେତେ ବୋହୁଛନ୍ତି</strong> — ପ୍ରତି କର୍ମଚାରୀ ପିଛା ସଂଖ୍ୟା, ଘଣ୍ଟା, ପ୍ରତିକ୍ରିୟା ଓ ସମୟରେ ସାରିବାର ହାର।</li>
+          <li><strong>ଆପଣଙ୍କ ଦଳ କେବେ ବ୍ୟସ୍ତ ରହେ</strong> — ଦିନର ଘଣ୍ଟା ଅନୁସାରେ ଓ ସପ୍ତାହର ଦିନ ଅନୁସାରେ।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="ଆନାଲିଟିକ୍ସ: 164 ସରିଛି, 7 ଦିନ 7 ଘଣ୍ଟା କାମର ସମୟ, ପ୍ରତି କାମ ପାଇଁ ହାରାହାରି 1 ଘଣ୍ଟା 4 ମିନିଟ୍, ହାରାହାରି ପ୍ରତିକ୍ରିୟା 21 ମିନିଟ୍, 95% ସମୟରେ, ସହିତ ଚାର୍ଟ।">
+        </div>
+        <figcaption class="shot-caption">ସାଧାରଣତଃ ହାଲୁକା, ଚାହିଁଲେ ଗାଢ଼ — ସମ୍ପୂର୍ଣ୍ଣ ଡ୍ୟାସବୋର୍ଡରେ ଦୁଇଟି ଯାକ ଅଛି।</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ଇତିହାସ ଓ କ୍ୟାଲେଣ୍ଡର</span>
+        <h3>ପ୍ରତ୍ୟେକ କାମର ନିଜ ରେକର୍ଡ ରହିଥାଏ</h3>
+        <p>ବ୍ୟକ୍ତି ଓ ତାରିଖ ଅନୁସାରେ ଇତିହାସ ଛାଣନ୍ତୁ ଏବଂ ପ୍ରତ୍ୟେକ ଧାଡ଼ିରେ ପ୍ରତିକ୍ରିୟା ସମୟ ଓ କାମର ସମୟ ମିଳେ, ତଳେ ପ୍ରତି ବ୍ୟକ୍ତିଙ୍କ ଯୋଗଫଳ, ଏବଂ ଏକ CSV ରପ୍ତାନି ଯାହା ପରଦାରେ ଯାହା ଅଛି ଠିକ୍ ତାହା ହିଁ ଦିଏ — ଆପଣଙ୍କ ହିସାବନବିଶ କିମ୍ବା ଗ୍ରାହକଙ୍କୁ ପ୍ରକୃତରେ ତାହା ହିଁ ଦରକାର।</p>
+        <ul class="check-list">
+          <li><strong>ଯେକୌଣସି ଜାଗାରେ ଯେକୌଣସି କାମର ଶିରୋନାମା ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ,</strong> ଏବଂ ତାର ସମ୍ପୂର୍ଣ୍ଣ ସମୟକ୍ରମ ଖୋଲିଯାଏ।</li>
+          <li><strong>କ୍ୟାଲେଣ୍ଡର</strong> ମାସକୁ ରଙ୍ଗର ଗାଢ଼ତା ଦ୍ୱାରା ଦେଖାଏ, ଯାହାଫଳରେ ମନ୍ଥର ସପ୍ତାହ ଏକ ଝଲକରେ ଜଣାପଡ଼େ।</li>
+          <li><strong>ସରିଥିବା କାମ ପୁଣି ଖୋଲନ୍ତୁ</strong> — ତାହା ଫେରି ଆସିଲେ ସିଧା ସେହି ଧାଡ଼ିରୁ ହିଁ।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="କ୍ୟାଲେଣ୍ଡର ଟ୍ୟାବ୍: ରଙ୍ଗର ଗାଢ଼ତା ଦିଆଯାଇଥିବା ଗୋଟିଏ ମାସ, ପାଖରେ ସରିଥିବା କାମର ତାଲିକା, ନୂଆ ଦିନ ସବୁଠାରୁ ଉପରେ।">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ଯେତେବେଳେ କିଛି ଖରାପ ହୁଏ</span>
+      <h2>ଏକ ଅଫିସ ପାଇଁ ତିଆରି, ଡେମୋ ପାଇଁ ନୁହେଁ।</h2>
+      <p class="lede">ଛୋଟ ଅଫିସଗୁଡ଼ିକରେ ଖରାପ ଅପରାହ୍ଣ ଆସେ। ରାଉଟର ରିବୁଟ୍ ହୁଏ, ବ୍ରଡବ୍ୟାଣ୍ଡ ବସିଯାଏ, କେହି ଭୁଲ PC ବନ୍ଦ କରିଦିଏ। ଏଥିମଧ୍ୟରୁ ପ୍ରତ୍ୟେକ ପାଇଁ ଆଗରୁ ଚିନ୍ତା କରାଯାଇଛି, ପରେ ଜଣାପଡ଼ିନାହିଁ।</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>ନେଟୱାର୍କ ଚାଲିଯାଏ।</strong> ସରିଥିବା କାମ ଓ ମନ୍ତବ୍ୟ PC ର ନିଜ ଆଉଟବକ୍ସକୁ ଯାଆନ୍ତି ଏବଂ ସର୍ଭର ଫେରିବା ମାତ୍ରେ ପହଞ୍ଚିଯାଆନ୍ତି — ପ୍ରତ୍ୟେକ ନିଜର ମୂଳ କ୍ଲିକ୍ ସମୟ ସହିତ, ଅର୍ଥାତ୍ ତିନି ଘଣ୍ଟାର ବନ୍ଦରେ 10:35 ରେ ସରିଥିବା କାମ 13:35 ନୁହେଁ, 10:35 ହିଁ ଲେଖା ହୁଏ।</li>
+          <li><strong>କିଛି ଦୁଇଥର ଚାଲିଯାଏ।</strong> ପ୍ରତ୍ୟେକ କାର୍ଯ୍ୟ ସହିତ ଏକ ଅନନ୍ୟ id ଯାଏ ଯାହାକୁ ସର୍ଭର ଚିହ୍ନେ, ତେଣୁ ସଂଯୋଗ ଛିଣ୍ଡିବା ପରେ ପୁଣି ପଠାଇଲେ ମଧ୍ୟ କୌଣସି କାମ ଦୁଇଥର ଗଣା ହୋଇପାରିବ ନାହିଁ।</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>ସର୍ଭର PC ର IP ବଦଳିଯାଏ।</strong> ପଟି ସ୍ଥାନୀୟ ନେଟୱାର୍କରେ ପଚାରେ ଏବଂ ସର୍ଭର ନିଜ ନୂଆ ଠିକଣା ସହ ଉତ୍ତର ଦିଏ। ଆପଣଙ୍କ ରାଉଟର ବ୍ରଡକାଷ୍ଟ ଅଟକାଉଥିଲେ — ମେସ୍ ଓ ISP ରାଉଟରରେ ସାଧାରଣ — ତେବେ ତାହା ସମ୍ପୂର୍ଣ୍ଣ ନେଟୱାର୍କ ସ୍କାନ୍ କରିନିଏ।</li>
+          <li><strong>କିଛି ଚାଲୁନାହିଁ ଏବଂ କାରଣ କାହାକୁ ଜଣା ନାହିଁ।</strong> ଭିତରେ ହିଁ ଥିବା ଏକ ଯାଞ୍ଚ ଆଠଟି ସାଧାରଣ କାରଣ ଦେଇ ଯାଏ — ଫାୟାରୱାଲ୍, Wi-Fi ଆଇସୋଲେସନ୍, VPN, ଭୁଲ ଠିକଣା — ଏବଂ ସରଳ ଭାଷାରେ କହିଦିଏ କାରଣ କେଉଁଟି।</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ଏହା କିପରି ଯୋଡ଼ାଯାଏ</span>
+      <h2>ଦୁଇଟି ପ୍ରୋଗ୍ରାମ୍, ଗୋଟିଏ ନେଟୱାର୍କ, କୌଣସି କ୍ଲାଉଡ୍ ନାହିଁ।</h2>
+      <p class="lede">ସମ୍ପୂର୍ଣ୍ଣ ବ୍ୟବସ୍ଥା ହେଉଛି ମ୍ୟାନେଜରଙ୍କ PC ରେ ଗୋଟିଏ ପ୍ରୋଗ୍ରାମ୍ ଏବଂ ପ୍ରତ୍ୟେକ କର୍ମଚାରୀଙ୍କ PC ରେ ଗୋଟିଏ ଛୋଟ ପ୍ରୋଗ୍ରାମ୍। ସେମାନେ ପରସ୍ପର ସହ ଅଫିସ ନେଟୱାର୍କରେ କଥା ହୁଅନ୍ତି, ଆଉ କେଉଁଠି ନୁହେଁ।</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue ର ଗଠନ</title>
+        <desc id="diagram-desc">ମ୍ୟାନେଜରଙ୍କ PC ରେ WorkQueue ସର୍ଭର ଚାଲେ, ଯେଉଁଥିରେ ଗୋଟିଏ SQLite ଡାଟାବେସ୍ ଓ ବ୍ରାଉଜରରେ ଖୋଲୁଥିବା ଡ୍ୟାସବୋର୍ଡ ଅଛି। ପ୍ରତ୍ୟେକ କର୍ମଚାରୀଙ୍କ PC ରେ WorkQueue ବାର୍ ଚାଲେ, ଯାହା ସର୍ଭର ସହ ପୋର୍ଟ 8420 ରେ HTTP ଦ୍ୱାରା କଥା ହୁଏ ଏବଂ ତାହାକୁ ପୋର୍ଟ 8421 ରେ UDP ବ୍ରଡକାଷ୍ଟ ଦ୍ୱାରା ଖୋଜେ। ସବୁକିଛି ଅଫିସ ନେଟୱାର୍କ ଭିତରେ ହିଁ ରହେ।</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">ମ୍ୟାନେଜରଙ୍କ PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">ଗୋଟିଏ SQLite ଡାଟାବେସ୍ ଫାଇଲ୍</text>
+        <text class="dg-s" x="38" y="182">ଡ୍ୟାସବୋର୍ଡ ବ୍ରାଉଜରରେ ଖୋଲେ</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">କର୍ମଚାରୀଙ୍କ PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px ପଟି</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">କର୍ମଚାରୀଙ୍କ PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px ପଟି</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">କର୍ମଚାରୀଙ୍କ PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px ପଟି</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 ସର୍ଭର ଖୋଜେ</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">ଉପରର ସବୁକିଛି ଆପଣଙ୍କ ଅଫିସ ନେଟୱାର୍କ ଭିତରେ ହିଁ ରହେ</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>ଅଫିସ ବାହାରେ?</h3><p>WorkQueue ଏକ ବ୍ୟକ୍ତିଗତ ନେଟୱାର୍କ (Tailscale) ସହ ଯୋଡ଼ି ହୋଇପାରେ, ଯାହାଫଳରେ ଘରର ଲାପଟପ୍ କିମ୍ବା ଦ୍ୱିତୀୟ ଶାଖା ସେହି ସର୍ଭର ପର୍ଯ୍ୟନ୍ତ ଏନକ୍ରିପ୍ଟେଡ୍ ଭାବେ ପହଞ୍ଚେ ଏବଂ ସାର୍ବଜନୀନ ଇଣ୍ଟରନେଟରେ କିଛି ରଖାଯାଏ ନାହିଁ। ସେଟଅପ୍‌ରେ ଏହା ଗୋଟିଏ ଅତିରିକ୍ତ ପାହାଚ ଏବଂ ଲାଇସେନ୍ସରେ ହିଁ ସାମିଲ।</p></div>
+      <div class="card"><h3>ବ୍ୟାକଅପ୍ ହେଉଛି ଗୋଟିଏ ଫାଇଲ୍</h3><p>ବ୍ୟବସ୍ଥା ଯାହା କିଛି ଜାଣେ ତାହା ଗୋଟିଏ ହିଁ ଡାଟାବେସ୍। ସର୍ଭର ଚାଲୁଥିବା ବେଳେ ହିଁ ଡ୍ୟାସବୋର୍ଡ ତାହା ରପ୍ତାନି କରେ — କିମ୍ବା ଚେକସମ୍ ସହ ପୂର୍ଣ୍ଣ ସ୍ନାପସଟ୍, କିମ୍ବା ଡାଟାବେସର ହୁବହୁ ନକଲ। ତାହାକୁ ସେହି PC ଠାରୁ ଦୂରରେ ରଖନ୍ତୁ ଏବଂ ଆପଣ ସୁରକ୍ଷିତ।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ଗୋଟିଏ ଭଲ କଥା</span>
+      <h2>ଏହା ଗୋଟିଏ ଛୋଟ ଆନନ୍ଦ ମଧ୍ୟ ପାଳନ କରିପାରେ।</h2>
+      <p class="lede">କାମ ବଦଳରେ ଗୋଟିଏ କାର୍ଡ ପଠାନ୍ତୁ — ଜନ୍ମଦିନ, ଚାକିରିର ବାର୍ଷିକୀ, ଗୋଟିଏ ଜୟ, କାହାର ସ୍ୱାଗତ। ସେହି ବ୍ୟକ୍ତିଙ୍କ ପଟି ଉପରେ ବେଲୁନ୍ ଭାସେ, ଏବଂ ଚାହିଁଲେ ପ୍ୟାନେଲରେ ଗୋଟିଏ ମିନିଟ୍‌ର ଖେଳ ମଧ୍ୟ ଅଛି। କାର୍ଡ କେବେ ଇତିହାସ, ଆନାଲିଟିକ୍ସ କିମ୍ବା କାହାର କାମ ସମୟରେ ଯାଏ ନାହିଁ। ତାହା କାମ ନୁହେଁ, ଏବଂ ଗୋଟିଏ ଦିନ ପରେ ନିଜେ ହଟିଯାଏ।</p>
+      <p class="small muted">ଆମେ ଏହାର ଉଲ୍ଲେଖ କରୁ କାରଣ ନଜରଦାରୀ ସଫ୍ଟୱେୟାରର ଏକ ପ୍ରତିଛବି ଥାଏ, ଏବଂ ଯେଉଁ ଉପକରଣ ପ୍ରତି ଆପଣଙ୍କ ଦଳ ବିରକ୍ତ ହୁଏ ତାହା ଚୁପଚାପ୍ ବ୍ୟବହାର ହେବା ବନ୍ଦ ହୋଇଯାଏ।</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">ବିବରଣୀ</span>
+      <h2>ଚଳାଇବାକୁ କଣ କଣ ଦରକାର</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>ମ୍ୟାନେଜରଙ୍କ PC</dt><dd>Windows 10 କିମ୍ବା 11, କାମ ସମୟରେ ଚାଲୁ ରହିବା ଦରକାର। ଅଲଗା ସର୍ଭର ନାହିଁ, ବିଶେଷ ହାର୍ଡୱେୟାର ମଧ୍ୟ ନାହିଁ। ଇନଷ୍ଟଲ୍ ପାଇଁ ଥରେ ଆଡମିନ୍ ଅଧିକାର ଦରକାର।</dd></div>
+      <div><dt>କର୍ମଚାରୀଙ୍କ PC</dt><dd>Windows 10 କିମ୍ବା 11। ଆଡମିନ୍ ଅଧିକାର ଦରକାର ନାହିଁ — ପଟି ଲଗ୍-ଇନ୍ ହୋଇଥିବା ବ୍ୟବହାରକାରୀଙ୍କ ପାଇଁ ଇନଷ୍ଟଲ୍ ହୁଏ।</dd></div>
+      <div><dt>ନେଟୱାର୍କ</dt><dd>ସବୁ PC ଗୋଟିଏ ଅଫିସ ନେଟୱାର୍କରେ, ତାର ଦ୍ୱାରା କିମ୍ବା Wi-Fi ଦ୍ୱାରା। ସେମାନଙ୍କ ମଧ୍ୟରେ TCP ପୋର୍ଟ 8420 ଓ UDP ପୋର୍ଟ 8421 ଖୋଲା ରହିବା ଦରକାର — ଇନଷ୍ଟଲର ଫାୟାରୱାଲ୍ ନିଜେ ଖୋଲିଦିଏ।</dd></div>
+      <div><dt>ଇଣ୍ଟରନେଟ୍</dt><dd>ଦରକାର ନାହିଁ। କେବଳ ଅଫିସ ବାହାରର ଲୋକଙ୍କ ପାଇଁ ରିମୋଟ ଆକସେସ୍ ଚାଲୁ କଲେ ହିଁ ଦରକାର।</dd></div>
+      <div><dt>ଡ୍ୟାସବୋର୍ଡ</dt><dd>ନେଟୱାର୍କର ଯେକୌଣସି ଡିଭାଇସରେ ଯେକୌଣସି ଆଧୁନିକ ବ୍ରାଉଜର, ଫୋନ କିମ୍ବା ଟାବଲେଟ୍ ସହିତ।</dd></div>
+      <div><dt>ଇନଷ୍ଟଲ୍ ସମୟ</dt><dd>ସର୍ଭର ପାଇଁ ପ୍ରାୟ ଦଶ ମିନିଟ୍ ଏବଂ ପ୍ରତି କର୍ମଚାରୀ PC ପାଇଁ ଗୋଟିଏ ମିନିଟ୍‌ରୁ ମଧ୍ୟ କମ୍।</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">ଏବଂ ଏହା କଣ କରେ ନାହିଁ</h3>
+    <p class="muted">ଦ୍ୱିତୀୟ ମାସରେ ଜାଣିବା ଅପେକ୍ଷା ଆପଣ ଏହା ଏବେ ହିଁ ପଢ଼ିନିଅନ୍ତୁ, ଆମେ ଏହା ହିଁ ଭଲ ମନେ କରୁ।</p>
+    <ul class="check-list">
+          <li><strong>ଏହା କେବଳ Windows ପାଇଁ।</strong> Mac ଓ Linux ଥିବା କର୍ମଚାରୀ ମେସିନ୍ ଏବେ ସମର୍ଥିତ ନୁହନ୍ତି।</li>
+          <li><strong>ଲୋକଙ୍କ ପରିଚୟ ସେମାନଙ୍କ PC ରୁ ହୁଏ,</strong> କୌଣସି ଲଗଇନ୍‌ରୁ ନୁହେଁ। ବିଶ୍ୱସ୍ତ ଅଫିସ ନେଟୱାର୍କ ପାଇଁ ଏହା ଠିକ୍ ସୁଧ, କିନ୍ତୁ ଏହାର ଅର୍ଥ ଯେ କେହି ଜିଦ୍ ଧରିଲେ ଅନ୍ୟ ମେସିନ୍ ବୋଲି ଛଳନା କରିପାରେ।</li>
+          <li><strong>କାମର ସମୟ ହେଉଛି କାନ୍ଥ-ଘଣ୍ଟାର ସମୟ।</strong> ଖାଇବା ସମୟରେ ମଧ୍ୟ କାମ ଖୋଲା ରହିଲେ, ଖାଇବା ମଧ୍ୟ ସେହି ସଂଖ୍ୟାରେ ଆସେ। ଏହା ଅତିବାହିତ ସମୟ ମାପେ, ପରିଶ୍ରମ ନୁହେଁ।</li>
+          <li><strong>ନେଟୱାର୍କ ବାହାରେ ଧାଡ଼ି ପୁରୁଣା ପଡ଼ିଯାଏ।</strong> ଅଫିସଠାରୁ ଦୂରରେ ଥିବା ଲାପଟପରେ ପୁଣି ଯୋଡ଼ି ହେବା ପର୍ଯ୍ୟନ୍ତ ଶେଷ ଜଣାଥିବା କାମ ହିଁ ଦେଖାଯାଏ — ଯେପର୍ଯ୍ୟନ୍ତ ଆପଣ ରିମୋଟ ଆକସେସ୍ ଚାଲୁ ନକରନ୍ତି।</li>
+          <li><strong>ପଟି 34 ପିକସେଲ୍</strong> ଉଚ୍ଚତା ମୁଖ୍ୟ ମନିଟରରେ ସ୍ଥାୟୀ ଭାବେ ନିଏ।</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">ପ୍ରଶ୍ନ</span>
+      <h2>ବିଶେଷ କରି WorkQueue ବିଷୟରେ</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>ଏହା କର୍ମଚାରୀଙ୍କ ନଜରଦାରୀ କି? ମୋ ଦଳକୁ ଏହା ଭଲ ଲାଗିବ ନାହିଁ କି?</summary>
+        <div class="faq-body">
+          <p>ଏହା ପ୍ରତ୍ୟେକ କାମର ଦୁଇଟି ହିଁ କଥା ଲେଖେ: ତାହା ପରଦାରେ କେବେ ପହଞ୍ଚିଲା ଏବଂ ସେହି ବ୍ୟକ୍ତି Complete କେବେ ଦବାଇଲେ। ଏହା ସ୍କ୍ରିନସଟ୍ ନିଏ ନାହିଁ, କୀଷ୍ଟ୍ରୋକ୍ ଲେଖେ ନାହିଁ, ଖାଲି ସମୟ ଗଣେ ନାହିଁ, କିଏ କେଉଁ ୱେବସାଇଟ୍ ଖୋଲୁଛି ତାହା ମଧ୍ୟ ଦେଖେ ନାହିଁ — ଏବଂ ଆଗକୁ ମଧ୍ୟ କରିବ ନାହିଁ। ଏହା ଜାଣିଶୁଣି ଟଣାଯାଇଥିବା ରେଖା, ଅବହେଳା ନୁହେଁ। ପ୍ରକୃତରେ ଦଳଙ୍କୁ ଏହା ଭଲ ଲାଗେ, କାରଣ &quot;ମୁଁ ତ ଘଣ୍ଟା ଆଗରୁ ପଠାଇଦେଇଥିଲି&quot; ପରି ତର୍କ ତର୍କ ହୋଇ ରହେ ନାହିଁ। ସମସ୍ତଙ୍କ ଆଗରେ ଗୋଟିଏ ହିଁ ସମୟ ଲେଖା ଅଛି।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ଏହା କେତେ ଲୋକଙ୍କୁ ସମ୍ଭାଳି ପାରିବ?</summary>
+        <div class="faq-body">
+          <p>ଏହା ଗୋଟିଏ ଅଫିସ ପାଇଁ ତିଆରି ଓ ପରୀକ୍ଷିତ — ସାଧାରଣ ହାର୍ଡୱେୟାରରେ ଏକାସାଙ୍ଗରେ ପ୍ରାୟ 25 ମେସିନ୍, ଏବଂ ପ୍ରତିକ୍ରିୟା ସେକେଣ୍ଡର ଦଶମାଂଶରୁ ମଧ୍ୟ କମ୍‌ରେ। ଆପଣ ଏଥିରୁ ବଡ଼ ହୋଇଥିଲେ, କିଣିବା ପରେ ନୁହେଁ, ଆଗରୁ କଥା ହୁଅନ୍ତୁ।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ମ୍ୟାନେଜରଙ୍କ PC ଖରାପ ହୋଇଗଲେ?</summary>
+        <div class="faq-body">
+          <p>ସର୍ଭରକୁ ଅନ୍ୟ ଏକ PC ରେ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କ ଶେଷ ରପ୍ତାନି ଆମଦାନୀ କରିନିଅନ୍ତୁ। ସେଥିପାଇଁ ହିଁ ବ୍ୟାକଅପ୍ ଗୋଟିଏ ଫାଇଲ୍ ଏବଂ ସେଥିପାଇଁ ହିଁ ଡ୍ୟାସବୋର୍ଡ ଆପଣଙ୍କୁ ବାରମ୍ବାର ଅନ୍ୟ କେଉଁଠି ନକଲ ରଖିବାକୁ କହେ। କର୍ମଚାରୀଙ୍କ PC ନୂଆ ସର୍ଭରକୁ ନିଜେ ଖୋଜି ନିଅନ୍ତି।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ମୁଁ ମୋର ତଥ୍ୟ ବାହାର କରିପାରିବି କି?</summary>
+        <div class="faq-body">
+          <p>ହଁ, ଯେକୌଣସି ସମୟରେ ଏବଂ ଆମକୁ ନପଚାରି ହିଁ। ଇତିହାସ CSV ରେ ବାହାରେ, ଏବଂ ସମ୍ପୂର୍ଣ୍ଣ ଡାଟାବେସ୍ JSON ସ୍ନାପସଟ୍ ଭାବେ କିମ୍ବା ସିଧା SQLite ଫାଇଲ୍ ଭାବେ ବାହାରି ଆସେ। କୌଣସି ଲକ୍-ଇନ୍ ନାହିଁ, କାରଣ ଆମ ପାଖରେ ଆପଣଙ୍କର ଏମିତି କିଛି ନାହିଁ ଯାହାକୁ ଅଟକାଯାଇପାରେ।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ଆପଣମାନେ ଆମର କାମ ଦେଖିପାରନ୍ତି କି?</summary>
+        <div class="faq-body">
+          <p>ନାହିଁ। ସଫ୍ଟୱେୟାର କେବେ ଆମ ସହ ଯୋଗାଯୋଗ କରେ ନାହିଁ। କୌଣସି ଟେଲିମେଟ୍ରି ନାହିଁ, ଲାଇସେନ୍ସ ଯାଞ୍ଚ ନାହିଁ, ଆନାଲିଟିକ୍ସ କଲ୍ ନାହିଁ। ଆପଣଙ୍କ ଅଫିସରେ ଇଣ୍ଟରନେଟ୍ ନଥିଲେ ମଧ୍ୟ WorkQueue ଜାଣି ପାରିବ ନାହିଁ।</p>
+        </div>
+      </details>
+      <details>
+        <summary>ସହାୟତା କେମିତି ହୁଏ?</summary>
+        <div class="faq-body">
+          <p>ଇମେଲ୍, ଗୋଟିଏ କାର୍ଯ୍ୟଦିବସ ମଧ୍ୟରେ ଉତ୍ତର, ଏବଂ ଉତ୍ତର ଦେଉଥିବା ବ୍ୟକ୍ତି ସେହି ଜଣ ଯିଏ ସଫ୍ଟୱେୟାର ଲେଖିଛନ୍ତି। ଲାଇସେନ୍ସରେ ଗୋଟିଏ ବର୍ଷର ସହାୟତା ଓ ଗୋଟିଏ ବର୍ଷର ଅପଡେଟ୍ ସାମିଲ।</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 ଦିନ ନିଜ ଦଳ ଉପରେ ଲଗାଇ ଦେଖନ୍ତୁ।</h2>
+    <p class="lede">ସମ୍ପୂର୍ଣ୍ଣ ଉପକରଣ, କିଛି ଅଟକାଯାଇନାହିଁ ଏବଂ ବାତିଲ୍ କରିବାକୁ ମଧ୍ୟ କିଛି ନାହିଁ। ମୋଟାମୋଟି କେତେ PC ଅଛି କୁହନ୍ତୁ — ଆମେ ଇନଷ୍ଟଲର ପଠାଇବୁ ଏବଂ ସେଟଅପ୍ ହେବା ପର୍ଯ୍ୟନ୍ତ କଲ୍‌ରେ ରହିବୁ।</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/or/contact?about=trial">ଟ୍ରାଏଲ୍ ମାଗନ୍ତୁ</a>
+      <a class="btn btn-ghost btn-lg" href="/or/pricing">ମୂଲ୍ୟ ଦେଖନ୍ତୁ</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/or/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>ଛୋଟ ବ୍ୟବସାୟ ପାଇଁ ଛୋଟ Windows ଉପକରଣ। ମୁମ୍ବାଇରେ, ଭାରତରେ ତିଆରି — ଥରେ କିଣନ୍ତୁ, ନିଜ ନେଟୱାର୍କରେ ଚଳାନ୍ତୁ।</p>
+      </div>
+      <div class="footer-col">
+        <h4>ଉପକରଣ</h4>
+        <ul>
+          <li><a href="/or/workqueue">WorkQueue</a></li>
+          <li><a href="/or/workqueue#requirements">କଣ କଣ ଦରକାର</a></li>
+          <li><a href="/or/contact?about=roadmap">ପରେ କଣ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>କିଣିବା</h4>
+        <ul>
+          <li><a href="/or/pricing">ମୂଲ୍ୟ</a></li>
+          <li><a href="/or/contact?about=trial">ମାଗଣା ଟ୍ରାଏଲ୍</a></li>
+          <li><a href="/or/contact?about=setup">ସେଟଅପ୍‌ରେ ସହାୟତା</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ଯୋଗାଯୋଗ</h4>
+        <ul>
+          <li><a href="/or/india">ପ୍ରତ୍ୟେକ ରାଜ୍ୟ</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="ନମସ୍କାର, ମୁଁ Quietworks ୱେବସାଇଟ୍ ଦେଖିଲି ଏବଂ ଅଧିକ ଜାଣିବାକୁ ଚାହେଁ।" href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।</span>
+      <span>ମୁମ୍ବାଇରେ ତିଆରି</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

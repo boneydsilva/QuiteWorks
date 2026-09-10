@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — अपने ही नेटवर्क पर काम बाँटिए और समय गिनिए</title>
+<meta name="description" content="WorkQueue आपकी टीम को काम उनकी स्क्रीन के ऊपर लगी 34-पिक्सल की स्ट्रिप से देता है, हर काम का समय अपने आप गिनता है, और उसकी रिपोर्ट बनाता है। आपके अपने Windows PC पर चलता है। पूरी कंपनी के लिए एक बार का भुगतान।">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="hi_IN">
+<meta property="og:title" content="WorkQueue — अपने ही नेटवर्क पर काम बाँटिए और समय गिनिए">
+<meta property="og:description" content="WorkQueue आपकी टीम को काम उनकी स्क्रीन के ऊपर लगी 34-पिक्सल की स्ट्रिप से देता है, हर काम का समय अपने आप गिनता है, और उसकी रिपोर्ट बनाता है। आपके अपने Windows PC पर चलता है। पूरी कंपनी के लिए एक बार का भुगतान।">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/hi/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/hi/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/hi/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"क्या यह कर्मचारियों की निगरानी है? क्या मेरी टीम को यह बुरा लगेगा?","acceptedAnswer":{"@type":"Answer","text":"यह हर काम की दो ही बातें दर्ज करता है: वह स्क्रीन पर कब पहुँचा और उस व्यक्ति ने Complete कब दबाया। यह न स्क्रीनशॉट लेता है, न कीस्ट्रोक रिकॉर्ड करता है, न ख़ाली समय गिनता है, न देखता है कि कौन कौन-सी वेबसाइट खोल रहा है — और कभी करेगा भी नहीं। यह जानबूझकर खींची गई रेखा है, चूक नहीं। असल में टीमों को यह पसंद आता है, क्योंकि \"मैंने तो घंटों पहले भेज दिया था\" वाली बहस बहस नहीं रह जाती। सबके सामने एक ही समय दर्ज है।"}},{"@type":"Question","name":"यह कितने लोगों को सँभाल सकता है?","acceptedAnswer":{"@type":"Answer","text":"यह एक दफ़्तर के लिए बना और परखा गया है — आम हार्डवेयर पर एक साथ क़रीब 25 मशीनें, और जवाब एक सेकंड के दसवें हिस्से से भी कम में। अगर आप इससे बड़े हैं, तो ख़रीदने के बाद नहीं, पहले बात कीजिए।"}},{"@type":"Question","name":"अगर मैनेजर का PC ख़राब हो जाए तो?","acceptedAnswer":{"@type":"Answer","text":"सर्वर किसी दूसरे PC पर इंस्टॉल कीजिए और आख़िरी एक्सपोर्ट इम्पोर्ट कर लीजिए। इसीलिए बैकअप एक ही फ़ाइल है और इसीलिए डैशबोर्ड आपसे बार-बार कहीं और कॉपी रखने को कहता है। कर्मचारियों के PC नया सर्वर खुद ढूँढ़ लेते हैं।"}},{"@type":"Question","name":"क्या मैं अपना डेटा बाहर निकाल सकता हूँ?","acceptedAnswer":{"@type":"Answer","text":"हाँ, कभी भी और हमसे पूछे बिना। इतिहास CSV में जाता है, और पूरा डेटाबेस JSON स्नैपशॉट के रूप में या ख़ुद SQLite फ़ाइल के रूप में निकल आता है। कोई लॉक-इन नहीं है, क्योंकि हमारी तरफ़ आपका कुछ है ही नहीं जिसे रोका जा सके।"}},{"@type":"Question","name":"क्या आप हमारे काम देख सकते हैं?","acceptedAnswer":{"@type":"Answer","text":"नहीं। सॉफ़्टवेयर कभी हमसे संपर्क नहीं करता। न कोई टेलीमेट्री, न कोई लाइसेंस जाँच, न कोई एनालिटिक्स कॉल। अगर आपके दफ़्तर में इंटरनेट हो ही नहीं, तो WorkQueue को फ़र्क़ तक नहीं पड़ेगा।"}},{"@type":"Question","name":"सपोर्ट कैसा रहता है?","acceptedAnswer":{"@type":"Answer","text":"ईमेल, एक कार्यदिवस के भीतर जवाब, और जवाब देने वाला वही है जिसने सॉफ़्टवेयर लिखा है। लाइसेंस में एक साल का सपोर्ट और एक साल के अपडेट शामिल हैं।"}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/hi/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/hi/">होम</a>
+        <a href="/hi/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/hi/pricing">कीमत</a>
+        <a href="/hi/india">पूरे भारत में</a>
+        <a href="/hi/contact">संपर्क</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="भाषा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">हिन्दी</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">अपनी भाषा चुनें</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi" aria-current="true"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">पूरी साइट इनमें से हर भाषा में लिखी गई है — मशीन से अनुवाद नहीं की गई।</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="थीम बदलें">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/hi/contact?about=trial">ट्रायल शुरू करें</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="मेन्यू">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>काम बाँटिए। ठीक-ठीक जानिए कि कितना समय लगा।</h1>
+        <p class="lede">मैनेजर ब्राउज़र से काम सौंपता है। हर कर्मचारी को अपनी क़तार स्क्रीन के ऊपर लगी एक पतली स्ट्रिप में दिखती है। दोनों समय आपके लिए अपने आप दर्ज हो जाते हैं, इसलिए रिपोर्टिंग लोगों के बस काम करते रहने से अपने आप बन जाती है।</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/hi/contact?about=trial">ट्रायल माँगिए</a>
+          <a class="btn btn-ghost btn-lg" href="/hi/pricing">कीमत देखिए</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 और 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> कोई क्लाउड अकाउंट नहीं</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> एक लाइसेंस, असीमित PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue बोर्ड, ऊपर काम लिखने की जगह और तीन कॉलम: बाक़ी, चल रहा है, और आज पूरा हुआ।" fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">सौंपने के लिए एक पंक्ति। देखने के लिए तीन कॉलम।</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">कर्मचारी की तरफ़</span>
+      <h2>34 पिक्सल। आपके स्टाफ़ को बस इतना ही सीखना है।</h2>
+      <p class="lede">स्ट्रिप Windows में उसी तरह लगती है जैसे टास्कबार, इसलिए Windows उसके लिए जगह छोड़ देता है और पूरी की गई विंडो उसके नीचे ही रुक जाती हैं। वह किसी का काम नहीं ढक सकती, और उसे कोई ढक नहीं सकता।</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 पिक्सल की स्क्रीन के ऊपर पूरी स्ट्रिप: बाईं ओर कर्मचारी का नाम और मौजूदा काम, दाईं ओर हर खुले काम के लिए एक चिप, और बीच में बहुत सारी खाली जगह।">
+      <figcaption class="shot-caption">1920 पिक्सल की स्क्रीन पर पूरी स्ट्रिप। स्क्रीन का बस इतना हिस्सा लेती है — यही तो बात है। नीचे के दोनों नज़दीकी दृश्य इसी स्ट्रिप के असली आकार में हैं।</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="कर्मचारी की स्ट्रिप का बायाँ सिरा: हरा जुड़ा हुआ बिंदु, नाम आशा राव, फिर एक लाल हीरा और काम का नाम — सितंबर के इनवॉइस मिलाइए।">
+        </div>
+        <figcaption class="shot-caption"><strong>बायाँ सिरा।</strong> सर्वर से जुड़े रहने तक एक हरा बिंदु, उनका नाम, और जो काम वे कर रहे हैं। लाल हीरे का मतलब है — ज़रूरी।</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="कर्मचारी की स्ट्रिप का दायाँ सिरा: रंग से पहचाने जाने वाली तीन चिप, हर खुले काम के लिए एक, और एक छोटा मेन्यू तीर।">
+        </div>
+        <figcaption class="shot-caption"><strong>दायाँ सिरा।</strong> हर खुले काम के लिए एक चिप, प्राथमिकता के रंग में। किसी पर क्लिक करते ही उस पर चले जाइए; फ़्रेम उसी रंग का हो जाता है।</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="स्ट्रिप से खुलने वाला पैनल: बाईं ओर मौजूदा काम, उसका ब्यौरा और सौंपे जाने का समय, उसके नीचे एक बड़ा Mark completed बटन, और दाईं ओर कर्मचारी के तीनों काम, हर एक के साथ अपना Complete बटन।">
+      </div>
+      <figcaption class="shot-caption center">किसी काम पर क्लिक करने से यह खुलता है। काम पूरा करने के लिए एक बड़ा बटन, एडमिन से सवाल पूछने के लिए एक बॉक्स, और बाक़ी हर काम एक क्लिक दूर।</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>कोई Accept बटन नहीं है</h3><p>काम उनकी मशीन तक पहुँचते ही &quot;मिल गया&quot; दर्ज हो जाता है। कोई काम मिलने की पुष्टि करना भूल नहीं सकता, और &quot;सौंपा गया&quot; से &quot;उनकी स्क्रीन पर&quot; तक का फ़ासला एक ऐसा आँकड़ा बन जाता है जिसे आप सचमुच सँभाल सकते हैं।</p></div>
+      <div class="card reveal"><h3>पूरा करने के लिए एक बटन</h3><p>किसी काम पर क्लिक कीजिए और पैनल खुल जाता है: ब्यौरा, कोई टिप्पणी, और एक बड़ा Complete बटन जो दूसरी बार क्लिक माँगता है ताकि यह ग़लती से न हो जाए।</p></div>
+      <div class="card reveal"><h3>वे जवाब भी दे सकते हैं</h3><p>कर्मचारी किसी काम पर टिप्पणी छोड़ सकता है — कोई सवाल, कोई अड़चन, या जो मिला उस पर एक नोट। आप उसे देखते हैं और डैशबोर्ड में उसी काम से जवाब दे देते हैं।</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">बोर्ड</span>
+        <h3>एक पंक्ति में सौंपिए, फिर दिन को चलते देखिए</h3>
+        <p>एक शीर्षक, जो ब्यौरा उस व्यक्ति को चाहिए, प्राथमिकता, तारीख़, किसे जाना है, और Assign। वही काम एक व्यक्ति को भेजिए या छह को।</p>
+        <ul class="check-list">
+          <li><strong>तीन चलती कॉलम</strong> — बाक़ी, चल रहा है, और आज पूरा हुआ, व्यक्ति के हिसाब से।</li>
+          <li><strong>बिना किसी को टोके काम कीजिए</strong> — कार्ड पर कर्सर ले जाइए और Done, Cancel, Reopen और Delete दिख जाते हैं।</li>
+          <li><strong>काम इधर-उधर कीजिए</strong> — काम खोलिए और किसी और को सौंप दीजिए।</li>
+          <li><strong>ज़रूरी काम ज़रूरी दिखता है</strong> — प्राथमिकता से कार्ड और कर्मचारी की स्ट्रिप का फ़्रेम रंग जाता है।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="बोर्ड, जिसमें पाँच काम बाक़ी हैं, तीन चल रहे हैं और बारह आज पूरे हुए।">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">एनालिटिक्स</span>
+        <h3>वे सवाल जो मैनेजर सचमुच पूछता है</h3>
+        <p>सात मुख्य आँकड़े और दस चार्ट, सब एक ही फ़िल्टर पंक्ति से चलते हैं। हर चार्ट के साथ उसकी टेबल भी है, ताकि आप बार को घूरने के बजाय आँकड़े पढ़ सकें।</p>
+        <ul class="check-list">
+          <li><strong>कितना काम हुआ</strong> — रोज़ाना, सौंपे गए के मुक़ाबले पूरे हुए।</li>
+          <li><strong>कामों में कितना समय लगता है</strong> — प्रति काम औसत और मध्यमान, और अवधि के सबसे लंबे काम।</li>
+          <li><strong>काम कितनी जल्दी उठाया जाता है</strong> — रोज़ाना और प्रति व्यक्ति जवाब का समय।</li>
+          <li><strong>कौन कितना उठा रहा है</strong> — प्रति कर्मचारी संख्या, घंटे, जवाब और समय पर पूरा करने की दर।</li>
+          <li><strong>आपकी टीम कब व्यस्त रहती है</strong> — दिन के घंटे और हफ़्ते के दिन के हिसाब से।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="एनालिटिक्स: 164 पूरे हुए, 7 दिन 7 घंटे काम का समय, प्रति काम औसत 1 घंटा 4 मिनट, औसत जवाब 21 मिनट, 95% समय पर, और साथ में चार्ट।">
+        </div>
+        <figcaption class="shot-caption">डिफ़ॉल्ट में हल्का, चाहें तो गहरा — पूरे डैशबोर्ड में दोनों हैं।</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">इतिहास और कैलेंडर</span>
+        <h3>हर काम का अपना रिकॉर्ड बना रहता है</h3>
+        <p>व्यक्ति और तारीख़ से इतिहास छानिए और हर पंक्ति पर जवाब का समय और काम का समय मिलता है, नीचे हर व्यक्ति का जोड़, और एक CSV एक्सपोर्ट जो स्क्रीन पर दिख रही चीज़ से पूरी तरह मेल खाता है — वही जो आपके अकाउंटेंट या क्लाइंट को असल में चाहिए।</p>
+        <ul class="check-list">
+          <li><strong>कहीं भी किसी काम के नाम पर क्लिक कीजिए,</strong> और उसका पूरा समय-क्रम खुल जाता है।</li>
+          <li><strong>कैलेंडर</strong> महीने को रंग की गहराई से दिखाता है, ताकि सुस्त हफ़्ता एक नज़र में दिख जाए।</li>
+          <li><strong>पूरा हो चुका काम फिर से खोलिए</strong> — सीधे उसी पंक्ति से, अगर वह लौट आए।</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="कैलेंडर टैब: रंग की गहराई वाला महीना, और उसके साथ पूरे हुए कामों की सूची, नया दिन सबसे ऊपर।">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">जब कुछ गड़बड़ हो</span>
+      <h2>एक दफ़्तर के लिए बना है, डेमो के लिए नहीं।</h2>
+      <p class="lede">छोटे दफ़्तरों में बुरी दोपहरें आती हैं। राउटर रीबूट होता है, ब्रॉडबैंड बैठ जाता है, कोई ग़लत PC बंद कर देता है। इनमें से हर एक के लिए पहले से सोचा गया है, बाद में पता नहीं चला।</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>नेटवर्क चला जाता है।</strong> पूरे हुए काम और टिप्पणियाँ PC के अपने आउटबॉक्स में चली जाती हैं और सर्वर लौटते ही पहुँच जाती हैं — हर एक अपने असली क्लिक के समय के साथ, यानी तीन घंटे की बंदी में 10:35 पर पूरा हुआ काम 10:35 पर ही दर्ज रहता है, 13:35 पर नहीं।</li>
+          <li><strong>कोई चीज़ दो बार चली जाती है।</strong> हर कार्रवाई के साथ एक अनोखी id जाती है जिसे सर्वर पहचानता है, इसलिए कनेक्शन टूटने के बाद दोबारा भेजने पर भी कोई काम दो बार नहीं गिना जा सकता।</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>सर्वर PC का IP बदल जाता है।</strong> स्ट्रिप स्थानीय नेटवर्क पर पूछती है और सर्वर अपने नए पते के साथ जवाब देता है। अगर आपका राउटर ब्रॉडकास्ट रोकता है — मेश और ISP राउटर में आम बात है — तो वह पूरे नेटवर्क को स्कैन कर लेती है।</li>
+          <li><strong>कुछ नहीं चल रहा और किसी को कारण नहीं पता।</strong> अंदर बना एक चेक आठ आम कारणों से गुज़रता है — फ़ायरवॉल, Wi-Fi आइसोलेशन, VPN, ग़लत पता — और सीधी भाषा में बता देता है कि कारण कौन सा है।</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">यह कैसे जुड़ता है</span>
+      <h2>दो प्रोग्राम, एक नेटवर्क, कोई क्लाउड नहीं।</h2>
+      <p class="lede">पूरा सिस्टम मैनेजर के PC पर एक प्रोग्राम है और हर कर्मचारी के PC पर एक छोटा प्रोग्राम। वे आपस में दफ़्तर के नेटवर्क पर बात करते हैं, और कहीं नहीं।</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue की बनावट</title>
+        <desc id="diagram-desc">मैनेजर के PC पर WorkQueue सर्वर चलता है, जिसमें एक SQLite डेटाबेस और ब्राउज़र में खुलने वाला डैशबोर्ड है। हर कर्मचारी के PC पर WorkQueue बार चलती है, जो सर्वर से पोर्ट 8420 पर HTTP से बात करती है और उसे पोर्ट 8421 पर UDP ब्रॉडकास्ट से ढूँढ़ती है। सब कुछ दफ़्तर के नेटवर्क के भीतर ही रहता है।</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">मैनेजर का PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">एक SQLite डेटाबेस फ़ाइल</text>
+        <text class="dg-s" x="38" y="182">डैशबोर्ड ब्राउज़र में खुलता है</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">कर्मचारी का PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px स्ट्रिप</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">कर्मचारी का PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px स्ट्रिप</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">कर्मचारी का PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px स्ट्रिप</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 सर्वर ढूँढ़ता है</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">ऊपर का सब कुछ आपके दफ़्तर के नेटवर्क के भीतर ही रहता है</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>दफ़्तर से बाहर?</h3><p>WorkQueue एक निजी नेटवर्क (Tailscale) से जुड़ सकता है, ताकि घर का लैपटॉप या दूसरी ब्रांच उसी सर्वर तक एन्क्रिप्टेड तरीक़े से पहुँचे और सार्वजनिक इंटरनेट पर कुछ भी न रखा जाए। सेटअप में यह एक अतिरिक्त क़दम है और लाइसेंस में शामिल है।</p></div>
+      <div class="card"><h3>बैकअप बस एक फ़ाइल है</h3><p>सिस्टम जो कुछ जानता है वह एक ही डेटाबेस है। सर्वर चलते-चलते डैशबोर्ड उसे एक्सपोर्ट कर देता है — या तो चेकसम के साथ पूरा स्नैपशॉट, या डेटाबेस की हूबहू कॉपी। उसे उस PC से हटाकर रखिए और आप सुरक्षित हैं।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">एक अच्छी बात</span>
+      <h2>यह छोटी-सी ख़ुशी भी मना सकता है।</h2>
+      <p class="lede">काम की जगह एक कार्ड भेजिए — जन्मदिन, नौकरी की सालगिरह, कोई जीत, किसी का स्वागत। उस व्यक्ति की स्ट्रिप पर गुब्बारे तैरते हैं, और चाहें तो पैनल में एक मिनट का खेल भी है। कार्ड न इतिहास में जाता है, न एनालिटिक्स में, न किसी के काम के समय में। वह काम नहीं है, और एक दिन बाद अपने आप हट जाता है।</p>
+      <p class="small muted">हम इसका ज़िक्र इसलिए करते हैं क्योंकि निगरानी वाले सॉफ़्टवेयर की एक छवि होती है, और जिस टूल से आपकी टीम चिढ़ती है वह चुपचाप इस्तेमाल होना बंद हो जाता है।</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">ब्यौरा</span>
+      <h2>चलाने के लिए क्या-क्या चाहिए</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>मैनेजर का PC</dt><dd>Windows 10 या 11, काम के घंटों में चालू रहे। न कोई अलग सर्वर, न कोई ख़ास हार्डवेयर। इंस्टॉल के लिए एक बार एडमिन अधिकार चाहिए।</dd></div>
+      <div><dt>कर्मचारियों के PC</dt><dd>Windows 10 या 11। एडमिन अधिकार की ज़रूरत नहीं — स्ट्रिप लॉग-इन किए हुए उपयोगकर्ता के लिए इंस्टॉल होती है।</dd></div>
+      <div><dt>नेटवर्क</dt><dd>सारे PC एक ही दफ़्तर के नेटवर्क पर, तार से या Wi-Fi से। उनके बीच TCP पोर्ट 8420 और UDP पोर्ट 8421 खुले हों — इंस्टॉलर फ़ायरवॉल खुद खोल देता है।</dd></div>
+      <div><dt>इंटरनेट</dt><dd>ज़रूरी नहीं। सिर्फ़ तब चाहिए जब आप दफ़्तर से बाहर के लोगों के लिए रिमोट एक्सेस चालू करें।</dd></div>
+      <div><dt>डैशबोर्ड</dt><dd>नेटवर्क के किसी भी डिवाइस पर कोई भी आधुनिक ब्राउज़र, फ़ोन या टैबलेट भी।</dd></div>
+      <div><dt>इंस्टॉल में समय</dt><dd>सर्वर के लिए क़रीब दस मिनट और हर कर्मचारी PC के लिए एक मिनट से भी कम।</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">और यह क्या नहीं करता</h3>
+    <p class="muted">हम चाहेंगे कि आप यह अभी पढ़ लें, दूसरे महीने में पता चलने के बजाय।</p>
+    <ul class="check-list">
+          <li><strong>यह सिर्फ़ Windows के लिए है।</strong> Mac और Linux वाली कर्मचारी मशीनें अभी समर्थित नहीं हैं।</li>
+          <li><strong>लोगों की पहचान उनके PC से होती है,</strong> किसी लॉगिन से नहीं। भरोसेमंद दफ़्तर नेटवर्क के लिए यह सही सौदा है, पर इसका मतलब है कि कोई ठान ले तो दूसरी मशीन होने का दिखावा कर सकता है।</li>
+          <li><strong>काम का समय दीवार-घड़ी का समय है।</strong> अगर कोई काम खाने के समय भी खुला रहा, तो खाना भी उसी आँकड़े में है। यह बीता हुआ समय नापता है, मेहनत नहीं।</li>
+          <li><strong>नेटवर्क से बाहर, क़तार पुरानी पड़ जाती है।</strong> दफ़्तर से दूर लैपटॉप पर आख़िरी बार पता चले काम ही दिखते हैं, जब तक वह दोबारा न जुड़ जाए — जब तक आप रिमोट एक्सेस चालू न करें।</li>
+          <li><strong>स्ट्रिप 34 पिक्सल</strong> ऊँचाई मुख्य मॉनिटर पर हमेशा के लिए लेती है।</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">सवाल</span>
+      <h2>ख़ास तौर पर WorkQueue के बारे में</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>क्या यह कर्मचारियों की निगरानी है? क्या मेरी टीम को यह बुरा लगेगा?</summary>
+        <div class="faq-body">
+          <p>यह हर काम की दो ही बातें दर्ज करता है: वह स्क्रीन पर कब पहुँचा और उस व्यक्ति ने Complete कब दबाया। यह न स्क्रीनशॉट लेता है, न कीस्ट्रोक रिकॉर्ड करता है, न ख़ाली समय गिनता है, न देखता है कि कौन कौन-सी वेबसाइट खोल रहा है — और कभी करेगा भी नहीं। यह जानबूझकर खींची गई रेखा है, चूक नहीं। असल में टीमों को यह पसंद आता है, क्योंकि &quot;मैंने तो घंटों पहले भेज दिया था&quot; वाली बहस बहस नहीं रह जाती। सबके सामने एक ही समय दर्ज है।</p>
+        </div>
+      </details>
+      <details>
+        <summary>यह कितने लोगों को सँभाल सकता है?</summary>
+        <div class="faq-body">
+          <p>यह एक दफ़्तर के लिए बना और परखा गया है — आम हार्डवेयर पर एक साथ क़रीब 25 मशीनें, और जवाब एक सेकंड के दसवें हिस्से से भी कम में। अगर आप इससे बड़े हैं, तो ख़रीदने के बाद नहीं, पहले बात कीजिए।</p>
+        </div>
+      </details>
+      <details>
+        <summary>अगर मैनेजर का PC ख़राब हो जाए तो?</summary>
+        <div class="faq-body">
+          <p>सर्वर किसी दूसरे PC पर इंस्टॉल कीजिए और आख़िरी एक्सपोर्ट इम्पोर्ट कर लीजिए। इसीलिए बैकअप एक ही फ़ाइल है और इसीलिए डैशबोर्ड आपसे बार-बार कहीं और कॉपी रखने को कहता है। कर्मचारियों के PC नया सर्वर खुद ढूँढ़ लेते हैं।</p>
+        </div>
+      </details>
+      <details>
+        <summary>क्या मैं अपना डेटा बाहर निकाल सकता हूँ?</summary>
+        <div class="faq-body">
+          <p>हाँ, कभी भी और हमसे पूछे बिना। इतिहास CSV में जाता है, और पूरा डेटाबेस JSON स्नैपशॉट के रूप में या ख़ुद SQLite फ़ाइल के रूप में निकल आता है। कोई लॉक-इन नहीं है, क्योंकि हमारी तरफ़ आपका कुछ है ही नहीं जिसे रोका जा सके।</p>
+        </div>
+      </details>
+      <details>
+        <summary>क्या आप हमारे काम देख सकते हैं?</summary>
+        <div class="faq-body">
+          <p>नहीं। सॉफ़्टवेयर कभी हमसे संपर्क नहीं करता। न कोई टेलीमेट्री, न कोई लाइसेंस जाँच, न कोई एनालिटिक्स कॉल। अगर आपके दफ़्तर में इंटरनेट हो ही नहीं, तो WorkQueue को फ़र्क़ तक नहीं पड़ेगा।</p>
+        </div>
+      </details>
+      <details>
+        <summary>सपोर्ट कैसा रहता है?</summary>
+        <div class="faq-body">
+          <p>ईमेल, एक कार्यदिवस के भीतर जवाब, और जवाब देने वाला वही है जिसने सॉफ़्टवेयर लिखा है। लाइसेंस में एक साल का सपोर्ट और एक साल के अपडेट शामिल हैं।</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 दिन अपनी ही टीम पर लगाकर देखिए।</h2>
+    <p class="lede">पूरा टूल, कुछ भी रोका नहीं गया, और रद्द करने को कुछ नहीं। हमें मोटे तौर पर बता दीजिए कि कितने PC हैं — हम इंस्टॉलर भेजेंगे और सेटअप के दौरान कॉल पर बने रहेंगे।</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/hi/contact?about=trial">ट्रायल माँगिए</a>
+      <a class="btn btn-ghost btn-lg" href="/hi/pricing">कीमत देखिए</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/hi/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>छोटे कारोबारों के लिए छोटे Windows टूल। मुंबई, भारत में बने — एक बार खरीदिए, अपने ही नेटवर्क पर चलाइए।</p>
+      </div>
+      <div class="footer-col">
+        <h4>टूल</h4>
+        <ul>
+          <li><a href="/hi/workqueue">WorkQueue</a></li>
+          <li><a href="/hi/workqueue#requirements">क्या-क्या चाहिए</a></li>
+          <li><a href="/hi/contact?about=roadmap">आगे क्या आ रहा है</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>खरीदारी</h4>
+        <ul>
+          <li><a href="/hi/pricing">कीमत</a></li>
+          <li><a href="/hi/contact?about=trial">मुफ़्त ट्रायल</a></li>
+          <li><a href="/hi/contact?about=setup">सेटअप में मदद</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>संपर्क</h4>
+        <ul>
+          <li><a href="/hi/india">हर राज्य</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="नमस्ते, मैंने Quietworks की वेबसाइट देखी और इसके बारे में और जानना चाहता/चाहती हूँ।" href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. सर्वाधिकार सुरक्षित।</span>
+      <span>मुंबई में बना</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

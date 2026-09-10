@@ -5,9 +5,15 @@ description: Edit, preview, re-record or deploy the Quietworks marketing site (b
 
 # Quietworks site
 
-`D:\BoneysNewWebsiteProcessAutoamation` — plain HTML, CSS and JS. **No build
-step, no npm, no framework.** What is in `public/` is exactly what is served.
-Live at <https://boneydsilva.com> on Cloudflare Workers static assets.
+`D:\BoneysNewWebsiteProcessAutoamation` — plain HTML, CSS and JS. **No npm, no
+framework.** What is in `public/` is exactly what is served. Live at
+<https://boneydsilva.com> on Cloudflare Workers static assets.
+
+There is **one build step**, and it only writes static HTML:
+`python tools\build_i18n.py` generates the eleven translated languages, the
+36 state pages, the sitemap and robots.txt. Run it after touching anything
+under `tools/content/`, and run `python tools\build_i18n.py --check` before
+deploying — it fails if `public/` is out of date.
 
 Deploy is `git add -A; git commit; git push` — Cloudflare rebuilds in about
 40 seconds. Only `public/` is published; `tools/`, `deploy/` and the READMEs
@@ -34,10 +40,15 @@ Range requests so the demo film can be seeked locally.
 | CSS sections | numbered `/* --- 1. Tokens */` … keep them in order and renumber if you insert one |
 | JS sections | numbered the same way, each an `initX()` called from one `DOMContentLoaded` |
 
-Header, footer and nav are **copy-pasted into all five pages** — the cost of
-having no build step. Change one, change all five, and `public/sitemap.xml`.
-Once there are four or five tools that stops being tolerable; that is the
-moment for a tiny build step or Astro, not before.
+Header, footer and nav are **copy-pasted into the five hand-written English
+pages**. Change one, change all five — and then run the build, because the
+generated pages have their own copy from `build_i18n.py`. If the two drift the
+site looks like two sites.
+
+The build owns three blocks inside those English pages, between
+`<!-- qw:hreflang -->`, `<!-- qw:langpicker -->` and `<!-- qw:jsonld -->`.
+Do not hand-edit inside a marker; edit the builder. Delete a marker and the
+build stops rather than quietly dropping the block.
 
 Dark mode lives in three blocks that must stay in step: `:root`,
 `@media (prefers-color-scheme: dark) :root:not([data-theme="light"])`, and
@@ -53,6 +64,35 @@ Dark mode lives in three blocks that must stay in step: `:root`,
   Plausible or Cloudflare Web Analytics need no banner if he ever wants numbers.
 - Every screenshot needs real `alt` text and explicit `width`/`height`, or the
   page jumps while images load.
+
+## Twelve languages and 36 states
+
+125 pages: five hand-written English ones, and 120 generated. Full detail in
+**`tools/README.md`**; the parts worth knowing before you touch anything:
+
+| | |
+|---|---|
+| Languages | `tools/content/langs.py` — English + hi mr bn ta te kn ml gu pa or as |
+| States | `tools/content/states.py` — 28 states, 8 union territories |
+| Copy | `tools/content/strings/<lang>.py` — 434 keys, `en.py` is the reference |
+| URLs | `/pricing`, `/hi/pricing`, `/india`, `/india/maharashtra`, `/mr/india/maharashtra` |
+
+- **Every core page exists in all twelve.** A state page exists in English
+  always, and in that state's own language only where the two differ — Goa
+  works in English, so it has one page, not two. `hreflang` lists only what
+  really exists; the picker still offers twelve and sends the rest to that
+  language's `/india`.
+- **The build refuses a half-finished translation.** Every strings file must
+  carry exactly the keys `en.py` has.
+- **`{state}` cannot just take a case ending** in most of these languages.
+  Four different patterns are in use and a new template has to pick one — the
+  table is in `tools/README.md`. Read the generated `<h1>` before believing a
+  template: `महाराष्ट्र मधील` and `தமிழ்நாடு-இல்` were both wrong, and both
+  looked fine in the Python.
+- **Nothing redirects on language.** `offerLanguage()` shows one dismissible
+  line when the browser asks for a language this page exists in, once per
+  browser. Being moved somewhere you cannot read, because of a header you have
+  never seen, is worse than the English you expected.
 
 ## The demo film
 
@@ -77,8 +117,11 @@ What is worth knowing before you start:
   the dashboard's CSS pixels) at each end of the move, and the caption.
   Check framing with `python tools\compose_demo.py <dir> still 7 25 36 58`
   rather than sitting through a five minute render.
-- **If you re-cut the film, update `FILM_CHAPTERS` in `site.js`** — five
-  timestamps — or the chapter buttons seek to the wrong places.
+- **If you re-cut the film, the five timestamps live in the markup**, on the
+  `<button data-film-at data-film-text>` chapter buttons — in `index.html` and
+  in every generated home page, because each language has its own captions.
+  Change `h_film_cap1..5` and the `at` values in `build_i18n.py`, then
+  rebuild. `initFilm()` reads whatever is in the DOM.
 - The music is synthesised from sine partials in `tools/score_demo.py`.
   Nothing sampled, nothing licensed. Keep it that way: no stock music.
 
@@ -116,9 +159,23 @@ overlay and the link still works with JavaScript off.
 
 ## Before saying a change works
 
-Load every page in headless Chrome over CDP and assert **zero console
-messages** — `/`, `/workqueue`, `/pricing`, `/contact` and a 404. Then check
-the thing you changed in both themes and at 390 / 760 / 1280 px.
+```powershell
+python tools\build_i18n.py           # or --check, if you changed no content
+python tools\audit_seo.py            # all 125 pages, no browser needed
+python tools\preview.py 8021         # then, in a second window:
+python tools\check_console.py 8021
+```
+
+`audit_seo.py` walks every page for one `<h1>`, sane title and description
+lengths, a canonical matching where the file is, internal links that resolve,
+`hreflang` sets that are reciprocal, and a sitemap that agrees with the tree.
+`check_console.py` loads one page of every kind in headless Chrome and asserts
+**zero console messages** — the rule this site has always held itself to,
+now across twelve languages.
+
+Then check the thing you changed in both themes and at 390 / 760 / 1280 px,
+and if it was copy in a language you do not read, read the generated `<h1>`
+rather than trusting the template.
 
 Watch for **layout that changes height while the page is idle** — an animating
 section that grows by a card pushes the page under the reader. Sample the

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — സ്വന്തം ശൃംഖലയിൽ ജോലി വീതിക്കുക, സമയം കണക്കാക്കുക</title>
+<meta name="description" content="WorkQueue നിങ്ങളുടെ ടീമിന് ജോലി അവരുടെ സ്ക്രീനിന്റെ മുകളിലുള്ള 34-പിക്സൽ സ്ട്രിപ്പിലൂടെ നൽകുന്നു, ഓരോ ജോലിയുടെയും സമയം സ്വയം കണക്കാക്കുന്നു, അതിന്റെ റിപ്പോർട്ട് നൽകുന്നു. നിങ്ങളുടെ സ്വന്തം Windows PC-യിൽ പ്രവർത്തിക്കുന്നു. കമ്പനിക്ക് മുഴുവനായി ഒറ്റത്തവണ പണം.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="ml_IN">
+<meta property="og:title" content="WorkQueue — സ്വന്തം ശൃംഖലയിൽ ജോലി വീതിക്കുക, സമയം കണക്കാക്കുക">
+<meta property="og:description" content="WorkQueue നിങ്ങളുടെ ടീമിന് ജോലി അവരുടെ സ്ക്രീനിന്റെ മുകളിലുള്ള 34-പിക്സൽ സ്ട്രിപ്പിലൂടെ നൽകുന്നു, ഓരോ ജോലിയുടെയും സമയം സ്വയം കണക്കാക്കുന്നു, അതിന്റെ റിപ്പോർട്ട് നൽകുന്നു. നിങ്ങളുടെ സ്വന്തം Windows PC-യിൽ പ്രവർത്തിക്കുന്നു. കമ്പനിക്ക് മുഴുവനായി ഒറ്റത്തവണ പണം.">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/ml/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/ml/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/ml/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ഇത് ജീവനക്കാരുടെ നിരീക്ഷണമാണോ? എന്റെ ടീമിന് ഇത് ഇഷ്ടപ്പെടില്ലേ?","acceptedAnswer":{"@type":"Answer","text":"ഇത് ഓരോ ജോലിക്കും രണ്ട് കാര്യങ്ങളേ രേഖപ്പെടുത്തുന്നുള്ളൂ: അത് സ്ക്രീനിൽ എത്തിയത് എപ്പോൾ, ആ ആൾ Complete അമർത്തിയത് എപ്പോൾ. ഇത് സ്ക്രീൻഷോട്ട് എടുക്കുന്നില്ല, കീസ്ട്രോക്ക് രേഖപ്പെടുത്തുന്നില്ല, വെറുതെയിരിക്കുന്ന സമയം അളക്കുന്നില്ല, ആരാണ് ഏത് വെബ്സൈറ്റ് കാണുന്നതെന്നും നോക്കുന്നില്ല — ഇനിയും ചെയ്യില്ല. ഇത് മനഃപൂർവം വരച്ച രേഖയാണ്, അശ്രദ്ധയല്ല. പ്രായോഗികമായി ടീമുകൾക്ക് ഇത് ഇഷ്ടപ്പെടാറുണ്ട്, കാരണം \"ഞാൻ മണിക്കൂറുകൾക്ക് മുമ്പേ അയച്ചതാണല്ലോ\" എന്ന തർക്കം തർക്കമല്ലാതാവുന്നു. എല്ലാവരുടെയും മുന്നിൽ ഒരേ സമയം രേഖപ്പെട്ടിരിക്കുന്നു."}},{"@type":"Question","name":"ഇതിന് എത്ര പേരെ താങ്ങാനാവും?","acceptedAnswer":{"@type":"Answer","text":"ഇത് ഒരൊറ്റ ഓഫീസിനുവേണ്ടി ഉണ്ടാക്കി, ഭാരപരിശോധന നടത്തിയതാണ് — സാധാരണ ഹാർഡ്‌വെയറിൽ ഒരേസമയം ഏകദേശം 25 യന്ത്രങ്ങൾ, പ്രതികരണങ്ങൾ സെക്കൻഡിന്റെ പത്തിലൊന്നിലും കുറവിൽ. നിങ്ങൾ അതിലും വലുതാണെങ്കിൽ, വാങ്ങിയശേഷമല്ല, മുമ്പേ സംസാരിക്കൂ."}},{"@type":"Question","name":"മാനേജരുടെ PC കേടായാൽ?","acceptedAnswer":{"@type":"Answer","text":"സെർവർ മറ്റൊരു PC-യിൽ ഇൻസ്റ്റാൾ ചെയ്ത്, നിങ്ങളുടെ അവസാന കയറ്റുമതി ഇറക്കുമതി ചെയ്യുക. അതുകൊണ്ടാണ് ബാക്കപ്പ് ഒരൊറ്റ ഫയലായത്, അതുകൊണ്ടാണ് മറ്റെവിടെയെങ്കിലും ഒരു പകർപ്പ് സൂക്ഷിക്കാൻ ഡാഷ്‌ബോർഡ് ഇടയ്ക്കിടെ ഓർമ്മിപ്പിക്കുന്നത്. ജീവനക്കാരുടെ PC-കൾ പുതിയ സെർവറിനെ സ്വയം കണ്ടെത്തും."}},{"@type":"Question","name":"എന്റെ ഡാറ്റ പുറത്തെടുക്കാമോ?","acceptedAnswer":{"@type":"Answer","text":"ആകാം, എപ്പോൾ വേണമെങ്കിലും, ഞങ്ങളോട് ചോദിക്കാതെതന്നെ. ചരിത്രം CSV ആയി വരും, മുഴുവൻ ഡാറ്റാബേസും JSON സ്നാപ്ഷോട്ടായോ നേരിട്ട് SQLite ഫയലായോ വരും. ലോക്ക്-ഇൻ ഇല്ല, കാരണം ഞങ്ങളുടെ ഭാഗത്ത് പൂട്ടാൻ നിങ്ങളുടേതായി ഒന്നുമില്ല."}},{"@type":"Question","name":"ഞങ്ങളുടെ ജോലികൾ നിങ്ങൾക്ക് കാണാമോ?","acceptedAnswer":{"@type":"Answer","text":"ഇല്ല. സോഫ്റ്റ്‌വെയർ ഒരിക്കലും ഞങ്ങളെ ബന്ധപ്പെടുന്നില്ല. ടെലിമെട്രിയില്ല, ലൈസൻസ് പരിശോധനയില്ല, അനലിറ്റിക്സ് വിളിയുമില്ല. നിങ്ങളുടെ ഓഫീസിൽ ഇന്റർനെറ്റേ ഇല്ലെങ്കിലും WorkQueue അത് ശ്രദ്ധിക്കുകപോലുമില്ല."}},{"@type":"Question","name":"പിന്തുണ എങ്ങനെയാണ്?","acceptedAnswer":{"@type":"Answer","text":"ഇമെയിൽ, ഒരു പ്രവൃത്തിദിവസത്തിനുള്ളിൽ മറുപടി, മറുപടി നൽകുന്നത് സോഫ്റ്റ്‌വെയർ എഴുതിയ ആൾതന്നെ. ലൈസൻസിൽ ഒരു വർഷത്തെ പിന്തുണയും ഒരു വർഷത്തെ അപ്ഡേറ്റുകളും ഉൾപ്പെടുന്നു."}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">പ്രധാന ഉള്ളടക്കത്തിലേക്ക് പോകുക</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/ml/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/ml/">ഹോം</a>
+        <a href="/ml/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/ml/pricing">വില</a>
+        <a href="/ml/india">ഇന്ത്യയിലുടനീളം</a>
+        <a href="/ml/contact">ബന്ധപ്പെടുക</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="ഭാഷ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">മലയാളം</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml" aria-current="true"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">ഈ ഓരോ ഭാഷയിലും സൈറ്റ് മുഴുവനായി എഴുതിയിട്ടുണ്ട് — യന്ത്രവിവർത്തനമല്ല.</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="തീം മാറ്റുക">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/ml/contact?about=trial">ട്രയൽ തുടങ്ങുക</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="മെനു">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>ജോലി വീതിക്കുക. എത്ര സമയമെടുത്തുവെന്ന് കൃത്യമായി അറിയുക.</h1>
+        <p class="lede">മാനേജർ ബ്രൗസറിൽനിന്ന് ഏൽപ്പിക്കുന്നു. ഓരോ ജീവനക്കാരനും തന്റെ ക്യൂ സ്ക്രീനിന്റെ മുകളിൽ ഘടിപ്പിച്ച നേർത്ത സ്ട്രിപ്പിൽ കാണുന്നു. രണ്ട് സമയങ്ങളും നിങ്ങൾക്കുവേണ്ടി സ്വയം രേഖപ്പെടുന്നു, അതിനാൽ ആളുകൾ വെറുതെ ജോലി ചെയ്താൽ മതി, റിപ്പോർട്ട് സ്വയം ഉണ്ടാകും.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/ml/contact?about=trial">ട്രയൽ ചോദിക്കുക</a>
+          <a class="btn btn-ghost btn-lg" href="/ml/pricing">വില കാണുക</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10-ഉം 11-ഉം</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ക്ലൗഡ് അക്കൗണ്ടില്ല</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ഒരു ലൈസൻസിൽ പരിധിയില്ലാത്ത PC</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue ബോർഡ്, മുകളിൽ ജോലി എഴുതാനുള്ള ഇടവും മൂന്ന് നിരകളും: കാത്തിരിക്കുന്നവ, നടക്കുന്നവ, ഇന്ന് പൂർത്തിയായവ." fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">ഏൽപ്പിക്കാൻ ഒരു വരി. നോക്കാൻ മൂന്ന് നിരകൾ.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ജീവനക്കാരന്റെ ഭാഗം</span>
+      <h2>34 പിക്സൽ. നിങ്ങളുടെ ജീവനക്കാർ പഠിക്കേണ്ടത് അത്രമാത്രം.</h2>
+      <p class="lede">ടാസ്ക്ബാർ പോലെതന്നെ സ്ട്രിപ്പും Windows-ൽ ഘടിക്കുന്നു, അതിനാൽ Windows അതിന് ഇടം മാറ്റിവെക്കുന്നു, വലുതാക്കിയ വിൻഡോകൾ അതിന് താഴെത്തന്നെ നിൽക്കുന്നു. അതിന് ആരുടെയും ജോലി മറയ്ക്കാനാവില്ല, അതിനെ ആർക്കും മറയ്ക്കാനുമാവില്ല.</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 പിക്സൽ സ്ക്രീനിന്റെ മുകളിൽ മുഴുവൻ സ്ട്രിപ്പ്: ഇടത്ത് ജീവനക്കാരന്റെ പേരും ഇപ്പോഴത്തെ ജോലിയും, വലത്ത് തുറന്ന ഓരോ ജോലിക്കും ഒരു ചിപ്പ്, നടുവിൽ ധാരാളം ഒഴിഞ്ഞ ഇടം.">
+      <figcaption class="shot-caption">1920 പിക്സൽ സ്ക്രീനിൽ മുഴുവൻ സ്ട്രിപ്പ്. സ്ക്രീനിന്റെ ഏകദേശം ഇത്ര ഭാഗം മാത്രമേ എടുക്കുന്നുള്ളൂ — അതുതന്നെയാണ് കാര്യം. താഴെയുള്ള രണ്ട് അടുത്തുള്ള ചിത്രങ്ങളും അതേ സ്ട്രിപ്പ്, യഥാർത്ഥ വലുപ്പത്തിൽ.</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="ജീവനക്കാരന്റെ സ്ട്രിപ്പിന്റെ ഇടത്തേയറ്റം: പച്ച കണക്റ്റഡ് കുത്ത്, ആശ റാവു എന്ന പേര്, പിന്നെ ചുവന്ന വജ്രവും ജോലിയുടെ തലക്കെട്ടും — സെപ്റ്റംബറിലെ ഇൻവോയ്സുകൾ ഒത്തുനോക്കുക.">
+        </div>
+        <figcaption class="shot-caption"><strong>ഇടത്തേയറ്റം.</strong> സെർവറുമായി ബന്ധമുള്ളിടത്തോളം ഒരു പച്ചക്കുത്ത്, അവരുടെ പേര്, അവർ ചെയ്യുന്ന ജോലി. ചുവന്ന വജ്രം എന്നാൽ അടിയന്തരം.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="ജീവനക്കാരന്റെ സ്ട്രിപ്പിന്റെ വലത്തേയറ്റം: നിറംകൊണ്ട് തിരിച്ചറിയുന്ന മൂന്ന് ചിപ്പുകൾ, തുറന്ന ഓരോ ജോലിക്കും ഒന്ന്, ഒരു ചെറിയ മെനു അമ്പ്.">
+        </div>
+        <figcaption class="shot-caption"><strong>വലത്തേയറ്റം.</strong> തുറന്ന ഓരോ ജോലിക്കും ഒരു ചിപ്പ്, മുൻഗണനയുടെ നിറത്തിൽ. ഒന്നിൽ ക്ലിക്ക് ചെയ്താൽ അതിലേക്ക് മാറാം; ചട്ടക്കൂട് ആ നിറം സ്വീകരിക്കുന്നു.</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="സ്ട്രിപ്പിൽനിന്ന് തുറക്കുന്ന പാനൽ: ഇടത്ത് ഇപ്പോഴത്തെ ജോലി, അതിന്റെ വിവരണവും ഏൽപ്പിച്ച സമയവും, അതിന് താഴെ ഒരു വലിയ Mark completed ബട്ടൺ, വലത്ത് ജീവനക്കാരന്റെ മൂന്ന് ജോലികൾ, ഓരോന്നിനും സ്വന്തം Complete ബട്ടൺ.">
+      </div>
+      <figcaption class="shot-caption center">ഏതെങ്കിലും ജോലിയിൽ ക്ലിക്ക് ചെയ്താൽ ഇത് തുറക്കുന്നു. ജോലി തീർക്കാൻ ഒരു വലിയ ബട്ടൺ, അഡ്മിനോട് ചോദിക്കാൻ ഒരു പെട്ടി, ബാക്കി ഓരോ ജോലിയും ഒരു ക്ലിക്ക് അകലെ.</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Accept ബട്ടൺ എന്നൊന്നില്ല</h3><p>ജോലി അവരുടെ യന്ത്രത്തിൽ എത്തിയ നിമിഷം &quot;കിട്ടി&quot; എന്ന് രേഖപ്പെടുത്തുന്നു. ജോലി കിട്ടിയെന്ന് അറിയിക്കാൻ ആർക്കും മറക്കാനാവില്ല, &quot;ഏൽപ്പിച്ചു&quot; മുതൽ &quot;അവരുടെ സ്ക്രീനിൽ&quot; വരെയുള്ള വിടവ് നിങ്ങൾക്ക് ശരിക്കും കൈകാര്യം ചെയ്യാവുന്ന ഒരു സംഖ്യയായി മാറുന്നു.</p></div>
+      <div class="card reveal"><h3>തീർക്കാൻ ഒരു ബട്ടൺ</h3><p>ഒരു ജോലിയിൽ ക്ലിക്ക് ചെയ്താൽ പാനൽ തുറക്കുന്നു: വിവരണം, ഏതെങ്കിലും കുറിപ്പുകൾ, അബദ്ധത്തിൽ സംഭവിക്കാതിരിക്കാൻ രണ്ടാമതൊരു ക്ലിക്ക് ചോദിക്കുന്ന ഒരു വലിയ Complete ബട്ടൺ.</p></div>
+      <div class="card reveal"><h3>അവർക്കും മറുപടി പറയാം</h3><p>ഒരു ജീവനക്കാരന് ജോലിയിൽ ഒരു കുറിപ്പിടാം — ഒരു ചോദ്യം, ഒരു തടസ്സം, അല്ലെങ്കിൽ കണ്ടെത്തിയതിനെക്കുറിച്ചൊരു കുറിപ്പ്. നിങ്ങൾ അത് കണ്ട്, ഡാഷ്‌ബോർഡിൽ അതേ ജോലിയിൽനിന്നുതന്നെ മറുപടി നൽകുന്നു.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ബോർഡ്</span>
+        <h3>ഒരു വരിയിൽ ഏൽപ്പിക്കുക, പിന്നെ ദിവസം നീങ്ങുന്നത് കാണുക</h3>
+        <p>ഒരു തലക്കെട്ട്, ആ ആൾക്ക് വേണ്ട വിവരം, മുൻഗണന, അവസാന തീയതി, ആർക്ക് പോകണം, പിന്നെ Assign. അതേ ജോലി ഒരാൾക്കോ ആറുപേർക്കോ അയയ്ക്കാം.</p>
+        <ul class="check-list">
+          <li><strong>മൂന്ന് സജീവ നിരകൾ</strong> — കാത്തിരിക്കുന്നവ, നടക്കുന്നവ, ഇന്ന് പൂർത്തിയായവ, ആൾതിരിച്ച്.</li>
+          <li><strong>ആരെയും തടസ്സപ്പെടുത്താതെ പ്രവർത്തിക്കുക</strong> — കാർഡിന് മുകളിൽ കഴ്സർ വെച്ചാൽ Done, Cancel, Reopen, Delete തെളിയുന്നു.</li>
+          <li><strong>ജോലി മാറ്റുക</strong> — ജോലി തുറന്ന് മറ്റൊരാൾക്ക് ഏൽപ്പിക്കുക.</li>
+          <li><strong>അടിയന്തരം അടിയന്തരമായിത്തന്നെ കാണുന്നു</strong> — മുൻഗണന കാർഡിനും ജീവനക്കാരന്റെ സ്ട്രിപ്പ് ചട്ടക്കൂടിനും നിറം നൽകുന്നു.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="ബോർഡിൽ അഞ്ച് ജോലികൾ കാത്തിരിക്കുന്നു, മൂന്ന് നടക്കുന്നു, പന്ത്രണ്ട് ഇന്ന് പൂർത്തിയായി.">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">അനലിറ്റിക്സ്</span>
+        <h3>ഒരു മാനേജർ ശരിക്കും ചോദിക്കുന്ന ചോദ്യങ്ങൾ</h3>
+        <p>ഏഴ് പ്രധാന സംഖ്യകളും പത്ത് ചാർട്ടുകളും, എല്ലാം ഒരൊറ്റ അരിപ്പ വരിയാൽ ചലിക്കുന്നവ. ഓരോ ചാർട്ടിനും അതിന്റെ പട്ടിക ജോടിയുണ്ട്, അതിനാൽ കമ്പികളിലേക്ക് കണ്ണുചുളിച്ച് നോക്കുന്നതിനുപകരം സംഖ്യകൾ വായിക്കാം.</p>
+        <ul class="check-list">
+          <li><strong>എത്ര ജോലി തീർന്നു</strong> — ഏൽപ്പിച്ചതുമായി താരതമ്യം ചെയ്ത് പൂർത്തിയായവ, ദിവസേന.</li>
+          <li><strong>ജോലികൾക്ക് എത്ര സമയമെടുക്കുന്നു</strong> — ഒരു ജോലിക്ക് ശരാശരിയും മധ്യമവും, ആ കാലയളവിലെ ഏറ്റവും നീണ്ട ജോലികളും.</li>
+          <li><strong>ജോലി എത്ര വേഗം ഏറ്റെടുക്കപ്പെടുന്നു</strong> — ദിവസേനയും ആൾതിരിച്ചുമുള്ള പ്രതികരണ സമയം.</li>
+          <li><strong>ആരാണ് എത്ര ചുമക്കുന്നത്</strong> — ഓരോ ജീവനക്കാരനും എണ്ണം, മണിക്കൂർ, പ്രതികരണം, സമയത്ത് തീർത്തതിന്റെ നിരക്ക്.</li>
+          <li><strong>നിങ്ങളുടെ ടീം എപ്പോൾ തിരക്കിലാണ്</strong> — ദിവസത്തിലെ മണിക്കൂർ അനുസരിച്ചും ആഴ്ചയിലെ ദിവസം അനുസരിച്ചും.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="അനലിറ്റിക്സ്: 164 പൂർത്തിയായി, 7 ദിവസം 7 മണിക്കൂർ ജോലി സമയം, ഒരു ജോലിക്ക് ശരാശരി 1 മണിക്കൂർ 4 മിനിറ്റ്, ശരാശരി പ്രതികരണം 21 മിനിറ്റ്, 95% സമയത്ത്, ഒപ്പം ചാർട്ടുകളും.">
+        </div>
+        <figcaption class="shot-caption">സ്വാഭാവികമായി ഇളം, വേണമെങ്കിൽ കടും — മുഴുവൻ ഡാഷ്‌ബോർഡിനും രണ്ടുമുണ്ട്.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">ചരിത്രവും കലണ്ടറും</span>
+        <h3>ഓരോ ജോലിക്കും സ്വന്തം രേഖ ബാക്കിയാവുന്നു</h3>
+        <p>ആൾ, തീയതി അനുസരിച്ച് ചരിത്രം അരിച്ചാൽ ഓരോ വരിയിലും പ്രതികരണ സമയവും ജോലി സമയവും കിട്ടും, താഴെ ആൾതിരിച്ചുള്ള ആകെത്തുകകൾ, സ്ക്രീനിലുള്ളത് കൃത്യമായി നൽകുന്ന CSV കയറ്റുമതി — നിങ്ങളുടെ അക്കൗണ്ടന്റിനോ ക്ലയന്റിനോ ശരിക്കും വേണ്ടത് അതുതന്നെ.</p>
+        <ul class="check-list">
+          <li><strong>എവിടെയായാലും ഏത് ജോലിയുടെ തലക്കെട്ടിലും ക്ലിക്ക് ചെയ്യുക,</strong> അതിന്റെ മുഴുവൻ സമയരേഖയും തുറക്കും.</li>
+          <li><strong>കലണ്ടർ</strong> മാസത്തെ നിറത്തിന്റെ കടുപ്പംകൊണ്ട് കാണിക്കുന്നു, അതിനാൽ മന്ദഗതിയിലുള്ള ആഴ്ച ഒറ്റനോട്ടത്തിൽ അറിയാം.</li>
+          <li><strong>പൂർത്തിയായ ജോലി വീണ്ടും തുറക്കുക</strong> — അത് തിരികെ വന്നാൽ നേരിട്ട് അതേ വരിയിൽനിന്നുതന്നെ.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="കലണ്ടർ ടാബ്: നിറത്തിന്റെ കടുപ്പം നൽകിയ ഒരു മാസം, അരികിൽ പൂർത്തിയായ ജോലികളുടെ പട്ടിക, പുതിയ ദിവസം മുകളിൽ.">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">എന്തെങ്കിലും പിഴയ്ക്കുമ്പോൾ</span>
+      <h2>ഒരു ഓഫീസിനുവേണ്ടി ഉണ്ടാക്കിയത്, ഡെമോയ്ക്കല്ല.</h2>
+      <p class="lede">ചെറിയ ഓഫീസുകൾക്ക് മോശം ഉച്ചകൾ വരും. റൗട്ടർ റീബൂട്ട് ചെയ്യും, ബ്രോഡ്‌ബാൻഡ് നിലയ്ക്കും, ആരെങ്കിലും തെറ്റായ PC ഓഫ് ചെയ്യും. ഇവയോരോന്നും മുൻകൂട്ടി ആലോചിച്ച് രൂപകൽപ്പന ചെയ്തതാണ്, പിന്നീട് കണ്ടെത്തിയതല്ല.</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>ശൃംഖല പോകുന്നു.</strong> പൂർത്തിയായവയും കുറിപ്പുകളും PC-യുടെതന്നെ ഔട്ട്ബോക്സിലേക്ക് പോയി, സെർവർ തിരികെ വരുമ്പോൾ എത്തുന്നു — ഓരോന്നും അതിന്റെ യഥാർത്ഥ ക്ലിക്ക് സമയത്തോടെ, അതായത് മൂന്ന് മണിക്കൂർ തടസ്സത്തിൽ 10:35-ന് തീർന്ന ജോലി 13:35 അല്ല, 10:35-ന് തന്നെ രേഖപ്പെടും.</li>
+          <li><strong>എന്തെങ്കിലും രണ്ടുതവണ പോകുന്നു.</strong> ഓരോ പ്രവൃത്തിക്കൊപ്പവും സെർവർ തിരിച്ചറിയുന്ന ഒരു അദ്വിതീയ id പോകുന്നു, അതിനാൽ ബന്ധം മുറിഞ്ഞശേഷം വീണ്ടും അയച്ചാലും ഒരു ജോലി രണ്ടുതവണ കണക്കാക്കപ്പെടില്ല.</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>സെർവർ PC-യുടെ IP മാറുന്നു.</strong> സ്ട്രിപ്പ് പ്രാദേശിക ശൃംഖലയിൽ ചോദിക്കുന്നു, സെർവർ അതിന്റെ പുതിയ വിലാസത്തോടെ മറുപടി പറയുന്നു. നിങ്ങളുടെ റൗട്ടർ ബ്രോഡ്കാസ്റ്റ് തടയുന്നെങ്കിൽ — മെഷ്, ISP റൗട്ടറുകളിൽ സാധാരണം — അത് ശൃംഖല സ്കാൻ ചെയ്യും.</li>
+          <li><strong>ഒന്നും പ്രവർത്തിക്കുന്നില്ല, കാരണം ആർക്കുമറിയില്ല.</strong> അകത്തുതന്നെയുള്ള ഒരു പരിശോധന പതിവുള്ള എട്ട് കാരണങ്ങളിലൂടെ കടന്നുപോകുന്നു — ഫയർവാൾ, Wi-Fi ഐസൊലേഷൻ, VPN, തെറ്റായ വിലാസം — എന്നിട്ട് ലളിതമായ വാക്കിൽ ഏതാണ് കാരണമെന്ന് പറയുന്നു.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ഇത് എങ്ങനെ ചേരുന്നു</span>
+      <h2>രണ്ട് പ്രോഗ്രാമുകൾ, ഒരു ശൃംഖല, ക്ലൗഡില്ല.</h2>
+      <p class="lede">മുഴുവൻ സംവിധാനവും മാനേജരുടെ PC-യിലെ ഒരു പ്രോഗ്രാമും ഓരോ ജീവനക്കാരന്റെയും PC-യിലെ ഒരു ചെറിയ പ്രോഗ്രാമുമാണ്. അവ പരസ്പരം ഓഫീസ് ശൃംഖലയിൽ സംസാരിക്കുന്നു, മറ്റെവിടെയുമല്ല.</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue-ന്റെ ഘടന</title>
+        <desc id="diagram-desc">മാനേജരുടെ PC-യിൽ WorkQueue സെർവർ പ്രവർത്തിക്കുന്നു, അതിൽ ഒരു SQLite ഡാറ്റാബേസും ബ്രൗസറിൽ തുറക്കുന്ന ഡാഷ്‌ബോർഡുമുണ്ട്. ഓരോ ജീവനക്കാരന്റെയും PC-യിൽ WorkQueue ബാർ പ്രവർത്തിക്കുന്നു, അത് സെർവറുമായി പോർട്ട് 8420-ൽ HTTP വഴി സംസാരിക്കുകയും പോർട്ട് 8421-ൽ UDP ബ്രോഡ്കാസ്റ്റ് വഴി അതിനെ കണ്ടെത്തുകയും ചെയ്യുന്നു. എല്ലാം ഓഫീസ് ശൃംഖലയ്ക്കുള്ളിൽത്തന്നെ നിൽക്കുന്നു.</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">മാനേജരുടെ PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">ഒരു SQLite ഡാറ്റാബേസ് ഫയൽ</text>
+        <text class="dg-s" x="38" y="182">ഡാഷ്‌ബോർഡ് ബ്രൗസറിൽ തുറക്കുന്നു</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">ജീവനക്കാരന്റെ PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px സ്ട്രിപ്പ്</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">ജീവനക്കാരന്റെ PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px സ്ട്രിപ്പ്</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">ജീവനക്കാരന്റെ PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px സ്ട്രിപ്പ്</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 സെർവറിനെ കണ്ടെത്തുന്നു</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">മുകളിലുള്ളതെല്ലാം നിങ്ങളുടെ ഓഫീസ് ശൃംഖലയ്ക്കുള്ളിൽത്തന്നെ നിൽക്കുന്നു</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>ഓഫീസിന് പുറത്തോ?</h3><p>WorkQueue-ന് ഒരു സ്വകാര്യ ശൃംഖലയോട് (Tailscale) ചേരാം, അപ്പോൾ വീട്ടിലെ ലാപ്ടോപ്പോ രണ്ടാമത്തെ ശാഖയോ അതേ സെർവറിൽ എൻക്രിപ്റ്റ് ചെയ്ത നിലയിൽ എത്തും, പൊതു ഇന്റർനെറ്റിൽ ഒന്നും പ്രസിദ്ധപ്പെടുത്തുന്നില്ല. സജ്ജീകരണത്തിൽ ഇത് ഒരു അധിക ഘട്ടമാണ്, ലൈസൻസിൽത്തന്നെ ഉൾപ്പെട്ടിരിക്കുന്നു.</p></div>
+      <div class="card"><h3>ബാക്കപ്പ് ഒരൊറ്റ ഫയലാണ്</h3><p>സംവിധാനത്തിന് അറിയാവുന്നതെല്ലാം ഒരൊറ്റ ഡാറ്റാബേസാണ്. സെർവർ പ്രവർത്തിക്കുമ്പോൾത്തന്നെ ഡാഷ്‌ബോർഡ് അത് കയറ്റുമതി ചെയ്യുന്നു — ചെക്ക്സം സഹിതം പൂർണ്ണ സ്നാപ്ഷോട്ട്, അല്ലെങ്കിൽ ഡാറ്റാബേസിന്റെ അതേപടിയുള്ള പകർപ്പ്. അത് ആ PC-യിൽനിന്ന് മാറ്റിവെക്കൂ, നിങ്ങൾ സുരക്ഷിതം.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ഒരു നല്ല കാര്യം</span>
+      <h2>ഇതിന് ഒരു ചെറിയ ആഘോഷവും നടത്താം.</h2>
+      <p class="lede">ജോലിക്ക് പകരം ഒരു കാർഡ് അയയ്ക്കൂ — പിറന്നാൾ, ജോലി വാർഷികം, ഒരു വിജയം, ഒരു സ്വാഗതം. ആ ആളുടെ സ്ട്രിപ്പിൽ ബലൂണുകൾ ഒഴുകും, വേണമെങ്കിൽ പാനലിൽ ഒരു മിനിറ്റ് കളിയുമുണ്ട്. കാർഡ് ഒരിക്കലും ചരിത്രത്തിലോ അനലിറ്റിക്സിലോ ആരുടെയെങ്കിലും ജോലി സമയത്തിലോ കയറുന്നില്ല. അത് ജോലിയല്ല, ഒരു ദിവസം കഴിഞ്ഞ് സ്വയം മാറിപ്പോകുന്നു.</p>
+      <p class="small muted">നിരീക്ഷണ സോഫ്റ്റ്‌വെയറിന് ഒരു ദുഷ്പേരുണ്ട്, നിങ്ങളുടെ ടീമിന് അനിഷ്ടമുള്ള ഉപകരണം നിശ്ശബ്ദമായി ഉപയോഗിക്കപ്പെടാതാവും — അതുകൊണ്ടാണ് ഇത് പറയുന്നത്.</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">വിശദാംശങ്ങൾ</span>
+      <h2>പ്രവർത്തിപ്പിക്കാൻ എന്തൊക്കെ വേണം</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>മാനേജരുടെ PC</dt><dd>Windows 10 അല്ലെങ്കിൽ 11, ജോലി സമയത്ത് ഓണായിരിക്കണം. പ്രത്യേക സെർവർ വേണ്ട, പ്രത്യേക ഹാർഡ്‌വെയറും വേണ്ട. ഇൻസ്റ്റാൾ ചെയ്യാൻ ഒരിക്കൽ അഡ്മിൻ അവകാശം വേണം.</dd></div>
+      <div><dt>ജീവനക്കാരുടെ PC-കൾ</dt><dd>Windows 10 അല്ലെങ്കിൽ 11. അഡ്മിൻ അവകാശം വേണ്ട — സ്ട്രിപ്പ് ലോഗിൻ ചെയ്ത ഉപയോക്താവിനുവേണ്ടി ഇൻസ്റ്റാൾ ചെയ്യുന്നു.</dd></div>
+      <div><dt>ശൃംഖല</dt><dd>എല്ലാ PC-കളും ഒരേ ഓഫീസ് ശൃംഖലയിൽ, കമ്പി വഴിയോ Wi-Fi വഴിയോ. അവയ്ക്കിടയിൽ TCP പോർട്ട് 8420-ഉം UDP പോർട്ട് 8421-ഉം തുറന്നിരിക്കണം — ഇൻസ്റ്റാളർ ഫയർവാൾ സ്വയം തുറക്കുന്നു.</dd></div>
+      <div><dt>ഇന്റർനെറ്റ്</dt><dd>വേണ്ട. ഓഫീസിന് പുറത്തുള്ളവർക്ക് റിമോട്ട് ആക്സസ് ഓണാക്കിയാൽ മാത്രം വേണം.</dd></div>
+      <div><dt>ഡാഷ്‌ബോർഡ്</dt><dd>ശൃംഖലയിലെ ഏത് ഉപകരണത്തിലെയും ഏത് ആധുനിക ബ്രൗസറും, ഫോണോ ടാബ്‌ലെറ്റോ ഉൾപ്പെടെ.</dd></div>
+      <div><dt>ഇൻസ്റ്റാൾ ചെയ്യാനുള്ള സമയം</dt><dd>സെർവറിന് ഏകദേശം പത്ത് മിനിറ്റ്, ഓരോ ജീവനക്കാരന്റെ PC-ക്കും ഒരു മിനിറ്റിൽ താഴെ.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">ഇത് എന്ത് ചെയ്യുന്നില്ല</h3>
+    <p class="muted">രണ്ടാം മാസത്തിൽ അറിയുന്നതിനെക്കാൾ ഇപ്പോൾത്തന്നെ ഇത് വായിക്കുന്നതാണ് നല്ലതെന്ന് ഞങ്ങൾ കരുതുന്നു.</p>
+    <ul class="check-list">
+          <li><strong>ഇത് Windows-ന് മാത്രമാണ്.</strong> Mac, Linux ജീവനക്കാരുടെ യന്ത്രങ്ങൾക്ക് ഇനിയും പിന്തുണയില്ല.</li>
+          <li><strong>ആളുകളെ അവരുടെ PC വഴിയാണ് തിരിച്ചറിയുന്നത്,</strong> ലോഗിൻ വഴിയല്ല. വിശ്വാസമുള്ള ഓഫീസ് ശൃംഖലയ്ക്ക് ഇത് ശരിയായ വിട്ടുവീഴ്ചയാണ്, പക്ഷേ ഉറച്ചുനിന്നാൽ ആർക്കെങ്കിലും മറ്റൊരു യന്ത്രമാണെന്ന് നടിക്കാമെന്നത് ശരിയാണ്.</li>
+          <li><strong>ജോലി സമയം എന്നാൽ ചുവരിലെ ഘടികാര സമയം.</strong> ഊണുനേരത്തും ജോലി തുറന്നുകിടന്നാൽ, ഊണും ആ സംഖ്യയിൽ വരും. ഇത് കടന്നുപോയ സമയം അളക്കുന്നു, അധ്വാനമല്ല.</li>
+          <li><strong>ശൃംഖലയ്ക്ക് പുറത്ത് ക്യൂ പഴകുന്നു.</strong> ഓഫീസിൽനിന്ന് അകലെയുള്ള ലാപ്ടോപ്പ് വീണ്ടും ബന്ധപ്പെടുന്നതുവരെ അവസാനം അറിയാവുന്ന ജോലികളേ കാണിക്കൂ — നിങ്ങൾ റിമോട്ട് ആക്സസ് ഓണാക്കിയില്ലെങ്കിൽ.</li>
+          <li><strong>സ്ട്രിപ്പ് 34 പിക്സൽ</strong> ഉയരം പ്രധാന മോണിറ്ററിൽ സ്ഥിരമായി എടുക്കുന്നു.</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">ചോദ്യങ്ങൾ</span>
+      <h2>പ്രത്യേകിച്ച് WorkQueue-നെക്കുറിച്ച്</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>ഇത് ജീവനക്കാരുടെ നിരീക്ഷണമാണോ? എന്റെ ടീമിന് ഇത് ഇഷ്ടപ്പെടില്ലേ?</summary>
+        <div class="faq-body">
+          <p>ഇത് ഓരോ ജോലിക്കും രണ്ട് കാര്യങ്ങളേ രേഖപ്പെടുത്തുന്നുള്ളൂ: അത് സ്ക്രീനിൽ എത്തിയത് എപ്പോൾ, ആ ആൾ Complete അമർത്തിയത് എപ്പോൾ. ഇത് സ്ക്രീൻഷോട്ട് എടുക്കുന്നില്ല, കീസ്ട്രോക്ക് രേഖപ്പെടുത്തുന്നില്ല, വെറുതെയിരിക്കുന്ന സമയം അളക്കുന്നില്ല, ആരാണ് ഏത് വെബ്സൈറ്റ് കാണുന്നതെന്നും നോക്കുന്നില്ല — ഇനിയും ചെയ്യില്ല. ഇത് മനഃപൂർവം വരച്ച രേഖയാണ്, അശ്രദ്ധയല്ല. പ്രായോഗികമായി ടീമുകൾക്ക് ഇത് ഇഷ്ടപ്പെടാറുണ്ട്, കാരണം &quot;ഞാൻ മണിക്കൂറുകൾക്ക് മുമ്പേ അയച്ചതാണല്ലോ&quot; എന്ന തർക്കം തർക്കമല്ലാതാവുന്നു. എല്ലാവരുടെയും മുന്നിൽ ഒരേ സമയം രേഖപ്പെട്ടിരിക്കുന്നു.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ഇതിന് എത്ര പേരെ താങ്ങാനാവും?</summary>
+        <div class="faq-body">
+          <p>ഇത് ഒരൊറ്റ ഓഫീസിനുവേണ്ടി ഉണ്ടാക്കി, ഭാരപരിശോധന നടത്തിയതാണ് — സാധാരണ ഹാർഡ്‌വെയറിൽ ഒരേസമയം ഏകദേശം 25 യന്ത്രങ്ങൾ, പ്രതികരണങ്ങൾ സെക്കൻഡിന്റെ പത്തിലൊന്നിലും കുറവിൽ. നിങ്ങൾ അതിലും വലുതാണെങ്കിൽ, വാങ്ങിയശേഷമല്ല, മുമ്പേ സംസാരിക്കൂ.</p>
+        </div>
+      </details>
+      <details>
+        <summary>മാനേജരുടെ PC കേടായാൽ?</summary>
+        <div class="faq-body">
+          <p>സെർവർ മറ്റൊരു PC-യിൽ ഇൻസ്റ്റാൾ ചെയ്ത്, നിങ്ങളുടെ അവസാന കയറ്റുമതി ഇറക്കുമതി ചെയ്യുക. അതുകൊണ്ടാണ് ബാക്കപ്പ് ഒരൊറ്റ ഫയലായത്, അതുകൊണ്ടാണ് മറ്റെവിടെയെങ്കിലും ഒരു പകർപ്പ് സൂക്ഷിക്കാൻ ഡാഷ്‌ബോർഡ് ഇടയ്ക്കിടെ ഓർമ്മിപ്പിക്കുന്നത്. ജീവനക്കാരുടെ PC-കൾ പുതിയ സെർവറിനെ സ്വയം കണ്ടെത്തും.</p>
+        </div>
+      </details>
+      <details>
+        <summary>എന്റെ ഡാറ്റ പുറത്തെടുക്കാമോ?</summary>
+        <div class="faq-body">
+          <p>ആകാം, എപ്പോൾ വേണമെങ്കിലും, ഞങ്ങളോട് ചോദിക്കാതെതന്നെ. ചരിത്രം CSV ആയി വരും, മുഴുവൻ ഡാറ്റാബേസും JSON സ്നാപ്ഷോട്ടായോ നേരിട്ട് SQLite ഫയലായോ വരും. ലോക്ക്-ഇൻ ഇല്ല, കാരണം ഞങ്ങളുടെ ഭാഗത്ത് പൂട്ടാൻ നിങ്ങളുടേതായി ഒന്നുമില്ല.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ഞങ്ങളുടെ ജോലികൾ നിങ്ങൾക്ക് കാണാമോ?</summary>
+        <div class="faq-body">
+          <p>ഇല്ല. സോഫ്റ്റ്‌വെയർ ഒരിക്കലും ഞങ്ങളെ ബന്ധപ്പെടുന്നില്ല. ടെലിമെട്രിയില്ല, ലൈസൻസ് പരിശോധനയില്ല, അനലിറ്റിക്സ് വിളിയുമില്ല. നിങ്ങളുടെ ഓഫീസിൽ ഇന്റർനെറ്റേ ഇല്ലെങ്കിലും WorkQueue അത് ശ്രദ്ധിക്കുകപോലുമില്ല.</p>
+        </div>
+      </details>
+      <details>
+        <summary>പിന്തുണ എങ്ങനെയാണ്?</summary>
+        <div class="faq-body">
+          <p>ഇമെയിൽ, ഒരു പ്രവൃത്തിദിവസത്തിനുള്ളിൽ മറുപടി, മറുപടി നൽകുന്നത് സോഫ്റ്റ്‌വെയർ എഴുതിയ ആൾതന്നെ. ലൈസൻസിൽ ഒരു വർഷത്തെ പിന്തുണയും ഒരു വർഷത്തെ അപ്ഡേറ്റുകളും ഉൾപ്പെടുന്നു.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 ദിവസം നിങ്ങളുടെ സ്വന്തം ടീമിൽ വെച്ചുനോക്കൂ.</h2>
+    <p class="lede">പൂർണ്ണ ഉപകരണം, ഒന്നും തടഞ്ഞുവെച്ചിട്ടില്ല, റദ്ദാക്കാനും ഒന്നുമില്ല. ഏകദേശം എത്ര PC എന്ന് പറയൂ — ഇൻസ്റ്റാളർ അയച്ച്, സജ്ജീകരിക്കുന്നതുവരെ കോളിൽ ഉണ്ടാവും.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/ml/contact?about=trial">ട്രയൽ ചോദിക്കുക</a>
+      <a class="btn btn-ghost btn-lg" href="/ml/pricing">വില കാണുക</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/ml/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>ചെറുകിട ബിസിനസുകൾക്കായി ചെറിയ Windows ഉപകരണങ്ങൾ. മുംബൈയിൽ, ഇന്ത്യയിൽ നിർമ്മിച്ചത് — ഒരിക്കൽ വാങ്ങുക, സ്വന്തം ശൃംഖലയിൽ പ്രവർത്തിപ്പിക്കുക.</p>
+      </div>
+      <div class="footer-col">
+        <h4>ഉപകരണങ്ങൾ</h4>
+        <ul>
+          <li><a href="/ml/workqueue">WorkQueue</a></li>
+          <li><a href="/ml/workqueue#requirements">എന്തൊക്കെ വേണം</a></li>
+          <li><a href="/ml/contact?about=roadmap">അടുത്തത് എന്ത്</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>വാങ്ങൽ</h4>
+        <ul>
+          <li><a href="/ml/pricing">വില</a></li>
+          <li><a href="/ml/contact?about=trial">സൗജന്യ ട്രയൽ</a></li>
+          <li><a href="/ml/contact?about=setup">സജ്ജീകരണത്തിൽ സഹായം</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ബന്ധപ്പെടുക</h4>
+        <ul>
+          <li><a href="/ml/india">എല്ലാ സംസ്ഥാനവും</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="നമസ്കാരം, ഞാൻ Quietworks വെബ്സൈറ്റ് കണ്ടു, കൂടുതൽ അറിയാൻ താൽപ്പര്യമുണ്ട്." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.</span>
+      <span>മുംബൈയിൽ നിർമ്മിച്ചത്</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

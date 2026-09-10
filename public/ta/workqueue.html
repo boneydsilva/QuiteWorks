@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkQueue — உங்கள் சொந்த வலையமைப்பில் வேலை ஒதுக்கீடும் நேரக் கணக்கும்</title>
+<meta name="description" content="WorkQueue உங்கள் குழுவுக்கு வேலையை அவர்களின் திரையின் மேலுள்ள 34-பிக்சல் பட்டை வழியாக வழங்குகிறது, ஒவ்வொரு வேலையின் நேரத்தையும் தானாகக் கணக்கிடுகிறது, அதற்கான அறிக்கையையும் தருகிறது. உங்கள் சொந்த Windows PC-யில் இயங்குகிறது. நிறுவனம் முழுமைக்கும் ஒரு முறைக் கட்டணம்.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue">
+<link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue">
+<link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue">
+<link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue">
+<link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue">
+<link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue">
+<link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue">
+<link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue">
+<link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue">
+<link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue">
+<link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue">
+<link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue">
+<link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quietworks">
+<meta property="og:locale" content="ta_IN">
+<meta property="og:title" content="WorkQueue — உங்கள் சொந்த வலையமைப்பில் வேலை ஒதுக்கீடும் நேரக் கணக்கும்">
+<meta property="og:description" content="WorkQueue உங்கள் குழுவுக்கு வேலையை அவர்களின் திரையின் மேலுள்ள 34-பிக்சல் பட்டை வழியாக வழங்குகிறது, ஒவ்வொரு வேலையின் நேரத்தையும் தானாகக் கணக்கிடுகிறது, அதற்கான அறிக்கையையும் தருகிறது. உங்கள் சொந்த Windows PC-யில் இயங்குகிறது. நிறுவனம் முழுமைக்கும் ஒரு முறைக் கட்டணம்.">
+<meta property="og:image" content="https://boneydsilva.com/assets/img/dashboard-board.png">
+<meta property="og:url" content="https://boneydsilva.com/ta/workqueue">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>try{var t=localStorage.getItem("qw-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"WorkQueue","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"4.0.1","url":"https://boneydsilva.com/ta/workqueue","inLanguage":["en-IN","hi-IN","mr-IN","bn-IN","ta-IN","te-IN","kn-IN","ml-IN","gu-IN","pa-IN","or-IN","as-IN"],"publisher":{"@type":"Organization","name":"Quietworks"},"offers":{"@type":"Offer","price":"14999","priceCurrency":"INR","url":"https://boneydsilva.com/ta/pricing","availability":"https://schema.org/InStock","eligibleRegion":{"@type":"Country","name":"India"}}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"இது ஊழியர் கண்காணிப்பா? என் குழுவுக்கு இது பிடிக்காதா?","acceptedAnswer":{"@type":"Answer","text":"ஒவ்வொரு வேலைக்கும் இரண்டையே இது பதிவு செய்கிறது: அது எப்போது திரையை அடைந்தது, அந்த நபர் எப்போது Complete அழுத்தினார். இது திரைப்படங்கள் எடுப்பதில்லை, விசை அழுத்தங்களைப் பதிவு செய்வதில்லை, சும்மா இருக்கும் நேரத்தைக் கணக்கிடுவதில்லை, யார் எந்த இணையதளத்தைப் பார்க்கிறார்கள் என்றும் கவனிப்பதில்லை — இனியும் செய்யாது. இது வேண்டுமென்றே வரையப்பட்ட கோடு, கவனக்குறைவு அல்ல. நடைமுறையில் குழுக்களுக்கு இது பிடிக்கிறது, ஏனெனில் \"மணிக்கணக்கில் முன்பே அனுப்பிவிட்டேனே\" என்ற வாக்குவாதம் வாக்குவாதமாகவே இருப்பதில்லை. அனைவரும் ஒரே நேரப் பதிவைப் பார்க்கிறார்கள்."}},{"@type":"Question","name":"இது எத்தனை பேரைச் சமாளிக்கும்?","acceptedAnswer":{"@type":"Answer","text":"இது ஒரே அலுவலகத்திற்காகக் கட்டப்பட்டு, சுமைச் சோதனை செய்யப்பட்டது — சாதாரண வன்பொருளில் ஒரே நேரத்தில் சுமார் 25 கணினிகள், பதில்கள் வினாடியில் பத்தில் ஒரு பங்குக்கும் குறைவாக. அதைவிடப் பெரியவர்களாக இருந்தால், வாங்கிய பிறகு அல்ல, முன்பே பேசுங்கள்."}},{"@type":"Question","name":"மேலாளரின் PC பழுதடைந்தால் என்ன செய்வது?","acceptedAnswer":{"@type":"Answer","text":"சேவையகத்தை வேறு PC-யில் நிறுவி, உங்கள் கடைசி ஏற்றுமதியை இறக்குமதி செய்யுங்கள். இதனால்தான் காப்புப்பிரதி ஒரே கோப்பாக இருக்கிறது, இதனால்தான் வேறெங்காவது ஒரு நகல் வைக்குமாறு கட்டுப்பாட்டுப் பலகை உங்களை நச்சரிக்கிறது. ஊழியர்களின் PC-கள் புதிய சேவையகத்தைத் தாமே கண்டுபிடித்துக் கொள்கின்றன."}},{"@type":"Question","name":"என் தரவை வெளியே எடுக்க முடியுமா?","acceptedAnswer":{"@type":"Answer","text":"முடியும், எப்போது வேண்டுமானாலும், எங்களிடம் கேட்காமலேயே. வரலாறு CSV-யாக வெளிவரும், முழுத் தரவுத்தளமும் JSON படமெடுப்பாகவோ SQLite கோப்பாகவோ வெளிவரும். பூட்டி வைப்பது ஏதுமில்லை, ஏனெனில் எங்கள் பக்கம் உங்களுடையது என்று பூட்ட எதுவுமே இல்லை."}},{"@type":"Question","name":"எங்கள் வேலைகள் உங்களுக்குத் தெரியுமா?","acceptedAnswer":{"@type":"Answer","text":"இல்லை. மென்பொருள் ஒருபோதும் எங்களைத் தொடர்பு கொள்வதில்லை. தொலைஅளவீடு இல்லை, உரிமச் சரிபார்ப்பு இல்லை, பகுப்பாய்வு அழைப்பு இல்லை. உங்கள் அலுவலகத்தில் இணையமே இல்லாவிட்டாலும் WorkQueue அதைக் கவனிக்கக் கூட செய்யாது."}},{"@type":"Question","name":"ஆதரவு எப்படி இருக்கும்?","acceptedAnswer":{"@type":"Answer","text":"மின்னஞ்சல், ஒரு வேலை நாளுக்குள் பதில், பதிலளிப்பவர் மென்பொருளை எழுதியவரே. உரிமத்தில் ஓராண்டு ஆதரவும் ஓராண்டு புதுப்பிப்புகளும் அடங்கும்."}}]}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">முதன்மை உள்ளடக்கத்திற்குச் செல்</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/ta/">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+        Quietworks
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/ta/">முகப்பு</a>
+        <a href="/ta/workqueue" aria-current="page">WorkQueue</a>
+        <a href="/ta/pricing">விலை</a>
+        <a href="/ta/india">இந்தியா முழுவதும்</a>
+        <a href="/ta/contact">தொடர்பு</a>
+      </div>
+      <div class="nav-actions">
+        <details class="lang-pick" data-lang-pick>
+        <summary aria-label="மொழி">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M3 12h18M12 2.8c2.4 2.6 3.6 5.7 3.6 9.2s-1.2 6.6-3.6 9.2M12 2.8c-2.4 2.6-3.6 5.7-3.6 9.2s1.2 6.6 3.6 9.2"/></svg>
+          <span class="lang-current">தமிழ்</span>
+        </summary>
+        <div class="lang-menu">
+          <p class="lang-head">உங்கள் மொழியைத் தேர்ந்தெடுங்கள்</p>
+          <ul>
+          <li><a href="/workqueue" hreflang="en-IN" lang="en" data-lang="en"><span class="lang-name">English</span><span class="lang-sample">Read in English</span></a></li>
+          <li><a href="/hi/workqueue" hreflang="hi-IN" lang="hi" data-lang="hi"><span class="lang-name">हिन्दी</span><span class="lang-sample">हिन्दी में पढ़ें</span></a></li>
+          <li><a href="/mr/workqueue" hreflang="mr-IN" lang="mr" data-lang="mr"><span class="lang-name">मराठी</span><span class="lang-sample">मराठीत वाचा</span></a></li>
+          <li><a href="/bn/workqueue" hreflang="bn-IN" lang="bn" data-lang="bn"><span class="lang-name">বাংলা</span><span class="lang-sample">বাংলায় পড়ুন</span></a></li>
+          <li><a href="/ta/workqueue" hreflang="ta-IN" lang="ta" data-lang="ta" aria-current="true"><span class="lang-name">தமிழ்</span><span class="lang-sample">தமிழில் படிக்க</span></a></li>
+          <li><a href="/te/workqueue" hreflang="te-IN" lang="te" data-lang="te"><span class="lang-name">తెలుగు</span><span class="lang-sample">తెలుగులో చదవండి</span></a></li>
+          <li><a href="/kn/workqueue" hreflang="kn-IN" lang="kn" data-lang="kn"><span class="lang-name">ಕನ್ನಡ</span><span class="lang-sample">ಕನ್ನಡದಲ್ಲಿ ಓದಿ</span></a></li>
+          <li><a href="/ml/workqueue" hreflang="ml-IN" lang="ml" data-lang="ml"><span class="lang-name">മലയാളം</span><span class="lang-sample">മലയാളത്തിൽ വായിക്കുക</span></a></li>
+          <li><a href="/gu/workqueue" hreflang="gu-IN" lang="gu" data-lang="gu"><span class="lang-name">ગુજરાતી</span><span class="lang-sample">ગુજરાતીમાં વાંચો</span></a></li>
+          <li><a href="/pa/workqueue" hreflang="pa-IN" lang="pa" data-lang="pa"><span class="lang-name">ਪੰਜਾਬੀ</span><span class="lang-sample">ਪੰਜਾਬੀ ਵਿੱਚ ਪੜ੍ਹੋ</span></a></li>
+          <li><a href="/or/workqueue" hreflang="or-IN" lang="or" data-lang="or"><span class="lang-name">ଓଡ଼ିଆ</span><span class="lang-sample">ଓଡ଼ିଆରେ ପଢ଼ନ୍ତୁ</span></a></li>
+          <li><a href="/as/workqueue" hreflang="as-IN" lang="as" data-lang="as"><span class="lang-name">অসমীয়া</span><span class="lang-sample">অসমীয়াত পঢ়ক</span></a></li>
+          </ul>
+          <p class="lang-note">முழுத் தளமும் இந்த ஒவ்வொரு மொழியிலும் எழுதப்பட்டது — இயந்திர மொழிபெயர்ப்பு அல்ல.</p>
+        </div>
+      </details>
+        <button class="theme-toggle" type="button" aria-label="தோற்றத்தை மாற்று">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="/ta/contact?about=trial">சோதனையைத் தொடங்கு</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="பட்டி">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">WorkQueue</span>
+        <h1>வேலையைப் பகிருங்கள். எவ்வளவு நேரமானது என்பதைத் துல்லியமாக அறியுங்கள்.</h1>
+        <p class="lede">மேலாளர் உலாவியிலிருந்து ஒப்படைக்கிறார். ஒவ்வொரு ஊழியரும் தன் வரிசையைத் திரையின் மேல் பொருத்தப்பட்ட மெல்லிய பட்டையில் பார்க்கிறார். இரண்டு நேரங்களும் உங்களுக்காகத் தானாகப் பதிவாகின்றன, எனவே மக்கள் வெறுமனே வேலை செய்வதன் பக்கவிளைவாகவே அறிக்கை உருவாகிறது.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="/ta/contact?about=trial">சோதனையைக் கேளுங்கள்</a>
+          <a class="btn btn-ghost btn-lg" href="/ta/pricing">விலையைப் பாருங்கள்</a>
+        </div>
+        <div class="trust-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Windows 10 மற்றும் 11</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> கிளவுட் கணக்கு இல்லை</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> ஒரு உரிமத்தில் வரம்பற்ற PC-கள்</span>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">http://192.168.0.10:8420 &mdash; WorkQueue</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080"
+               alt="WorkQueue பலகை, மேலே வேலையை எழுதும் இடம், மூன்று நெடுவரிசைகள்: காத்திருப்பில், நடக்கிறது, இன்று முடிந்தவை." fetchpriority="high">
+        </div>
+        <figcaption class="shot-caption">ஒப்படைக்க ஒரு வரி. கவனிக்க மூன்று நெடுவரிசைகள்.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ஊழியர் பக்கம்</span>
+      <h2>34 பிக்சல். உங்கள் பணியாளர்கள் கற்க வேண்டியது இவ்வளவுதான்.</h2>
+      <p class="lede">பணிப்பட்டை போலவே இந்தப் பட்டையும் Windows-இல் பொருந்துகிறது, எனவே Windows அதற்கான இடத்தை ஒதுக்கி வைக்கிறது, முழுத் திரைச் சாளரங்கள் அதற்குக் கீழேயே நிற்கின்றன. அது யாருடைய வேலையையும் மறைக்க முடியாது, அதை யாரும் மறைக்கவும் முடியாது.</p>
+    </div>
+
+    <figure class="strip-actual">
+      <img src="/assets/img/bar-strip.png" width="1920" height="41" loading="lazy" alt="1920 பிக்சல் திரையின் மேல் முழுப் பட்டை: இடதுபுறம் ஊழியரின் பெயரும் தற்போதைய வேலையும், வலதுபுறம் திறந்திருக்கும் ஒவ்வொரு வேலைக்கும் ஒரு சிப், இடையில் நிறைய காலி இடம்.">
+      <figcaption class="shot-caption">1920 பிக்சல் திரையில் முழுப் பட்டை. திரையில் இவ்வளவு இடத்தைத்தான் எடுக்கிறது — அதுதான் விஷயமே. கீழே உள்ள இரண்டு நெருக்கக் காட்சிகளும் அதே பட்டை, உண்மையான அளவில்.</figcaption>
+    </figure>
+
+    <div class="strip-zoom">
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-left.png" width="500" height="41" loading="lazy" alt="ஊழியர் பட்டையின் இடது முனை: பச்சை இணைப்புப் புள்ளி, ஆஷா ராவ் என்ற பெயர், பிறகு சிவப்பு வைரம் மற்றும் வேலையின் தலைப்பு — செப்டம்பர் விலைப்பட்டியல்களைச் சரிபார்க்கவும்.">
+        </div>
+        <figcaption class="shot-caption"><strong>இடது முனை.</strong> சேவையகத்துடன் இணைப்பு இருக்கும் வரை ஒரு பச்சைப் புள்ளி, அவர்களின் பெயர், அவர்கள் செய்யும் வேலை. சிவப்பு வைரம் என்றால் அவசரம்.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <img src="/assets/img/bar-strip-chips.png" width="560" height="41" loading="lazy" alt="ஊழியர் பட்டையின் வலது முனை: நிறத்தால் அடையாளம் காணும் மூன்று சிப்புகள், திறந்திருக்கும் ஒவ்வொரு வேலைக்கும் ஒன்று, ஒரு சிறிய பட்டி அம்பு.">
+        </div>
+        <figcaption class="shot-caption"><strong>வலது முனை.</strong> திறந்திருக்கும் ஒவ்வொரு வேலைக்கும் ஒரு சிப், முன்னுரிமை நிறத்தில். ஒன்றைச் சொடுக்கினால் அதற்கு மாறலாம்; சட்டகம் அதே நிறத்தை எடுக்கிறது.</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin:0 0 clamp(30px,5vw,52px)">
+      <div class="shot" style="max-width:860px;margin-inline:auto">
+        <img src="/assets/img/bar-panel.png" width="822" height="278" loading="lazy" alt="பட்டையிலிருந்து திறக்கும் பலகம்: இடதுபுறம் தற்போதைய வேலை, அதன் விவரமும் ஒப்படைத்த நேரமும், அதற்குக் கீழே ஒரு பெரிய Mark completed பொத்தான், வலதுபுறம் ஊழியரின் மூன்று வேலைகள், ஒவ்வொன்றுக்கும் தனித் Complete பொத்தான்.">
+      </div>
+      <figcaption class="shot-caption center">ஒரு வேலையைச் சொடுக்கினால் இது திறக்கிறது. வேலையை முடிக்க ஒரு பெரிய பொத்தான், நிர்வாகியிடம் கேட்க ஒரு பெட்டி, மற்ற ஒவ்வொரு வேலையும் ஒரு சொடுக்கு தூரத்தில்.</figcaption>
+    </figure>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><h3>Accept பொத்தானே இல்லை</h3><p>வேலை அவர்களது கணினியை அடைந்த கணமே &quot;கிடைத்தது&quot; எனப் பதிவாகிறது. வேலை கிடைத்ததைத் தெரிவிக்க யாரும் மறக்க முடியாது, &quot;ஒப்படைத்தது&quot; முதல் &quot;அவர்கள் திரையில்&quot; வரையிலான இடைவெளி நீங்கள் உண்மையிலேயே நிர்வகிக்கக்கூடிய ஒரு எண்ணாக மாறுகிறது.</p></div>
+      <div class="card reveal"><h3>முடிக்க ஒரே பொத்தான்</h3><p>ஒரு வேலையைச் சொடுக்கினால் பலகம் திறக்கிறது: விவரம், கருத்துகள், தவறுதலாக நிகழ்ந்துவிடக் கூடாது என்பதற்காக இரண்டாவது சொடுக்கைக் கேட்கும் ஒரு பெரிய Complete பொத்தான்.</p></div>
+      <div class="card reveal"><h3>அவர்களும் பதில் சொல்லலாம்</h3><p>ஒரு ஊழியர் வேலையில் கருத்து ஒன்றை விட்டுச் செல்லலாம் — ஒரு கேள்வி, ஒரு தடை, அல்லது கண்டறிந்ததைப் பற்றிய குறிப்பு. நீங்கள் அதைப் பார்த்து, கட்டுப்பாட்டுப் பலகையில் அதே வேலையிலிருந்தே பதில் அளிக்கிறீர்கள்.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">பலகை</span>
+        <h3>ஒரு வரியில் ஒப்படையுங்கள், பிறகு நாள் நகர்வதைப் பாருங்கள்</h3>
+        <p>ஒரு தலைப்பு, அந்த நபருக்குத் தேவையான விவரம், முன்னுரிமை, கெடு, யாருக்குச் செல்ல வேண்டும், பிறகு Assign. அதே வேலையை ஒருவருக்கோ ஆறு பேருக்கோ அனுப்புங்கள்.</p>
+        <ul class="check-list">
+          <li><strong>மூன்று நேரடி நெடுவரிசைகள்</strong> — காத்திருப்பில், நடக்கிறது, இன்று முடிந்தவை, நபர் வாரியாக.</li>
+          <li><strong>யாரையும் இடையூறு செய்யாமல் செயல்படுங்கள்</strong> — அட்டையின் மேல் சுட்டியை வைத்தால் Done, Cancel, Reopen, Delete தோன்றும்.</li>
+          <li><strong>வேலையை இடம் மாற்றுங்கள்</strong> — வேலையைத் திறந்து வேறு ஒருவருக்கு ஒப்படையுங்கள்.</li>
+          <li><strong>அவசரமானது அவசரமாகவே தெரியும்</strong> — முன்னுரிமை அட்டைக்கும் ஊழியரின் பட்டைச் சட்டகத்திற்கும் நிறம் தருகிறது.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Board</span>
+          </div>
+          <img src="/assets/img/dashboard-board.png" width="1920" height="1080" loading="lazy" alt="பலகையில் ஐந்து வேலைகள் காத்திருப்பில், மூன்று நடந்து கொண்டிருக்கின்றன, பன்னிரண்டு இன்று முடிந்துள்ளன.">
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature-row reverse" id="analytics">
+      <div class="feature-text">
+        <span class="eyebrow">பகுப்பாய்வு</span>
+        <h3>ஒரு மேலாளர் உண்மையில் கேட்கும் கேள்விகள்</h3>
+        <p>ஏழு முக்கிய எண்களும் பத்து வரைபடங்களும், அனைத்தும் ஒரே வடிகட்டி வரிசையால் இயங்குபவை. ஒவ்வொரு வரைபடத்திற்கும் அதன் அட்டவணை இணை உண்டு, எனவே கம்பங்களை உற்றுப் பார்ப்பதற்குப் பதிலாக எண்களைப் படிக்கலாம்.</p>
+        <ul class="check-list">
+          <li><strong>எவ்வளவு வேலை முடிந்தது</strong> — ஒப்படைத்தவற்றுடன் ஒப்பிடும்போது முடிந்தவை, நாள்தோறும்.</li>
+          <li><strong>வேலைகளுக்கு எவ்வளவு நேரமாகிறது</strong> — ஒரு வேலைக்குச் சராசரியும் இடைநிலையும், அந்தக் காலத்தின் மிக நீண்ட வேலைகளும்.</li>
+          <li><strong>வேலை எவ்வளவு விரைவாக எடுக்கப்படுகிறது</strong> — நாள்தோறும், நபர்வாரியாகப் பதில் நேரம்.</li>
+          <li><strong>யார் எவ்வளவு சுமக்கிறார்கள்</strong> — ஒவ்வொரு ஊழியருக்கும் எண்ணிக்கை, மணிநேரம், பதில், நேரத்தில் முடித்த விகிதம்.</li>
+          <li><strong>உங்கள் குழு எப்போது பரபரப்பாக இருக்கிறது</strong> — நாளின் மணிநேரம் வாரியாகவும், வாரத்தின் நாள் வாரியாகவும்.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Analytics</span>
+          </div>
+          <img src="/assets/img/dashboard-analytics.png" width="1920" height="1080" loading="lazy" alt="பகுப்பாய்வு: 164 முடிந்தவை, 7 நாள் 7 மணி வேலை நேரம், ஒரு வேலைக்குச் சராசரி 1 மணி 4 நிமிடம், சராசரிப் பதில் 21 நிமிடம், 95% நேரத்தில், உடன் வரைபடங்கள்.">
+        </div>
+        <figcaption class="shot-caption">இயல்பாக வெளிச்சம், விரும்பினால் இருள் — முழுக் கட்டுப்பாட்டுப் பலகைக்கும் இரண்டும் உண்டு.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <span class="eyebrow">வரலாறும் நாட்காட்டியும்</span>
+        <h3>ஒவ்வொரு வேலைக்கும் அதன் சொந்தப் பதிவு இருக்கிறது</h3>
+        <p>நபர் மற்றும் தேதி வாரியாக வரலாற்றை வடிகட்டினால் ஒவ்வொரு வரியிலும் பதில் நேரமும் வேலை நேரமும் கிடைக்கும், கீழே நபர்வாரியான மொத்தங்கள், திரையில் இருப்பதைத் துல்லியமாகப் பிரதிபலிக்கும் CSV ஏற்றுமதி — உங்கள் கணக்காளருக்கோ வாடிக்கையாளருக்கோ உண்மையில் தேவைப்படுவது இதுவே.</p>
+        <ul class="check-list">
+          <li><strong>எங்கிருந்தாலும் எந்த வேலையின் தலைப்பையும் சொடுக்குங்கள்,</strong> அதன் முழு நேரவரிசை திறக்கும்.</li>
+          <li><strong>நாட்காட்டி</strong> மாதத்தை நிறத்தின் அடர்த்தியால் காட்டுகிறது, எனவே மந்தமான வாரம் ஒரே பார்வையில் தெரிகிறது.</li>
+          <li><strong>முடிந்த வேலையை மீண்டும் திறங்கள்</strong> — அது திரும்பி வந்தால் நேரடியாக அதே வரியிலிருந்தே.</li>
+        </ul>
+      </div>
+      <figure style="margin:0">
+        <div class="shot shot-crop">
+          <div class="shot-bar">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-title">WorkQueue &mdash; Calendar</span>
+          </div>
+          <img src="/assets/img/dashboard-calendar.png" width="1920" height="1080" loading="lazy" alt="நாட்காட்டித் தாவல்: நிற அடர்த்தி கொண்ட ஒரு மாதம், அருகில் முடிந்த வேலைகளின் பட்டியல், புதிய நாள் மேலே.">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band-ink">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ஏதாவது தவறும்போது</span>
+      <h2>ஒரு அலுவலகத்திற்காகக் கட்டப்பட்டது, விளக்கக்காட்சிக்கு அல்ல.</h2>
+      <p class="lede">சிறு அலுவலகங்களுக்கு மோசமான மதியப் பொழுதுகள் வரும். ரௌட்டர் மறுதொடக்கம் ஆகும், பிராட்பேண்ட் நின்றுவிடும், யாரோ தவறான PC-யை அணைத்துவிடுவார்கள். இவை ஒவ்வொன்றுக்கும் முன்கூட்டியே திட்டமிடப்பட்டது, பின்னால் கண்டுபிடிக்கப்பட்டது அல்ல.</p>
+    </div>
+    <div class="grid grid-2">
+      <div><ul class="check-list">
+          <li><strong>வலையமைப்பு போய்விடுகிறது.</strong> முடித்தவையும் கருத்துகளும் PC-யின் சொந்த வெளிப்பெட்டிக்குச் சென்று, சேவையகம் திரும்பியதும் சேர்கின்றன — ஒவ்வொன்றும் அதன் அசல் சொடுக்கு நேரத்துடன், அதாவது மூன்று மணி நேரத் தடங்கலில் 10:35-க்கு முடிந்த வேலை 13:35 அல்ல, 10:35 எனவே பதிவாகும்.</li>
+          <li><strong>ஏதோ இரண்டு முறை அனுப்பப்படுகிறது.</strong> ஒவ்வொரு செயலுடனும் சேவையகம் அடையாளம் காணும் ஒரு தனித்துவ id செல்கிறது, எனவே இணைப்பு துண்டித்த பிறகு மீண்டும் அனுப்பினாலும் ஒரு வேலை இரண்டு முறை கணக்கிடப்பட முடியாது.</li>
+        </ul></div>
+      <div><ul class="check-list">
+          <li><strong>சேவையக PC-யின் IP மாறுகிறது.</strong> பட்டை உள்ளூர் வலையமைப்பில் கேட்கிறது, சேவையகம் தன் புதிய முகவரியுடன் பதிலளிக்கிறது. உங்கள் ரௌட்டர் ஒலிபரப்பைத் தடுத்தால் — மெஷ் மற்றும் ISP ரௌட்டர்களில் வழக்கமானது — அது வலையமைப்பை வருடிப் பார்க்கிறது.</li>
+          <li><strong>எதுவும் இயங்கவில்லை, காரணமும் யாருக்கும் தெரியவில்லை.</strong> உள்ளேயே இருக்கும் ஒரு சோதனை வழக்கமான எட்டுக் காரணங்களைக் கடந்து செல்கிறது — ஃபயர்வால், Wi-Fi தனிமைப்படுத்தல், VPN, தவறான முகவரி — எளிய சொற்களில் எது காரணம் என்று சொல்கிறது.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">இது எப்படிப் பொருந்துகிறது</span>
+      <h2>இரண்டு நிரல்கள், ஒரு வலையமைப்பு, கிளவுட் இல்லை.</h2>
+      <p class="lede">முழு அமைப்பும் மேலாளரின் PC-யில் ஒரு நிரலும் ஒவ்வொரு ஊழியரின் PC-யில் ஒரு சிறிய நிரலும்தான். அவை ஒன்றோடொன்று அலுவலக வலையமைப்பில் பேசுகின்றன, வேறெங்கும் அல்ல.</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="diagram-title diagram-desc">
+        <title id="diagram-title">WorkQueue-இன் அமைப்பு</title>
+        <desc id="diagram-desc">மேலாளரின் PC-யில் WorkQueue சேவையகம் இயங்குகிறது, அதில் ஒரு SQLite தரவுத்தளமும் உலாவியில் திறக்கும் கட்டுப்பாட்டுப் பலகையும் உள்ளன. ஒவ்வொரு ஊழியரின் PC-யிலும் WorkQueue பட்டை இயங்குகிறது, அது சேவையகத்துடன் துறை 8420-இல் HTTP வழியாகப் பேசுகிறது, துறை 8421-இல் UDP ஒலிபரப்பு வழியாக அதைக் கண்டுபிடிக்கிறது. எல்லாமே அலுவலக வலையமைப்பினுள்ளேயே இருக்கிறது.</desc>
+        <rect x="6" y="6" width="848" height="256" rx="14" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="7 6"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 60, 592 60"/>
+        <path class="dg-line" d="M268 145 H 592"/>
+        <path class="dg-line" d="M268 145 C 400 145, 440 230, 592 230"/>
+        <rect class="dg-box-a" x="16" y="85" width="252" height="122" rx="11"/>
+        <text class="dg-t" x="38" y="116">மேலாளரின் PC</text>
+        <text class="dg-s" x="38" y="140">workqueue-server.exe</text>
+        <text class="dg-s" x="38" y="161">ஒரு SQLite தரவுத்தளக் கோப்பு</text>
+        <text class="dg-s" x="38" y="182">கட்டுப்பாட்டுப் பலகை உலாவியில் திறக்கிறது</text>
+        <rect class="dg-box" x="592" y="30" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="55">ஊழியரின் PC</text>
+        <text class="dg-s" x="612" y="75">workqueue-bar.exe · 34px பட்டை</text>
+        <rect class="dg-box" x="592" y="115" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="140">ஊழியரின் PC</text>
+        <text class="dg-s" x="612" y="160">workqueue-bar.exe · 34px பட்டை</text>
+        <rect class="dg-box" x="592" y="200" width="252" height="60" rx="11"/>
+        <text class="dg-t" x="612" y="225">ஊழியரின் PC</text>
+        <text class="dg-s" x="612" y="245">workqueue-bar.exe · 34px பட்டை</text>
+        <text class="dg-l" x="430" y="132" text-anchor="middle">HTTP :8420</text>
+        <text class="dg-l" x="430" y="172" text-anchor="middle">UDP :8421 சேவையகத்தைக் கண்டுபிடிக்கிறது</text>
+        <text class="dg-s" x="430" y="285" text-anchor="middle">மேலே உள்ள அனைத்தும் உங்கள் அலுவலக வலையமைப்பினுள்ளேயே இருக்கிறது</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:36px">
+      <div class="card"><h3>அலுவலகத்திற்கு வெளியேவா?</h3><p>WorkQueue ஒரு தனியார் வலையமைப்புடன் (Tailscale) இணையலாம், அப்போது வீட்டு மடிக்கணினியோ இரண்டாவது கிளையோ அதே சேவையகத்தை மறையாக்கத்துடன் அடையும், பொது இணையத்தில் எதுவும் வெளியிடப்படாது. அமைப்பில் இது ஒரு கூடுதல் படி, உரிமத்தில் சேர்த்தே உள்ளது.</p></div>
+      <div class="card"><h3>காப்புப்பிரதி என்பது ஒரே கோப்பு</h3><p>அமைப்பு அறிந்த அனைத்துமே ஒரே தரவுத்தளம்தான். சேவையகம் இயங்கிக் கொண்டிருக்கும்போதே கட்டுப்பாட்டுப் பலகை அதை ஏற்றுமதி செய்கிறது — சரிபார்ப்புத் தொகையுடன் முழுப் படமெடுப்பு, அல்லது தரவுத்தளத்தின் அப்படியே ஒரு நகல். அதை அந்த PC-யிலிருந்து விலக்கி வையுங்கள், நீங்கள் பாதுகாப்பானவர்.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">ஒரு நல்ல விஷயம்</span>
+      <h2>இது ஒரு சிறிய கொண்டாட்டமும் நடத்தும்.</h2>
+      <p class="lede">வேலைக்குப் பதிலாக ஒரு அட்டை அனுப்புங்கள் — பிறந்தநாள், பணி ஆண்டுவிழா, ஒரு வெற்றி, ஒரு வரவேற்பு. அந்த நபரின் பட்டையில் பலூன்கள் மிதக்கும், விரும்பினால் பலகத்தில் ஒரு நிமிட விளையாட்டும் உண்டு. அட்டை ஒருபோதும் வரலாற்றிலோ, பகுப்பாய்விலோ, யாருடைய வேலை நேரத்திலோ நுழைவதில்லை. அது வேலை அல்ல, ஒரு நாள் கழித்துத் தானாகவே விலகிக் கொள்கிறது.</p>
+      <p class="small muted">கண்காணிப்பு மென்பொருளுக்கு ஒரு பெயர் உண்டு, உங்கள் குழு வெறுக்கும் கருவி அமைதியாகப் பயன்படுத்தப்படுவது நின்றுவிடும் — அதனால்தான் இதைக் குறிப்பிடுகிறோம்.</p>
+    </div>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap wrap-narrow">
+    <div class="section-head">
+      <span class="eyebrow">விவரங்கள்</span>
+      <h2>இயக்க என்னென்ன தேவை</h2>
+    </div>
+    <dl class="spec-list">
+      <div><dt>மேலாளரின் PC</dt><dd>Windows 10 அல்லது 11, வேலை நேரத்தில் இயங்கிக் கொண்டிருக்க வேண்டும். தனிச் சேவையகம் இல்லை, சிறப்பு வன்பொருள் இல்லை. நிறுவலுக்கு ஒரு முறை நிர்வாக உரிமை தேவை.</dd></div>
+      <div><dt>ஊழியர்களின் PC-கள்</dt><dd>Windows 10 அல்லது 11. நிர்வாக உரிமை தேவையில்லை — பட்டை உள்நுழைந்த பயனருக்காக நிறுவப்படுகிறது.</dd></div>
+      <div><dt>வலையமைப்பு</dt><dd>எல்லா PC-களும் ஒரே அலுவலக வலையமைப்பில், கம்பி வழியாகவோ Wi-Fi வழியாகவோ. அவற்றுக்கிடையே TCP துறை 8420-ம் UDP துறை 8421-ம் திறந்திருக்க வேண்டும் — நிறுவி ஃபயர்வாலைத் தானே திறக்கிறது.</dd></div>
+      <div><dt>இணையம்</dt><dd>தேவையில்லை. அலுவலகத்திற்கு வெளியே உள்ளவர்களுக்குத் தொலைநிலை அணுகலை இயக்கினால் மட்டுமே தேவை.</dd></div>
+      <div><dt>கட்டுப்பாட்டுப் பலகை</dt><dd>வலையமைப்பில் உள்ள எந்தச் சாதனத்திலும் எந்த நவீன உலாவியிலும், தொலைபேசி அல்லது டேப்லெட் உட்பட.</dd></div>
+      <div><dt>நிறுவ ஆகும் நேரம்</dt><dd>சேவையகத்திற்குச் சுமார் பத்து நிமிடங்கள், ஒவ்வொரு ஊழியர் PC-க்கும் ஒரு நிமிடத்திற்கும் குறைவு.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:48px">இது என்ன செய்யாது</h3>
+    <p class="muted">இரண்டாவது மாதத்தில் தெரிந்துகொள்வதைவிட இப்போதே இதைப் படித்துவிடுவது நல்லது.</p>
+    <ul class="check-list">
+          <li><strong>இது Windows-க்கு மட்டும்.</strong> Mac மற்றும் Linux ஊழியர் கணினிகள் இன்னும் ஆதரிக்கப்படவில்லை.</li>
+          <li><strong>மக்கள் அவர்களது PC-யால் அடையாளம் காணப்படுகிறார்கள்,</strong> உள்நுழைவால் அல்ல. நம்பகமான அலுவலக வலையமைப்புக்கு இது சரியான ஏற்பாடு, ஆனால் நினைத்தால் ஒருவர் இன்னொரு கணினியாக நடிக்க முடியும் என்பதும் உண்மை.</li>
+          <li><strong>வேலை நேரம் என்பது சுவர்க் கடிகார நேரம்.</strong> மதிய உணவு நேரத்திலும் வேலை திறந்திருந்தால், உணவும் அந்த எண்ணில் சேரும். இது கடந்த நேரத்தை அளக்கிறது, உழைப்பை அல்ல.</li>
+          <li><strong>வலையமைப்புக்கு வெளியே வரிசை பழையதாகிவிடும்.</strong> அலுவலகத்திலிருந்து தொலைவில் உள்ள மடிக்கணினி மீண்டும் இணையும் வரை கடைசியாக அறிந்த வேலைகளையே காட்டும் — நீங்கள் தொலைநிலை அணுகலை இயக்காத வரை.</li>
+          <li><strong>பட்டை 34 பிக்சல்</strong> உயரத்தை முதன்மைத் திரையில் நிரந்தரமாக எடுத்துக்கொள்கிறது.</li>
+        </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wrap-narrow">
+    <div class="section-head center">
+      <span class="eyebrow">கேள்விகள்</span>
+      <h2>குறிப்பாக WorkQueue பற்றி</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>இது ஊழியர் கண்காணிப்பா? என் குழுவுக்கு இது பிடிக்காதா?</summary>
+        <div class="faq-body">
+          <p>ஒவ்வொரு வேலைக்கும் இரண்டையே இது பதிவு செய்கிறது: அது எப்போது திரையை அடைந்தது, அந்த நபர் எப்போது Complete அழுத்தினார். இது திரைப்படங்கள் எடுப்பதில்லை, விசை அழுத்தங்களைப் பதிவு செய்வதில்லை, சும்மா இருக்கும் நேரத்தைக் கணக்கிடுவதில்லை, யார் எந்த இணையதளத்தைப் பார்க்கிறார்கள் என்றும் கவனிப்பதில்லை — இனியும் செய்யாது. இது வேண்டுமென்றே வரையப்பட்ட கோடு, கவனக்குறைவு அல்ல. நடைமுறையில் குழுக்களுக்கு இது பிடிக்கிறது, ஏனெனில் &quot;மணிக்கணக்கில் முன்பே அனுப்பிவிட்டேனே&quot; என்ற வாக்குவாதம் வாக்குவாதமாகவே இருப்பதில்லை. அனைவரும் ஒரே நேரப் பதிவைப் பார்க்கிறார்கள்.</p>
+        </div>
+      </details>
+      <details>
+        <summary>இது எத்தனை பேரைச் சமாளிக்கும்?</summary>
+        <div class="faq-body">
+          <p>இது ஒரே அலுவலகத்திற்காகக் கட்டப்பட்டு, சுமைச் சோதனை செய்யப்பட்டது — சாதாரண வன்பொருளில் ஒரே நேரத்தில் சுமார் 25 கணினிகள், பதில்கள் வினாடியில் பத்தில் ஒரு பங்குக்கும் குறைவாக. அதைவிடப் பெரியவர்களாக இருந்தால், வாங்கிய பிறகு அல்ல, முன்பே பேசுங்கள்.</p>
+        </div>
+      </details>
+      <details>
+        <summary>மேலாளரின் PC பழுதடைந்தால் என்ன செய்வது?</summary>
+        <div class="faq-body">
+          <p>சேவையகத்தை வேறு PC-யில் நிறுவி, உங்கள் கடைசி ஏற்றுமதியை இறக்குமதி செய்யுங்கள். இதனால்தான் காப்புப்பிரதி ஒரே கோப்பாக இருக்கிறது, இதனால்தான் வேறெங்காவது ஒரு நகல் வைக்குமாறு கட்டுப்பாட்டுப் பலகை உங்களை நச்சரிக்கிறது. ஊழியர்களின் PC-கள் புதிய சேவையகத்தைத் தாமே கண்டுபிடித்துக் கொள்கின்றன.</p>
+        </div>
+      </details>
+      <details>
+        <summary>என் தரவை வெளியே எடுக்க முடியுமா?</summary>
+        <div class="faq-body">
+          <p>முடியும், எப்போது வேண்டுமானாலும், எங்களிடம் கேட்காமலேயே. வரலாறு CSV-யாக வெளிவரும், முழுத் தரவுத்தளமும் JSON படமெடுப்பாகவோ SQLite கோப்பாகவோ வெளிவரும். பூட்டி வைப்பது ஏதுமில்லை, ஏனெனில் எங்கள் பக்கம் உங்களுடையது என்று பூட்ட எதுவுமே இல்லை.</p>
+        </div>
+      </details>
+      <details>
+        <summary>எங்கள் வேலைகள் உங்களுக்குத் தெரியுமா?</summary>
+        <div class="faq-body">
+          <p>இல்லை. மென்பொருள் ஒருபோதும் எங்களைத் தொடர்பு கொள்வதில்லை. தொலைஅளவீடு இல்லை, உரிமச் சரிபார்ப்பு இல்லை, பகுப்பாய்வு அழைப்பு இல்லை. உங்கள் அலுவலகத்தில் இணையமே இல்லாவிட்டாலும் WorkQueue அதைக் கவனிக்கக் கூட செய்யாது.</p>
+        </div>
+      </details>
+      <details>
+        <summary>ஆதரவு எப்படி இருக்கும்?</summary>
+        <div class="faq-body">
+          <p>மின்னஞ்சல், ஒரு வேலை நாளுக்குள் பதில், பதிலளிப்பவர் மென்பொருளை எழுதியவரே. உரிமத்தில் ஓராண்டு ஆதரவும் ஓராண்டு புதுப்பிப்புகளும் அடங்கும்.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>30 நாட்கள் உங்கள் சொந்தக் குழுவில் வையுங்கள்.</h2>
+    <p class="lede">முழுக் கருவி, எதுவும் தடுக்கப்படவில்லை, ரத்து செய்யவும் ஒன்றுமில்லை. தோராயமாக எத்தனை PC என்று சொல்லுங்கள் — நிறுவியை அனுப்பி, அமைக்கும்வரை அழைப்பில் இருப்போம்.</p>
+    <div class="btn-row center">
+      <a class="btn btn-primary btn-lg" href="/ta/contact?about=trial">சோதனையைக் கேளுங்கள்</a>
+      <a class="btn btn-ghost btn-lg" href="/ta/pricing">விலையைப் பாருங்கள்</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/ta/">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand-mark-bg" width="32" height="32" rx="7"/>
+          <rect class="brand-mark-fg" x="6" y="7"  width="20" height="4" rx="2"/>
+          <rect class="brand-mark-fg" x="6" y="14" width="13" height="4" rx="2" opacity=".72"/>
+          <rect class="brand-mark-fg" x="6" y="21" width="8"  height="4" rx="2" opacity=".45"/>
+        </svg>
+          Quietworks
+        </a>
+        <p>சிறு நிறுவனங்களுக்கான சிறிய Windows கருவிகள். மும்பையில், இந்தியாவில் உருவாக்கப்பட்டவை — ஒரு முறை வாங்குங்கள், உங்கள் சொந்த வலையமைப்பில் இயக்குங்கள்.</p>
+      </div>
+      <div class="footer-col">
+        <h4>கருவிகள்</h4>
+        <ul>
+          <li><a href="/ta/workqueue">WorkQueue</a></li>
+          <li><a href="/ta/workqueue#requirements">என்னென்ன தேவை</a></li>
+          <li><a href="/ta/contact?about=roadmap">அடுத்து என்ன</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>வாங்குதல்</h4>
+        <ul>
+          <li><a href="/ta/pricing">விலை</a></li>
+          <li><a href="/ta/contact?about=trial">இலவசச் சோதனை</a></li>
+          <li><a href="/ta/contact?about=setup">அமைப்பதில் உதவி</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>தொடர்பு</h4>
+        <ul>
+          <li><a href="/ta/india">ஒவ்வொரு மாநிலமும்</a></li>
+          <li><a href="mailto:boneydsilva@gmail.com">boneydsilva@gmail.com</a></li>
+          <li><a data-whatsapp="வணக்கம், Quietworks இணையதளத்தைப் பார்த்தேன், மேலும் அறிய விரும்புகிறேன்." href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Quietworks. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</span>
+      <span>மும்பையில் உருவானது</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

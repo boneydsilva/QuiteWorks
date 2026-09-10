@@ -179,3 +179,93 @@ editor will do; the exact numbers above are what the current crops used.
   profile. `shoot.py` uses a timestamped profile directory to avoid this, but
   kill leftover `chrome.exe` processes whose command line mentions your temp
   folder if it happens.
+
+---
+
+# The generated pages: languages and states
+
+`public/` is not all hand-written any more. 121 of its 125 pages come out of
+`tools/build_i18n.py`, because eleven translations of four pages plus a page
+for every state and union territory is not something anybody keeps in step by
+hand. What is generated is still plain static HTML — open
+`public/ta/pricing.html` and it is exactly what a reader is served.
+
+```powershell
+python tools\build_i18n.py           # write everything
+python tools\build_i18n.py --check   # fail if public/ is out of date
+```
+
+| | |
+|---|---|
+| Hand-written, canonical | `public/index.html`, `workqueue.html`, `pricing.html`, `contact.html`, `404.html` |
+| Generated | `public/<lang>/*`, `public/india/*`, `public/<lang>/india/*`, `sitemap.xml`, `robots.txt` |
+| Languages | `tools/content/langs.py` — twelve, English plus eleven |
+| States | `tools/content/states.py` — 28 states, 8 union territories |
+| Copy | `tools/content/strings/<lang>.py` — 434 keys each, `en.py` is the reference |
+
+**The four English pages are still written by hand.** The builder only replaces
+what sits between the `<!-- qw:hreflang -->`, `<!-- qw:langpicker -->` and
+`<!-- qw:jsonld -->` markers in them, so the machine-maintained parts stay in
+step while the prose does not get regenerated over. Delete a marker and the
+build stops with an error rather than silently dropping the block.
+
+## Which pages exist
+
+Every core page exists in all twelve languages. A **state page** exists in
+English always, and in that state's own language when the two differ — so
+Maharashtra has `/india/maharashtra` and `/mr/india/maharashtra`, while Goa,
+whose businesses work in English, has only the English one. The `hreflang`
+block lists only the versions that really exist; the language picker still
+offers all twelve, sending a reader with no version of that page to their own
+language's `/india` hub.
+
+## Adding a language
+
+1. A row in `tools/content/langs.py`.
+2. A `tools/content/strings/<code>.py` with the same 434 keys as `en.py`.
+3. `python tools\build_i18n.py`.
+
+The build refuses to run if a key is missing, so a half-finished translation
+cannot ship a page with a hole in it.
+
+## Adding a state
+
+One dict in `tools/content/states.py`, then rebuild. `lang` is the language
+that state's own page is written in — leave it `en` where the local language
+is not one of the eleven, because a page in a language nobody there reads is
+worse than an honest English one. `trade` is what stops the page being a
+find-and-replace of the last one, so keep it true.
+
+## The placeholders and grammar
+
+`{state}`, `{hub}`, `{cities}`, `{lang}` are filled in at build time, which is
+a trap in most of these languages: a case ending cannot simply be appended to
+a proper noun. Three different solutions are in use, and a new language needs
+to pick one:
+
+- **Free postposition** (Hindi, Punjabi) — `{state} में` is already correct.
+- **Bound suffix** (Kannada, Telugu, Odia, Assamese, Gujarati) — written with
+  no space, `{state}ದಲ್ಲಿ`, so it joins the name.
+- **Head noun carries the case** (Marathi, Bengali) — `{state} राज्यातील`,
+  because महाराष्ट्र + मध्ये is not महाराष्ट्रमध्ये.
+- **No inflection at all** (Tamil, Malayalam) — the ending changes with the
+  noun (தமிழ்நாடு → தமிழ்நாட்டில்), so the templates use apposition or a
+  compound and never inflect the placeholder.
+
+Read a generated `<h1>` in the language before believing a new template.
+
+## Checking it
+
+```powershell
+python tools\build_i18n.py
+python tools\audit_seo.py              # no browser needed
+python tools\preview.py 8021           # then, in another window:
+python tools\check_console.py 8021
+```
+
+`audit_seo.py` walks all 125 pages: one `<h1>`, sane title and description
+lengths, a canonical that matches where the file is, every internal link
+resolving, `hreflang` sets that are self-referential and reciprocal, and a
+sitemap that agrees with the tree. `check_console.py` drives headless Chrome
+over one page of every kind and asserts zero console messages — the rule the
+site has always held itself to, now across twelve languages.

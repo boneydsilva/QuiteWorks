@@ -306,15 +306,16 @@ function initZoom() {
    during it, so the button counts it in.
    -------------------------------------------------------------------------- */
 
-// Where each chapter starts in the film, and what is happening there. If the
-// film is ever re-cut, these five numbers are what has to change.
-const FILM_CHAPTERS = [
-  { at: 3.2,  text: "The manager types the job once, and picks whose screen it goes to." },
-  { at: 23.4, text: "It lands on Asha's strip about two seconds later. There is no app to open and nothing to accept — reaching her PC is what counts as delivered." },
-  { at: 32.4, text: "The clock started itself the moment the task arrived, and the board shows it running. Nobody has to remember to start a timer." },
-  { at: 39.6, text: "She presses Complete once. Her strip goes quiet and the card crosses the board on its own." },
-  { at: 48.6, text: "Response five seconds, work twenty-four. Two timestamps nobody typed — and thirty days of them is the reporting." },
-];
+// The chapters live in the markup - one <button data-film-at data-film-text>
+// each - because every language has its own captions. Re-cutting the film
+// means changing those five timestamps in the HTML, not here.
+
+function filmChapters(root) {
+  return Array.from(root.querySelectorAll("[data-film-at]")).map((b) => ({
+    at: Number(b.dataset.filmAt),
+    text: b.dataset.filmText || "",
+  }));
+}
 
 function initFilm() {
   const root = document.querySelector("[data-film]");
@@ -328,6 +329,7 @@ function initFilm() {
   const source = video && video.querySelector("source");
   if (!video || !source) return;
 
+  const chapters = filmChapters(root);
   const original = label ? label.innerHTML : "";
   let current = -1;
   let loading = null;
@@ -336,10 +338,12 @@ function initFilm() {
 
   const sync = () => {
     let index = 0;
-    FILM_CHAPTERS.forEach((c, i) => { if (video.currentTime >= c.at) index = i; });
+    chapters.forEach((c, i) => { if (video.currentTime >= c.at) index = i; });
     if (index === current) return;
     current = index;
-    if (caption) caption.textContent = FILM_CHAPTERS[index].text;
+    if (caption && chapters[index] && chapters[index].text) {
+      caption.textContent = chapters[index].text;
+    }
     buttons.forEach((b, i) => b.setAttribute("aria-current", String(i === index)));
   };
 
@@ -416,6 +420,82 @@ function initFilm() {
   buttons.forEach((b, i) => b.setAttribute("aria-current", String(i === 0)));
 }
 
+/* --------------------------------------------------------------------------
+   9. Language
+   The picker is a <details> full of ordinary links, so it already works with
+   this file missing. This adds three things: it closes when you click away,
+   it remembers which language was chosen, and on a first visit it offers -
+   quietly, once, in a dismissible line - the language the browser asks for.
+   It never redirects on its own. Being moved to a page you cannot read
+   because of an Accept-Language header you have never seen is worse than the
+   English you at least expected.
+   -------------------------------------------------------------------------- */
+
+const LANG_KEY = "qw-lang";
+
+function initLang() {
+  const pick = document.querySelector("[data-lang-pick]");
+  if (!pick) return;
+
+  const here = document.documentElement.lang || "en";
+  try { localStorage.setItem(LANG_KEY, here); } catch (e) { /* private mode */ }
+
+  // Clicking a language is a choice; store it before the page navigates.
+  pick.querySelectorAll("a[data-lang]").forEach((a) => {
+    a.addEventListener("click", () => {
+      try { localStorage.setItem(LANG_KEY, a.dataset.lang); } catch (e) { /* ignore */ }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (pick.open && !pick.contains(event.target)) pick.open = false;
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && pick.open) {
+      pick.open = false;
+      const summary = pick.querySelector("summary");
+      if (summary) summary.focus();
+    }
+  });
+
+  offerLanguage(pick, here);
+}
+
+// Offer, do not redirect. Shown once per browser, and only when this page
+// really exists in the language being asked for.
+function offerLanguage(pick, here) {
+  let stored = null;
+  try { stored = localStorage.getItem("qw-lang-offered"); } catch (e) { return; }
+  if (stored) return;
+
+  const wanted = (navigator.languages || [navigator.language || ""])
+    .map((tag) => String(tag).toLowerCase().split("-")[0])
+    .find((code) => code && code !== here &&
+      pick.querySelector('a[data-lang="' + code + '"]'));
+  if (!wanted) return;
+
+  const link = pick.querySelector('a[data-lang="' + wanted + '"]');
+  const alternate = document.querySelector('link[rel="alternate"][hreflang^="' + wanted + '"]');
+  if (!link || !alternate) return;   // no version of THIS page in that language
+
+  const bar = document.createElement("div");
+  bar.className = "lang-offer";
+  bar.innerHTML =
+    '<a href="' + alternate.href + '" lang="' + wanted + '" hreflang="' + wanted + '">' +
+    link.querySelector(".lang-sample").textContent + "</a>" +
+    '<button type="button" aria-label="Dismiss">&times;</button>';
+
+  const close = () => {
+    bar.remove();
+    try { localStorage.setItem("qw-lang-offered", "1"); } catch (e) { /* ignore */ }
+  };
+  bar.querySelector("button").addEventListener("click", close);
+  bar.querySelector("a").addEventListener("click", close);
+
+  const header = document.querySelector(".site-header");
+  if (header) header.insertAdjacentElement("afterend", bar);
+}
+
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -427,4 +507,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMisc();
   initZoom();
   initFilm();
+  initLang();
 });

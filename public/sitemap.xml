@@ -1,27 +1,1712 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://boneydsilva.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://boneydsilva.com/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://boneydsilva.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://boneydsilva.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
     <lastmod>2026-09-10</lastmod>
     <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/workqueue</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/workqueue"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/workqueue"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/pricing"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/pricing"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/pricing"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/pricing"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/pricing"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/pricing"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/india</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/contact"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/contact"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/contact"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/contact"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/contact"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/contact"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/contact"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/contact"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/contact"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/contact"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/andhra-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/andhra-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india/andhra-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/andhra-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/india/andhra-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/andhra-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india/andhra-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/andhra-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/arunachal-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/arunachal-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/arunachal-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/assam</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/assam"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india/assam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/assam"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/as/india/assam</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/assam"/>
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://boneydsilva.com/as/india/assam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/assam"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/bihar</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/bihar"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/bihar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/bihar"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/bihar</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/bihar"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/bihar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/bihar"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/chhattisgarh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/chhattisgarh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/chhattisgarh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/chhattisgarh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/chhattisgarh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/chhattisgarh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/chhattisgarh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/chhattisgarh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/goa</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/goa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/goa"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/gujarat</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/gujarat"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india/gujarat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/gujarat"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/india/gujarat</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/gujarat"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india/gujarat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/gujarat"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/haryana</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/haryana"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/haryana"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/haryana"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/haryana</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/haryana"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/haryana"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/haryana"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/himachal-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/himachal-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/himachal-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/himachal-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/himachal-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/himachal-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/himachal-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/himachal-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/jharkhand</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/jharkhand"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/jharkhand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/jharkhand"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/jharkhand</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/jharkhand"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/jharkhand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/jharkhand"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/karnataka</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/karnataka"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india/karnataka"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/karnataka"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/kn/india/karnataka</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/karnataka"/>
+    <xhtml:link rel="alternate" hreflang="kn-IN" href="https://boneydsilva.com/kn/india/karnataka"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/karnataka"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/kerala</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/kerala"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india/kerala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/kerala"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/india/kerala</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/kerala"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india/kerala"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/kerala"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/madhya-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/madhya-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/madhya-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/madhya-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/madhya-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/madhya-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/madhya-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/madhya-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/maharashtra</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/maharashtra"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india/maharashtra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/maharashtra"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/mr/india/maharashtra</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/maharashtra"/>
+    <xhtml:link rel="alternate" hreflang="mr-IN" href="https://boneydsilva.com/mr/india/maharashtra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/maharashtra"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/manipur</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/manipur"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/manipur"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/meghalaya</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/meghalaya"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/meghalaya"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/mizoram</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/mizoram"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/mizoram"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/nagaland</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/nagaland"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/nagaland"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/odisha</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/odisha"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india/odisha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/odisha"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/or/india/odisha</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/odisha"/>
+    <xhtml:link rel="alternate" hreflang="or-IN" href="https://boneydsilva.com/or/india/odisha"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/odisha"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/punjab</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/punjab"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india/punjab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/punjab"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/pa/india/punjab</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/punjab"/>
+    <xhtml:link rel="alternate" hreflang="pa-IN" href="https://boneydsilva.com/pa/india/punjab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/punjab"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/rajasthan</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/rajasthan"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/rajasthan"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/rajasthan"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/rajasthan</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/rajasthan"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/rajasthan"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/rajasthan"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/sikkim</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/sikkim"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/sikkim"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/tamil-nadu</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/tamil-nadu"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india/tamil-nadu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/tamil-nadu"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/india/tamil-nadu</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/tamil-nadu"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india/tamil-nadu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/tamil-nadu"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/telangana</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/telangana"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india/telangana"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/telangana"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/te/india/telangana</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/telangana"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://boneydsilva.com/te/india/telangana"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/telangana"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/tripura</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/tripura"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india/tripura"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/tripura"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/india/tripura</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/tripura"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india/tripura"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/tripura"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/uttar-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/uttar-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/uttar-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/uttar-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/uttar-pradesh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/uttar-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/uttar-pradesh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/uttar-pradesh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/uttarakhand</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/uttarakhand"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/uttarakhand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/uttarakhand"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/uttarakhand</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/uttarakhand"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/uttarakhand"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/uttarakhand"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/west-bengal</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/west-bengal"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india/west-bengal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/west-bengal"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/bn/india/west-bengal</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/west-bengal"/>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://boneydsilva.com/bn/india/west-bengal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/west-bengal"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/andaman-and-nicobar-islands</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/andaman-and-nicobar-islands"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/andaman-and-nicobar-islands"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/chandigarh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/chandigarh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/chandigarh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/chandigarh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/chandigarh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/chandigarh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/chandigarh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/chandigarh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/dadra-and-nagar-haveli-and-daman-and-diu</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/gu/india/dadra-and-nagar-haveli-and-daman-and-diu</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://boneydsilva.com/gu/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/dadra-and-nagar-haveli-and-daman-and-diu"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/delhi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/delhi"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/delhi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/delhi"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/delhi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/delhi"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/delhi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/delhi"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/jammu-and-kashmir</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/jammu-and-kashmir"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/jammu-and-kashmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/jammu-and-kashmir"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/jammu-and-kashmir</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/jammu-and-kashmir"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/jammu-and-kashmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/jammu-and-kashmir"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/ladakh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/ladakh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/ladakh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/ladakh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/hi/india/ladakh</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/ladakh"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://boneydsilva.com/hi/india/ladakh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/ladakh"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/lakshadweep</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/lakshadweep"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india/lakshadweep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/lakshadweep"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ml/india/lakshadweep</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/lakshadweep"/>
+    <xhtml:link rel="alternate" hreflang="ml-IN" href="https://boneydsilva.com/ml/india/lakshadweep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/lakshadweep"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/india/puducherry</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/puducherry"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india/puducherry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/puducherry"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://boneydsilva.com/ta/india/puducherry</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://boneydsilva.com/india/puducherry"/>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://boneydsilva.com/ta/india/puducherry"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://boneydsilva.com/india/puducherry"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
