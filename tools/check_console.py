@@ -33,8 +33,8 @@ BASE = "http://localhost:%s" % PORT
 DEV = "http://127.0.0.1:9333"
 
 PAGES = [
-    "/", "/workqueue", "/pricing", "/contact", "/india",
-    "/hi/", "/hi/workqueue", "/hi/pricing", "/hi/contact", "/hi/india",
+    "/", "/workqueue", "/pricing", "/contact", "/india/",
+    "/hi/", "/hi/workqueue", "/hi/pricing", "/hi/contact", "/hi/india/",
     "/mr/", "/bn/", "/ta/", "/te/", "/kn/", "/ml/", "/gu/", "/pa/", "/or/", "/as/",
     "/india/maharashtra", "/india/tamil-nadu", "/india/goa",
     "/india/dadra-and-nagar-haveli-and-daman-and-diu",

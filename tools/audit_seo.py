@@ -35,16 +35,16 @@ def pages():
 
 
 def url_of(path):
-    """Match what build_i18n.url_for() produces: "/" and "/hi/" keep their
-    trailing slash, "/india" and "/pricing" do not."""
+    """Match what build_i18n.url_for() produces: anything backed by an
+    index.html keeps its trailing slash ("/", "/hi/", "/india/"); a page
+    backed by its own .html file does not ("/pricing")."""
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
     if rel == "index.html":
         return "/"
     if rel.endswith("/index.html"):
-        stem = rel[: -len("/index.html")]
-        if "/" not in stem and len(stem) == 2:      # a language home, /hi/
-            return "/" + stem + "/"
-        return "/" + stem
+        # Anything backed by an index.html is served at the slashed URL;
+        # Cloudflare 307s the bare form.
+        return "/" + rel[: -len("index.html")]
     return "/" + rel[: -len(".html")]
 
 

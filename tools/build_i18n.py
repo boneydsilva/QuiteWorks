@@ -69,14 +69,20 @@ def esc(text):
 
 def url_for(lang, page, slug=None):
     """The public URL of a page. `page` is home/workqueue/pricing/contact/
-    india/state."""
+    india/state.
+
+    The trailing slashes are not decoration. Cloudflare serves a folder's
+    index.html at the slashed URL and 307s the bare one, so /india without
+    the slash is a redirect - and a canonical that redirects is a canonical
+    doing half its job. Anything backed by an index.html gets the slash;
+    /pricing, backed by pricing.html, does not."""
     p = "" if lang == "en" else "/" + lang
     if page == "home":
         return (p + "/") if p else "/"
     if page == "state":
         return "%s/india/%s" % (p, slug)
     if page == "india":
-        return p + "/india"
+        return p + "/india/"
     return "%s/%s" % (p, page)
 
 
@@ -214,7 +220,7 @@ def header(lang, current, targets):
     links = [("home", (p + "/") if p else "/", s["n_home"]),
              ("workqueue", p + "/workqueue", s["n_workqueue"]),
              ("pricing", p + "/pricing", s["n_pricing"]),
-             ("india", p + "/india", s["n_india"]),
+             ("india", p + "/india/", s["n_india"]),
              ("contact", p + "/contact", s["n_contact"])]
     nav = "\n".join(
         '        <a href="%s"%s>%s</a>'
@@ -287,7 +293,7 @@ def footer(lang, wa_msg=None):
       <div class="footer-col">
         <h4>{contact}</h4>
         <ul>
-          <li><a href="{p}/india">{states}</a></li>
+          <li><a href="{p}/india/">{states}</a></li>
           <li><a href="mailto:{email}">{email}</a></li>
           <li><a data-whatsapp="{wa}" href="#">WhatsApp</a></li>
         </ul>
@@ -410,7 +416,7 @@ def build_home(lang):
     <div class="state-teaser">
       <p>%s</p>
       <div class="chip-row">%s</div>
-      <a class="btn btn-ghost btn-sm" href="%s/india">%s</a>
+      <a class="btn btn-ghost btn-sm" href="%s/india/">%s</a>
     </div>""" % (esc(s["i_states_p"]),
                  "".join('<a class="chip" href="%s">%s</a>'
                          % (url_for(lang, "state", st["slug"]), esc(st["native"]))
@@ -1462,7 +1468,7 @@ def build_state(st, lang):
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="{home}">{bc_home}</a>
       <span aria-hidden="true">/</span>
-      <a href="{p}/india">{bc_india}</a>
+      <a href="{p}/india/">{bc_india}</a>
       <span aria-hidden="true">/</span>
       <span aria-current="page">{state}</span>
     </nav>
@@ -1506,7 +1512,7 @@ def build_state(st, lang):
   <div class="wrap wrap-narrow center">
     <h2>{other_h2}</h2>
     <p class="lede">{other_p}</p>
-    <a class="btn btn-ghost" href="{p}/india">{other_btn}</a>
+    <a class="btn btn-ghost" href="{p}/india/">{other_btn}</a>
   </div>
 </section>
 
