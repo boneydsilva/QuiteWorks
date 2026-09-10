@@ -6,10 +6,11 @@
    ========================================================================== */
 
 const SITE = {
-  // Where the contact form posts. Sign up free at https://web3forms.com,
-  // paste the access key here, and the form starts emailing you. Until then
-  // the form falls back to opening the visitor's email client.
-  formAccessKey: "PASTE-YOUR-WEB3FORMS-ACCESS-KEY-HERE",
+  // Where the contact form posts (Web3Forms). This key is public by design -
+  // it ships in the page like every client-side form key - so restrict it to
+  // this domain in the Web3Forms dashboard, or anyone can post through it.
+  // Blank it and the form falls back to opening the visitor's email client.
+  formAccessKey: "c8733f42-4a22-4bd9-9471-e781cf396e74",
 
   // Your details. The email is also hard-coded in the page footers and on the
   // contact page - search the .html files for it if you ever change it. The
